@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly - Healthy Catering Food Services</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  
+  <div id="preloader">
+    <svg class="bg-vectors" xmlns="http://w3.org" viewBox="0 0 960 540" preserveAspectRatio="none">
+      <path class="bg-wave" fill="rgba(0, 230, 118, 0.06)" d="M0,160 Q240,280 480,160 T960,160 L960,0 L0,0 Z"/>
+      <path class="bg-wave" fill="rgba(255, 145, 0, 0.04)" d="M0,200 Q240,100 480,220 T960,200 L960,0 L0,0 Z" style="animation-delay: -3s; animation-duration: 11s;"/>
+    </svg>
+
+    <div class="preloader-art">
+      <svg class="food-vector salad-leaf" width="45" height="45" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+        <path d="M2 22C4.5 19.5 7.5 19 10 20C13 21.2 16.5 19.8 18 17C19.5 14.2 18.8 10.5 21 8C18.5 8.5 16 7.5 14.5 5.5C13 3.5 13.5 1 11 2C8.5 3 8 6.5 6 8C4 9.5 1 9 2 11.5C3 14 5.5 14.5 5 17.5C4.5 20.5 2 22 2 22Z" fill="var(--food-green)" opacity="0.95"/>
+        <path d="M6 8C7.5 10.5 10 13 13.5 14.5" stroke="#047857" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+
+      <svg class="food-vector avocado" width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+        <path d="M12 2C7.5 2 4 7 4 13C4 18 7.5 22 12 22C16.5 22 20 18 20 13C20 7 16.5 2 12 2Z" fill="#4ea93b"/>
+        <path d="M12 4C8.5 4 5.5 8.5 5.5 13C5.5 17 8.5 20.5 12 20.5C15.5 20.5 18.5 17 18.5 13C18.5 8.5 15.5 4 12 4Z" fill="#a3e635"/>
+        <circle cx="12" cy="14.5" r="3.5" fill="#78350f"/>
+      </svg>
+
+      <svg class="food-vector broccoli" width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+        <path d="M10 15C10 12.5 11 11 12 11C13 11 14 12.5 14 15C14 18 13.5 22 12 22C10.5 22 10 18 10 15Z" fill="#15803d"/>
+        <circle cx="8.5" cy="9.5" r="4.5" fill="var(--food-green)"/>
+        <circle cx="15.5" cy="9.5" r="4.5" fill="var(--food-green)"/>
+        <circle cx="12" cy="6.5" r="4.5" fill="#22c55e"/>
+      </svg>
+
+      <div class="cloche-container">
+        <svg width="110" height="80" viewBox="0 0 24 18" fill="none" xmlns="http://w3.org">
+          <path d="M12 4C6.5 4 2 7.5 2 12H22C22 7.5 17.5 4 12 4Z" fill="#475569"/>
+          <path d="M12 4C14.8 4 17.3 5.4 19 7.5" stroke="#ffffff" stroke-width="0.75" stroke-linecap="round"/>
+          <circle cx="12" cy="2.5" r="1.5" fill="var(--food-orange)"/>
+          <path d="M2 13H22V14H22.5C23 14 23.5 14.5 23.5 15C23.5 15.5 23 16 22.5 16H1.5C1 16 0.5 15.5 0.5 15C0.5 14.5 1 14 1.5 14H2V13Z" fill="#334155"/>
+        </svg>
+      </div>
+
+      <div class="platter"></div>
+    </div>
+
+    <div class="brand-title">Stackly</div>
+
+    <div class="progress-wrapper">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="header-container">
+      
+      <div class="logo-wrapper" onclick="refreshPage()">
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0iIzAwZTY3NiI+PHBhdGggZD0iTTEyIDJMMiA3bDEwIDUgMTAtNS0xMC01ek0yIDE3bDEwIDUgMTAtNU0yIDEybDEwIDUgMTAtNSIvPjwvc3ZnPg==" alt="Stackly Logo" class="brand-logo">
+        <span class="logo-text">Stackly</span>
+      </div>
+
+      <nav class="desktop-nav">
+        <a href="#" class="nav-item active">Home</a>
+        <a href="#" class="nav-item">Our Menu</a>
+        <a href="#" class="nav-item">Meal Plans</a>
+        <a href="#" class="nav-item">Catering</a>
+        <a href="#" class="nav-item">About Us</a>
+        <a href="#" class="nav-item">Contact Us</a>
+      </nav>
+
+      <div class="utility-actions">
+        <a href="404.html" class="icon-btn" title="Wishlist">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+        </a>
+        <a href="404.html" class="icon-btn" title="Shopping Cart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+          <span class="cart-badge">0</span>
+        </a>
+       <button class="auth-btn" onclick="window.location.href='login.html';" title="Login">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+    <circle cx="12" cy="7" r="4"/>
+  </svg>
+</button>
+
+      </div>
+
+      <div class="hamburger-menu" id="hamburger-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+    </div>
+  </header>
+
+  <div class="mobile-menu-overlay" id="mobile-overlay">
+    <div class="mobile-menu-card">
+      <nav class="mobile-nav-links">
+        <a href="#" class="mobile-nav-item active">Home</a>
+        <a href="#" class="mobile-nav-item">Our Menu</a>
+        <a href="#" class="mobile-nav-item">Meal Plans</a>
+        <a href="#" class="mobile-nav-item">Catering</a>
+        <a href="#" class="mobile-nav-item">About Us</a>
+        <a href="#" class="mobile-nav-item">Contact Us</a>
+      </nav>
+      <div class="mobile-utilities">
+        <a href="404.html" class="mobile-util-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          Wishlist
+        </a>
+        <a href="404.html" class="mobile-util-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+          Cart Container
+        </a>
+        <button class="mobile-auth-btn">Sign In / Register</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+    let audioContext = null;
+    let soundFired = false;
+
+    function initAndPlaySound() {
+      if (soundFired) return;
+      try {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtx) return;
+        if (!audioContext) audioContext = new AudioCtx();
+        if (audioContext.state === 'suspended') audioContext.resume();
+
+        const osc = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        osc.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(1450, audioContext.currentTime); 
+        gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + 1.5);
+        osc.start();
+        osc.stop(audioContext.currentTime + 1.5);
+        
+        soundFired = true;
+        cleanListeners();
+      } catch (e) {}
+    }
+
+    function cleanListeners() {
+      window.removeEventListener('mousemove', initAndPlaySound);
+      window.removeEventListener('touchstart', initAndPlaySound);
+      window.removeEventListener('click', initAndPlaySound);
+    }
+
+    window.addEventListener('mousemove', initAndPlaySound);
+    window.addEventListener('touchstart', initAndPlaySound);
+    window.addEventListener('click', initAndPlaySound);
+
+    function refreshPage() {
+      window.location.reload(true);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const navItems = document.querySelectorAll('.nav-item, .mobile-nav-item');
+      navItems.forEach(item => {
+        item.addEventListener('click', function() {
+          navItems.forEach(i => i.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+
+      const burger = document.getElementById('hamburger-toggle');
+      const mobileOverlay = document.getElementById('mobile-overlay');
+      
+      burger.addEventListener('click', () => {
+        burger.classList.toggle('open');
+        mobileOverlay.classList.toggle('visible');
+      });
+
+      setTimeout(() => {
+        const preloader = document.getElementById('preloader');
+        const mainApp = document.getElementById('main-app');
+
+        preloader.style.opacity = '0';
+        preloader.style.transform = 'scale(1.05)';
+        
+        setTimeout(() => {
+          preloader.style.display = 'none';
+          mainApp.style.opacity = '1';
+          mainApp.style.transform = 'scale(1)';
+          cleanListeners();
+        }, 500);
+
+      }, 2000);
+    });
+  </script>
+
+<section class="crisp-hero-card">
+  
+  <!-- OPTION 1: Section Backing Custom Background Image Layer -->
+  <div class="hero-bg-layer">
+    <!-- Update your main background texture file route here -->
+    <img src="./Assets/hero-section-bg.jpg" alt="Background Texture" class="bg-asset-img">
+  </div>
+
+  <!-- Soft Ambient Graphic Canvas Shapes (Subtle backing circle) -->
+  <div class="ambient-circle-graphic"></div>
+
+  <div class="crisp-hero-container">
+    
+    <!-- LEFT COLUMN: Short & Punchy Action Content Tracks -->
+    <div class="crisp-hero-left">
+      <span class="hero-badge-tagline">FRESH. LOCAL. DELIVERED.</span>
+      
+      <!-- Synchronized Cross-Fading Text Segment Block -->
+      <div id="hero-text-viewport" class="text-fade-viewport text-visible">
+        <h1 class="hero-main-title" id="dynamic-title">Gourmet Meal Blueprints For Your Events</h1>
+        <p class="hero-sub-paragraph" id="dynamic-desc">Calibrated dynamic nutritional menus engineered perfectly around your fitness configurations and corporate gatherings.</p>
+      </div>
+
+      <div class="hero-cta-button-row">
+        <a href="404.html" class="btn-primary-green">Explore Plans</a>
+        <a href="404.html" class="btn-secondary-white">View Menu</a>
+      </div>
+    </div>
+
+    <!-- RIGHT COLUMN: 1.5s Synchronized Photo Target Slot -->
+    <div class="crisp-hero-right">
+      <div id="hero-image-viewport" class="image-fade-viewport image-visible">
+        <!-- OPTION 2: Right-Side Carousel Image Node -->
+        <img id="carousel-dish-img" class="crisp-dish-photo-asset" src="./Assets/hero section img 1.jpg" alt="Premium Healthy Catering Menu Platter">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+    /* ==========================================================================
+   SHORT, CRISP & COMPACT FLOATING BENTO HERO BLOCK (IMAGE PARITY FIT)
+   ========================================================================== */
+.crisp-hero-card {
+  position: relative;
+  width: 94%;
+  max-width: 1300px;
+  
+  /* Precision clearance avoids sticky header overlays seamlessly */
+  margin: 115px auto 40px auto; 
+  
+  /* Light, refreshing background gradient tones */
+  background: linear-gradient(135deg, #f2fbf5 0%, #f7fee7 100%);
+  border: 1px solid rgba(0, 230, 118, 0.12);
+  border-radius: 36px;
+  box-shadow: 0 15px 40px -20px rgba(15, 23, 42, 0.05);
+  
+  /* Short & compact vertical padding constraint to match standard layout shape */
+  padding: 60px 85px; 
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   OPTION Handle: Full Section Background Image Parameter Constraints
+   ========================================================================== */
+.hero-bg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bg-asset-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.08; /* Blends nicely in the background without affecting text legibility */
+}
+
+/* Elegant circular backing glow shape on the right column */
+.ambient-circle-graphic {
+  position: absolute;
+  right: -5%;
+  bottom: -20%;
+  width: 520px;
+  height: 520px;
+  background: rgba(220, 252, 231, 0.7);
+  border-radius: 50%;
+  filter: blur(10px);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.crisp-hero-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  z-index: 3;
+}
+
+/* Left Content Column Configuration */
+.crisp-hero-left {
+  flex: 1.1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-badge-tagline {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #16a34a; /* Vibrant theme green color */
+  margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   1.5s STEP CROSS-FADE VIEWPORT ENGINE CONSTRAINTS
+   ========================================================================== */
+.text-fade-viewport {
+  min-height: 190px; /* Rigid constraint halts vertical layout bounce over slide flips */
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+.text-fade-viewport.text-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-main-title {
+  font-size: 3.2rem;
+  font-weight: 900;
+  line-height: 1.15;
+  color: #0f172a; /* High contrast deep slate */
+  margin-bottom: 18px;
+  letter-spacing: -0.5px;
+}
+
+.hero-sub-paragraph {
+  font-size: 1.1rem;
+  color: #475569;
+  line-height: 1.6;
+  max-width: 520px;
+}
+
+/* High-Contrast CTA Button Blocks */
+.hero-cta-button-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.btn-primary-green {
+  text-decoration: none;
+  background: #22c55e;
+  color: #ffffff;
+  padding: 14px 34px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.2);
+  transition: background 0.25s, transform 0.2s;
+}
+
+.btn-primary-green:hover {
+  background: #16a34a;
+  transform: translateY(-2px);
+}
+
+.btn-secondary-white {
+  text-decoration: none;
+  background: #ffffff;
+  color: #1e293b;
+  border: 1px solid #e2e8f0;
+  padding: 13px 32px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  transition: background 0.25s, transform 0.2s;
+}
+
+.btn-secondary-white:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+}
+
+/* Right Media Platter Section Segments */
+.crisp-hero-right {
+  flex: 0.9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-fade-viewport {
+  width: 360px;
+  height: 340px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+.image-fade-viewport.image-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Option Handle: Right-Side Carousel Photo Frame Layout Shapes */
+.crisp-dish-photo-asset {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Preserves raw image shapes cleanly without weird distortion */
+  filter: drop-shadow(0 15px 30px rgba(15, 23, 42, 0.08));
+}
+
+/* ==========================================================================
+   FLUID STRUCTURAL RESPONSIVE ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .crisp-hero-card { padding: 50px 50px; }
+  .hero-main-title { font-size: 2.7rem; }
+  .image-fade-viewport { width: 300px; height: 280px; }
+}
+
+@media (max-width: 992px) {
+  .crisp-hero-card { padding: 45px 24px; margin-top: 105px; border-radius: 24px; }
+  .crisp-hero-container { flex-direction: column-reverse; text-align: center; gap: 35px; }
+  .crisp-hero-left { align-items: center; }
+  .text-fade-viewport { min-height: auto; }
+  .hero-main-title { font-size: 2.2rem; }
+  .hero-cta-button-row { flex-direction: column; width: 100%; gap: 12px; }
+  .btn-primary-green, .btn-secondary-white { width: 100%; text-align: center; }
+  .image-fade-viewport { width: 250px; height: 240px; }
+  .ambient-circle-graphic { width: 300px; height: 300px; }
+}
+
+</style>
+
+<script>
+    /* ==========================================================================
+   SHORT, CRISP & COMPACT FLOATING BENTO HERO BLOCK (IMAGE PARITY FIT)
+   ========================================================================== */
+.crisp-hero-card {
+  position: relative;
+  width: 94%;
+  max-width: 1300px;
+  
+  /* Precision clearance avoids sticky header overlays seamlessly */
+  margin: 115px auto 40px auto; 
+  
+  /* Light, refreshing background gradient tones */
+  background: linear-gradient(135deg, #f2fbf5 0%, #f7fee7 100%);
+  border: 1px solid rgba(0, 230, 118, 0.12);
+  border-radius: 36px;
+  box-shadow: 0 15px 40px -20px rgba(15, 23, 42, 0.05);
+  
+  /* Short & compact vertical padding constraint to match standard layout shape */
+  padding: 60px 85px; 
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   OPTION Handle: Full Section Background Image Parameter Constraints
+   ========================================================================== */
+.hero-bg-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.bg-asset-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.08; /* Blends nicely in the background without affecting text legibility */
+}
+
+/* Elegant circular backing glow shape on the right column */
+.ambient-circle-graphic {
+  position: absolute;
+  right: -5%;
+  bottom: -20%;
+  width: 520px;
+  height: 520px;
+  background: rgba(220, 252, 231, 0.7);
+  border-radius: 50%;
+  filter: blur(10px);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.crisp-hero-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  z-index: 3;
+}
+
+/* Left Content Column Configuration */
+.crisp-hero-left {
+  flex: 1.1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-badge-tagline {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #16a34a; /* Vibrant theme green color */
+  margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   1.5s STEP CROSS-FADE VIEWPORT ENGINE CONSTRAINTS
+   ========================================================================== */
+.text-fade-viewport {
+  min-height: 190px; /* Rigid constraint halts vertical layout bounce over slide flips */
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+.text-fade-viewport.text-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-main-title {
+  font-size: 3.2rem;
+  font-weight: 900;
+  line-height: 1.15;
+  color: #0f172a; /* High contrast deep slate */
+  margin-bottom: 18px;
+  letter-spacing: -0.5px;
+}
+
+.hero-sub-paragraph {
+  font-size: 1.1rem;
+  color: #475569;
+  line-height: 1.6;
+  max-width: 520px;
+}
+
+/* High-Contrast CTA Button Blocks */
+.hero-cta-button-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.btn-primary-green {
+  text-decoration: none;
+  background: #22c55e;
+  color: #ffffff;
+  padding: 14px 34px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.2);
+  transition: background 0.25s, transform 0.2s;
+}
+
+.btn-primary-green:hover {
+  background: #16a34a;
+  transform: translateY(-2px);
+}
+
+.btn-secondary-white {
+  text-decoration: none;
+  background: #ffffff;
+  color: #1e293b;
+  border: 1px solid #e2e8f0;
+  padding: 13px 32px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+  transition: background 0.25s, transform 0.2s;
+}
+
+.btn-secondary-white:hover {
+  background: #f8fafc;
+  transform: translateY(-2px);
+}
+
+/* Right Media Platter Section Segments */
+.crisp-hero-right {
+  flex: 0.9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-fade-viewport {
+  width: 360px;
+  height: 340px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.97);
+  transition: opacity 0.28s ease, transform 0.28s ease;
+}
+
+.image-fade-viewport.image-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Option Handle: Right-Side Carousel Photo Frame Layout Shapes */
+.crisp-dish-photo-asset {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Preserves raw image shapes cleanly without weird distortion */
+  filter: drop-shadow(0 15px 30px rgba(15, 23, 42, 0.08));
+}
+
+/* ==========================================================================
+   FLUID STRUCTURAL RESPONSIVE ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .crisp-hero-card { padding: 50px 50px; }
+  .hero-main-title { font-size: 2.7rem; }
+  .image-fade-viewport { width: 300px; height: 280px; }
+}
+
+@media (max-width: 992px) {
+  .crisp-hero-card { padding: 45px 24px; margin-top: 105px; border-radius: 24px; }
+  .crisp-hero-container { flex-direction: column-reverse; text-align: center; gap: 35px; }
+  .crisp-hero-left { align-items: center; }
+  .text-fade-viewport { min-height: auto; }
+  .hero-main-title { font-size: 2.2rem; }
+  .hero-cta-button-row { flex-direction: column; width: 100%; gap: 12px; }
+  .btn-primary-green, .btn-secondary-white { width: 100%; text-align: center; }
+  .image-fade-viewport { width: 250px; height: 240px; }
+  .ambient-circle-graphic { width: 300px; height: 300px; }
+}
+
+</script>
+</body>
+</html>
