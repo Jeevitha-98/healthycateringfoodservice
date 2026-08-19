@@ -1,0 +1,3082 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Healthy Catering Partner Dashboard"
+    >
+
+    <title>Partner Dashboard | Healthy Catering</title>
+
+    <link
+        rel="stylesheet"
+        href="./partner-dashboard.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         DASHBOARD APPLICATION
+    ========================================================== -->
+
+    <div class="dashboard-app">
+
+
+        <!-- =====================================================
+             MOBILE OVERLAY
+        ====================================================== -->
+
+        <div
+            class="sidebar-overlay"
+            id="sidebarOverlay"
+        ></div>
+
+
+        <!-- =====================================================
+             SIDEBAR
+        ====================================================== -->
+
+        <aside
+            class="dashboard-sidebar"
+            id="dashboardSidebar"
+        >
+
+
+            <!-- SIDEBAR BRAND -->
+
+            <div class="sidebar-brand">
+
+                <a
+                    href="#"
+                    class="brand-refresh"
+                    id="brandRefresh"
+                    title="Refresh Dashboard"
+                >
+
+                    <!-- Replace this image path with your logo -->
+
+                    <img
+                        src="./Assests/logo.png"
+                        alt="Healthy Catering Logo"
+                        class="sidebar-logo"
+                    >
+
+                    <div class="brand-text">
+
+                        <strong>
+                            HEALTHY
+                        </strong>
+
+                        <span>
+                            CATERING
+                        </span>
+
+                    </div>
+
+                </a>
+
+
+                <!-- MOBILE CLOSE -->
+
+                <button
+                    class="sidebar-close"
+                    id="sidebarClose"
+                    aria-label="Close sidebar"
+                >
+
+                    <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                    >
+
+                        <path
+                            d="M18 6L6 18"
+                        />
+
+                        <path
+                            d="M6 6L18 18"
+                        />
+
+                    </svg>
+
+                </button>
+
+            </div>
+
+
+            <!-- =================================================
+                 SIDEBAR NAVIGATION
+            ================================================== -->
+
+            <nav class="sidebar-navigation">
+
+
+                <div class="navigation-label">
+                    PARTNER MENU
+                </div>
+
+
+                <!-- DASHBOARD -->
+
+                <a
+                    href="#dashboard"
+                    class="sidebar-menu active"
+                    data-section="dashboard"
+                >
+
+                    <span class="menu-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                        >
+
+                            <rect
+                                x="3"
+                                y="3"
+                                width="7"
+                                height="7"
+                                rx="1"
+                            />
+
+                            <rect
+                                x="14"
+                                y="3"
+                                width="7"
+                                height="7"
+                                rx="1"
+                            />
+
+                            <rect
+                                x="3"
+                                y="14"
+                                width="7"
+                                height="7"
+                                rx="1"
+                            />
+
+                            <rect
+                                x="14"
+                                y="14"
+                                width="7"
+                                height="7"
+                                rx="1"
+                            />
+
+                        </svg>
+
+                    </span>
+
+                    <span class="menu-title">
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <!-- ORDERS -->
+
+                <a
+                    href="#orders"
+                    class="sidebar-menu"
+                    data-section="orders"
+                >
+
+                    <span class="menu-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                        >
+
+                            <path
+                                d="M6 3h12v18H6z"
+                            />
+
+                            <path
+                                d="M9 7h6"
+                            />
+
+                            <path
+                                d="M9 11h6"
+                            />
+
+                            <path
+                                d="M9 15h4"
+                            />
+
+                        </svg>
+
+                    </span>
+
+                    <span class="menu-title">
+                        Orders
+                    </span>
+
+                </a>
+
+
+                <!-- MENU -->
+
+                <a
+                    href="#menu"
+                    class="sidebar-menu"
+                    data-section="menu"
+                >
+
+                    <span class="menu-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                        >
+
+                            <path
+                                d="M4 5h16"
+                            />
+
+                            <path
+                                d="M4 12h16"
+                            />
+
+                            <path
+                                d="M4 19h16"
+                            />
+
+                            <circle
+                                cx="8"
+                                cy="5"
+                                r="1.5"
+                            />
+
+                            <circle
+                                cx="15"
+                                cy="12"
+                                r="1.5"
+                            />
+
+                            <circle
+                                cx="10"
+                                cy="19"
+                                r="1.5"
+                            />
+
+                        </svg>
+
+                    </span>
+
+                    <span class="menu-title">
+                        Menu
+                    </span>
+
+                </a>
+
+
+                <!-- EVENTS -->
+
+                <a
+                    href="#events"
+                    class="sidebar-menu"
+                    data-section="events"
+                >
+
+                    <span class="menu-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                        >
+
+                            <rect
+                                x="3"
+                                y="5"
+                                width="18"
+                                height="16"
+                                rx="2"
+                            />
+
+                            <path
+                                d="M16 3v4"
+                            />
+
+                            <path
+                                d="M8 3v4"
+                            />
+
+                            <path
+                                d="M3 10h18"
+                            />
+
+                            <path
+                                d="M8 14h3"
+                            />
+
+                            <path
+                                d="M8 17h5"
+                            />
+
+                        </svg>
+
+                    </span>
+
+                    <span class="menu-title">
+                        Events
+                    </span>
+
+                </a>
+
+
+                <!-- PROFILE -->
+
+                <a
+                    href="#profile"
+                    class="sidebar-menu"
+                    data-section="profile"
+                >
+
+                    <span class="menu-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                        >
+
+                            <circle
+                                cx="12"
+                                cy="8"
+                                r="4"
+                            />
+
+                            <path
+                                d="M4 21c0-4.2 3.4-7 8-7s8 2.8 8 7"
+                            />
+
+                        </svg>
+
+                    </span>
+
+                    <span class="menu-title">
+                        Profile
+                    </span>
+
+                </a>
+
+            </nav>
+
+
+            <!-- =================================================
+                 SIDEBAR BOTTOM
+            ================================================== -->
+
+            <div class="sidebar-bottom">
+
+
+                <div class="sidebar-help-card">
+
+                    <span class="help-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.7"
+                        >
+
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="9"
+                            />
+
+                            <path
+                                d="M9.5 9a2.5 2.5 0 1 1 4.5 1.5c-.8 1-2 1.2-2 2.5"
+                            />
+
+                            <circle
+                                cx="12"
+                                cy="16.5"
+                                r=".7"
+                                fill="currentColor"
+                            />
+
+                        </svg>
+
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Need help?
+                        </strong>
+
+                        <small>
+                            Contact support
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- LOGOUT -->
+
+                <button
+                    class="logout-button"
+                    id="logoutButton"
+                >
+
+                    <span class="menu-icon">
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                        >
+
+                            <path
+                                d="M10 17l5-5-5-5"
+                            />
+
+                            <path
+                                d="M15 12H3"
+                            />
+
+                            <path
+                                d="M20 3v18"
+                            />
+
+                        </svg>
+
+                    </span>
+
+                    <span>
+                        Logout
+                    </span>
+
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================================
+             MAIN AREA
+        ====================================================== -->
+
+        <main class="dashboard-main">
+
+
+            <!-- =================================================
+                 TOP HEADER
+            ================================================== -->
+
+            <header class="dashboard-header">
+
+
+                <div class="header-left">
+
+
+                    <!-- HAMBURGER -->
+
+                    <button
+                        class="hamburger-button"
+                        id="hamburgerButton"
+                        aria-label="Open navigation menu"
+                        aria-expanded="false"
+                    >
+
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </button>
+
+
+                    <div class="header-page-info">
+
+                        <span class="header-small-title">
+                            PARTNER PORTAL
+                        </span>
+
+                        <h1 id="headerPageTitle">
+                            Dashboard
+                        </h1>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     HEADER RIGHT
+                ================================================== -->
+
+                <div class="header-right">
+
+
+                    <!-- NOTIFICATION -->
+
+                    <button
+                        class="header-icon-button"
+                        id="notificationButton"
+                        aria-label="Notifications"
+                    >
+
+                        <svg
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="1.8"
+                        >
+
+                            <path
+                                d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"
+                            />
+
+                            <path
+                                d="M10 21h4"
+                            />
+
+                        </svg>
+
+                        <span
+                            class="notification-dot"
+                        ></span>
+
+                    </button>
+
+
+                    <!-- PROFILE -->
+
+                    <div class="header-profile">
+
+
+                        <div
+                            class="profile-avatar"
+                            id="profileAvatar"
+                        >
+                            J
+                        </div>
+
+
+                        <div class="profile-details">
+
+                            <span class="profile-greeting">
+                                Welcome back
+                            </span>
+
+                            <strong id="profileName">
+                                Jeevi
+                            </strong>
+
+                        </div>
+
+
+                        <svg
+                            class="profile-chevron"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+
+                            <path
+                                d="M6 9l6 6 6-6"
+                            />
+
+                        </svg>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================================
+                 PAGE CONTENT
+            ================================================== -->
+
+            <div
+                class="dashboard-content"
+                id="dashboardContent"
+            >
+
+
+                <!-- =============================================
+                     DASHBOARD SECTION
+                ============================================== -->
+
+                <section
+                    class="dashboard-section active-section"
+                    id="section-dashboard"
+                >
+
+                    <div class="welcome-block">
+
+                        <div>
+
+                            <span class="content-eyebrow">
+                                PARTNER DASHBOARD
+                            </span>
+
+                            <h2>
+                                Good to see you,
+                                <span id="welcomeName">
+                                    Jeevi
+                                </span>.
+                            </h2>
+
+                            <p>
+                                Manage your catering operations,
+                                orders and upcoming events from
+                                one place.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="dashboard-placeholder-grid">
+
+
+                        <div class="placeholder-card">
+
+                            <div class="placeholder-icon">
+
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.7"
+                                >
+
+                                    <path
+                                        d="M4 19V5"
+                                    />
+
+                                    <path
+                                        d="M4 19h16"
+                                    />
+
+                                    <path
+                                        d="M7 16v-4"
+                                    />
+
+                                    <path
+                                        d="M11 16V8"
+                                    />
+
+                                    <path
+                                        d="M15 16v-6"
+                                    />
+
+                                    <path
+                                        d="M19 16V5"
+                                    />
+
+                                </svg>
+
+                            </div>
+
+                            <span>
+                                SECTION
+                            </span>
+
+                            <h3>
+                                Dashboard Overview
+                            </h3>
+
+                            <p>
+                                Dashboard content can be added
+                                here later.
+                            </p>
+
+                        </div>
+
+
+                        <div class="placeholder-card">
+
+                            <div class="placeholder-icon">
+
+                                <svg
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.7"
+                                >
+
+                                    <circle
+                                        cx="12"
+                                        cy="12"
+                                        r="8"
+                                    />
+
+                                    <path
+                                        d="M12 8v5l3 2"
+                                    />
+
+                                </svg>
+
+                            </div>
+
+                            <span>
+                                SECTION
+                            </span>
+
+                            <h3>
+                                Activity
+                            </h3>
+
+                            <p>
+                                Recent partner activity will
+                                appear here.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     ORDERS SECTION
+                ============================================== -->
+
+                <section
+                    class="dashboard-section"
+                    id="section-orders"
+                >
+
+                    <div class="section-heading">
+
+                        <span>
+                            PARTNER MENU
+                        </span>
+
+                        <h2>
+                            Orders
+                        </h2>
+
+                        <p>
+                            Orders section page content.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     MENU SECTION
+                ============================================== -->
+
+                <section
+                    class="dashboard-section"
+                    id="section-menu"
+                >
+
+                    <div class="section-heading">
+
+                        <span>
+                            PARTNER MENU
+                        </span>
+
+                        <h2>
+                            Menu
+                        </h2>
+
+                        <p>
+                            Menu management page content.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     EVENTS SECTION
+                ============================================== -->
+
+                <section
+                    class="dashboard-section"
+                    id="section-events"
+                >
+
+                    <div class="section-heading">
+
+                        <span>
+                            PARTNER MENU
+                        </span>
+
+                        <h2>
+                            Events
+                        </h2>
+
+                        <p>
+                            Catering events page content.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =============================================
+                     PROFILE SECTION
+                ============================================== -->
+
+                <section
+                    class="dashboard-section"
+                    id="section-profile"
+                >
+
+                    <div class="section-heading">
+
+                        <span>
+                            PARTNER MENU
+                        </span>
+
+                        <h2>
+                            Profile
+                        </h2>
+
+                        <p>
+                            Partner profile page content.
+                        </p>
+
+                    </div>
+
+                </section>
+
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+  <style>
+    /* ============================================================
+   RESET
+============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    color: #172033;
+
+    background: #f5f8f4;
+
+    overflow-x: hidden;
+}
+
+
+button,
+a {
+    font-family: inherit;
+}
+
+
+/* ============================================================
+   VARIABLES
+============================================================ */
+
+:root {
+
+    --green:
+        #239b48;
+
+    --green-dark:
+        #15803d;
+
+    --green-light:
+        #eaf7ec;
+
+    --green-soft:
+        #f3faf3;
+
+    --dark:
+        #172033;
+
+    --muted:
+        #738096;
+
+    --border:
+        #e6ebe7;
+
+    --white:
+        #ffffff;
+
+    --sidebar-width:
+        255px;
+
+    --header-height:
+        82px;
+
+}
+
+
+/* ============================================================
+   APP
+============================================================ */
+
+.dashboard-app {
+    min-height: 100vh;
+
+    display: flex;
+
+    background:
+        #f6f9f6;
+}
+
+
+/* ============================================================
+   SIDEBAR
+============================================================ */
+
+.dashboard-sidebar {
+
+    position: fixed;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width:
+        var(--sidebar-width);
+
+    z-index: 100;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background:
+        #ffffff;
+
+    border-right:
+        1px solid var(--border);
+
+    box-shadow:
+        5px 0 30px
+        rgba(15, 23, 42, 0.035);
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+/* ============================================================
+   SIDEBAR BRAND
+============================================================ */
+
+.sidebar-brand {
+
+    height:
+        var(--header-height);
+
+    padding:
+        0 20px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+
+.brand-refresh {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    text-decoration: none;
+
+    color: var(--dark);
+
+    cursor: pointer;
+}
+
+
+.sidebar-logo {
+
+    width: 40px;
+
+    height: 40px;
+
+    object-fit: contain;
+
+    border-radius: 10px;
+}
+
+
+.brand-text {
+
+    display: flex;
+
+    flex-direction: column;
+
+    line-height: 1;
+}
+
+
+.brand-text strong {
+
+    font-size:
+        0.98rem;
+
+    letter-spacing:
+        1.2px;
+
+    font-weight:
+        900;
+}
+
+
+.brand-text span {
+
+    margin-top: 4px;
+
+    font-size:
+        0.56rem;
+
+    letter-spacing:
+        2.5px;
+
+    color:
+        var(--green);
+
+    font-weight:
+        800;
+}
+
+
+/* ============================================================
+   CLOSE BUTTON
+============================================================ */
+
+.sidebar-close {
+
+    display: none;
+
+    width: 36px;
+
+    height: 36px;
+
+    border: none;
+
+    background:
+        var(--green-soft);
+
+    color:
+        var(--green-dark);
+
+    border-radius: 9px;
+
+    cursor: pointer;
+}
+
+
+.sidebar-close svg {
+
+    width: 19px;
+
+    height: 19px;
+}
+
+
+/* ============================================================
+   NAVIGATION
+============================================================ */
+
+.sidebar-navigation {
+
+    flex: 1;
+
+    padding:
+        28px 15px;
+
+    overflow-y: auto;
+}
+
+
+.navigation-label {
+
+    padding:
+        0 12px;
+
+    margin-bottom:
+        12px;
+
+    color:
+        #a0a9b7;
+
+    font-size:
+        0.62rem;
+
+    font-weight:
+        850;
+
+    letter-spacing:
+        1.4px;
+}
+
+
+/* ============================================================
+   SIDEBAR MENU
+============================================================ */
+
+.sidebar-menu {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    width: 100%;
+
+    height: 48px;
+
+    padding:
+        0 13px;
+
+    margin-bottom: 5px;
+
+    border-radius:
+        11px;
+
+    color:
+        #657184;
+
+    text-decoration: none;
+
+    font-size:
+        0.87rem;
+
+    font-weight:
+        650;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.sidebar-menu:hover {
+
+    color:
+        var(--green-dark);
+
+    background:
+        var(--green-soft);
+
+    transform:
+        translateX(2px);
+}
+
+
+.sidebar-menu.active {
+
+    color:
+        var(--green-dark);
+
+    background:
+        var(--green-light);
+
+    font-weight:
+        800;
+}
+
+
+.sidebar-menu.active::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 10px;
+
+    width: 3px;
+
+    height: 28px;
+
+    border-radius: 0 5px 5px 0;
+
+    background:
+        var(--green);
+}
+
+
+.menu-icon {
+
+    width: 21px;
+
+    height: 21px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+
+.menu-icon svg {
+
+    width: 20px;
+
+    height: 20px;
+}
+
+
+.menu-title {
+    white-space: nowrap;
+}
+
+
+/* ============================================================
+   SIDEBAR BOTTOM
+============================================================ */
+
+.sidebar-bottom {
+
+    padding:
+        15px;
+
+    border-top:
+        1px solid var(--border);
+}
+
+
+/* ============================================================
+   HELP CARD
+============================================================ */
+
+.sidebar-help-card {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding:
+        12px;
+
+    margin-bottom:
+        10px;
+
+    border-radius:
+        12px;
+
+    background:
+        #f6faf6;
+
+    border:
+        1px solid
+        #edf3ed;
+}
+
+
+.help-icon {
+
+    width: 32px;
+
+    height: 32px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 9px;
+
+    background:
+        #e5f5e7;
+
+    color:
+        var(--green-dark);
+}
+
+
+.help-icon svg {
+
+    width: 17px;
+
+    height: 17px;
+}
+
+
+.sidebar-help-card strong {
+
+    display: block;
+
+    color:
+        var(--dark);
+
+    font-size:
+        0.73rem;
+}
+
+
+.sidebar-help-card small {
+
+    display: block;
+
+    margin-top: 2px;
+
+    color:
+        #8993a2;
+
+    font-size:
+        0.63rem;
+}
+
+
+/* ============================================================
+   LOGOUT
+============================================================ */
+
+.logout-button {
+
+    width: 100%;
+
+    height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    padding:
+        0 13px;
+
+    border: none;
+
+    border-radius:
+        10px;
+
+    background:
+        transparent;
+
+    color:
+        #7b8492;
+
+    cursor: pointer;
+
+    font-size:
+        0.86rem;
+
+    font-weight:
+        700;
+
+    text-align: left;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.logout-button:hover {
+
+    color:
+        #dc2626;
+
+    background:
+        #fff4f4;
+}
+
+
+/* ============================================================
+   MAIN
+============================================================ */
+
+.dashboard-main {
+
+    width:
+        calc(100% - var(--sidebar-width));
+
+    min-height:
+        100vh;
+
+    margin-left:
+        var(--sidebar-width);
+}
+
+
+/* ============================================================
+   HEADER
+============================================================ */
+
+.dashboard-header {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 50;
+
+    height:
+        var(--header-height);
+
+    padding:
+        0 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    background:
+        rgba(255, 255, 255, 0.94);
+
+    border-bottom:
+        1px solid var(--border);
+
+    backdrop-filter:
+        blur(15px);
+}
+
+
+/* ============================================================
+   HEADER LEFT
+============================================================ */
+
+.header-left {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+
+.header-page-info {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+.header-small-title {
+
+    color:
+        #a0a9b7;
+
+    font-size:
+        0.57rem;
+
+    font-weight:
+        850;
+
+    letter-spacing:
+        1.3px;
+}
+
+
+.header-page-info h1 {
+
+    margin-top: 3px;
+
+    color:
+        var(--dark);
+
+    font-size:
+        1.2rem;
+
+    font-weight:
+        850;
+}
+
+
+/* ============================================================
+   HAMBURGER
+============================================================ */
+
+.hamburger-button {
+
+    display: none;
+
+    width: 42px;
+
+    height: 42px;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 5px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 10px;
+
+    background:
+        #ffffff;
+
+    cursor: pointer;
+}
+
+
+.hamburger-button span {
+
+    width: 19px;
+
+    height: 2px;
+
+    border-radius: 4px;
+
+    background:
+        var(--dark);
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+/* ============================================================
+   HEADER RIGHT
+============================================================ */
+
+.header-right {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+}
+
+
+/* ============================================================
+   NOTIFICATION
+============================================================ */
+
+.header-icon-button {
+
+    position: relative;
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 11px;
+
+    background:
+        #ffffff;
+
+    color:
+        #657184;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.header-icon-button:hover {
+
+    color:
+        var(--green-dark);
+
+    border-color:
+        #cfe6d2;
+
+    background:
+        var(--green-soft);
+}
+
+
+.header-icon-button svg {
+
+    width: 20px;
+
+    height: 20px;
+}
+
+
+.notification-dot {
+
+    position: absolute;
+
+    top: 9px;
+
+    right: 9px;
+
+    width: 6px;
+
+    height: 6px;
+
+    border-radius: 50%;
+
+    background:
+        #ef4444;
+
+    border:
+        1px solid #ffffff;
+}
+
+
+/* ============================================================
+   PROFILE
+============================================================ */
+
+.header-profile {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    cursor: pointer;
+}
+
+
+.profile-avatar {
+
+    width: 39px;
+
+    height: 39px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #35b95c,
+            #16803c
+        );
+
+    color:
+        #ffffff;
+
+    font-size:
+        0.85rem;
+
+    font-weight:
+        850;
+
+    box-shadow:
+        0 5px 15px
+        rgba(34, 197, 94, 0.20);
+}
+
+
+.profile-details {
+
+    display: flex;
+
+    flex-direction: column;
+
+    line-height: 1.1;
+}
+
+
+.profile-greeting {
+
+    color:
+        #9aa3b0;
+
+    font-size:
+        0.62rem;
+
+    font-weight:
+        600;
+}
+
+
+.profile-details strong {
+
+    margin-top: 4px;
+
+    color:
+        var(--dark);
+
+    font-size:
+        0.82rem;
+
+    font-weight:
+        800;
+}
+
+
+.profile-chevron {
+
+    width: 15px;
+
+    height: 15px;
+
+    color:
+        #9aa3b0;
+}
+
+
+/* ============================================================
+   CONTENT
+============================================================ */
+
+.dashboard-content {
+
+    padding:
+        35px;
+
+    max-width:
+        1500px;
+
+    margin:
+        0 auto;
+}
+
+
+/* ============================================================
+   SECTIONS
+============================================================ */
+
+.dashboard-section {
+
+    display: none;
+
+    animation:
+        sectionIn 0.35s ease;
+}
+
+
+.dashboard-section.active-section {
+
+    display: block;
+}
+
+
+@keyframes sectionIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(8px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* ============================================================
+   WELCOME
+============================================================ */
+
+.welcome-block {
+
+    padding:
+        32px;
+
+    border-radius:
+        20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #eff9ed,
+            #ffffff
+        );
+
+    border:
+        1px solid
+        #dfecdf;
+
+    margin-bottom:
+        25px;
+}
+
+
+.content-eyebrow {
+
+    display: inline-block;
+
+    margin-bottom:
+        10px;
+
+    color:
+        var(--green);
+
+    font-size:
+        0.64rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1.4px;
+}
+
+
+.welcome-block h2 {
+
+    color:
+        var(--dark);
+
+    font-size:
+        clamp(
+            1.8rem,
+            3vw,
+            2.6rem
+        );
+
+    letter-spacing:
+        -1px;
+
+    font-weight:
+        900;
+}
+
+
+.welcome-block h2 span {
+
+    color:
+        var(--green);
+}
+
+
+.welcome-block p {
+
+    max-width:
+        600px;
+
+    margin-top:
+        9px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        0.92rem;
+
+    line-height:
+        1.6;
+}
+
+
+/* ============================================================
+   PLACEHOLDER GRID
+============================================================ */
+
+.dashboard-placeholder-grid {
+
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap:
+        20px;
+}
+
+
+.placeholder-card {
+
+    padding:
+        27px;
+
+    border-radius:
+        18px;
+
+    background:
+        #ffffff;
+
+    border:
+        1px solid var(--border);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.placeholder-card:hover {
+
+    transform:
+        translateY(-4px);
+
+    border-color:
+        #d5e9d8;
+
+    box-shadow:
+        0 18px 35px
+        rgba(15, 23, 42, 0.06);
+}
+
+
+.placeholder-icon {
+
+    width:
+        43px;
+
+    height:
+        43px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    margin-bottom:
+        18px;
+
+    border-radius:
+        12px;
+
+    color:
+        var(--green-dark);
+
+    background:
+        var(--green-light);
+}
+
+
+.placeholder-icon svg {
+
+    width:
+        21px;
+
+    height:
+        21px;
+}
+
+
+.placeholder-card > span {
+
+    color:
+        #9ba5b3;
+
+    font-size:
+        0.61rem;
+
+    font-weight:
+        850;
+
+    letter-spacing:
+        1.2px;
+}
+
+
+.placeholder-card h3 {
+
+    margin-top:
+        5px;
+
+    color:
+        var(--dark);
+
+    font-size:
+        1.05rem;
+
+    font-weight:
+        850;
+}
+
+
+.placeholder-card p {
+
+    margin-top:
+        7px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        0.8rem;
+
+    line-height:
+        1.5;
+}
+
+
+/* ============================================================
+   INDIVIDUAL SECTION HEADING
+============================================================ */
+
+.section-heading {
+
+    padding:
+        35px;
+
+    min-height:
+        280px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    justify-content:
+        center;
+
+    border:
+        1px solid var(--border);
+
+    border-radius:
+        20px;
+
+    background:
+        #ffffff;
+}
+
+
+.section-heading > span {
+
+    color:
+        var(--green);
+
+    font-size:
+        0.64rem;
+
+    font-weight:
+        900;
+
+    letter-spacing:
+        1.4px;
+}
+
+
+.section-heading h2 {
+
+    margin-top:
+        8px;
+
+    color:
+        var(--dark);
+
+    font-size:
+        2rem;
+
+    font-weight:
+        900;
+}
+
+
+.section-heading p {
+
+    margin-top:
+        8px;
+
+    color:
+        var(--muted);
+
+    font-size:
+        0.9rem;
+}
+
+
+/* ============================================================
+   MOBILE OVERLAY
+============================================================ */
+
+.sidebar-overlay {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 90;
+
+    background:
+        rgba(15, 23, 42, 0.42);
+
+    backdrop-filter:
+        blur(3px);
+}
+
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (max-width: 1000px) {
+
+    :root {
+
+        --sidebar-width:
+            235px;
+
+    }
+
+
+    .dashboard-content {
+
+        padding:
+            25px;
+
+    }
+
+
+    .dashboard-header {
+
+        padding:
+            0 25px;
+
+    }
+
+
+    .profile-details,
+    .profile-chevron {
+
+        display:
+            none;
+
+    }
+
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 760px) {
+
+    :root {
+
+        --header-height:
+            70px;
+
+    }
+
+
+    .dashboard-sidebar {
+
+        width:
+            min(
+                285px,
+                84vw
+            );
+
+        transform:
+            translateX(-105%);
+
+        box-shadow:
+            15px 0 40px
+            rgba(15, 23, 42, 0.12);
+
+    }
+
+
+    .dashboard-sidebar.sidebar-open {
+
+        transform:
+            translateX(0);
+
+    }
+
+
+    .sidebar-close {
+
+        display:
+            flex;
+
+        align-items:
+            center;
+
+        justify-content:
+            center;
+
+    }
+
+
+    .sidebar-overlay.active {
+
+        display:
+            block;
+
+    }
+
+
+    .dashboard-main {
+
+        width:
+            100%;
+
+        margin-left:
+            0;
+
+    }
+
+
+    .dashboard-header {
+
+        padding:
+            0 17px;
+
+    }
+
+
+    .hamburger-button {
+
+        display:
+            flex;
+
+    }
+
+
+    .header-right {
+
+        gap:
+            9px;
+
+    }
+
+
+    .header-icon-button {
+
+        width:
+            39px;
+
+        height:
+            39px;
+
+    }
+
+
+    .profile-avatar {
+
+        width:
+            37px;
+
+        height:
+            37px;
+
+    }
+
+
+    .dashboard-content {
+
+        padding:
+            20px 15px 30px;
+
+    }
+
+
+    .welcome-block {
+
+        padding:
+            25px 20px;
+
+    }
+
+
+    .dashboard-placeholder-grid {
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+
+    .section-heading {
+
+        padding:
+            25px 20px;
+
+    }
+
+}
+
+
+/* ============================================================
+   SMALL MOBILE
+============================================================ */
+
+@media (max-width: 420px) {
+
+    .header-small-title {
+
+        display:
+            none;
+
+    }
+
+
+    .header-page-info h1 {
+
+        font-size:
+            1rem;
+
+    }
+
+
+    .header-icon-button {
+
+        width:
+            36px;
+
+        height:
+            36px;
+
+    }
+
+
+    .profile-avatar {
+
+        width:
+            35px;
+
+        height:
+            35px;
+
+    }
+
+
+    .welcome-block h2 {
+
+        font-size:
+            1.55rem;
+
+    }
+
+
+    .welcome-block p {
+
+        font-size:
+            0.82rem;
+
+    }
+
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation:
+            none !important;
+
+        transition:
+            none !important;
+
+    }
+
+}
+  </style>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* =========================================================
+       ELEMENTS
+    ========================================================= */
+
+    const sidebar =
+        document.getElementById(
+            "dashboardSidebar"
+        );
+
+    const overlay =
+        document.getElementById(
+            "sidebarOverlay"
+        );
+
+    const hamburger =
+        document.getElementById(
+            "hamburgerButton"
+        );
+
+    const sidebarClose =
+        document.getElementById(
+            "sidebarClose"
+        );
+
+    const brandRefresh =
+        document.getElementById(
+            "brandRefresh"
+        );
+
+    const logoutButton =
+        document.getElementById(
+            "logoutButton"
+        );
+
+    const notificationButton =
+        document.getElementById(
+            "notificationButton"
+        );
+
+    const profileName =
+        document.getElementById(
+            "profileName"
+        );
+
+    const profileAvatar =
+        document.getElementById(
+            "profileAvatar"
+        );
+
+    const welcomeName =
+        document.getElementById(
+            "welcomeName"
+        );
+
+    const headerPageTitle =
+        document.getElementById(
+            "headerPageTitle"
+        );
+
+
+    /* =========================================================
+       GET USER DATA
+    ========================================================= */
+
+    function getLoggedInUser() {
+
+        const storedUser =
+            localStorage.getItem(
+                "healthyCateringUser"
+            );
+
+
+        if (!storedUser) {
+
+            return null;
+
+        }
+
+
+        try {
+
+            return JSON.parse(
+                storedUser
+            );
+
+        } catch (error) {
+
+            console.error(
+                "Unable to read user data:",
+                error
+            );
+
+            return null;
+
+        }
+
+    }
+
+
+    /* =========================================================
+       EXTRACT FIRST NAME
+    ========================================================= */
+
+    function getFirstName(user) {
+
+        /*
+         * First priority:
+         * Registered full name.
+         *
+         * Example:
+         * Jeevitha Karunanithi
+         * →
+         * Jeevitha
+         */
+
+        if (
+            user &&
+            user.name &&
+            user.name.trim() !== ""
+        ) {
+
+            return user.name
+                .trim()
+                .split(/\s+/)[0];
+
+        }
+
+
+        /*
+         * Fallback:
+         * Extract from email.
+         *
+         * jeevi@gmail.com
+         * →
+         * jeevi
+         */
+
+        if (
+            user &&
+            user.email
+        ) {
+
+            return user.email
+                .split("@")[0];
+
+        }
+
+
+        return "Partner";
+
+    }
+
+
+    /* =========================================================
+       LOAD PROFILE
+    ========================================================= */
+
+    function loadProfile() {
+
+        const user =
+            getLoggedInUser();
+
+
+        /*
+         * If no user exists,
+         * return to login.
+         */
+
+        if (!user) {
+
+            window.location.href =
+                "login.html";
+
+            return;
+
+        }
+
+
+        const firstName =
+            getFirstName(user);
+
+
+        /*
+         * Display first name.
+         */
+
+        profileName.textContent =
+            firstName;
+
+
+        welcomeName.textContent =
+            firstName;
+
+
+        /*
+         * First letter avatar.
+         */
+
+        profileAvatar.textContent =
+            firstName
+                .charAt(0)
+                .toUpperCase();
+
+    }
+
+
+    loadProfile();
+
+
+    /* =========================================================
+       OPEN SIDEBAR
+    ========================================================= */
+
+    function openSidebar() {
+
+        sidebar.classList.add(
+            "sidebar-open"
+        );
+
+        overlay.classList.add(
+            "active"
+        );
+
+        hamburger.setAttribute(
+            "aria-expanded",
+            "true"
+        );
+
+        document.body.style.overflow =
+            "hidden";
+
+    }
+
+
+    /* =========================================================
+       CLOSE SIDEBAR
+    ========================================================= */
+
+    function closeSidebar() {
+
+        sidebar.classList.remove(
+            "sidebar-open"
+        );
+
+        overlay.classList.remove(
+            "active"
+        );
+
+        hamburger.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        document.body.style.overflow =
+            "";
+
+    }
+
+
+    /* =========================================================
+       HAMBURGER
+    ========================================================= */
+
+    hamburger.addEventListener(
+        "click",
+        function () {
+
+            if (
+                sidebar.classList.contains(
+                    "sidebar-open"
+                )
+            ) {
+
+                closeSidebar();
+
+            } else {
+
+                openSidebar();
+
+            }
+
+        }
+    );
+
+
+    /* =========================================================
+       CLOSE BUTTON
+    ========================================================= */
+
+    sidebarClose.addEventListener(
+        "click",
+        closeSidebar
+    );
+
+
+    /* =========================================================
+       CLICK OUTSIDE
+    ========================================================= */
+
+    overlay.addEventListener(
+        "click",
+        closeSidebar
+    );
+
+
+    /* =========================================================
+       SIDEBAR MENU
+    ========================================================= */
+
+    const sidebarMenus =
+        document.querySelectorAll(
+            ".sidebar-menu"
+        );
+
+
+    const dashboardSections =
+        document.querySelectorAll(
+            ".dashboard-section"
+        );
+
+
+    sidebarMenus.forEach(
+        function (menu) {
+
+            menu.addEventListener(
+                "click",
+                function (event) {
+
+                    event.preventDefault();
+
+
+                    const sectionName =
+                        this.dataset.section;
+
+
+                    /*
+                     * Active menu
+                     */
+
+                    sidebarMenus.forEach(
+                        function (item) {
+
+                            item.classList.remove(
+                                "active"
+                            );
+
+                        }
+                    );
+
+
+                    this.classList.add(
+                        "active"
+                    );
+
+
+                    /*
+                     * Hide every section
+                     */
+
+                    dashboardSections.forEach(
+                        function (section) {
+
+                            section.classList.remove(
+                                "active-section"
+                            );
+
+                        }
+                    );
+
+
+                    /*
+                     * Show selected section
+                     */
+
+                    const selectedSection =
+                        document.getElementById(
+                            "section-" +
+                            sectionName
+                        );
+
+
+                    if (
+                        selectedSection
+                    ) {
+
+                        selectedSection.classList.add(
+                            "active-section"
+                        );
+
+                    }
+
+
+                    /*
+                     * Update header title
+                     */
+
+                    const menuTitle =
+                        this.querySelector(
+                            ".menu-title"
+                        );
+
+
+                    if (menuTitle) {
+
+                        headerPageTitle.textContent =
+                            menuTitle.textContent.trim();
+
+                    }
+
+
+                    /*
+                     * Update URL hash.
+                     *
+                     * This makes individual sections
+                     * easier to identify while testing.
+                     */
+
+                    window.history.replaceState(
+                        null,
+                        "",
+                        "#" + sectionName
+                    );
+
+
+                    /*
+                     * Close mobile sidebar.
+                     */
+
+                    if (
+                        window.innerWidth <= 760
+                    ) {
+
+                        closeSidebar();
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+    /* =========================================================
+       RESTORE SECTION FROM HASH
+    ========================================================= */
+
+    function loadSectionFromHash() {
+
+        const hash =
+            window.location.hash
+                .replace("#", "")
+                .trim();
+
+
+        if (!hash) {
+
+            return;
+
+        }
+
+
+        const matchingMenu =
+            document.querySelector(
+                `.sidebar-menu[data-section="${hash}"]`
+            );
+
+
+        if (matchingMenu) {
+
+            matchingMenu.click();
+
+        }
+
+    }
+
+
+    loadSectionFromHash();
+
+
+    /* =========================================================
+       BRAND = REFRESH DASHBOARD
+    ========================================================= */
+
+    brandRefresh.addEventListener(
+        "click",
+        function (event) {
+
+            event.preventDefault();
+
+
+            /*
+             * Reload the dashboard page.
+             *
+             * User remains inside the dashboard.
+             */
+
+            window.location.reload();
+
+        }
+    );
+
+
+    /* =========================================================
+       LOGOUT
+    ========================================================= */
+
+    logoutButton.addEventListener(
+        "click",
+        function () {
+
+            /*
+             * Remove logged-in session information.
+             */
+
+            localStorage.removeItem(
+                "healthyCateringUser"
+            );
+
+
+            /*
+             * Navigate to login.
+             */
+
+            window.location.href =
+                "login.html";
+
+        }
+    );
+
+
+    /* =========================================================
+       NOTIFICATION
+    ========================================================= */
+
+    notificationButton.addEventListener(
+        "click",
+        function () {
+
+            /*
+             * Placeholder notification behavior.
+             * Replace this later with notification drawer.
+             */
+
+            alert(
+                "You have new partner notifications."
+            );
+
+        }
+    );
+
+
+    /* =========================================================
+       ESC KEY
+    ========================================================= */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape"
+            ) {
+
+                closeSidebar();
+
+            }
+
+        }
+    );
+
+
+    /* =========================================================
+       WINDOW RESIZE
+    ========================================================= */
+
+    window.addEventListener(
+        "resize",
+        function () {
+
+            if (
+                window.innerWidth > 760
+            ) {
+
+                closeSidebar();
+
+            }
+
+        }
+    );
+
+
+});
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,2078 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Healthy Catering Login"
+    >
+
+    <title>Login | Healthy Catering</title>
+
+    <link
+        rel="stylesheet"
+        href="./login.css"
+    >
+
+</head>
+
+
+<body>
+
+    <main class="login-page">
+
+        <!-- Background decorative circles -->
+        <div class="bg-circle bg-circle-one"></div>
+        <div class="bg-circle bg-circle-two"></div>
+
+
+        <!-- =====================================================
+             MAIN LOGIN CONTAINER
+        ====================================================== -->
+
+        <section class="login-container">
+
+
+            <!-- =================================================
+                 LEFT SIDE
+            ================================================== -->
+
+            <div class="login-visual-panel">
+
+
+                <!-- Floating SVG Icon 1 -->
+
+                <svg
+                    class="floating-food-icon food-icon-one"
+                    width="45"
+                    height="45"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+
+                    <path d="M7 21h10"/>
+
+                    <path d="M9 21v-3h6v3"/>
+
+                    <path d="M5 12h14"/>
+
+                    <path d="M6 12a6 6 0 0 1 12 0"/>
+
+                    <path d="M12 3v3"/>
+
+                </svg>
+
+
+                <!-- Floating SVG Icon 2 -->
+
+                <svg
+                    class="floating-food-icon food-icon-two"
+                    width="42"
+                    height="42"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+
+                    <path
+                        d="M12 21c4-4 7-7.5 7-12a7 7 0 0 0-14 0c0 4.5 3 8 7 12z"
+                    />
+
+                    <path d="M12 5v10"/>
+
+                    <path d="M12 9c-2 0-3-1-4-2"/>
+
+                    <path d="M12 12c2 0 3-1 4-2"/>
+
+                </svg>
+
+
+                <!-- Floating SVG Icon 3 -->
+
+                <svg
+                    class="floating-food-icon food-icon-three"
+                    width="48"
+                    height="48"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+
+                    <path d="M4 11h16"/>
+
+                    <path
+                        d="M5 11c0 5 3 8 7 8s7-3 7-8"
+                    />
+
+                    <path
+                        d="M8 7c1-2 2-3 4-3s3 1 4 3"
+                    />
+
+                    <path d="M12 4V2"/>
+
+                </svg>
+
+
+                <!-- Floating SVG Icon 4 -->
+
+                <svg
+                    class="floating-food-icon food-icon-four"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                >
+
+                    <path d="M3 12h18"/>
+
+                    <path
+                        d="M5 12c0 5 3 8 7 8s7-3 7-8"
+                    />
+
+                    <path
+                        d="M8 8c1-2 2-3 4-3s3 1 4 3"
+                    />
+
+                </svg>
+
+
+                <div class="visual-content">
+
+
+                    <!-- Brand -->
+
+                    <div class="login-brand-badge">
+
+                        <span class="brand-dot"></span>
+
+                        Healthy Catering
+
+                    </div>
+
+
+                    <!-- Main title -->
+
+                    <h2 class="visual-title">
+
+                        Eat Well.
+
+                        <span>Live Better.</span>
+
+                    </h2>
+
+
+                    <!-- Description -->
+
+                    <p class="visual-description">
+
+                        Freshly prepared, thoughtfully balanced meals
+                        crafted for everyday wellness, corporate events
+                        and unforgettable celebrations.
+
+                    </p>
+
+
+                    <!-- =================================================
+                         IMAGE
+                         Replace this path with your own image
+                    ================================================== -->
+
+                    <div class="login-food-image-wrapper">
+
+                        <div class="login-food-image-glow"></div>
+
+                        <img
+                            src="./Assests/catering employees.webp"
+                            alt="Fresh healthy catering meal"
+                            class="login-food-image"
+                        >
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 RIGHT SIDE LOGIN
+            ================================================== -->
+
+            <div class="login-form-panel">
+
+
+                <div class="login-form-wrapper">
+
+
+                    <!-- Home -->
+
+                    <a
+                        href="index.html"
+                        class="home-link"
+                    >
+
+                        <span>←</span>
+
+                        Back to Home
+
+                    </a>
+
+
+                    <!-- Form heading -->
+
+                    <div class="form-header">
+
+                        <h1>
+                            Welcome Back
+                        </h1>
+
+                        <p>
+                            Sign in to manage your meals,
+                            catering orders and account.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Validation message -->
+
+                    <div
+                        id="formMessage"
+                        class="form-message"
+                        role="alert"
+                    >
+                        Please fill in all required fields.
+                    </div>
+
+
+                    <!-- =================================================
+                         LOGIN FORM
+                    ================================================== -->
+
+                    <form
+                        id="loginForm"
+                        novalidate
+                    >
+
+
+                        <!-- Role -->
+
+                        <div class="form-group">
+
+                            <label for="userRole">
+                                Login As
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <svg
+                                    class="input-icon"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+
+                                    <path
+                                        d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+                                    />
+
+                                    <circle
+                                        cx="12"
+                                        cy="7"
+                                        r="4"
+                                    />
+
+                                </svg>
+
+
+                                <select
+                                    id="userRole"
+                                    class="role-select"
+                                >
+
+                                    <option value="">
+                                        Select account type
+                                    </option>
+
+                                    <option value="admin">
+                                        Admin
+                                    </option>
+
+                                    <option value="client">
+                                        Client
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Email -->
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <svg
+                                    class="input-icon"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+
+                                    <rect
+                                        x="3"
+                                        y="5"
+                                        width="18"
+                                        height="14"
+                                        rx="2"
+                                    />
+
+                                    <path d="m3 7 9 6 9-6"/>
+
+                                </svg>
+
+
+                                <input
+                                    type="email"
+                                    id="email"
+                                    class="form-input"
+                                    placeholder="Enter your email"
+                                    autocomplete="email"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Password -->
+
+                        <div class="form-group">
+
+                            <label for="password">
+                                Password
+                            </label>
+
+                            <div class="input-wrapper">
+
+                                <svg
+                                    class="input-icon"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                >
+
+                                    <rect
+                                        x="4"
+                                        y="10"
+                                        width="16"
+                                        height="11"
+                                        rx="2"
+                                    />
+
+                                    <path
+                                        d="M8 10V7a4 4 0 0 1 8 0v3"
+                                    />
+
+                                </svg>
+
+
+                                <input
+                                    type="password"
+                                    id="password"
+                                    class="form-input"
+                                    placeholder="Enter your password"
+                                    autocomplete="current-password"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Forgot password -->
+
+                        <div class="password-row">
+
+                            <a
+                                href="forgot-password.html"
+                                class="forgot-password"
+                            >
+                                Forgot Password?
+                            </a>
+
+                        </div>
+
+
+                        <!-- Login button -->
+
+                        <button
+                            type="submit"
+                            class="login-button"
+                        >
+
+                            <span>
+                                Sign In
+                            </span>
+
+                        </button>
+
+
+                    </form>
+
+
+                    <!-- =================================================
+                         SOCIAL LOGIN
+                    ================================================== -->
+
+                    <div class="divider">
+
+                        <span>
+                            OR CONTINUE WITH
+                        </span>
+
+                    </div>
+
+
+                    <div class="social-buttons">
+
+
+                        <!-- Google -->
+
+                        <button
+                            type="button"
+                            class="social-button"
+                            id="googleLogin"
+                        >
+
+                            <svg
+                                class="google-icon"
+                                width="19"
+                                height="19"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                            >
+
+                                <path
+                                    d="M21.35 12.27c0-.71-.06-1.4-.18-2.06H12v3.9h5.24a4.48 4.48 0 0 1-1.94 2.94v2.44h3.14c1.84-1.69 2.91-4.18 2.91-7.22z"
+                                />
+
+                                <path
+                                    d="M12 21.5c2.63 0 4.84-.87 6.45-2.35l-3.14-2.44c-.87.58-1.98.93-3.31.93-2.54 0-4.69-1.72-5.46-4.03H3.3v2.52A9.74 9.74 0 0 0 12 21.5z"
+                                />
+
+                                <path
+                                    d="M6.54 13.61a5.86 5.86 0 0 1 0-3.73V7.36H3.3a9.76 9.76 0 0 0 0 8.77l3.24-2.52z"
+                                />
+
+                                <path
+                                    d="M12 5.85c1.43 0 2.71.49 3.72 1.45l2.79-2.79C16.84 2.92 14.63 2 12 2a9.74 9.74 0 0 0-8.7 5.36l3.24 2.52C7.31 7.57 9.46 5.85 12 5.85z"
+                                />
+
+                            </svg>
+
+                            Google
+
+                        </button>
+
+
+                        <!-- Facebook -->
+
+                        <button
+                            type="button"
+                            class="social-button"
+                            id="facebookLogin"
+                        >
+
+                            <svg
+                                class="facebook-icon"
+                                width="19"
+                                height="19"
+                                viewBox="0 0 24 24"
+                                fill="currentColor"
+                            >
+
+                                <path
+                                    d="M14 8h3V4h-3c-3.31 0-5 1.69-5 5v3H6v4h3v8h4v-8h3l1-4h-4V9c0-.57.43-1 1-1z"
+                                />
+
+                            </svg>
+
+                            Facebook
+
+                        </button>
+
+
+                    </div>
+
+
+                    <!-- Register -->
+
+                    <p class="register-text">
+
+                        Don't have an account?
+
+                        <a href="signup.html">
+                            Create Account
+                        </a>
+
+                    </p>
+
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+ <style>
+    /* ============================================================
+   GLOBAL RESET
+============================================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Inter,
+        "Segoe UI",
+        Roboto,
+        Arial,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5fbf4 0%,
+            #eef9ed 45%,
+            #f8fcf7 100%
+        );
+
+    color: #0f172a;
+
+    overflow-x: hidden;
+}
+
+
+/* ============================================================
+   MAIN PAGE
+============================================================ */
+
+.login-page {
+    position: relative;
+
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    overflow: hidden;
+}
+
+
+/* ============================================================
+   BACKGROUND CIRCLES
+============================================================ */
+
+.bg-circle {
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+.bg-circle-one {
+    width: 420px;
+    height: 420px;
+
+    top: -180px;
+    left: -150px;
+
+    background:
+        rgba(34, 197, 94, 0.08);
+
+    animation:
+        circleFloatOne 8s ease-in-out infinite alternate;
+}
+
+
+.bg-circle-two {
+    width: 500px;
+    height: 500px;
+
+    right: -220px;
+    bottom: -250px;
+
+    background:
+        rgba(74, 222, 128, 0.08);
+
+    animation:
+        circleFloatTwo 10s ease-in-out infinite alternate;
+}
+
+
+@keyframes circleFloatOne {
+
+    from {
+        transform:
+            translate3d(0, 0, 0);
+    }
+
+    to {
+        transform:
+            translate3d(25px, 30px, 0);
+    }
+
+}
+
+
+@keyframes circleFloatTwo {
+
+    from {
+        transform:
+            translate3d(0, 0, 0);
+    }
+
+    to {
+        transform:
+            translate3d(-30px, -20px, 0);
+    }
+
+}
+
+
+/* ============================================================
+   MAIN CONTAINER
+============================================================ */
+
+.login-container {
+    position: relative;
+
+    z-index: 5;
+
+    width: min(1180px, 100%);
+
+    min-height: 680px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.05fr
+        0.95fr;
+
+    background:
+        rgba(255, 255, 255, 0.88);
+
+    border:
+        1px solid
+        rgba(34, 197, 94, 0.12);
+
+    border-radius: 32px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 30px 80px
+        rgba(15, 23, 42, 0.10);
+
+    backdrop-filter:
+        blur(18px);
+}
+
+
+/* ============================================================
+   LEFT VISUAL PANEL
+============================================================ */
+
+.login-visual-panel {
+    position: relative;
+
+    min-height: 680px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 70px;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ecf9e9 0%,
+            #f7fcf4 55%,
+            #e7f7e4 100%
+        );
+}
+
+
+.visual-content {
+    position: relative;
+
+    z-index: 5;
+
+    max-width: 520px;
+}
+
+
+/* ============================================================
+   BRAND
+============================================================ */
+
+.login-brand-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    padding:
+        9px 16px;
+
+    margin-bottom: 25px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(255, 255, 255, 0.8);
+
+    border:
+        1px solid
+        rgba(34, 197, 94, 0.18);
+
+    color: #15803d;
+
+    font-size: 0.78rem;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+.brand-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: #22c55e;
+
+    box-shadow:
+        0 0 12px
+        rgba(34, 197, 94, 0.6);
+}
+
+
+/* ============================================================
+   TITLE
+============================================================ */
+
+.visual-title {
+    font-size:
+        clamp(
+            2.8rem,
+            5vw,
+            4.6rem
+        );
+
+    line-height: 1.03;
+
+    font-weight: 900;
+
+    letter-spacing: -2.5px;
+
+    color: #0f172a;
+
+    margin-bottom: 22px;
+}
+
+
+.visual-title span {
+    display: block;
+
+    color: #22a447;
+}
+
+
+/* ============================================================
+   DESCRIPTION
+============================================================ */
+
+.visual-description {
+    max-width: 500px;
+
+    color: #526275;
+
+    font-size: 1.08rem;
+
+    line-height: 1.75;
+
+    margin-bottom: 30px;
+}
+
+
+/* ============================================================
+   FOOD IMAGE
+============================================================ */
+
+.login-food-image-wrapper {
+    position: relative;
+
+    width: min(460px, 100%);
+
+    margin-top: 10px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+
+
+.login-food-image-glow {
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(34, 197, 94, 0.15);
+
+    filter:
+        blur(20px);
+
+    animation:
+        imageGlow 4s ease-in-out infinite alternate;
+}
+
+
+@keyframes imageGlow {
+
+    from {
+        transform: scale(0.9);
+        opacity: 0.55;
+    }
+
+    to {
+        transform: scale(1.1);
+        opacity: 0.9;
+    }
+
+}
+
+
+.login-food-image {
+    position: relative;
+
+    z-index: 2;
+
+    display: block;
+
+    width: 100%;
+
+    max-width: 430px;
+
+    height: 280px;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 25px 30px
+            rgba(15, 23, 42, 0.14)
+        );
+
+    animation:
+        foodImageFloat 5s ease-in-out infinite alternate;
+}
+
+
+@keyframes foodImageFloat {
+
+    from {
+        transform:
+            translateY(5px)
+            rotate(-1deg);
+    }
+
+    to {
+        transform:
+            translateY(-12px)
+            rotate(1deg);
+    }
+
+}
+
+
+/* ============================================================
+   FLOATING SVG ICONS
+============================================================ */
+
+.floating-food-icon {
+    position: absolute;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    opacity: 0.35;
+
+    color: #22a447;
+
+    animation:
+        floatingFood 5s ease-in-out infinite alternate;
+}
+
+
+.food-icon-one {
+    top: 15%;
+    left: 7%;
+}
+
+
+.food-icon-two {
+    top: 12%;
+    right: 8%;
+
+    animation-delay: 1s;
+}
+
+
+.food-icon-three {
+    bottom: 16%;
+    left: 8%;
+
+    animation-delay: 2s;
+}
+
+
+.food-icon-four {
+    bottom: 12%;
+    right: 12%;
+
+    animation-delay: 0.5s;
+}
+
+
+@keyframes floatingFood {
+
+    from {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+
+    to {
+        transform:
+            translateY(-18px)
+            rotate(7deg);
+    }
+
+}
+
+
+/* ============================================================
+   RIGHT LOGIN PANEL
+============================================================ */
+
+.login-form-panel {
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        55px 65px;
+
+    background:
+        rgba(255, 255, 255, 0.95);
+}
+
+
+.login-form-wrapper {
+    width: 100%;
+
+    max-width: 410px;
+}
+
+
+/* ============================================================
+   HOME LINK
+============================================================ */
+
+.home-link {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 25px;
+
+    color: #15803d;
+
+    text-decoration: none;
+
+    font-size: 0.88rem;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.25s ease,
+        color 0.25s ease;
+}
+
+
+.home-link:hover {
+    color: #166534;
+
+    transform:
+        translateX(-3px);
+}
+
+
+/* ============================================================
+   FORM HEADER
+============================================================ */
+
+.form-header {
+    margin-bottom: 30px;
+}
+
+
+.form-header h1 {
+    font-size: 2.3rem;
+
+    font-weight: 900;
+
+    letter-spacing: -1px;
+
+    color: #0f172a;
+
+    margin-bottom: 8px;
+}
+
+
+.form-header p {
+    color: #64748b;
+
+    font-size: 0.96rem;
+
+    line-height: 1.6;
+}
+
+
+/* ============================================================
+   VALIDATION MESSAGE
+============================================================ */
+
+.form-message {
+    display: none;
+
+    margin-bottom: 18px;
+
+    padding:
+        12px 14px;
+
+    border-radius: 10px;
+
+    background: #fff7ed;
+
+    border:
+        1px solid #fed7aa;
+
+    color: #c2410c;
+
+    font-size: 0.87rem;
+
+    font-weight: 650;
+
+    line-height: 1.45;
+}
+
+
+.form-message.show {
+    display: block;
+
+    animation:
+        messageAppear 0.3s ease;
+}
+
+
+@keyframes messageAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+
+}
+
+
+/* ============================================================
+   FORM GROUP
+============================================================ */
+
+.form-group {
+    margin-bottom: 19px;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #1e293b;
+
+    font-size: 0.88rem;
+
+    font-weight: 750;
+}
+
+
+.input-wrapper {
+    position: relative;
+}
+
+
+.input-icon {
+    position: absolute;
+
+    left: 16px;
+
+    top: 50%;
+
+    width: 19px;
+    height: 19px;
+
+    transform:
+        translateY(-50%);
+
+    color: #94a3b8;
+
+    pointer-events: none;
+
+    transition:
+        color 0.25s ease;
+}
+
+
+.form-input,
+.role-select {
+    width: 100%;
+
+    height: 53px;
+
+    padding:
+        0 16px 0 48px;
+
+    border:
+        1px solid #dbe5dc;
+
+    border-radius: 13px;
+
+    outline: none;
+
+    background: #fbfefb;
+
+    color: #0f172a;
+
+    font-size: 0.95rem;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.role-select {
+    cursor: pointer;
+}
+
+
+.form-input:focus,
+.role-select:focus {
+    background: #ffffff;
+
+    border-color: #22c55e;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(34, 197, 94, 0.10);
+}
+
+
+.input-wrapper:focus-within
+.input-icon {
+    color: #22a447;
+}
+
+
+/* ============================================================
+   FORGOT PASSWORD
+============================================================ */
+
+.password-row {
+    display: flex;
+
+    justify-content: flex-end;
+
+    margin-top: -7px;
+
+    margin-bottom: 22px;
+}
+
+
+.forgot-password {
+    color: #15803d;
+
+    text-decoration: none;
+
+    font-size: 0.84rem;
+
+    font-weight: 700;
+}
+
+
+.forgot-password:hover {
+    color: #166534;
+
+    text-decoration: underline;
+}
+
+
+/* ============================================================
+   LOGIN BUTTON
+============================================================ */
+
+.login-button {
+    position: relative;
+
+    width: 100%;
+
+    height: 54px;
+
+    border: none;
+
+    border-radius: 13px;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            135deg,
+            #22c55e,
+            #15803d
+        );
+
+    color: #ffffff;
+
+    font-size: 0.98rem;
+
+    font-weight: 800;
+
+    box-shadow:
+        0 10px 25px
+        rgba(34, 197, 94, 0.24);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.login-button::before {
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: -120%;
+
+    width: 70%;
+    height: 100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent
+        );
+
+    transform:
+        skewX(-20deg);
+
+    transition:
+        left 0.7s ease;
+}
+
+
+.login-button:hover::before {
+    left: 140%;
+}
+
+
+.login-button:hover {
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(34, 197, 94, 0.34);
+}
+
+
+/* ============================================================
+   DIVIDER
+============================================================ */
+
+.divider {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin:
+        25px 0 20px;
+
+    color: #94a3b8;
+
+    font-size: 0.78rem;
+}
+
+
+.divider::before,
+.divider::after {
+    content: "";
+
+    flex: 1;
+
+    height: 1px;
+
+    background: #e2e8f0;
+}
+
+
+/* ============================================================
+   SOCIAL BUTTONS
+============================================================ */
+
+.social-buttons {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 12px;
+}
+
+
+.social-button {
+    height: 48px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 9px;
+
+    border:
+        1px solid #dce5de;
+
+    border-radius: 12px;
+
+    background: #ffffff;
+
+    color: #334155;
+
+    cursor: pointer;
+
+    font-size: 0.86rem;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+.social-button:hover {
+    transform:
+        translateY(-2px);
+
+    border-color:
+        rgba(34, 197, 94, 0.3);
+
+    box-shadow:
+        0 8px 20px
+        rgba(15, 23, 42, 0.07);
+}
+
+
+.google-icon {
+    color: #db4437;
+}
+
+
+.facebook-icon {
+    color: #1877f2;
+}
+
+
+/* ============================================================
+   REGISTER
+============================================================ */
+
+.register-text {
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #64748b;
+
+    font-size: 0.86rem;
+}
+
+
+.register-text a {
+    color: #15803d;
+
+    text-decoration: none;
+
+    font-weight: 800;
+}
+
+
+.register-text a:hover {
+    text-decoration: underline;
+}
+
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (max-width: 1000px) {
+
+    .login-page {
+        padding: 20px;
+    }
+
+
+    .login-container {
+        grid-template-columns:
+            1fr 1fr;
+
+        min-height: 620px;
+    }
+
+
+    .login-visual-panel {
+        padding: 45px;
+
+        min-height: 620px;
+    }
+
+
+    .login-form-panel {
+        padding:
+            45px 40px;
+    }
+
+
+    .visual-title {
+        font-size: 3.1rem;
+    }
+
+
+    .login-food-image {
+        height: 220px;
+    }
+
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 760px) {
+
+    .login-page {
+        padding: 12px;
+    }
+
+
+    .login-container {
+        display: flex;
+
+        flex-direction: column;
+
+        border-radius: 24px;
+
+        min-height: auto;
+    }
+
+
+    .login-visual-panel {
+        min-height: auto;
+
+        padding:
+            45px 25px 30px;
+
+        text-align: center;
+
+        align-items: center;
+    }
+
+
+    .visual-content {
+        max-width: 100%;
+    }
+
+
+    .login-brand-badge {
+        margin-bottom: 18px;
+    }
+
+
+    .visual-title {
+        font-size:
+            clamp(
+                2.3rem,
+                10vw,
+                3.2rem
+            );
+
+        letter-spacing: -1.5px;
+    }
+
+
+    .visual-description {
+        font-size: 0.94rem;
+
+        margin:
+            0 auto 20px;
+    }
+
+
+    .login-food-image-wrapper {
+        width: 100%;
+    }
+
+
+    .login-food-image {
+        height: 190px;
+    }
+
+
+    .login-form-panel {
+        padding:
+            35px 24px 40px;
+    }
+
+
+    .form-header h1 {
+        font-size: 2rem;
+    }
+
+
+    .social-buttons {
+        grid-template-columns: 1fr;
+    }
+
+
+    .floating-food-icon {
+        opacity: 0.2;
+    }
+
+}
+
+
+/* ============================================================
+   SMALL MOBILE
+============================================================ */
+
+@media (max-width: 420px) {
+
+    .login-page {
+        padding: 8px;
+    }
+
+
+    .login-container {
+        border-radius: 20px;
+    }
+
+
+    .login-visual-panel {
+        padding:
+            35px 20px 25px;
+    }
+
+
+    .login-form-panel {
+        padding:
+            30px 18px 35px;
+    }
+
+
+    .visual-title {
+        font-size: 2.25rem;
+    }
+
+
+    .login-food-image {
+        height: 160px;
+    }
+
+}
+
+
+/* ============================================================
+   ACCESSIBILITY
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation: none !important;
+
+        transition: none !important;
+    }
+
+}
+ </style>
+
+ <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* =========================================================
+       GET ELEMENTS
+    ========================================================= */
+
+    const loginForm = document.getElementById("loginForm");
+    const formMessage = document.getElementById("formMessage");
+
+    const role = document.getElementById("userRole");
+    const email = document.getElementById("email");
+    const password = document.getElementById("password");
+
+    const googleLogin = document.getElementById("googleLogin");
+    const facebookLogin = document.getElementById("facebookLogin");
+
+
+    /* =========================================================
+       SAFETY CHECK
+    ========================================================= */
+
+    if (!loginForm || !formMessage || !role || !email || !password) {
+        console.error("Login page: Required elements were not found.");
+        return;
+    }
+
+
+    /* =========================================================
+       SHOW MESSAGE
+    ========================================================= */
+
+    function showMessage(message) {
+        formMessage.textContent = message;
+        formMessage.classList.add("show");
+    }
+
+
+    /* =========================================================
+       HIDE MESSAGE
+    ========================================================= */
+
+    function hideMessage() {
+        formMessage.classList.remove("show");
+    }
+
+
+    /* =========================================================
+       CLEAR MESSAGE WHEN USER EDITS FORM
+    ========================================================= */
+
+    role.addEventListener("change", hideMessage);
+    email.addEventListener("input", hideMessage);
+    password.addEventListener("input", hideMessage);
+
+
+    /* =========================================================
+       LOGIN FORM SUBMIT
+    ========================================================= */
+
+    loginForm.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        hideMessage();
+
+
+        /* =====================================================
+           GET VALUES
+        ===================================================== */
+
+        const selectedRole = role.value.trim();
+        const enteredEmail = email.value.trim();
+        const enteredPassword = password.value;
+
+
+        console.log("========== LOGIN ATTEMPT ==========");
+        console.log("Role:", selectedRole);
+        console.log("Email:", enteredEmail);
+
+
+        /* =====================================================
+           REQUIRED FIELD VALIDATION
+        ===================================================== */
+
+        if (selectedRole === "") {
+
+            showMessage("Please select an account type.");
+
+            role.focus();
+
+            return;
+        }
+
+
+        if (enteredEmail === "") {
+
+            showMessage("Please enter your email address.");
+
+            email.focus();
+
+            return;
+        }
+
+
+        if (enteredPassword === "") {
+
+            showMessage("Please enter your password.");
+
+            password.focus();
+
+            return;
+        }
+
+
+        /* =====================================================
+           EMAIL VALIDATION
+        ===================================================== */
+
+        const emailPattern =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+
+        if (!emailPattern.test(enteredEmail)) {
+
+            showMessage(
+                "Please enter a valid email address."
+            );
+
+            email.focus();
+
+            return;
+        }
+
+
+        /* =====================================================
+           SAVE LOGIN SESSION
+        ===================================================== */
+
+        try {
+
+            sessionStorage.setItem(
+                "loggedInUser",
+                enteredEmail
+            );
+
+            sessionStorage.setItem(
+                "loggedInRole",
+                selectedRole
+            );
+
+            /*
+             * Save username separately.
+             *
+             * Example:
+             * jeevi@gmail.com
+             * becomes:
+             * jeevi
+             */
+
+            const username =
+                enteredEmail
+                    .split("@")[0]
+                    .trim();
+
+            sessionStorage.setItem(
+                "loggedInUsername",
+                username
+            );
+
+
+            console.log(
+                "Session saved successfully."
+            );
+
+            console.log(
+                "loggedInUser:",
+                sessionStorage.getItem("loggedInUser")
+            );
+
+            console.log(
+                "loggedInRole:",
+                sessionStorage.getItem("loggedInRole")
+            );
+
+            console.log(
+                "loggedInUsername:",
+                sessionStorage.getItem("loggedInUsername")
+            );
+
+        } catch (error) {
+
+            console.error(
+                "Session storage error:",
+                error
+            );
+
+        }
+
+
+        /* =====================================================
+           ROLE BASED NAVIGATION
+        ===================================================== */
+
+        let dashboardURL = "";
+
+
+        /* -----------------------------------------------------
+           ADMIN → PARTNER DASHBOARD
+        ----------------------------------------------------- */
+
+        if (selectedRole === "admin") {
+
+            dashboardURL =
+                "./partner-dashboard.html";
+
+        }
+
+
+        /* -----------------------------------------------------
+           CLIENT → CLIENT DASHBOARD
+        ----------------------------------------------------- */
+
+        else if (selectedRole === "client") {
+
+            dashboardURL =
+                "./client-dashboard.html";
+
+        }
+
+
+        /* -----------------------------------------------------
+           INVALID ROLE
+        ----------------------------------------------------- */
+
+        else {
+
+            showMessage(
+                "Invalid account type selected."
+            );
+
+            console.error(
+                "Invalid role:",
+                selectedRole
+            );
+
+            return;
+        }
+
+
+        /* =====================================================
+           FINAL NAVIGATION
+        ===================================================== */
+
+        console.log(
+            "Redirecting to:",
+            dashboardURL
+        );
+
+
+        /*
+         * Small delay allows sessionStorage to complete
+         * before navigation.
+         */
+
+        setTimeout(function () {
+
+            window.location.assign(
+                dashboardURL
+            );
+
+        }, 100);
+
+
+    });
+
+
+    /* =========================================================
+       GOOGLE LOGIN
+    ========================================================= */
+
+    if (googleLogin) {
+
+        googleLogin.addEventListener(
+            "click",
+            function () {
+
+                console.log(
+                    "Google login selected."
+                );
+
+                window.location.assign(
+                    "./404.html"
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       FACEBOOK LOGIN
+    ========================================================= */
+
+    if (facebookLogin) {
+
+        facebookLogin.addEventListener(
+            "click",
+            function () {
+
+                console.log(
+                    "Facebook login selected."
+                );
+
+                window.location.assign(
+                    "./404.html"
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       ENTER KEY / FORM READY
+    ========================================================= */
+
+    console.log(
+        "Login page JavaScript initialized successfully."
+    );
+
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,2010 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly - Healthy Catering Food Services</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  
+  <div id="preloader">
+    <svg class="bg-vectors" xmlns="http://w3.org" viewBox="0 0 960 540" preserveAspectRatio="none">
+      <path class="bg-wave" fill="rgba(0, 230, 118, 0.06)" d="M0,160 Q240,280 480,160 T960,160 L960,0 L0,0 Z"/>
+      <path class="bg-wave" fill="rgba(255, 145, 0, 0.04)" d="M0,200 Q240,100 480,220 T960,200 L960,0 L0,0 Z" style="animation-delay: -3s; animation-duration: 11s;"/>
+    </svg>
+
+    <div class="preloader-art">
+      <svg class="food-vector salad-leaf" width="45" height="45" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+        <path d="M2 22C4.5 19.5 7.5 19 10 20C13 21.2 16.5 19.8 18 17C19.5 14.2 18.8 10.5 21 8C18.5 8.5 16 7.5 14.5 5.5C13 3.5 13.5 1 11 2C8.5 3 8 6.5 6 8C4 9.5 1 9 2 11.5C3 14 5.5 14.5 5 17.5C4.5 20.5 2 22 2 22Z" fill="var(--food-green)" opacity="0.95"/>
+        <path d="M6 8C7.5 10.5 10 13 13.5 14.5" stroke="#047857" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+
+      <svg class="food-vector avocado" width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+        <path d="M12 2C7.5 2 4 7 4 13C4 18 7.5 22 12 22C16.5 22 20 18 20 13C20 7 16.5 2 12 2Z" fill="#4ea93b"/>
+        <path d="M12 4C8.5 4 5.5 8.5 5.5 13C5.5 17 8.5 20.5 12 20.5C15.5 20.5 18.5 17 18.5 13C18.5 8.5 15.5 4 12 4Z" fill="#a3e635"/>
+        <circle cx="12" cy="14.5" r="3.5" fill="#78350f"/>
+      </svg>
+
+      <svg class="food-vector broccoli" width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+        <path d="M10 15C10 12.5 11 11 12 11C13 11 14 12.5 14 15C14 18 13.5 22 12 22C10.5 22 10 18 10 15Z" fill="#15803d"/>
+        <circle cx="8.5" cy="9.5" r="4.5" fill="var(--food-green)"/>
+        <circle cx="15.5" cy="9.5" r="4.5" fill="var(--food-green)"/>
+        <circle cx="12" cy="6.5" r="4.5" fill="#22c55e"/>
+      </svg>
+
+      <div class="cloche-container">
+        <svg width="110" height="80" viewBox="0 0 24 18" fill="none" xmlns="http://w3.org">
+          <path d="M12 4C6.5 4 2 7.5 2 12H22C22 7.5 17.5 4 12 4Z" fill="#475569"/>
+          <path d="M12 4C14.8 4 17.3 5.4 19 7.5" stroke="#ffffff" stroke-width="0.75" stroke-linecap="round"/>
+          <circle cx="12" cy="2.5" r="1.5" fill="var(--food-orange)"/>
+          <path d="M2 13H22V14H22.5C23 14 23.5 14.5 23.5 15C23.5 15.5 23 16 22.5 16H1.5C1 16 0.5 15.5 0.5 15C0.5 14.5 1 14 1.5 14H2V13Z" fill="#334155"/>
+        </svg>
+      </div>
+
+      <div class="platter"></div>
+    </div>
+
+    <div class="brand-title">Stackly</div>
+
+    <div class="progress-wrapper">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="header-container">
+      
+      <div class="logo-wrapper" onclick="refreshPage()">
+        <img src="./Assests/healthy catering logo.webp" alt="Stackly Logo" class="brand-logo">
+       
+      </div>
+
+      <nav class="desktop-nav">
+        <a href="index.html" class="nav-item ">Home</a>
+        <a href="ourmenus.html" class="nav-item">Our Menu</a>
+        <a href="mealplans.html" class="nav-item">Meal Plans</a>
+        <a href="catering.html" class="nav-item">Catering</a>
+        <a href="about.html" class="nav-item">About Us</a>
+        <a href="contact.html" class="nav-item active">Contact Us</a>
+      </nav>
+
+      <div class="utility-actions">
+        <a href="404.html" class="icon-btn" title="Wishlist">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+        </a>
+        <a href="404.html" class="icon-btn" title="Shopping Cart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+          <span class="cart-badge">0</span>
+        </a>
+       <button class="auth-btn" onclick="window.location.href='login.html';" title="Login">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+    <circle cx="12" cy="7" r="4"/>
+  </svg>
+</button>
+
+      </div>
+
+      <div class="hamburger-menu" id="hamburger-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+    </div>
+  </header>
+
+  <div class="mobile-menu-overlay" id="mobile-overlay">
+    <div class="mobile-menu-card">
+      <nav class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-item ">Home</a>
+        <a href="ourmenus.html" class="mobile-nav-item">Our Menu</a>
+        <a href="mealplans.html" class="mobile-nav-item">Meal Plans</a>
+        <a href="catering.html" class="mobile-nav-item">Catering</a>
+        <a href="about.html" class="mobile-nav-item">About Us</a>
+        <a href="contact.html" class="mobile-nav-item active">Contact Us</a>
+      </nav>
+      <div class="mobile-utilities">
+        <a href="404.html" class="mobile-util-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          Wishlist
+        </a>
+        <a href="404.html" class="mobile-util-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+          Cart Container
+        </a>
+        <button class="mobile-auth-btn">Sign In / Register</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+    let audioContext = null;
+    let soundFired = false;
+
+    function initAndPlaySound() {
+      if (soundFired) return;
+      try {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtx) return;
+        if (!audioContext) audioContext = new AudioCtx();
+        if (audioContext.state === 'suspended') audioContext.resume();
+
+        const osc = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        osc.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(1450, audioContext.currentTime); 
+        gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + 1.5);
+        osc.start();
+        osc.stop(audioContext.currentTime + 1.5);
+        
+        soundFired = true;
+        cleanListeners();
+      } catch (e) {}
+    }
+
+    function cleanListeners() {
+      window.removeEventListener('mousemove', initAndPlaySound);
+      window.removeEventListener('touchstart', initAndPlaySound);
+      window.removeEventListener('click', initAndPlaySound);
+    }
+
+    window.addEventListener('mousemove', initAndPlaySound);
+    window.addEventListener('touchstart', initAndPlaySound);
+    window.addEventListener('click', initAndPlaySound);
+
+    function refreshPage() {
+      window.location.reload(true);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const navItems = document.querySelectorAll('.nav-item, .mobile-nav-item');
+      navItems.forEach(item => {
+        item.addEventListener('click', function() {
+          navItems.forEach(i => i.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+
+      const burger = document.getElementById('hamburger-toggle');
+      const mobileOverlay = document.getElementById('mobile-overlay');
+      
+      burger.addEventListener('click', () => {
+        burger.classList.toggle('open');
+        mobileOverlay.classList.toggle('visible');
+      });
+
+      setTimeout(() => {
+        const preloader = document.getElementById('preloader');
+        const mainApp = document.getElementById('main-app');
+
+        preloader.style.opacity = '0';
+        preloader.style.transform = 'scale(1.05)';
+        
+        setTimeout(() => {
+          preloader.style.display = 'none';
+          mainApp.style.opacity = '1';
+          mainApp.style.transform = 'scale(1)';
+          cleanListeners();
+        }, 500);
+
+      }, 2000);
+    });
+  </script>
+
+<!-- ==========================================================================
+     CINEMATIC BENTO CARD CONTACT HERO THEATER SECTION (index.html)
+     ========================================================================== -->
+<section class="contact-hero-section">
+  
+  <!-- ENVIRONMENT CANVAS BACKDROP LAYER: SUBTLE AMBIENT WELLNESS WASHES -->
+  <div class="contact-hero-ambient-canvas">
+    <div class="contact-blur-orb orb-green"></div>
+    <div class="contact-blur-orb orb-orange"></div>
+    
+    <!-- Floating Vector Satellites -->
+    <svg class="contact-vector cv-1" width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org" opacity="0.12"><path d="M2 22C4.5 19.5 7.5 19 10 20C13 21.2 16.5 19.8 18 17C19.5 14.2 18.8 10.5 21 8C18.5 8.5 16 7.5 14.5 5.5Z" fill="#22c55e"/></svg>
+    <svg class="contact-vector cv-2" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.8" opacity="0.1"><circle cx="8.5" cy="9.5" r="5"/><circle cx="15.5" cy="9.5" r="5"/><circle cx="12" cy="6.5" r="5"/><path d="M10 15c0-2.5 1-4 2-4s2 1.5 2 4c0 3-.5 7-2 7s-2-4-2-4z"/></svg>
+  </div>
+
+  <div class="contact-hero-master-container" id="contact-hero-trigger">
+    
+    <!-- MAIN FLOATING CARRIER BENTO CARD POD -->
+    <div class="contact-hero-bento-pod contact-hero-reveal-node">
+      <div class="contact-hero-split-grid">
+        
+        <!-- LEFT COLUMN: HIGH-VISIBILITY TYPOGRAPHY COPIES & CONTACT QUICK INFO -->
+        <div class="contact-hero-text-side">
+          <span class="contact-hero-mini-tag">GET IN TOUCH LOCKS</span>
+          <h1 class="contact-hero-main-title">
+            Let’s Plan Your Next <span class="text-green-glow">CATERING BLUEPRINT.</span>
+          </h1>
+          <p class="contact-hero-sub-paragraph">Have an upcoming corporate summit, gala banquet, or private celebration function? Reach out below to map out custom calorie-calibrated menus tailored to your event metrics.</p>
+          
+          <!-- QUICK TOUCHPOINTS CONTAINER ROW SLATS -->
+          <div class="contact-hero-quick-touch-row">
+            <div class="hero-touch-cell">
+              <strong>Support Hotline:</strong>
+              <span><a href="tel:+914271234567" class="hero-touch-link">+91 427 123 4567</a></span>
+            </div>
+            <div class="hero-touch-cell">
+              <strong>Email Inbox:</strong>
+              <span><a href="mailto:concierge@stackly.com" class="hero-touch-link">concierge@stackly.com</a></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: RECTANGULAR FLOATING PHOTO VIEWPORT CANVAS -->
+        <div class="contact-hero-media-side">
+          <div class="contact-hero-artwork-universe">
+            <div class="contact-artwork-spotlight-backdrop"></div>
+            
+            <!-- STRECT RECTANGLE PICTURE SHAPE: Sharpened structural bounding profiles -->
+            <div class="contact-hero-rectangle-mask">
+              <div class="contact-hero-live-shimmer"></div>
+              <!-- MAIN PHOTOGRAPH CANVAS ASSET -->
+              <img src="./Assests/hero%20section%20img%203.webp" alt="Our Customer Support Team Answering Catering Bookings" class="contact-hero-native-photo">
+            </div>
+
+            <!-- Overlapping Decorative Micro-Metric Badge -->
+            <div class="contact-hero-floating-pill-badge">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              <span>Instant response 24/7 active</span>
+            </div>
+            
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+    /* ==========================================================================
+   GLASSMORPHIC BENTO CARD CONTACT HERO PROPERTIES (style.css)
+   ========================================================================== */
+.contact-hero-section {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  
+  /* FIXED: Precise exact padding constraints: 50px Top, 30px Bottom precisely */
+  padding-top: 130px;
+  padding-bottom: 30px;
+  
+  overflow: hidden;
+  z-index: 2;
+}
+
+.contact-hero-master-container {
+  width: 94%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ==========================================================================
+   INFINITE CONTINUOUS DRIFTING BACKDROP SATELLITE CHIPS ARRAYS
+   ========================================================================== */
+.contact-hero-ambient-canvas {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  pointer-events: none; z-index: 1;
+}
+
+.contact-blur-orb {
+  position: absolute;
+  width: 350px; height: 350px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.12;
+}
+.orb-green  { top: -5%; left: 10%; background-color: #22c55e; }
+.orb-orange { bottom: -10%; right: 10%; background-color: #ff9100; }
+
+.contact-vector { position: absolute; }
+.cv-1 { top: 12%; left: 6%; animation: contactSatelliteDrift 6s ease-in-out infinite alternate; }
+.cv-2 { bottom: 18%; right: 8%; animation: contactSatelliteDrift 5s ease-in-out infinite alternate-reverse 0.3s; }
+
+@keyframes contactSatelliteDrift {
+  0% { transform: translateY(0) rotate(0deg) scale(0.95); }
+  100% { transform: translateY(-16px) rotate(10deg) scale(1.04); }
+}
+
+/* ==========================================================================
+   THE FLOATING MASTER BENTO POD CARRIER CANVAS PLATFORM
+   ========================================================================== */
+.contact-hero-bento-pod {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(135deg, rgba(244, 251, 246, 0.75) 0%, rgba(250, 253, 235, 0.75) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  
+  border: 1px solid rgba(34, 197, 94, 0.15);
+  border-radius: 36px; /* Elegant rounded edge layout bento bounds */
+  padding: 55px 60px;
+  box-shadow: 0 25px 55px -25px rgba(15, 23, 42, 0.06);
+  
+  /* Continuous smooth hardware vertical flight floating motion timeline loop */
+  animation: contactBentoPlatformFloat 4.5s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes contactBentoPlatformFloat {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-10px); }
+}
+
+.contact-hero-split-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+}
+
+/* ==========================================================================
+   LEFT SIDE: HIGH-VISIBILITY TYPOGRAPHY COPIES AND CONTEXT ACTIONS
+   ========================================================================== */
+.contact-hero-text-side {
+  flex: 1.25;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.contact-hero-mini-tag {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  color: #16a34a; /* Main Brand Theme Green tag color */
+  background: #ffffff;
+  border: 1px solid rgba(34, 197, 94, 0.12);
+  padding: 6px 14px;
+  border-radius: 50px;
+  margin-bottom: 15px;
+}
+
+.contact-hero-main-title {
+  font-size: 3.2rem; /* INCREASED font size scaling weight for high brand scannability */
+  font-weight: 900;
+  color: #0f172a;
+  line-height: 1.15;
+  margin-bottom: 18px;
+  letter-spacing: -1px;
+}
+
+/* HIGH-INTENSITY TYPOGRAPHIC GLOW BINDINGS */
+.text-green-glow { color: #22c55e; transition: text-shadow 0.3s ease, color 0.3s ease; }
+.contact-hero-bento-pod:hover .text-green-glow {
+  color: #4ade80;
+  text-shadow: 0 0 20px rgba(74, 222, 128, 0.45); /* Title typography text flares up neon trails intensely on hover focus */
+}
+
+.contact-hero-sub-paragraph {
+  font-size: 1.22rem; /* INCREASED description text copy weight size */
+  color: #475569;
+  line-height: 1.6;
+  max-width: 580px;
+  margin-bottom: 30px;
+}
+
+/* Quick Touchpoints List Row Slat */
+.contact-hero-quick-touch-row {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
+  padding-top: 22px;
+  width: 100%;
+}
+
+.hero-touch-cell { display: flex; flex-direction: column; align-items: flex-start; }
+.hero-touch-cell strong { font-size: 0.85rem; font-weight: 800; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; }
+.hero-touch-cell span { font-size: 1.35rem; font-weight: 800; margin-top: 4px; }
+
+.hero-touch-link { text-decoration: none; color: #1e293b; transition: color 0.2s ease; }
+.hero-touch-link:hover { color: #16a34a; }
+
+/* ==========================================================================
+   RIGHT SIDE: DYNAMIC FLOATING RECTANGLE IMAGE CANVAS
+   ========================================================================== */
+.contact-hero-media-side {
+  flex: 0.95;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-hero-artwork-universe {
+  position: relative;
+  width: 400px;
+  height: 380px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-artwork-spotlight-backdrop {
+  position: absolute;
+  width: 320px; height: 320px;
+  background: radial-gradient(circle, rgba(34,197,94,0.14) 0%, rgba(34,197,94,0) 70%);
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* FIXED SHAPE: Sharp rectangle frame masking outline boundaries instead of circle cuts */
+.contact-hero-rectangle-mask {
+  position: relative;
+  width: 100%;
+  height: 310px; /* Locked elegant landscape vertical aspect bounds */
+  border: 1px solid #ffffff;
+  
+  /* MODERN RECTANGLE: Sharp clean corners frame profile */
+  border-radius: 20px;
+  
+  box-shadow: 0 25px 55px -20px rgba(15, 23, 42, 0.12);
+  overflow: hidden;
+  z-index: 3;
+  
+  /* Synchronized complementary floating timeline prevents layout column collisions */
+  animation: photoFrameDriftTrack 4.5s ease-in-out infinite alternate-reverse;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Image bounding rectangle panel morphs curves slightly on bento parent focus states */
+.contact-hero-bento-pod:hover .contact-hero-rectangle-mask {
+  border-color: rgba(34, 197, 94, 0.2);
+  box-shadow: 0 30px 65px -15px rgba(34, 197, 94, 0.25);
+}
+
+@keyframes photoFrameDriftTrack { 0% { transform: translateY(0px) rotate(0deg); } 100% { transform: translateY(-12px) rotate(0.5deg); } }
+
+.contact-hero-native-photo {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important; /* Retained: forces photographs to crop smoothly into rectangular grids */
+}
+
+.contact-hero-live-shimmer {
+  position: absolute;
+  top: -50%; left: -50%; width: 200%; height: 200%;
+  background: linear-gradient(45deg, transparent 45%, rgba(255,255,255,0.4) 50%, transparent 55%);
+  transform: rotate(35deg);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+  z-index: 5;
+}
+.contact-hero-bento-pod:hover .contact-hero-live-shimmer { transform: translate(50%, 50%) rotate(35deg); }
+
+/* Absolute positioned overlapping capsule banner badge */
+.contact-hero-floating-pill-badge {
+  position: absolute;
+  bottom: -15px; right: -20px;
+  background: #0f172a; /* Sleek high contrast dark slate backing platter */
+  color: #ffffff;
+  padding: 10px 18px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  border: 2px solid #ffffff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
+  z-index: 10;
+  animation: photoFrameDriftTrack 4.5s ease-in-out infinite alternate; /* Counters parent movement paths */
+}
+.contact-hero-floating-pill-badge svg { color: #22c55e; flex-shrink: 0; }
+
+/* ==========================================================================
+   SCROLL REVEAL ARRAYS INITIAL PARAMETERS SETTINGS BASE
+   ========================================================================== */
+.contact-hero-reveal-node {
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.85s ease;
+}
+.contact-hero-reveal-node.contact-hero-reveal-active { opacity: 1; transform: translateY(0) scale(1); }
+
+/* ==========================================================================
+   FLUID STRUCTURAL RESPONSIVE ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 1150px) {
+  .contact-hero-bento-pod { padding: 40px; }
+  .contact-hero-main-title { font-size: 2.6rem; }
+  .contact-hero-sub-paragraph { font-size: 1.1rem; }
+  .contact-hero-artwork-universe { width: 340px; height: 320px; }
+  .contact-hero-rectangle-mask { height: 260px; }
+  .hero-touch-cell span { font-size: 1.15rem; }
+}
+
+@media (max-width: 992px) {
+  /* Safely converts bento horizontal pod into stacked vertical center tracks columns on tablet screens */
+  .contact-hero-split-grid { flex-direction: column-reverse; text-align: center; gap: 40px; }
+  .contact-hero-text-side { align-items: center; text-align: center; }
+  .contact-hero-sub-paragraph { max-width: 100%; }
+  .contact-hero-quick-touch-row { justify-content: center; gap: 50px; }
+  .hero-touch-cell { align-items: center; }
+  
+  .contact-hero-artwork-universe { width: 100%; max-width: 420px; height: 320px; }
+  .contact-hero-rectangle-mask { width: 100%; max-width: 380px; height: 260px; }
+  .contact-hero-floating-pill-badge { right: 50%; transform: translateX(50%) !important; bottom: -20px; animation: none !important; } /* Centers overlays on smartphone viewports */
+}
+
+@media (max-width: 480px) {
+  .contact-hero-section { padding-top: 40px; padding-bottom: 25px; }
+  .contact-hero-bento-pod { padding: 30px 16px; border-radius: 24px; }
+  .contact-hero-main-title { font-size: 1.85rem; }
+  .contact-hero-quick-touch-row { flex-direction: column; gap: 15px; }
+.contact-hero-rectangle-mask { max-width: 310px; height: 230px; }}
+
+</style>
+
+<script>
+    // ==========================================================================
+// SCROLL REVEAL BENTO POD APPEARANCE RUNNER ENGINE (script.js)
+// ==========================================================================
+function initContactHeroVisibilityObserver() {
+  const scrollTriggerParentBox = document.getElementById('contact-hero-trigger');
+  if (!scrollTriggerParentBox) return;
+
+  const floatingBentoPodNode = scrollTriggerParentBox.querySelector('.contact-hero-reveal-node');
+  if (!floatingBentoPodNode) return;
+
+  const contactHeroObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Expose the master bento card platform pod instantly on screen entry focus
+        floatingBentoPodNode.classList.add('contact-hero-reveal-active');
+        contactHeroObserver.unobserve(scrollTriggerParentBox);
+      }
+    });
+  }, {
+    threshold: 0.05 // Fires the moment 5% of the container passes browser fold lines
+  });
+
+  contactHeroObserver.observe(scrollTriggerParentBox);
+}
+
+// Register global canvas initialization listener safely on DOM load hooks
+window.addEventListener('DOMContentLoaded', () => {
+  initContactHeroVisibilityObserver();
+});
+</script>
+
+<!-- ==========================================================================
+     CINEMATIC BENTO DESIGN CONTACT FORM PANEL (index.html)
+     ========================================================================== -->
+<section class="intake-form-section">
+  <div class="intake-master-container" id="intake-scroll-trigger">
+    <div class="intake-bento-console-card intake-node">
+      
+      <!-- COMPACT HEADER CLUSTER INSIDE THE CARD PLATFORM -->
+      <div class="intake-card-header-block">
+        <span class="intake-mini-badge">TASTE PROFILING</span>
+        <h2 class="intake-main-title">Configure Your Gathering Matrix</h2>
+        <p class="intake-subtext">Fill out your baseline requirements coordinates below. Our system will dynamically compute a tailored catering proposal quote blueprint.</p>
+      </div>
+
+      <!-- CORE FORM VALIDATION SHELL ENGINE -->
+      <form class="intake-native-form-element" id="catering-intake-form" novalidate>
+        <div class="intake-form-two-column-split">
+          
+          <!-- INPUT FIELD 1: FULL NAME (BLOCKS SPECIAL CHARACTERS & DIGITS) -->
+          <div class="intake-input-group-cell">
+            <label for="intake-client-name" class="intake-field-label">Full Name / Corporate Title</label>
+            <div class="intake-interactive-field-viewport">
+              <span class="field-icon-accent"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+              <!-- Keypress listener attached to instantly deny special symbol overrides -->
+              <input type="text" id="intake-client-name" class="intake-text-input" placeholder="e.g. Vikram R" autocomplete="off" required>
+            </div>
+            <!-- Dynamic validation feedback prompts row -->
+            <div class="field-validation-error-prompt" id="error-client-name">Alphabetical characters only allowed</div>
+          </div>
+
+          <!-- INPUT FIELD 2: MOBILE HANDLE PHONE NUMBER (BLOCKS LETTERS) -->
+          <div class="intake-input-group-cell">
+            <label for="intake-client-phone" class="intake-field-label">Contact Mobile Handle</label>
+            <div class="intake-interactive-field-viewport">
+              <span class="field-icon-accent"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.7 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+              <input type="tel" id="intake-client-phone" class="intake-text-input" placeholder="e.g. 9876543210" maxlength="10" autocomplete="off" required>
+            </div>
+            <div class="field-validation-error-prompt" id="error-client-phone">Please enter a valid 10-digit mobile line</div>
+          </div>
+
+        </div>
+
+        <div class="intake-form-two-column-split">
+          
+          <!-- INPUT FIELD 3: EMAIL ADDDRESS INBOX -->
+          <div class="intake-input-group-cell">
+            <label for="intake-client-email" class="intake-field-label">Email Inbox Address</label>
+            <div class="intake-interactive-field-viewport">
+              <span class="field-icon-accent"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+              <input type="email" id="intake-client-email" class="intake-text-input" placeholder="e.g. concierge@stackly.com" autocomplete="off" required>
+            </div>
+            <div class="field-validation-error-prompt" id="error-client-email">Please enter a verified electronic email route</div>
+          </div>
+
+          <!-- INPUT FIELD 4: GUEST TRACK COUNT HEADS -->
+          <div class="intake-input-group-cell">
+            <label for="intake-guest-count" class="intake-field-label">Estimated Guest Volume Attendance</label>
+            <div class="intake-interactive-field-viewport">
+              <span class="field-icon-accent"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+              <input type="number" id="intake-guest-count" class="intake-text-input" placeholder="e.g. 150" min="10" max="5000" required>
+            </div>
+            <div class="field-validation-error-prompt" id="error-guest-count">Guest ranges must register between 10 and 5,000 heads</div>
+          </div>
+
+        </div>
+
+        <!-- INPUT FIELD 5: ADDITIONAL LOG NOTES SUMMARY OVERVIEW -->
+        <div class="intake-input-group-cell width-100-percent">
+          <label for="intake-event-notes" class="intake-field-label">Thematic Diet Preferences & Event Notes</label>
+          <div class="intake-interactive-field-viewport align-items-flex-start">
+            <span class="field-icon-accent padding-top-textarea"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></span>
+            <textarea id="intake-event-notes" class="intake-textarea-input" placeholder="Describe any tracking macro thresholds, flower choices, traditional buffet setups, or specific menu package inclusions..." rows="4"></textarea>
+          </div>
+        </div>
+
+        <!-- KINETIC PROCESSING ROUTE LINK AND SUBMIT DRIVER -->
+        <div class="intake-submit-hub-wrap">
+          <button type="submit" class="btn-intake-submit-kinetic-glow">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Transmit Catering Blueprint Request
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</section>
+
+<style>
+    /* ==========================================================================
+   INTERACTIVE BENTO DESIGN CONSOLE CARD INTAKE FORM (style.css)
+   ========================================================================== */
+.intake-form-section {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  
+  /* FIXED COMPACT GAPS: Strict padding metrics layer blocks (50px Top, 30px Bottom) */
+  padding-top: 50px;
+  padding-bottom: 30px;
+  
+  overflow: hidden;
+  z-index: 2;
+}
+
+.intake-master-container {
+  width: 94%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ==========================================================================
+   THE DECK GLASSMORPHIC PANEL PROFILE ARCHITECTURE
+   ========================================================================== */
+.intake-bento-console-card {
+  width: 100%;
+  max-width: 850px; /* Perfect centered dashboard layout width constraints */
+  margin: 0 auto;
+  background: linear-gradient(135deg, rgba(244, 251, 246, 0.7) 0%, rgba(255, 255, 255, 0.95) 100%);
+  border: 1px solid rgba(34, 197, 94, 0.14);
+  border-radius: 32px;
+  padding: 45px 50px;
+  box-shadow: 0 25px 55px -25px rgba(15, 23, 42, 0.05);
+}
+
+.intake-card-header-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.intake-mini-badge {
+  font-size: 0.8rem; font-weight: 800; letter-spacing: 2px; color: #16a34a;
+  background: #ffffff; border: 1px solid rgba(34, 197, 94, 0.1); padding: 5px 12px; border-radius: 50px; margin-bottom: 12px;
+}
+
+.intake-main-title { font-size: 2.1rem; font-weight: 900; color: #0f172a; margin: 0 0 10px 0; letter-spacing: -0.5px; }
+.intake-subtext { font-size: 1.05rem; color: #475569; line-height: 1.5; max-width: 600px; margin: 0; }
+
+/* ==========================================================================
+   INPUT COMPONENTS DECK STRUCTURE (INCREASED TEXT SIZES & HIGHLIGHTS)
+   ========================================================================== */
+.intake-native-form-element {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.intake-form-two-column-split {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  width: 100%;
+}
+
+.intake-input-group-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  width: 100%;
+}
+.width-100-percent { width: 100%; }
+
+.intake-field-label {
+  font-size: 0.95rem; /* INCREASED: Font scaled up for clean scannability labels reading */
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.intake-interactive-field-viewport {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.align-items-flex-start { align-items: flex-start; }
+
+/* Focus glow highlight tracks */
+.intake-interactive-field-viewport:focus-within {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1); /* Section input row glows intensely on click */
+}
+
+/* Isolated left icon tags wrapper profile */
+.field-icon-accent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 46px; height: 46px;
+  color: #64748b;
+  flex-shrink: 0;
+  transition: color 0.2s;
+}
+.intake-interactive-field-viewport:focus-within .field-icon-accent { color: #16a34a; }
+.padding-top-textarea { height: 46px; }
+
+/* Native text entries input styling fields variables overrides */
+.intake-text-input,
+.intake-textarea-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 12px 16px 12px 0;
+  font-size: 1.05rem !important; /* INCREASED text copy entry weight size */
+  font-weight: 600;
+  color: #0f172a;
+}
+.intake-textarea-input { padding: 14px 16px 14px 0; resize: vertical; font-family: inherit; }
+
+/* Placeholder font layout tracking metrics configuration profiles */
+::placeholder { color: #94a3b8; font-weight: 500; }
+
+/* ==========================================================================
+   DYNAMIC INTERFACE SUBMISSION ERROR ALERTS (RED SHELL TIMELINES)
+   ========================================================================== */
+.field-validation-error-prompt {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #ef4444;
+  margin-top: 5px;
+  display: none; /* Hidden by default engine properties validation flags */
+  text-align: left;
+}
+
+/* Error Injected Active State Layout Variables Classes overrides */
+.intake-input-group-cell.field-error-alert-triggered .intake-interactive-field-viewport {
+  border-color: #ef4444 !important;
+  background-color: #fef2f2;
+}
+.intake-input-group-cell.field-error-alert-triggered .field-icon-accent { color: #ef4444 !important; }
+.intake-input-group-cell.field-error-alert-triggered .field-validation-error-prompt { display: block; }
+
+/* ==========================================================================
+   KINETIC TRANSMIT CTA BUTTON HUB (ROUTES SECURELY TO 404.HTML ON SUCCESS)
+   ========================================================================== */
+.intake-submit-hub-wrap {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 15px;
+}
+
+.btn-intake-submit-kinetic-glow {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: #ffffff; border: none; padding: 16px 42px;
+  font-size: 1.05rem; font-weight: 700; border-radius: 12px;
+  display: inline-flex; align-items: center; gap: 12px; cursor: pointer;
+  box-shadow: 0 10px 25px rgba(22, 163, 74, 0.25);
+  animation: formSubmitFloat 3.5s ease-in-out infinite alternate;
+  transition: background 0.25s, box-shadow 0.25s, transform 0.2s;
+}
+.btn-intake-submit-kinetic-glow:hover { box-shadow: 0 15px 35px rgba(22, 163, 74, 0.45); animation-play-state: paused !important; transform: translateY(-2px); }
+
+@keyframes formSubmitFloat { 0% { transform: translateY(0px); } 100% { transform: translateY(-6px); } }
+
+/* Scroll entries appearance reveals node rules initialization handles */
+.intake-node { opacity: 0; transform: translateY(24px); transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.85s ease; }
+.intake-node.intake-revealed-active { opacity: 1; transform: translateY(0); }
+
+/* ==========================================================================
+   FLUID STRUCTURAL RESPONSIVE ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 850px) {
+  .intake-bento-console-card { padding: 35px 24px; border-radius: 24px; }
+  .intake-form-two-column-split { flex-direction: column; gap: 20px; } /* Stacks rows cleanly into independent columns streams on tablets */
+}
+@media (max-width: 540px) {
+  .intake-main-title { font-size: 1.65rem; }
+  .btn-intake-submit-kinetic-glow { width: 100%; justify-content: center; } /* Spans full canvas width smoothly on smartphones */
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// CLIENT-SIDE REAL-TIME STRICT VALUE VALIDATION FORM CONTROLLER (script.js)
+// ==========================================================================
+function initCateringFormValidationConsole() {
+  const formElement = document.getElementById('catering-intake-form');
+  const scrollTriggerParentBox = document.getElementById('intake-scroll-trigger');
+
+  if (!formElement || !scrollTriggerParentBox) return;
+
+  const clientNameInput = document.getElementById('intake-client-name');
+  const clientPhoneInput = document.getElementById('intake-client-phone');
+  const clientEmailInput = document.getElementById('intake-client-email');
+  const guestCountInput = document.getElementById('intake-guest-count');
+
+  // ==========================================================================
+  // REAL-TIME INPUT FILTERS: Intercepts and denies faulty string entries instantly
+  // ==========================================================================
+  
+  // 1. STRICT NAME RULE: Blocks numerical digits and specific punctuation characters from ever loading into the box
+  if (clientNameInput) {
+    clientNameInput.addEventListener('input', function() {
+      // Strips digits [0-9] and raw punctuation signs out of the string instantly
+      const cleanedValue = this.value.replace(/[^a-zA-Z\s.]/g, '');
+      if (this.value !== cleanedValue) {
+        this.value = cleanedValue; // Hard-replaces content thread variables bounds
+      }
+      // Instantly clear error visibility if inputs baseline checks look stable
+      if (this.value.trim().length > 0) {
+        this.closest('.intake-input-group-cell').classList.remove('field-error-alert-triggered');
+      }
+    });
+  }
+
+  // 2. STRICT PHONE RULE: Intercepts and denies all alphabet characters completely (numbers only allowed)
+  if (clientPhoneInput) {
+    clientPhoneInput.addEventListener('input', function() {
+      const numericCleanedValue = this.value.replace(/[^0-9]/g, '');
+      if (this.value !== numericCleanedValue) {
+        this.value = numericCleanedValue;
+      }
+      if (this.value.length === 10) {
+        this.closest('.intake-input-group-cell').classList.remove('field-error-alert-triggered');
+      }
+    });
+  }
+
+  // Clear errors for email/guest row items live upon inputs updates
+  if (clientEmailInput) { clientEmailInput.addEventListener('input', function() { this.closest('.intake-input-group-cell').classList.remove('field-error-alert-triggered'); }); }
+  if (guestCountInput) { guestCountInput.addEventListener('input', function() { this.closest('.intake-input-group-cell').classList.remove('field-error-alert-triggered'); }); }
+
+  // ==========================================================================
+  // MASTER SUBMISSION CHECK: Evaluates final fields logs, routing to 404 on pass
+  // ==========================================================================
+  formElement.addEventListener('submit', function(event) {
+    event.preventDefault(); // Safeguards native browser reloads crash bugs tracks
+    
+    let isFormMatrixValid = true;
+
+    // Validate Name Field length baseline
+    if (!clientNameInput || clientNameInput.value.trim().length < 2) {
+      isFormMatrixValid = false;
+      clientNameInput.closest('.intake-input-group-cell').classList.add('field-error-alert-triggered');
+    }
+
+    // Validate Phone Field length rules (Requires exactly 10 digits parameters)
+    if (!clientPhoneInput || clientPhoneInput.value.length !== 10) {
+      isFormMatrixValid = false;
+      clientPhoneInput.closest('.intake-input-group-cell').classList.add('field-error-alert-triggered');
+    }
+
+    // Validate Email Field format structures regex expression
+    const emailValidationRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!clientEmailInput || !emailValidationRegex.test(clientEmailInput.value)) {
+      isFormMatrixValid = false;
+      clientEmailInput.closest('.intake-input-group-cell').classList.add('field-error-alert-triggered');
+    }
+
+    // Validate Guest Heads Volume Integer value range maps bounds
+    const parsedGuestInteger = parseInt(guestCountInput ? guestCountInput.value : 0);
+    if (!guestCountInput || isNaN(parsedGuestInteger) || parsedGuestInteger < 10 || parsedGuestInteger > 5000) {
+      isFormMatrixValid = false;
+      guestCountInput.closest('.intake-input-group-cell').classList.add('field-error-alert-triggered');
+    }
+
+    if (isFormMatrixValid) {
+      // Proceed with safe routing redirect handover directly onto your 404 confirmation webpage file
+      window.location.href = "404.html";
+    }
+  });
+
+  // ==========================================================================
+  // HIGH-PERFORMANCE INTERSECTIONOBSERVER TIMELINE DRIVER
+  // ==========================================================================
+  const formCardNode = scrollTriggerParentBox.querySelector('.intake-node');
+  
+  const formPanelObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        if (formCardNode) formCardNode.classList.add('intake-revealed-active');
+        formPanelObserver.unobserve(scrollTriggerParentBox);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  formPanelObserver.observe(scrollTriggerParentBox);
+}
+
+// Map secure completion DOM handlers window startup completion events
+window.addEventListener('DOMContentLoaded', () => {
+  formElement = document.getElementById('catering-intake-form');
+  if (formElement) {
+    initCateringFormValidationConsole();
+  }
+});
+
+</script>
+
+<!-- ==========================================================================
+     CINEMATIC GLASSMORPHIC GEOGRAPHIC OVERVIEW MAP DECK (index.html)
+     ========================================================================== -->
+<section class="spatial-map-section">
+  <div class="map-master-container" id="map-scroll-trigger">
+    
+    <!-- MAIN CARRIER BANNER BENTO POD PLATFORM -->
+    <div class="map-bento-pod-card map-reveal-node">
+      <div class="map-split-grid-matrix">
+        
+        <!-- LEFT COLUMN: PHYSICAL COORDINATION MATRIX LOGS -->
+        <div class="map-content-left-text">
+          <span class="map-mini-badge-tag">SPATIAL TRACK</span>
+          <h2 class="map-main-headline-title">Our Centralized <span class="text-green-glow">KITCHEN HEADQUARTERS.</span></h2>
+          <p class="map-subtext-paragraph">We dispatch our express thermal fleet containments from our core Salem logistics platform, guaranteeing temperature-safe delivery lines straight to your event venue doors down to the exact minute.</p>
+          
+          <!-- PHYSICAL LOCATION INFO STRIP ROW -->
+          <div class="map-hq-address-slat-row">
+            <div class="hq-icon-shield">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="hq-text-lines">
+              <h4>Headquarters Address</h4>
+              <p>MMR Complex, Periyakollappatty, Chinna Thirupathi, Salem, Tamil Nadu 636008</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: THEMED INTERACTIVE MAP VIEWPORT WINDOW -->
+        <div class="map-viewport-right-media">
+          <div class="map-canvas-universe-wrapper">
+            <div class="map-spotlight-backdrop-glow"></div>
+            
+            <!-- CREATIVE RECTANGLE MASK HOOD FRAME -->
+            <div class="map-rectangle-frame-viewport">
+              <div class="map-live-shimmer-line"></div>
+              
+              <!-- EXTERNAL DYNAMIC MAP ROUTER ACCELERATOR LAYER -->
+              <!-- FIXED TARGET COORDINATES: Anchors straight onto your exact corporate physical location query strings -->
+              <a href="https://maps.app.goo.gl/1iUAJLxSuFhmkqeE8" target="_blank" class="btn-external-google-maps-launcher" title="Launch external live GPS routes navigation">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+                Open Google Maps
+              </a>
+
+              <!-- COMPLIANT MAP IMAGE NODE FRAME -->
+              <img src="./Assests/map.webp" alt="Map Viewport Tracking Salem Headquarters Hub Location" class="map-native-img-asset">
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+    /* ==========================================================================
+   CINEMATIC BENTO DESIGN GEOGRAPHIC MAP MODULE STYLES (style.css)
+   ========================================================================== */
+.spatial-map-section {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  
+  /* FIXED RIGOROUS GAPS: Precise exact padding constraints (50px Top, 30px Bottom) */
+  padding-top: 50px;
+  padding-bottom: 30px;
+  
+  overflow: hidden;
+  z-index: 2;
+}
+
+.map-master-container {
+  width: 94%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ==========================================================================
+   THE DECK GLASSMORPHIC PANEL CARRIER BANNER COMPONENT
+   ========================================================================== */
+.map-bento-pod-card {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(135deg, rgba(244, 251, 246, 0.75) 0%, rgba(250, 253, 235, 0.75) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  
+  border: 1px solid rgba(34, 197, 94, 0.15);
+  border-radius: 36px; /* Elegant rounded edge bounding profiles curves */
+  padding: 55px 60px;
+  box-shadow: 0 25px 55px -25px rgba(15, 23, 42, 0.06);
+  
+  /* Continuous smooth hardware vertical flight floating motion drive loop layout */
+  animation: mapBentoPlatformFloat 4.5s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes mapBentoPlatformFloat {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-10px); }
+}
+
+.map-split-grid-matrix {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+}
+
+/* ==========================================================================
+   LEFT SIDE: PHYSICAL COORDINATION MATRIX COPIES LOGS
+   ========================================================================== */
+.map-content-left-text {
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.map-mini-badge-tag {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  color: #16a34a; /* Main Brand Theme Green tag accents */
+  background: #ffffff;
+  border: 1px solid rgba(34, 197, 94, 0.12);
+  padding: 6px 14px;
+  border-radius: 50px;
+  margin-bottom: 15px;
+}
+
+.map-main-headline-title {
+  font-size: 3.2rem; /* HIGH CONTRAST: Increased typography size scaling for elite brand scannability */
+  font-weight: 900;
+  color: #0f172a;
+  line-height: 1.15;
+  margin-bottom: 18px;
+  letter-spacing: -1px;
+}
+
+/* HOVER INTENSE NEON TEXT GLOW PATH BINDINGS */
+.text-green-glow { color: #22c55e; transition: text-shadow 0.3s ease, color 0.3s ease; }
+.map-bento-pod-card:hover .text-green-glow {
+  color: #4ade80;
+  text-shadow: 0 0 20px rgba(74, 222, 128, 0.45); /* Headings flare up vivid light trails intensely on hover focused states */
+}
+
+.map-subtext-paragraph {
+  font-size: 1.22rem; /* INCREASED description text weight size metrics */
+  color: #475569;
+  line-height: 1.6;
+  max-width: 540px;
+  margin-bottom: 25px;
+}
+
+/* Address Information Strip Slat */
+.map-hq-address-slat-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  border-top: 1px solid rgba(226, 232, 240, 0.8);
+  padding-top: 22px;
+  width: 100%;
+}
+
+.hq-icon-shield {
+  width: 46px; height: 46px; border-radius: 12px;
+  background: #e8f5e9; color: #22c55e;
+  display: flex; justify-content: center; align-items: center; flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(34,197,94,0.05);
+}
+
+.hq-text-lines { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+.hq-text-lines h4 { font-size: 1.15rem !important; font-weight: 800; color: #0f172a; margin: 0 0 4px 0; }
+.hq-text-lines p { font-size: 1.02rem !important; color: #64748b; margin: 0; line-height: 1.45; font-weight: 600; }
+
+/* ==========================================================================
+   RIGHT SIDE: THEMED IMAGE VEHICLE WINDOW VIEWPORT (MAP MASKS)
+   ========================================================================== */
+.map-viewport-right-media {
+  flex: 0.95;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map-canvas-universe-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  height: 360px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.map-spotlight-backdrop-glow {
+  position: absolute;
+  width: 340px; height: 340px;
+  background: radial-gradient(circle, rgba(34,197,94,0.14) 0%, rgba(34,197,94,0) 70%);
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* FIXED SHAPE ARCHITECTURE: Rectangular frame masking outline profile instead of circular cuts */
+.map-rectangle-frame-viewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 6px solid #ffffff; /* Porcelain premium white rim style border lining */
+  
+  /* MODERN RECTANGLE MASK: Sharp clean corners frame mapping rules */
+  border-radius: 24px;
+  
+  box-shadow: 0 25px 55px -20px rgba(15, 23, 42, 0.12);
+  overflow: hidden;
+  z-index: 3;
+  
+  /* Hardware accelerated continuous flight floating timeline prevents layout overlaps columns bugs */
+  animation: mapFrameDriftTrack 4.5s ease-in-out infinite alternate-reverse;
+  transition: border-color 0.35s, box-shadow 0.35s;
+}
+
+/* Map frame coordinates glide on bento card deck parent hover focused states */
+.map-bento-pod-card:hover .map-rectangle-frame-viewport {
+  border-color: #ffffff;
+  box-shadow: 0 35px 75px -15px rgba(34, 197, 94, 0.28); /* Map flares up deep green glow paths on row focus triggers! */
+}
+
+@keyframes mapFrameDriftTrack { 0% { transform: translateY(0px) rotate(0deg); } 100% { transform: translateY(-12px) rotate(0.5deg); } }
+
+.map-native-img-asset {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important; /* Retained: forces spatial graphics maps photograph layouts to fit cleanly inside rectangles */
+}
+
+.map-live-shimmer-line {
+  position: absolute;
+  top: -50%; left: -50%; width: 200%; height: 200%;
+  background: linear-gradient(45deg, transparent 45%, rgba(255,255,255,0.3) 50%, transparent 55%);
+  transform: rotate(35deg);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+  z-index: 5;
+}
+.map-bento-pod-card:hover .map-live-shimmer-line { transform: translate(50%, 50%) rotate(35deg); }
+
+/* ==========================================================================
+   CREATIVE OVERLAY CHIP: STYLISH GOOGLE MAP LINK ACCELERATOR
+   ========================================================================== */
+.btn-external-google-maps-launcher {
+  text-decoration: none;
+  position: absolute;
+  
+  /* Pinned prominently down along the base baseline track of the image card viewport */
+  bottom: 20px; 
+  left: 50%;
+  transform: translateX(-50%);
+  
+  background: #0f172a; /* Sleek high contrast dark slate backing platter handles */
+  color: #ffffff !important;
+  padding: 12px 24px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border-radius: 50px; /* Modern oval capsule pill border shape profile */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid #ffffff;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
+  z-index: 10;
+  transition: background 0.25s, border-color 0.25s, box-shadow 0.25s, color 0.25s;
+}
+
+.btn-external-google-maps-launcher:hover {
+  background: #22c55e; /* Shifts cleanly into brand green color on hover focus links */
+  border-color: #22c55e;
+  box-shadow: 0 12px 28px rgba(34, 197, 94, 0.45);
+}
+.btn-external-google-maps-launcher svg { color: #22c55e; flex-shrink: 0; transition: color 0.2s; }
+.btn-external-google-maps-launcher:hover svg { color: #ffffff; }
+
+/* ==========================================================================
+   SCROLL REVEAL ARRAYS INITIAL PARAMETERS DEFINITIONS
+   ========================================================================== */
+.map-reveal-node {
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.85s ease;
+}
+.map-reveal-node.map-reveal-active { opacity: 1; transform: translateY(0) scale(1); }
+
+/* ==========================================================================
+   FLUID STRUCTURAL RESPONSIVE ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 1150px) {
+  .map-bento-pod-card { padding: 40px; }
+  .map-main-headline-title { font-size: 2.6rem; }
+  .map-subtext-paragraph { font-size: 1.1rem; }
+  .map-canvas-universe-wrapper { width: 340px; height: 300px; }
+}
+
+@media (max-width: 992px) {
+  /* Safely converts horizontal pod grid layers into single vertical stacked columns on tablet screen boundaries */
+  .map-split-grid-matrix { flex-direction: column-reverse; text-align: center; gap: 40px; }
+  .map-content-left-text { align-items: center; text-align: center; width: 100%; }
+  .map-subtext-paragraph { max-width: 100%; }
+  .map-hq-address-slat-row { justify-content: center; flex-direction: column; align-items: center; gap: 10px; }
+  .hq-text-lines { align-items: center; text-align: center; }
+  
+  .map-canvas-universe-wrapper { width: 100%; max-width: 420px; height: 320px; }
+  .map-rectangle-frame-viewport { width: 100%; max-width: 380px; height: 260px; border-radius: 20px !important; } /* Clear phone boundary fallbacks */
+}
+
+@media (max-width: 480px) {
+  .spatial-map-section { padding-top: 40px; padding-bottom: 25px; }
+  .map-bento-pod-card { padding: 30px 16px; border-radius: 24px; }
+  .map-main-headline-title { font-size: 1.85rem; }
+  .btn-external-google-maps-launcher { width: 90%; justify-content: center; } /* Expand full width handles comfortably on small mobile folders display touches */
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// SCROLL REVEAL BENTO POD MAP BLOCK ACCELERATOR OBSERVER (script.js)
+// ==========================================================================
+function initSpatialMapVisibilityObserver() {
+  const scrollTriggerParentBox = document.getElementById('map-scroll-trigger');
+  if (!scrollTriggerParentBox) return;
+
+  const floatingBentoMapNode = scrollTriggerParentBox.querySelector('.map-reveal-node');
+  if (!floatingBentoMapNode) return;
+
+  const mapPanelObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Expose the master bento map platform card block instantly on section focus entry
+        floatingBentoMapNode.classList.add('map-reveal-active');
+        mapPanelObserver.unobserve(scrollTriggerParentBox);
+      }
+    });
+  }, {
+    threshold: 0.05 // Fires the split-second 5% of the area clears browser folding lines
+  });
+
+  mapPanelObserver.observe(scrollTriggerParentBox);
+}
+
+// Wire up global page runtime startup completion listeners safely on DOM load hooks
+window.addEventListener('DOMContentLoaded', () => {
+  const scrollTriggerParentBox = document.getElementById('map-scroll-trigger');
+  if (scrollTriggerParentBox) {
+    initSpatialMapVisibilityObserver();
+  }
+});
+
+</script>
+
+<!-- ==========================================================================
+     FLOATING NEWSLETTER SUBSCRIPTION BANNER (index.html)
+     ========================================================================== -->
+<section class="newsletter-banner-section">
+  <div class="newsletter-master-container">
+    
+    <!-- MAIN FLOATING CARRIER BANNER POD -->
+    <div class="newsletter-floating-pod">
+      
+      <!-- SUBTLE FLOATING VECTOR LEAF ELEMENTS -->
+      <div class="pod-ambient-leaves">
+        <svg class="pod-leaf pl-1" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M2 22C4.5 19.5 7.5 19 10 20C13 21.2 16.5 19.8 18 17C19.5 14.2 18.8 10.5 21 8C18.5 8.5 16 7.5 14.5 5.5Z" fill="#22c55e" opacity="0.4"/></svg>
+        <svg class="pod-leaf pl-2" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M2 22C4.5 19.5 7.5 19 10 20C13 21.2 16.5 19.8 18 17C19.5 14.2 18.8 10.5 21 8C18.5 8.5 16 7.5 14.5 5.5Z" fill="#22c55e" opacity="0.3"/></svg>
+        <svg class="pod-leaf pl-3" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M2 22C4.5 19.5 7.5 19 10 20C13 21.2 16.5 19.8 18 17C19.5 14.2 18.8 10.5 21 8C18.5 8.5 16 7.5 14.5 5.5Z" fill="#22c55e" opacity="0.25"/></svg>
+      </div>
+
+      <div class="newsletter-pod-split">
+        
+        <!-- LEFT SIDE: HIGH-VISIBILITY TYPOGRAPHY FIELDS -->
+        <div class="newsletter-text-block">
+          <h2 class="newsletter-pod-title">Subscribe to our <span class="text-green-glow">Newsletter</span></h2>
+          <p class="newsletter-pod-subtext">Get the best culinary offers & updates straight to your inbox.</p>
+          
+          <!-- SUBMISSION RAIL POINTS TO 404 DIRECTLY -->
+          <form action="404.html" method="GET" class="newsletter-native-form">
+            <div class="newsletter-field-carrier">
+              <!-- oninvalid event triggers custom validation warning message natively -->
+              <input 
+                type="email" 
+                placeholder="Enter your email address" 
+                required 
+                class="newsletter-input-box"
+                oninvalid="this.setCustomValidity('Please fill the fields')"
+                oninput="this.setCustomValidity('')"
+              >
+              <button type="submit" class="btn-newsletter-subscribe">Subscribe</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- RIGHT SIDE: THEMED GROCERY BAG PLACEMENT HOLDER GRAPHIC -->
+        <div class="newsletter-graphic-block">
+          <div class="grocery-bag-silhouette">
+            <!-- OPTION CONFIGURATION: Update local folder paths directly here to load your custom bag illustration photographs -->
+            <img src="./Assests/hero%20section%20img%203.webp" alt="Fresh Healthy Organic Catering Ingredients Bag" class="grocery-bag-asset">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* ==========================================================================
+   MINIMALIST FLOATING NEWSLETTER BANNER LAYER (COMPRESSED PADDINGS FIXED)
+   ========================================================================== */
+.newsletter-banner-section {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  
+  /* FIXED: Precise exact padding constraints: 50px Top, 30px Bottom precisely */
+  padding-top: 50px;
+  padding-bottom: 30px;
+  
+  overflow: hidden;
+  z-index: 2;
+}
+
+.newsletter-master-container {
+  width: 94%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ==========================================================================
+   INFINITE CONTINUOUS OSCILLATING FLOATING POD CARRIER
+   ========================================================================== */
+.newsletter-floating-pod {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(135deg, #f3fbf5 0%, #f7fee7 100%); /* Refreshing light wellness mint tint */
+  border: 1px solid rgba(34, 197, 94, 0.14);
+  border-radius: 24px;
+  padding: 40px 50px;
+  box-shadow: 0 15px 35px -20px rgba(15, 23, 42, 0.05);
+  overflow: hidden;
+  
+  /* Infinite gentle visual banner floating animation loop */
+  animation: primaryPodOscillate 4s ease-in-out infinite alternate;
+}
+
+@keyframes primaryPodOscillate {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-8px); }
+}
+
+.newsletter-pod-split {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+/* ==========================================================================
+   HIGH-VISIBILITY TYPOGRAPHY & INTEGRATED INPUT CORE FLUID GRIDS
+   ========================================================================== */
+.newsletter-text-block {
+  flex: 1.3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  z-index: 5;
+}
+
+.newsletter-pod-title {
+  font-size: 2.3rem; /* High text size parameter scaling */
+  font-weight: 900;
+  color: #1e293b;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+  transition: text-shadow 0.3s ease;
+}
+
+/* Creative Hover & Glow Effect Assigned to Content Text Elements */
+.text-green-glow { color: #16a34a; }
+.newsletter-floating-pod:hover .newsletter-pod-title {
+  text-shadow: 0 0 15px rgba(34, 197, 94, 0.15);
+}
+
+.newsletter-pod-subtext {
+  font-size: 1.1rem;
+  color: #64748b;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+/* Form row architecture fields */
+.newsletter-native-form { width: 100%; max-width: 480px; }
+
+.newsletter-field-carrier {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.newsletter-input-box {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 14px 18px;
+  border-radius: 12px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.01);
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.newsletter-input-box:focus {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1);
+}
+
+.btn-newsletter-subscribe {
+  background: #16a34a; /* Signature active brand green button */
+  color: #ffffff;
+  border: none;
+  padding: 14px 28px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
+  transition: background 0.25s, box-shadow 0.25s, transform 0.15s;
+}
+.btn-newsletter-subscribe:hover {
+  background: #15803d;
+  box-shadow: 0 6px 16px rgba(22, 163, 74, 0.35);
+  transform: translateY(-1px);
+}
+.btn-newsletter-subscribe:active { transform: translateY(0); }
+
+/* ==========================================================================
+   RIGHT COLUMN: DIGITAL ECOSYSTEM SILHOUETTE PICTURE
+   ========================================================================== */
+.newsletter-graphic-block {
+  flex: 0.8;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+}
+
+.grocery-bag-silhouette {
+  position: relative;
+  width: 250px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grocery-bag-asset {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Keeps raw photographic elements proportioned cleanly */
+  transform: scale(1);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* Trigger gentle asset lift on hover interactions */
+.newsletter-floating-pod:hover .grocery-bag-asset {
+  transform: scale(1.05) rotate(2deg);
+}
+
+/* Surrounding Floating Satellite Leaves */
+.pod-ambient-leaves { position: absolute; width: 100%; height: 100%; top: 0; left: 0; pointer-events: none; z-index: 2; }
+.pod-leaf { position: absolute; }
+.pl-1 { top: 10%; right: 40%; animation: leafDrift 5s ease-in-out infinite alternate; }
+.pl-2 { bottom: 8%; left: 45%; animation: leafDrift 6s ease-in-out infinite alternate-reverse; }
+.pl-3 { top: 40%; right: 22%; animation: leafDrift 4.5s ease-in-out infinite alternate; }
+
+@keyframes leafDrift {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-10px) rotate(12deg); }
+}
+
+/* ==========================================================================
+   FLUID STRUCTURAL RESPONSIVE ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 992px) {
+  .newsletter-floating-pod { padding: 35px 30px; }
+  .newsletter-pod-title { font-size: 1.85rem; }
+  .newsletter-pod-subtext { font-size: 1rem; }
+  .grocery-bag-silhouette { width: 200px; height: 150px; }
+}
+
+@media (max-width: 768px) {
+  /* Shifts layout into a single vertical bento card on smaller viewports safely */
+  .newsletter-pod-split { flex-direction: column; text-align: center; gap: 30px; }
+  .newsletter-text-block { align-items: center; width: 100%; }
+  .newsletter-field-carrier { flex-direction: column; width: 100%; }
+  .newsletter-input-box { width: 100%; text-align: center; }
+  .btn-newsletter-subscribe { width: 100%; }
+  .newsletter-graphic-block { width: 100%; justify-content: center; }
+}
+
+</style>
+
+<!-- ==========================================================================
+     PREMIUM HEALTHY CATERING MASTER FOOTER DECK (index.html)
+     ========================================================================== -->
+<footer class="catering-master-footer">
+  <div class="footer-master-container">
+    
+    <!-- GRID MATRIX SYSTEM -->
+    <div class="footer-main-grid-rail">
+      
+      <!-- COLUMN 1: BRAND LOGO & CORE PROFILE OVERVIEW -->
+      <div class="footer-grid-column brand-profile-block">
+        <!-- NATIVE BACK TO TOP EMITTER ATTACHED ON CLICK -->
+        <div class="footer-brand-logo-wrap" onclick="executeScrollToTop(event)" title="Click to fly back to top">
+          <!-- OPTION CONFIGURATION: Update source paths here to load your custom transparent logo branding graphic -->
+          <img src="./Assests/brand logo - Copy.webp" alt="Stackly Healthy Catering Logo" class="footer-brand-img">
+        </div>
+        <p class="brand-mission-copy">Engineering premium macro-balanced catering setups and artisanal organic menus designed to fuel workplace productivity and luxury celebrations alike.</p>
+        
+        <!-- 5 COMPLIANT SOCIAL MEDIA SATELLITE LINKS -->
+        <div class="footer-social-channels-row">
+          <a href="404.html" class="social-icon-circle" aria-label="Follow us on Facebook">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-4h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="404.html" class="social-icon-circle" aria-label="Follow us on Instagram">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="2" width="20" height="24" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"/></svg>
+          </a>
+          <a href="404.html" class="social-icon-circle" aria-label="Follow us on X Twitter">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+          </a>
+          <a href="404.html" class="social-icon-circle" aria-label="Follow us on LinkedIn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="404.html" class="social-icon-circle" aria-label="Follow us on YouTube">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 22.5 0 0 0 1 11.75a29 22.5 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 22.5 0 0 0 .46-5.25 29 22.5 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- COLUMN 2: DOMAIN QUICK LINKS -->
+      <div class="footer-grid-column navigation-menu-column">
+        <h4 class="footer-column-heading">Explore Menus</h4>
+        <div class="heading-underline-accent"></div>
+        <ul class="footer-links-list">
+          <li><a href="404.html">Corporate Sunrise</a></li>
+          <li><a href="404.html">Elite Gala Buffet</a></li>
+          <li><a href="404.html">Lean Fitness Boxes</a></li>
+          <li><a href="404.html">Boutique High Tea</a></li>
+        </ul>
+      </div>
+
+      <!-- COLUMN 3: SERVICE SUPPORT HUB -->
+      <div class="footer-grid-column navigation-menu-column">
+        <h4 class="footer-column-heading">Catering Support</h4>
+        <div class="heading-underline-accent"></div>
+        <ul class="footer-links-list">
+          <li><a href="404.html">Nutritional Parameters</a></li>
+          <li><a href="404.html">Fleet Delivery Tracks</a></li>
+          <li><a href="404.html">Help & FAQ Center</a></li>
+          <li><a href="404.html">Hygienic Certifications</a></li>
+        </ul>
+      </div>
+
+      <!-- COLUMN 4: REPLACED CORE ADDRESS MATRIX SLAT -->
+      <div class="footer-grid-column brand-address-matrix-column">
+        <h4 class="footer-column-heading">Headquarters Location</h4>
+        <div class="heading-underline-accent"></div>
+        
+        <div class="address-matrix-wrapper">
+          <!-- Physical Location -->
+          <div class="matrix-data-row">
+            <div class="matrix-icon-wrap text-green-accent">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <p class="matrix-text">MMR Complex, Periyakollappatty, Chinna Thirupathi, Salem, Tamil Nadu 636008</p>
+          </div>
+          
+          <!-- Direct Telephone Slat -->
+          <div class="matrix-data-row">
+            <div class="matrix-icon-wrap text-green-accent">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.7 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <p class="matrix-text"><a href="tel:+914271234567" class="matrix-interactive-link">+91 427 123 4567</a></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- LOWER SUB-FOOTER REVENUE STRIP TRACK -->
+    <div class="footer-copyright-strip-row">
+      <p class="copyright-legal-text">&copy; 2026 Stackly Industries. All culinary rights reserved.</p>
+      
+      <div class="sub-footer-utility-links">
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Terms of Service</a>
+        <a href="404.html">Cookie Management</a>
+      </div>
+
+      <!-- FLOATING BACK-TO-TOP CHRONO HANDLE LINK BUTTON -->
+      <button class="footer-scroll-top-btn" onclick="executeScrollToTop(event)" title="Fly back to top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+      </button>
+    </div>
+
+  </div>
+</footer>
+
+<style>
+  /* ==========================================================================
+   MASTER DEEP CARBON FOOTER ARCHITECTURE (style.css PARITY)
+   ========================================================================== */
+.catering-master-footer {
+  position: relative;
+  width: 100%;
+  /* EXACT SCHEME MATCH: High contrast premium midnight carbon background */
+  background-color: #0b0f19; 
+  padding: 65px 0 30px 0;
+  overflow: hidden;
+  z-index: 100;
+  font-family: inherit;
+}
+
+.footer-master-container {
+  width: 94%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ==========================================================================
+   4-COLUMN EQUALIZER GRID STRUCTURE RAIL
+   ========================================================================== */
+/* ==========================================================================
+   FIXED: COMPACT FOOTER GRID ARCHITECTURE (REDUCED UNWANTED INTER-COLUMN GAPS)
+   ========================================================================== */
+.footer-main-grid-rail {
+  display: grid;
+  
+  /* FIXED: Changed from equal widths to packed custom column weights to compress the space between lists tightly */
+  grid-template-columns: 1.4fr 0.8fr 0.8fr 1.1fr;
+  
+  /* FIXED: Reduced column gap distance from 40px to a tight 20px */
+  column-gap: 20px;
+  row-gap: 30px;
+  
+  width: 100%;
+  padding-bottom: 45px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+}
+
+/* ==========================================================================
+   FLUID STRUCTURAL RESPONSIVE ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .footer-main-grid-rail { 
+    /* Automatically switches grid tracks safely on tablet screens to maintain balance */
+    grid-template-columns: repeat(2, 1fr); 
+    column-gap: 30px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-main-grid-rail { 
+    /* Unconditional vertical center stacking fallback rules for smartphones */
+    grid-template-columns: 1fr; 
+    gap: 30px; 
+  }
+}
+
+
+.footer-grid-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Brand Overview Profile Styles */
+.brand-profile-block { flex: 1.2; }
+
+.footer-brand-logo-wrap {
+  cursor: pointer;
+  margin-bottom: 18px;
+  transition: transform 0.3s ease;
+}
+.footer-brand-logo-wrap:hover { transform: scale(1.03); }
+.footer-brand-img { height: 35px; width: auto; object-fit: contain; }
+
+.brand-mission-copy {
+  font-size: 0.88rem;
+  color: #94a3b8; /* Muted contrast description text color */
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+/* 5 Social Media Rounded Anchors Frame Rows */
+.footer-social-channels-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.social-icon-circle {
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  color: #94a3b8;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s, color 0.3s, border-color 0.3s, transform 0.2s;
+}
+
+.social-icon-circle:hover {
+  /* HOVER ENHANCEMENT: Swaps dynamically to signature brand mint green color on focus triggers */
+  background: rgba(34, 197, 94, 0.1);
+  border-color: #22c55e;
+  color: #22c55e;
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   NAVIGATION COLUMN MODULES & TEXT CONTENT HEADERS
+   ========================================================================== */
+.footer-column-heading {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 6px;
+  letter-spacing: -0.2px;
+}
+
+.heading-underline-accent {
+  width: 25px;
+  height: 2.5px;
+  background-color: #ef4444; /* Exact image copy coral line tag highlight marker */
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links-list a {
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #94a3b8;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-links-list a:hover {
+  color: #22c55e; /* Flows into theme green instantly on pointer interactions */
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   REPLACED BRAND ADDRESS CONTACT MATRIX BLOCK
+   ========================================================================== */
+.brand-address-matrix-column { flex: 1.2; }
+
+.address-matrix-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.matrix-data-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.matrix-icon-wrap {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.text-green-accent { color: #22c55e; }
+
+.matrix-text {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.matrix-interactive-link {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+.matrix-interactive-link:hover { color: #22c55e; }
+
+/* ==========================================================================
+   LOWER SUB-FOOTER LEGAL REVENUE BAR STRIP
+   ========================================================================== */
+.footer-copyright-strip-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 25px;
+  position: relative;
+}
+
+.copyright-legal-text { font-size: 0.82rem; color: #64748b; margin: 0; font-weight: 500; }
+
+.sub-footer-utility-links { display: flex; align-items: center; gap: 24px; }
+.sub-footer-utility-links a {
+  text-decoration: none;
+  font-size: 0.82rem;
+  color: #64748b;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.sub-footer-utility-links a:hover { color: #22c55e; }
+
+/* Dedicated Back-to-Top Floating Trigger Button Action */
+.footer-scroll-top-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #94a3b8;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.25s, color 0.25s, border-color 0.25s, transform 0.2s;
+}
+
+.footer-scroll-top-btn:hover {
+  background: #22c55e;
+  border-color: #22c55e;
+  color: #ffffff;
+  transform: scale(1.05) translateY(-3px);
+  box-shadow: 0 6px 16px rgba(34, 197, 94, 0.25);
+}
+
+/* ==========================================================================
+   FLUID STRUCTURAL RESPONSIVE VIEWPORT QUERIES
+   ========================================================================== */
+@media (max-width: 1024px) {
+  /* Compresses the layout rail into exactly 2 rows side-by-side to block clipping overflow fields */
+  .footer-main-grid-rail { grid-template-columns: repeat(2, 1fr); gap: 35px; }
+}
+
+@media (max-width: 640px) {
+  .catering-master-footer { padding-top: 50px; padding-bottom: 25px; }
+  /* Compresses the grid system row layer directly into a single centered column stack on smartphones */
+  .footer-main-grid-rail { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+  .footer-grid-column { align-items: center; text-align: center; }
+  .footer-links-list { align-items: center; }
+  .matrix-data-row { flex-direction: column; align-items: center; gap: 4px; }
+  
+  .footer-copyright-strip-row { flex-direction: column-reverse; gap: 20px; text-align: center; }
+  .sub-footer-utility-links { flex-direction: column; gap: 12px; }
+  .footer-scroll-top-btn { position: absolute; top: -10px; right: 50%; transform: translateX(50%); } /* Center buttons on tiny displays */
+}
+
+</style>
+
+<script>
+  // ==========================================================================
+// HARDWARE-ACCELERATED BACK TO TOP SMOOTH SCROLL DRIVER TIMELINE (script.js)
+// ==========================================================================
+function executeScrollToTop(event) {
+  if (event) {
+    event.preventDefault(); // Intercept default router index event triggers safely
+  }
+  
+  // Directly feeds instructions into browser hardware scrolling pipelines
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // Triggers a smooth chronological upward flight path curve
+  });
+}
+
+</script>
+</body>
+</html>
