@@ -1,0 +1,2671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly - Healthy Catering Food Services</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  
+  <div id="preloader">
+    <svg class="bg-vectors" xmlns="http://w3.org" viewBox="0 0 960 540" preserveAspectRatio="none">
+      <path class="bg-wave" fill="rgba(0, 230, 118, 0.06)" d="M0,160 Q240,280 480,160 T960,160 L960,0 L0,0 Z"/>
+      <path class="bg-wave" fill="rgba(255, 145, 0, 0.04)" d="M0,200 Q240,100 480,220 T960,200 L960,0 L0,0 Z" style="animation-delay: -3s; animation-duration: 11s;"/>
+    </svg>
+
+    <div class="preloader-art">
+      <svg class="food-vector salad-leaf" width="45" height="45" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+        <path d="M2 22C4.5 19.5 7.5 19 10 20C13 21.2 16.5 19.8 18 17C19.5 14.2 18.8 10.5 21 8C18.5 8.5 16 7.5 14.5 5.5C13 3.5 13.5 1 11 2C8.5 3 8 6.5 6 8C4 9.5 1 9 2 11.5C3 14 5.5 14.5 5 17.5C4.5 20.5 2 22 2 22Z" fill="var(--food-green)" opacity="0.95"/>
+        <path d="M6 8C7.5 10.5 10 13 13.5 14.5" stroke="#047857" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+
+      <svg class="food-vector avocado" width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+        <path d="M12 2C7.5 2 4 7 4 13C4 18 7.5 22 12 22C16.5 22 20 18 20 13C20 7 16.5 2 12 2Z" fill="#4ea93b"/>
+        <path d="M12 4C8.5 4 5.5 8.5 5.5 13C5.5 17 8.5 20.5 12 20.5C15.5 20.5 18.5 17 18.5 13C18.5 8.5 15.5 4 12 4Z" fill="#a3e635"/>
+        <circle cx="12" cy="14.5" r="3.5" fill="#78350f"/>
+      </svg>
+
+      <svg class="food-vector broccoli" width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+        <path d="M10 15C10 12.5 11 11 12 11C13 11 14 12.5 14 15C14 18 13.5 22 12 22C10.5 22 10 18 10 15Z" fill="#15803d"/>
+        <circle cx="8.5" cy="9.5" r="4.5" fill="var(--food-green)"/>
+        <circle cx="15.5" cy="9.5" r="4.5" fill="var(--food-green)"/>
+        <circle cx="12" cy="6.5" r="4.5" fill="#22c55e"/>
+      </svg>
+
+      <div class="cloche-container">
+        <svg width="110" height="80" viewBox="0 0 24 18" fill="none" xmlns="http://w3.org">
+          <path d="M12 4C6.5 4 2 7.5 2 12H22C22 7.5 17.5 4 12 4Z" fill="#475569"/>
+          <path d="M12 4C14.8 4 17.3 5.4 19 7.5" stroke="#ffffff" stroke-width="0.75" stroke-linecap="round"/>
+          <circle cx="12" cy="2.5" r="1.5" fill="var(--food-orange)"/>
+          <path d="M2 13H22V14H22.5C23 14 23.5 14.5 23.5 15C23.5 15.5 23 16 22.5 16H1.5C1 16 0.5 15.5 0.5 15C0.5 14.5 1 14 1.5 14H2V13Z" fill="#334155"/>
+        </svg>
+      </div>
+
+      <div class="platter"></div>
+    </div>
+
+    <div class="brand-title">Stackly</div>
+
+    <div class="progress-wrapper">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="header-container">
+      
+      <div class="logo-wrapper" onclick="refreshPage()">
+        <img src="./Assests/healthy catering logo.webp" alt="Stackly Logo" class="brand-logo">
+       
+      </div>
+
+      <nav class="desktop-nav">
+        <a href="index.html" class="nav-item ">Home</a>
+        <a href="ourmenus.html" class="nav-item active">Our Menu</a>
+        <a href="mealplans.html" class="nav-item">Meal Plans</a>
+        <a href="catering.html" class="nav-item">Catering</a>
+        <a href="about.html" class="nav-item">About Us</a>
+        <a href="contact.html" class="nav-item">Contact Us</a>
+      </nav>
+
+      <div class="utility-actions">
+        <a href="404.html" class="icon-btn" title="Wishlist">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+        </a>
+        <a href="404.html" class="icon-btn" title="Shopping Cart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+          <span class="cart-badge">0</span>
+        </a>
+       <button class="auth-btn" onclick="window.location.href='login.html';" title="Login">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+    <circle cx="12" cy="7" r="4"/>
+  </svg>
+</button>
+
+      </div>
+
+      <div class="hamburger-menu" id="hamburger-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+    </div>
+  </header>
+
+  <div class="mobile-menu-overlay" id="mobile-overlay">
+    <div class="mobile-menu-card">
+      <nav class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-item ">Home</a>
+        <a href="ourmenus.html" class="mobile-nav-item active">Our Menu</a>
+        <a href="mealplans.html" class="mobile-nav-item">Meal Plans</a>
+        <a href="catering.html" class="mobile-nav-item">Catering</a>
+        <a href="about.html" class="mobile-nav-item">About Us</a>
+        <a href="contact.html" class="mobile-nav-item">Contact Us</a>
+      </nav>
+      <div class="mobile-utilities">
+        <a href="404.html" class="mobile-util-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          Wishlist
+        </a>
+        <a href="404.html" class="mobile-util-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+          Cart Container
+        </a>
+        <button class="mobile-auth-btn">Sign In / Register</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+    let audioContext = null;
+    let soundFired = false;
+
+    function initAndPlaySound() {
+      if (soundFired) return;
+      try {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtx) return;
+        if (!audioContext) audioContext = new AudioCtx();
+        if (audioContext.state === 'suspended') audioContext.resume();
+
+        const osc = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        osc.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(1450, audioContext.currentTime); 
+        gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + 1.5);
+        osc.start();
+        osc.stop(audioContext.currentTime + 1.5);
+        
+        soundFired = true;
+        cleanListeners();
+      } catch (e) {}
+    }
+
+    function cleanListeners() {
+      window.removeEventListener('mousemove', initAndPlaySound);
+      window.removeEventListener('touchstart', initAndPlaySound);
+      window.removeEventListener('click', initAndPlaySound);
+    }
+
+    window.addEventListener('mousemove', initAndPlaySound);
+    window.addEventListener('touchstart', initAndPlaySound);
+    window.addEventListener('click', initAndPlaySound);
+
+    function refreshPage() {
+      window.location.reload(true);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const navItems = document.querySelectorAll('.nav-item, .mobile-nav-item');
+      navItems.forEach(item => {
+        item.addEventListener('click', function() {
+          navItems.forEach(i => i.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+
+      const burger = document.getElementById('hamburger-toggle');
+      const mobileOverlay = document.getElementById('mobile-overlay');
+      
+      burger.addEventListener('click', () => {
+        burger.classList.toggle('open');
+        mobileOverlay.classList.toggle('visible');
+      });
+
+      setTimeout(() => {
+        const preloader = document.getElementById('preloader');
+        const mainApp = document.getElementById('main-app');
+
+        preloader.style.opacity = '0';
+        preloader.style.transform = 'scale(1.05)';
+        
+        setTimeout(() => {
+          preloader.style.display = 'none';
+          mainApp.style.opacity = '1';
+          mainApp.style.transform = 'scale(1)';
+          cleanListeners();
+        }, 500);
+
+      }, 2000);
+    });
+  </script>
+<!-- ==========================================================================
+     COMPACT CATERING PROMO PROMO BANNER POD (index.html)
+     ========================================================================== -->
+<section class="compact-promo-banner-section">
+  <div class="promo-pod-container">
+    <div class="promo-pod-card-bento">
+      
+      <!-- LEFT COLUMN: SHORT & CRISP HEADING CONTENT -->
+      <div class="promo-pod-text-side">
+        <span class="promo-pod-mini-tag">FRESH. ORGANIC. HANDCRAFTED.</span>
+        <h2 class="promo-pod-main-headline">Your Premium Healthy Catering</h2>
+        <p class="promo-pod-sub-paragraph">Wide range of nutrition-balanced menus at the best value. Express temperature-safe delivery right to your table.</p>
+        
+        <div class="promo-pod-cta-wrap">
+          <a href="404.html" class="btn-promo-pod-action">Book Your Event</a>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: CINEMATIC FLOATING MAIN MEDIA ARTWORK SYSTEM -->
+      <div class="promo-pod-media-side">
+        <div class="promo-pod-artwork-universe">
+          <!-- Backing soft circular lighting drop spotlight shadow -->
+          <div class="promo-pod-backdrop-glow-circle"></div>
+          
+          <!-- SATELLITE VECTOR LEAF 1 -->
+          <svg class="promo-pod-vector-leaf pvl-1" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+            <path d="M2 22C4.5 19.5 7.5 19 10 20C13 21.2 16.5 19.8 18 17C19.5 14.2 18.8 10.5 21 8C18.5 8.5 16 7.5 14.5 5.5Z" fill="#22c55e"/>
+          </svg>
+
+          <!-- SATELLITE VECTOR LEAF 2 -->
+          <svg class="promo-pod-vector-leaf pvl-2" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+            <path d="M2 22C4.5 19.5 7.5 19 10 20C13 21.2 16.5 19.8 18 17C19.5 14.2 18.8 10.5 21 8C18.5 8.5 16 7.5 14.5 5.5Z" fill="#22c55e"/>
+          </svg>
+
+          <!-- MAIN THEMED CATERING IMAGE PLACEMENT COMPONENT -->
+          <div class="promo-pod-main-image-frame">
+            <!-- OPTION CONFIGURATION: Update local directory folder paths here to load your custom photograph -->
+            <img src="./Assests/salad.webp" alt="Premium Healthy Catering Gourmet Platter Setup" class="promo-pod-native-asset">
+          </div>
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+    /* ==========================================================================
+   COMPACT PROMO PROMO BANNER ARCHITECTURE (COMPRESSED PADDINGS SPECS)
+   ========================================================================== */
+.compact-promo-banner-section {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  
+  /* FIXED: Precise exact padding constraints: 50px Top, 30px Bottom precisely */
+  padding-top: 130px;
+  padding-bottom: 30px;
+  
+  overflow: hidden;
+  z-index: 2;
+}
+
+.promo-pod-container {
+  width: 94%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ==========================================================================
+   THEMED FLOATING BENTO POD (MATCHING YOUR IMAGE LAYOUT BALANCE)
+   ========================================================================== */
+.promo-pod-card-bento {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(135deg, #f4fbf6 0%, #fafdeb 100%); /* Refreshing light wellness mint tint backdrop */
+  border: 1px solid rgba(34, 197, 94, 0.12);
+  border-radius: 32px; /* Smooth elegant curved edges */
+  padding: 45px 60px; /* Packed compact inner footprint spacing */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  box-shadow: 0 12px 35px -20px rgba(15, 23, 42, 0.04);
+}
+
+/* ==========================================================================
+   LEFT SIDE: HIGH-VISIBILITY COMPACT TYPOGRAPHY DECK
+   ========================================================================== */
+.promo-pod-text-side {
+  flex: 1.3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.promo-pod-mini-tag {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #16a34a; /* Brand signature theme green */
+  margin-bottom: 12px;
+}
+
+.promo-pod-main-headline {
+  font-size: 2.8rem; /* High contrast, clear increased typography size scales */
+  font-weight: 900;
+  color: #0f172a; /* Deep elegant slate font */
+  line-height: 1.15;
+  margin-bottom: 14px;
+  letter-spacing: -1px;
+  transition: text-shadow 0.3s ease;
+}
+
+/* Hover Content Glow Mechanics */
+.promo-pod-card-bento:hover .promo-pod-main-headline {
+  text-shadow: 0 0 15px rgba(34, 197, 94, 0.15);
+}
+
+.promo-pod-sub-paragraph {
+  font-size: 1.15rem; /* Increased size */
+  color: #475569;
+  line-height: 1.6;
+  max-width: 520px;
+  margin-bottom: 25px;
+}
+
+/* Rounded Pill Button Layouts */
+.promo-pod-cta-wrap { width: 100%; }
+
+.btn-promo-pod-action {
+  text-decoration: none;
+  background: #16a34a;
+  color: #ffffff;
+  padding: 14px 34px;
+  font-weight: 700;
+  font-size: 0.98rem;
+  border-radius: 50px; /* Oval pill silhouette */
+  display: inline-flex;
+  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.25);
+  transition: background 0.25s, box-shadow 0.25s, transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-promo-pod-action:hover {
+  background: #15803d;
+  box-shadow: 0 8px 20px rgba(22, 163, 74, 0.4);
+  transform: translateY(-2px);
+}
+.btn-promo-pod-action:active { transform: translateY(0); }
+
+/* ==========================================================================
+   RIGHT SIDE: CINEMATIC MULTI-DIMENSIONAL MEDIA LANDING VEHICLE
+   ========================================================================== */
+.promo-pod-media-side {
+  flex: 0.9;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.promo-pod-artwork-universe {
+  position: relative;
+  width: 320px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Backing soft circular lighting drop spotlight matches your uploaded layout context */
+.promo-pod-backdrop-glow-circle {
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  background: rgba(34, 197, 94, 0.14); /* Smooth soft green backdrop wash */
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Main Food Platter Graphic Container Asset Shape Override */
+.promo-pod-main-image-frame {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  /* Infinite gentle visual floating oscillation timeline loop */
+  animation: centralMediaFloat 4s ease-in-out infinite alternate;
+}
+
+.promo-pod-native-asset {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Preserves organic shapes flawlessly without clipping cuts */
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Interactive photo micro spin on bento focus card states */
+.promo-pod-card-bento:hover .promo-pod-native-asset {
+  transform: scale(1.05) rotate(3deg);
+}
+
+@keyframes centralMediaFloat {
+  0% { transform: translateY(0px) scale(0.98); }
+  100% { transform: translateY(-12px) scale(1.02); }
+}
+
+/* Surrounding Floating Vegetable Vector Satellites */
+.promo-pod-vector-leaf {
+  position: absolute;
+  z-index: 5;
+  pointer-events: none;
+}
+.pvl-1 { top: 10%; left: 0%; animation: vectorLeafDrift 4.5s ease-in-out infinite alternate; }
+.pvl-2 { bottom: 15%; right: -5%; animation: vectorLeafDrift 5s ease-in-out infinite alternate-reverse 0.2s; }
+
+@keyframes vectorLeafDrift {
+  0% { transform: translateY(0) rotate(-6deg); }
+  100% { transform: translateY(-10px) rotate(15deg); }
+}
+
+/* ==========================================================================
+   FLUID STRUCTURAL RESPONSIVE ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .promo-pod-main-headline { font-size: 2.3rem; }
+  .promo-pod-sub-paragraph { font-size: 1.05rem; }
+  .promo-pod-artwork-universe { width: 260px; height: 210px; }
+  .promo-pod-backdrop-glow-circle { width: 210px; height: 210px; }
+}
+
+@media (max-width: 940px) {
+  /* Shifts the horizontal layout safely into a vertical column block on tablet devices */
+  .promo-pod-card-bento { flex-direction: column-reverse; padding: 40px 30px; text-align: center; }
+  .promo-pod-text-side { align-items: center; text-align: center; }
+  .promo-pod-sub-paragraph { max-width: 100%; }
+  .btn-promo-pod-action { width: 100%; justify-content: center; }
+  .promo-pod-media-side { width: 100%; justify-content: center; margin-bottom: 10px; }
+}
+
+@media (max-width: 480px) {
+  .compact-promo-banner-section { padding-top: 40px; padding-bottom: 25px; } /* Compact smartphone borders padding */
+  .promo-pod-main-headline { font-size: 1.85rem; }
+}
+
+</style>
+
+<!-- ==========================================================================
+     CREATIVE BENTO ASYMMETRICAL CATEGORIES CANVAS (index.html)
+     ========================================================================== -->
+<section class="sensory-categories-section">
+  
+  <!-- DYNAMIC NEON GLOWING CORNER ACCENTS -->
+  <div class="cat-corner-glow glow-top-left"></div>
+  <div class="cat-corner-glow glow-top-right"></div>
+  <div class="cat-corner-glow glow-bottom-left"></div>
+  <div class="cat-corner-glow glow-bottom-right"></div>
+
+  <!-- HARDWARE FLOATING BACKGROUND DECORATION VECTOR LAYER -->
+  <div class="cat-bg-ambient-canvas">
+    <svg class="cat-vector cv-1" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.5" opacity="0.12"><path d="M2 12c0 5.5 4.5 10 10 10s10-4.5 10-10H2zM12 2v4M6 4l2 3"/></svg>
+    <svg class="cat-vector cv-2" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.5" opacity="0.12"><circle cx="12" cy="12" r="10"/><path d="M12 2v20M2 12h20"/></svg>
+    <svg class="cat-vector cv-3" width="36" height="36" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org" opacity="0.08"><path d="M2 22C4.5 19.5 7.5 19 10 20C13 21.2 16.5 19.8 18 17C19.5 14.2 18.8 10.5 21 8C18.5 8.5 16 7.5 14.5 5.5Z" fill="#22c55e"/></svg>
+  </div>
+
+  <div class="sensory-cat-container" id="cat-scroll-trigger">
+    
+    <!-- STICKY HORIZONTAL DASHBOARD POD (ELIMINATES VERTICAL EMPTY GAPS) -->
+    <div class="cat-sticky-dashboard-pod cat-reveal-node">
+      <div class="dashboard-header-block">
+        <span class="sidebar-tag-mini">DIETARY SELECTIONS</span>
+        <h2 class="sidebar-main-title">Select Your Catering Category</h2>
+      </div>
+      
+      <!-- HORIZONTAL INTERACTIVE MENU DECK -->
+      <div class="cat-filter-scroll-wrapper">
+        <ul class="cat-filter-list-deck">
+          <li class="cat-filter-item item-active-link" onclick="filterCateringMatrixDeck('all', this)">All Menus</li>
+          <li class="cat-filter-item" onclick="filterCateringMatrixDeck('corporate', this)">Corporate Platters</li>
+          <li class="cat-filter-item" onclick="filterCateringMatrixDeck('fitness', this)">Fitness Blueprints</li>
+          <li class="cat-filter-item" onclick="filterCateringMatrixDeck('social', this)">Social High Teas</li>
+          <li class="cat-filter-item" onclick="filterCateringMatrixDeck('organic', this)">Organic Greens</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 12-CARD MULTI-COLUMN SHOWCASE GRID -->
+    <div class="cat-display-showcase-matrix">
+      <div class="cat-dishes-grid-matrix" id="catering-dishes-grid">
+        
+        <!-- CARD 1 -->
+        <div class="dish-matrix-card grid-reveal-card" data-category="corporate">
+          <div class="dish-image-circle-frame">
+            <img src="./Assests/salad.webp" alt="Corporate Boardroom Platter" class="dish-native-img">
+          </div>
+          <div class="dish-card-body">
+            <h3 class="dish-title">Boardroom Sunrise</h3>
+            <p class="dish-desc">Healthy light breakfast boxes prepped cleanly for early meeting tracks.</p>
+            <span class="dish-price-tag">₹240 / Platter</span>
+          </div>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="dish-matrix-card grid-reveal-card" data-category="corporate">
+          <div class="dish-image-circle-frame">
+            <img src="./Assests/hero%20section%20img%203.webp" alt="Executive Lunch Box" class="dish-native-img">
+          </div>
+          <div class="dish-card-body">
+            <h3 class="dish-title">Executive Hot Box</h3>
+            <p class="dish-desc">Full-course nutritious meals configured to maximize team focus curves.</p>
+            <span class="dish-price-tag">₹380 / Platter</span>
+          </div>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="dish-matrix-card grid-reveal-card" data-category="corporate">
+          <div class="dish-image-circle-frame">
+            <img src="./Assests/high%20protein%20box.webp" alt="Vibrant Networking Appetizers" class="dish-native-img">
+          </div>
+          <div class="dish-card-body">
+            <h3 class="dish-title">Networking Canapés</h3>
+            <p class="dish-desc">Gourmet organic finger food skewers optimized for easy social interactions.</p>
+            <span class="dish-price-tag">₹190 / Platter</span>
+          </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="dish-matrix-card grid-reveal-card" data-category="fitness">
+          <div class="dish-image-circle-frame">
+            <img src="./Assests/organic%20munchies.webp" alt="Lean Shredding Box" class="dish-native-img">
+          </div>
+          <div class="dish-card-body">
+            <h3 class="dish-title">Lean Shredding Platter</h3>
+            <p class="dish-desc">High-protein calorie-calibrated cutting recipes built to drop body fat indices.</p>
+            <span class="dish-price-tag">₹290 / Container</span>
+          </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="dish-matrix-card grid-reveal-card" data-category="fitness">
+          <div class="dish-image-circle-frame">
+            <img src="./Assests/keto%20blueprint.webp" alt="Muscle Bulk Meal Vault" class="dish-native-img">
+          </div>
+          <div class="dish-card-body">
+            <h3 class="dish-title">Hyper-Bulk Macro Set</h3>
+            <p class="dish-desc">Clean complex carb stacks calibrated entirely to speed lean mass recovery metrics.</p>
+            <span class="dish-price-tag">₹340 / Container</span>
+          </div>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="dish-matrix-card grid-reveal-card" data-category="fitness">
+          <div class="dish-image-circle-frame">
+            <img src="./Assests/detox.webp" alt="Keto Pro Blueprint Platter" class="dish-native-img">
+          </div>
+          <div class="dish-card-body">
+            <h3 class="dish-title">Keto Pro Blueprint</h3>
+            <p class="dish-desc">Zero-sugar healthy lipid ratios prepped by specialized nutritional kitchen blocks.</p>
+            <span class="dish-price-tag">₹310 / Container</span>
+          </div>
+        </div>
+
+        <!-- CARD 7 -->
+        <div class="dish-matrix-card grid-reveal-card" data-category="social">
+          <div class="dish-image-circle-frame">
+            <img src="./Assests/salad.webp" alt="Artisanal Tea Scones" class="dish-native-img">
+          </div>
+          <div class="dish-card-body">
+            <h3 class="dish-title">Artisanal Tea Scones</h3>
+            <p class="dish-desc">Light low-glycemic baked treats served fresh with raw flower honey dips.</p>
+            <span class="dish-price-tag">₹160 / Platter</span>
+          </div>
+        </div>
+
+        <!-- CARD 8 -->
+        <div class="dish-matrix-card grid-reveal-card" data-category="social">
+          <div class="dish-image-circle-frame">
+            <img src="./Assests/high%20protein%20box.webp" alt="Luxury Pastry Assortment" class="dish-native-img">
+          </div>
+          <div class="dish-card-body">
+            <h3 class="dish-title">Luxury Macro Pastries</h3>
+            <p class="dish-desc">Bite-sized high-protein pastry configurations designed for high-end socials.</p>
+            <span class="dish-price-tag">₹220 / Platter</span>
+          </div>
+        </div>
+
+        <!-- CARD 9 -->
+        <div class="dish-matrix-card grid-reveal-card" data-category="social">
+          <div class="dish-image-circle-frame">
+            <img src="./Assests/hero%20section%20img%203.webp" alt="Boutique Herbal Brews" class="dish-native-img">
+          </div>
+          <div class="dish-card-body">
+            <h3 class="dish-title">Herbal Infusion Flight</h3>
+            <p class="dish-desc">Premium antioxidant rich matcha and white leaf brews curated for events.</p>
+            <span class="dish-price-tag">₹120 / Platter</span>
+          </div>
+        </div>
+
+        <!-- CARD 10 -->
+        <div class="dish-matrix-card grid-reveal-card" data-category="organic">
+          <div class="dish-image-circle-frame">
+            <img src="./Assests/organic%20munchies.webp" alt="Raw Harvest Salad Crunch" class="dish-native-img">
+          </div>
+          <div class="dish-card-body">
+            <h3 class="dish-title">Raw Harvest Bowl</h3>
+            <p class="dish-desc">100% plant-based setup packed with rich local harvest items and farm metrics.</p>
+            <span class="dish-price-tag">₹180 / Platter</span>
+          </div>
+        </div>
+
+        <!-- CARD 11 -->
+        <div class="dish-matrix-card grid-reveal-card" data-category="organic">
+          <div class="dish-image-circle-frame">
+            <img src="./Assests/detox.webp" alt="Coldpressed Elixir Set" class="dish-native-img">
+          </div>
+          <div class="dish-card-body">
+            <h3 class="dish-title">Hyper-Green Detox Cleanse</h3>
+            <p class="dish-desc">Raw green chlorophyll juices optimized to flush internal waste pathways fast.</p>
+            <span class="dish-price-tag">₹450 / Box Set</span>
+          </div>
+        </div>
+
+        <!-- CARD 12 -->
+        <div class="dish-matrix-card grid-reveal-card" data-category="organic">
+          <div class="dish-image-circle-frame">
+            <img src="./Assests/keto%20blueprint.webp" alt="Superfood Seed Platter" class="dish-native-img">
+          </div>
+          <div class="dish-card-body">
+            <h3 class="dish-title">Ancient Superfood Platter</h3>
+            <p class="dish-desc">Sprouted seed, avocado carb, and quinoa crunch bases prepped for deep wellness galas.</p>
+            <span class="dish-price-tag">₹260 / Platter</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<style>
+/* ==========================================================================
+   CREATIVE HORIZONTAL BENTO POD THEATER OVERRIDE (style.css)
+   ========================================================================== */
+.sensory-categories-section {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 50px 0;
+  overflow: hidden;
+  z-index: 2;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.sensory-cat-container {
+  width: 94%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column; 
+  gap: 35px;
+  position: relative;
+  z-index: 5;
+}
+
+/* FOUR CORNER TRANSLUCENT NEON MINT GREEN ORB SHADES */
+.cat-corner-glow {
+  position: absolute;
+  width: 450px; 
+  height: 450px;
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+  filter: blur(40px);
+  opacity: 0.18;
+}
+.glow-top-left     { top: -120px; left: -120px; background: radial-gradient(circle, #22c55e 0%, rgba(34,197,94,0) 75%); }
+.glow-top-right    { top: -120px; right: -120px; background: radial-gradient(circle, #22c55e 0%, rgba(34,197,94,0) 75%); }
+.glow-bottom-left  { bottom: -120px; left: -120px; background: radial-gradient(circle, #22c55e 0%, rgba(34,197,94,0) 75%); }
+.glow-bottom-right { bottom: -120px; right: -120px; background: radial-gradient(circle, #16a34a 0%, rgba(22,163,74,0) 75%); }
+
+/* Ambient Vectors Setup */
+.cat-bg-ambient-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 2; }
+.cat-vector { position: absolute; }
+.cv-1 { top: 8%; left: 8%; animation: floatingCanvas 6s ease-in-out infinite alternate; }
+.cv-2 { bottom: 15%; left: 10%; animation: floatingCanvas 5s ease-in-out infinite alternate-reverse; }
+.cv-3 { top: 12%; right: 12%; animation: floatingCanvas 7s ease-in-out infinite alternate 0.2s; }
+@keyframes floatingCanvas { 0% { transform: translateY(0) rotate(0deg) scale(0.95); } 100% { transform: translateY(-15px) rotate(12deg) scale(1.05); } }
+
+/* FIXED STICKY HORIZONTAL DASHBOARD POD (GLIDES WITH USER SCROLLS) */
+.cat-sticky-dashboard-pod {
+  position: sticky !important;
+  position: -webkit-sticky !important;
+  top: 20px; 
+  width: 100%;
+  background: linear-gradient(135deg, rgba(244, 251, 246, 0.95) 0%, rgba(250, 253, 235, 0.95) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(34, 197, 94, 0.16);
+  border-radius: 24px;
+  padding: 24px 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  z-index: 100; 
+  box-shadow: 0 15px 40px -20px rgba(15, 23, 42, 0.06);
+  will-change: transform;
+}
+
+.dashboard-header-block { display: flex; flex-direction: column; align-items: flex-start; }
+.sidebar-tag-mini { font-size: 0.78rem; font-weight: 800; letter-spacing: 1.5px; color: #16a34a; margin-bottom: 4px; }
+.sidebar-main-title { font-size: 1.65rem; font-weight: 900; color: #0f172a; letter-spacing: -0.5px; margin: 0; }
+
+.cat-filter-scroll-wrapper { flex-grow: 1; display: flex; justify-content: flex-end; }
+
+.cat-filter-list-deck {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cat-filter-item {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #475569;
+  padding: 10px 22px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 50px; 
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  white-space: nowrap;
+}
+
+.cat-filter-item:hover {
+  color: #16a34a;
+  border-color: rgba(34, 197, 94, 0.3);
+  background: #f0fdf4;
+  transform: translateY(-1px);
+}
+
+.cat-filter-item.item-active-link {
+  color: #ffffff;
+  background: #16a34a; 
+  border-color: #16a34a;
+  font-weight: 800;
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.25);
+}
+
+/* ==========================================================================
+   12 CARDS DISPLAY SHOWCASE MATRIX GRID
+   ========================================================================== */
+.cat-display-showcase-matrix { width: 100%; }
+
+.cat-dishes-grid-matrix {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 24px;
+  width: 100%;
+}
+
+.dish-matrix-card {
+  background: #ffffff;
+  border: 1px solid #edf2f7;
+  border-radius: 24px;
+  padding: 20px 16px; /* Optimized layout tracking margins */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.01);
+  transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s, border-color 0.25s;
+}
+.dish-matrix-card:hover { transform: translateY(-5px); border-color: rgba(34, 197, 94, 0.25); box-shadow: 0 15px 35px -10px rgba(34, 197, 94, 0.08); }
+
+/* ==========================================================================
+   FIXED SHAPE UPDATE: PREMIUM LARGE CIRCLE FRAMING SYSTEM
+   ========================================================================== */
+.dish-image-circle-frame {
+  width: 140px;      /* FIXED: Large balanced diameter width mapping */
+  height: 140px;     /* FIXED: Large balanced diameter height mapping */
+  border-radius: 50% !important; /* FIXED: Unconditionally locks bounds into perfect uniform circles */
+  overflow: hidden;
+  position: relative;
+  margin: 5px auto 18px auto; /* Centered along the horizontal baseline axis */
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+  border: 4px solid #ffffff; /* Porcelain plate border rim style layering */
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s;
+}
+
+.dish-matrix-card:hover .dish-image-circle-frame {
+  transform: scale(1.04) rotate(3deg); /* Smooth circular spin on card focus interactions */
+  box-shadow: 0 12px 28px rgba(34, 197, 94, 0.15);
+}
+
+.dish-native-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important; /* Forces photographs to fit cleanly into circles without distortion */
+  border-radius: 50%;
+}
+
+/* ==========================================================================
+   COMPACT INNER CONTENT DESIGN (INCREASED FONTS & ZERO UNWANTED GAPS)
+   ========================================================================== */
+.dish-card-body { 
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
+  text-align: center; 
+  height: 100%; 
+  padding: 5px 10px 0 10px; /* Packed interior column layout footprint */
+}
+
+.dish-title { 
+  font-size: 1.45rem !important; /* INCREASED: Maximum reading high scannability weight */
+  font-weight: 800; 
+  color: #1e293b; 
+  margin-bottom: 4px !important; /* Compressed gap underneath title heading nodes */
+  line-height: 1.25;
+}
+
+.dish-desc { 
+  font-size: 1.0rem !important; /* INCREASED: Text size optimized for clean reading */
+  color: #475569; 
+  line-height: 1.5; 
+  margin-bottom: 8px !important; /* FIXED: Reduced from 12px to compress vertical gap above the price tag */
+}
+
+.dish-price-tag { 
+  font-size: 1.35rem !important; /* INCREASED: Bold high contrast visibility price marker */
+  font-weight: 900; 
+  color: #16a34a; 
+  margin-top: auto; /* Maintains flawless matrix bottom structural grid row symmetry */
+  padding-top: 2px;
+}
+
+/* ==========================================================================
+   FLUID STRUCTURAL RESPONSIVE VIEWPORT QUERIES
+   ========================================================================== */
+@media (max-width: 992px) {
+  .dish-title { font-size: 1.25rem !important; }
+  .dish-desc { font-size: 0.98rem !important; }
+  .dish-price-tag { font-size: 1.2rem !important; }
+}
+
+@media (max-width: 640px) {
+  .dish-title { font-size: 1.18rem !important; }
+  .dish-desc { font-size: 0.92rem !important; }
+}
+
+
+/* Filter Drop Hide Mask Class */
+.dish-matrix-card.card-filter-hide { opacity: 0 !important; transform: scale(0.92) translateY(15px) !important; pointer-events: none !important; position: absolute !important; visibility: hidden !important; }
+
+/* Scroll entrance stagger parameters */
+.cat-reveal-node, .grid-reveal-card { opacity: 0; transform: translateY(30px); transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+.cat-reveal-node.revealed-active, .grid-reveal-card.revealed-active { opacity: 1; transform: translateY(0); }
+
+/* FLUID STRUCTURAL RESPONSIVE BREAKPOINTS */
+@media (max-width: 1024px) {
+  .cat-sticky-dashboard-pod { flex-direction: column; align-items: center; text-align: center; padding: 20px; gap: 15px; }
+  .dashboard-header-block { align-items: center; }
+  .cat-filter-scroll-wrapper { width: 100%; justify-content: center; }
+  .cat-filter-list-deck { width: 100%; overflow-x: auto; scrollbar-width: none; padding-bottom: 4px; justify-content: flex-start; }
+  .cat-filter-list-deck::-webkit-scrollbar { display: none; }
+  .cat-dishes-grid-matrix { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+}
+
+@media (max-width: 640px) {
+  .cat-dishes-grid-matrix { grid-template-columns: 1fr; max-width: 380px; margin: 0 auto; }
+  .sidebar-main-title { font-size: 1.45rem; }
+  .dish-image-circle-frame { width: 125px; height: 125px; }
+  .cat-corner-glow { width: 220px; height: 220px; }
+}
+
+
+
+</style>
+
+<script>
+// ==========================================================================
+// SCROLL REVEAL ENTRANCE & GRID TRANSFORMATION CONTROLLER (script.js)
+// ==========================================================================
+
+function filterCateringMatrixDeck(targetedCategoryToken, selectedMenuTabElement) {
+  const allDishCardElements = document.querySelectorAll('.dish-matrix-card');
+  if (allDishCardElements.length === 0) return;
+
+  const allSidebarTabs = document.querySelectorAll('.cat-filter-item');
+  allSidebarTabs.forEach(tab => tab.classList.remove('item-active-link'));
+  if (selectedMenuTabElement) {
+    selectedMenuTabElement.classList.add('item-active-link');
+  }
+
+  allDishCardElements.forEach((card) => {
+    const cardDataCategory = card.getAttribute('data-category');
+    
+    if (targetedCategoryToken === 'all' || cardDataCategory === targetedCategoryToken) {
+      card.classList.remove('card-filter-hide');
+      
+      card.style.opacity = "0";
+      card.style.transform = "translateY(15px) scale(0.96)";
+      setTimeout(() => {
+        card.style.opacity = "1";
+        card.style.transform = "translateY(0) scale(1)";
+      }, 50);
+
+    } else {
+      card.classList.add('card-filter-hide');
+    }
+  });
+}
+
+function initDietaryCategoriesScrollObserver() {
+  const topDashboardPodNode = document.querySelectorAll('.cat-reveal-node');
+  const rightGridDishCards = document.querySelectorAll('.grid-reveal-card');
+  const masterContainerTrigger = document.getElementById('cat-scroll-trigger');
+
+  if (!masterContainerTrigger) return;
+
+  const categoriesMasterObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        
+        topDashboardPodNode.forEach((node) => {
+          node.classList.add('revealed-active');
+        });
+
+        rightGridDishCards.forEach((card, cardIdx) => {
+          setTimeout(() => {
+            card.classList.add('revealed-active');
+          }, cardIdx * 90); 
+        });
+
+        categoriesMasterObserver.unobserve(masterContainerTrigger);
+      }
+    });
+  }, {
+    threshold: 0.05 
+  });
+
+  categoriesMasterObserver.observe(masterContainerTrigger);
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  initDietaryCategoriesScrollObserver();
+});
+
+
+</script>
+
+<section class="premium-bento-cta-section">
+  <!-- THE BACKDROP CANVAS IMAGE MATRIX LAYER -->
+  <div class="cta-backdrop-canvas">
+    <!-- OPTION CONFIGURATION: Update local folder paths directly here to load your custom background wallpaper -->
+    <img src="./Assests/hero%20section%20img%203.webp" alt="Premium Healthy Culinary Wallpaper" class="cta-raw-bg-asset">
+    <!-- Glassmorphic Deep Dark Overlay Plate protects typography contrast lines -->
+    <div class="cta-curtain-dimmer"></div>
+  </div>
+
+  <div class="cta-master-container" id="cta-scroll-trigger">
+    <div class="cta-split-wrapper">
+      
+      <!-- LINE 1 & 2 CONTENT SEGMENT: Cascades line-by-line sequentially -->
+      <div class="cta-typography-side">
+        <h2 class="cta-glowing-headline">
+          <span class="cta-line-node delay-c1">Elevate Your Next Celebration.</span>
+          <span class="cta-line-node delay-c2 text-green-accent">Gourmet Catering Packed With Wellness.</span>
+        </h2>
+        <p class="cta-sub-message cta-line-node delay-c3">Lock down custom macro configurations with our certified chefs today. Zero kitchen cleaning required.</p>
+      </div>
+
+      <!-- INTERACTIVE OSCILLATING CTA TRIGGER LINK -->
+      <div class="cta-action-side cta-line-node delay-c4">
+        <a href="404.html" class="btn-cta-kinetic-glow">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18h20v2H2z"/><path d="M12 4a7 7 0 0 1 7 7H5a7 7 0 0 1 7-7z"/><path d="M12 2v2"/></svg>
+          Book Your Event Now
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ==========================================================================
+   CINEMATIC CALL TO ACTION STRUCT (COMPRESSED PADDINGS SPECIFIED)
+   ========================================================================== */
+.premium-bento-cta-section {
+  position: relative;
+  width: 100%;
+  
+  /* FIXED: Rigorous exact padding constraints: 50px Top, 30px Bottom */
+  padding-top: 50px;
+  padding-bottom: 30px;
+  
+  overflow: hidden;
+  z-index: 2;
+  background-color: #0f172a; /* Fallback safe dark slate color */
+}
+
+/* ==========================================================================
+   RAW BACKGROUND IMAGE CANVAS LAYER CONFIGURATIONS
+   ========================================================================== */
+.cta-backdrop-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.cta-raw-bg-asset {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Spans across full boundaries cleanly without rendering shifts */
+  transform: scale(1.02);
+  transition: transform 0.8s ease-in-out;
+}
+
+/* Interactive subtle background zooming when section enters focus rules */
+.premium-bento-cta-section:hover .cta-raw-bg-asset {
+  transform: scale(1.06); /* Slowly expands backdrop layout behind content layers */
+}
+
+.cta-curtain-dimmer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Deep cinematic radial shadow protection mask guarantees 100% white font scannability */
+  background: radial-gradient(circle at center, rgba(15, 23, 42, 0.75) 0%, rgba(15, 23, 42, 0.9) 100%);
+  z-index: 2;
+}
+
+.cta-master-container {
+  width: 94%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 15px;
+  position: relative;
+  z-index: 3;
+}
+
+.cta-split-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+/* ==========================================================================
+   HIGH-VISIBILITY TYPOGRAPHY CLUSTERS (HIGH FONT SIZES FIXED)
+   ========================================================================== */
+.cta-typography-side {
+  flex: 1.4;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.cta-glowing-headline {
+  font-size: 2.8rem; /* High impact headline layout sizing */
+  font-weight: 900;
+  line-height: 1.15;
+  color: #ffffff;
+  margin-bottom: 12px;
+  letter-spacing: -1px;
+}
+
+.cta-glowing-headline span {
+  display: block; /* Locks the titles neatly into exactly 2 lines as requested */
+}
+
+/* Creative Hover & Glow Effect Assigned to Content Text Elements */
+.text-green-accent {
+  color: #22c55e; /* Premium wellness theme bright green link color */
+  transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+
+.premium-bento-cta-section:hover .text-green-accent {
+  color: #4ade80;
+  text-shadow: 0 0 20px rgba(74, 222, 128, 0.5); /* Title typography glows intensely on hover actions! */
+}
+
+.cta-sub-message {
+  font-size: 1.25rem; /* Increased body size */
+  color: #cbd5e1; /* Clear muted light contrast text */
+  line-height: 1.5;
+  max-width: 620px;
+}
+
+/* ==========================================================================
+   KINETIC OSCILLATING FLOATING CTA TRIGGER BUTTON LAYER
+   ========================================================================== */
+.cta-action-side {
+  flex: 0.8;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.btn-cta-kinetic-glow {
+  text-decoration: none;
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: #ffffff;
+  padding: 18px 40px;
+  font-weight: 700;
+  font-size: 1.05rem; /* High text size parameter scaling */
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 30px rgba(34, 197, 94, 0.35);
+  white-space: nowrap;
+  
+  /* Continuous smooth fluid flight motion timeline */
+  animation: dynamicCtaButtonFloat 3.5s ease-in-out infinite alternate;
+  transition: box-shadow 0.25s, transform 0.2s;
+}
+
+.btn-cta-kinetic-glow:hover {
+  box-shadow: 0 15px 35px rgba(34, 197, 94, 0.55);
+  animation-play-state: paused; /* Halts oscillation smoothly when cursor pointers focus */
+  transform: translateY(-2px);
+}
+
+@keyframes dynamicCtaButtonFloat {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-8px); }
+}
+
+/* ==========================================================================
+   NATIVE STAGGERED LINE-BY-LINE INITIAL RETRACTED COORDINATES
+   ========================================================================== */
+.cta-line-node {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+              opacity 0.8s ease;
+}
+
+/* Toggled instantly by Scroll entry Intersection Observer script streams */
+.cta-line-node.cta-reveal-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Delays cascade smoothly one-by-one */
+.delay-c1 { transition-delay: 0.0s; }
+.delay-c2 { transition-delay: 0.15s; }
+.delay-c3 { transition-delay: 0.3s; }
+.delay-c4 { transition-delay: 0.45s; }
+
+/* ==========================================================================
+   FLUID STRUCTURAL RESPONSIVE ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 992px) {
+  .cta-split-wrapper { flex-direction: column; text-align: center; gap: 30px; }
+  .cta-typography-side { align-items: center; text-align: center; }
+  .cta-glowing-headline { font-size: 2.2rem; }
+  .cta-sub-message { font-size: 1.1rem; }
+  .btn-cta-kinetic-glow { width: 100%; justify-content: center; }
+  .cta-action-side { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 640px) {
+  .premium-bento-cta-section { padding-top: 40px; padding-bottom: 25px; } /* Shrinks requested pad boundaries slightly for smartphones */
+  .cta-glowing-headline { font-size: 1.8rem; }
+}
+
+</style>
+
+<script>
+  // ==========================================================================
+// SCROLL-DRIVEN LINE REVEAL DECK CONTROLLER (script.js)
+// ==========================================================================
+function initCtaSectionRevealObserver() {
+  const ctaLineNodes = document.querySelectorAll('.cta-line-node');
+  const targetParentTrigger = document.getElementById('cta-scroll-trigger');
+
+  if (!targetParentTrigger || ctaLineNodes.length === 0) return;
+
+  const ctaSectionObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Appends the active reveal flag class to initiate cascading timelines concurrently
+        ctaLineNodes.forEach((node) => {
+          node.classList.add('cta-reveal-active');
+        });
+        // Disconnect handle instantly to maintain low memory allocation profiles
+        ctaSectionObserver.disconnect();
+      }
+    });
+  }, {
+    threshold: 0.15 // Fires as soon as 15% of the CTA section crosses into client viewports
+  });
+
+  ctaSectionObserver.observe(targetParentTrigger);
+}
+
+// Attach listener handle securely
+window.addEventListener('DOMContentLoaded', () => {
+  initCtaSectionRevealObserver();
+});
+
+</script>
+
+<!-- ==========================================================================
+     ZERO-GAP CINEMATIC GRID DASHBOARD LANDING VEHICLE (index.html)
+     ========================================================================== -->
+<section class="dashboard-journey-section">
+  <div class="dash-master-container" id="dash-scroll-trigger">
+    
+    <!-- LINE-BY-LINE SCROLL CASCADE HEADER UNIT -->
+    <div class="dash-header-block">
+      <span class="dash-mini-badge dash-reveal-node">CELEBRATION MATRIX</span>
+      <h2 class="dash-main-title">
+        <span class="dash-reveal-node">Signature Event Catering</span>
+        <span class="dash-reveal-node text-green-accent">Tailored For Every Milestone.</span>
+      </h2>
+    </div>
+
+    <!-- ZERO-GAP ASYMMETRICAL SOLID MATRICES MESH -->
+    <div class="dash-bento-mesh-deck">
+      
+      <!-- MATRICES SLAT 1: BIRTHDAYS -->
+      <div class="dash-mesh-card card-theme-green dash-reveal-node">
+        <div class="mesh-card-content" onclick="toggleDashMenuDrawer(0, this)">
+          <div class="mesh-left-meta">
+            <span class="mesh-counter-token">01</span>
+            <div class="mesh-text-group">
+              <h3>Birthday Celebration</h3>
+              <p>Vibrant, fun macro pastries and high-energy custom layout treats.</p>
+            </div>
+          </div>
+          <div class="mesh-right-action">
+            <span class="mesh-view-menu-btn">View Menu List <span class="mesh-arrow">▼</span></span>
+            <div class="mesh-vector-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16h16"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><path d="M12 2v3"/></svg>
+            </div>
+          </div>
+        </div>
+        
+        <!-- NESTED DROPDOWN ACCORDION MATRICES DRAWER 1 (10 CUSTOM ITEMS) -->
+        <div class="mesh-nested-drawer-slider">
+          <div class="mesh-drawer-grid-10">
+            <div class="m-tier"><span class="mt-dot"></span><p>Welcome Sweet Dish</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Crisp Refreshing Mocktail</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Organic Farm Starters</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Executive Main Course Dish</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Signature Side Gravy Bowl</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Artisanal Flatbread / Basmati Rice</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Thematic Probiotic Curd Blend</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Digestive Herbal Supari Platter</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Executive Premium Dessert Cream</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Temperature-Safe Mineral Water Bottle</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MATRICES SLAT 2: MARRIAGE -->
+      <div class="dash-mesh-card card-theme-orange dash-reveal-node">
+        <div class="mesh-card-content" onclick="toggleDashMenuDrawer(1, this)">
+          <div class="mesh-left-meta">
+            <span class="mesh-counter-token">02</span>
+            <div class="mesh-text-group">
+              <h3>Marriage Function</h3>
+              <p>Grand full-scale premium multi-tier traditional and continental buffets.</p>
+            </div>
+          </div>
+          <div class="mesh-right-action">
+            <span class="mesh-view-menu-btn">View Menu List <span class="mesh-arrow">▼</span></span>
+            <div class="mesh-vector-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="mesh-nested-drawer-slider">
+          <div class="mesh-drawer-grid-10">
+            <div class="m-tier"><span class="mt-dot"></span><p>Welcome Wedding Confection</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Gourmet Fruit Elixir Nectar</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Pristine Handcrafted Starters</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Imperial Main Entrée Platter</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Rich Traditional Side Compote</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Saffron Basmati Pulao Selection</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Saffron Infused Yogurt Curd</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Premium Royal Mint Mouthfreshener</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Multi-Tier Decadent Ice Dessert</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Sealed Crystal Safe Mineral Water</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MATRICES SLAT 3: BABY SHOWER -->
+      <div class="dash-mesh-card card-theme-green dash-reveal-node">
+        <div class="mesh-card-content" onclick="toggleDashMenuDrawer(2, this)">
+          <div class="mesh-left-meta">
+            <span class="mesh-counter-token">03</span>
+            <div class="mesh-text-group">
+              <h3>Baby Shower</h3>
+              <p>Delicate, wholesome organic recipes optimized for prenatal tracking vitality.</p>
+            </div>
+          </div>
+          <div class="mesh-right-action">
+            <span class="mesh-view-menu-btn">View Menu List <span class="mesh-arrow">▼</span></span>
+            <div class="mesh-vector-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="4" r="2"/><path d="M12 7c-2.5 0-4 2-4 4.5S9.5 16 12 16s4-1.5 4-4.5S14.5 7 12 7z"/><path d="M12 16v5M9 21h6"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="mesh-nested-drawer-slider">
+          <div class="mesh-drawer-grid-10">
+            <div class="m-tier"><span class="mt-dot"></span><p>Organic Honey Dry Fruit Sweet</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Raw Pressed Berry Antioxidant Smoothie</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Sprouted Seed Microgreen Crunch</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Iron-Rich Steamed Grain Main Bowl</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Wholesome Calcium Side Mash</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Millet Sourdough / Brown Rice Flat</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Low-Fat Probiotic Berry Yogurt</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Digestive Fennel Seed Herbal Blend</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Fresh Organic Cut Melon Platter</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Zero-Sodium Natural Mineral Flask</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MATRICES SLAT 4: OTHER EVENTS -->
+      <div class="dash-mesh-card card-theme-orange dash-reveal-node">
+        <div class="mesh-card-content" onclick="toggleDashMenuDrawer(3, this)">
+          <div class="mesh-left-meta">
+            <span class="mesh-counter-token">04</span>
+            <div class="mesh-text-group">
+              <h3>Other Events</h3>
+              <p>Boutique high teas, corporate summits, and customized athletic events spreads.</p>
+            </div>
+          </div>
+          <div class="mesh-right-action">
+            <span class="mesh-view-menu-btn">View Menu List <span class="mesh-arrow">▼</span></span>
+            <div class="mesh-vector-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            </div>
+          </div>
+        </div>
+        <div class="mesh-nested-drawer-slider">
+          <div class="mesh-drawer-grid-10">
+            <div class="m-tier"><span class="mt-dot"></span><p>Artisanal Bite Confectionery</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Nitro-Brew Herbal Cold Infusion</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Bento Box Canapé Assortments</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Custom Macro Hot Buffet Entrée</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Low-Sodium Savory Emulsion Slurry</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>High-Protein Flour Flatbread / Quin</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Light Dairy-Free Plant Kefir Culture</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Aromatic Cardamom Pod Cleanser</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Sugar-Free Keto Dark Mousse Pot</p></div>
+            <div class="m-tier"><span class="mt-dot"></span><p>Eco-Friendly Packed Rain Spring Water</p></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="radial-action-base radial-reveal-node">
+      <a href="404.html" class="btn-radial-customizer-glow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.4a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+        Launch Custom Menu Blueprint
+      </a>
+    </div>
+
+  </div>
+</section>
+
+        <style>
+    /* ==========================================================================
+   KINETIC GLOWING CALL TO ACTION KEY (style.css)
+   ========================================================================== */
+.radial-action-base {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 35px; /* Clean spatial separation margin gap */
+  position: relative;
+  z-index: 10;
+}
+
+.btn-radial-customizer-glow {
+  text-decoration: none;
+  font-family: inherit;
+  
+  /* HIGH-CONTRAST GRADIENT: Vibrant premium signature green color blend */
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: #ffffff !important;
+  
+  /* TYPOGRAPHY CONFIGURATION: Increased professional scannability scaling */
+  padding: 16px 42px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: -0.2px;
+  
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  
+  /* NEON GLOW TRAIL: Multi-layered soft ambient drop outline */
+  box-shadow: 0 10px 25px rgba(22, 163, 74, 0.3);
+  
+  /* NATIVE ANIMATION DRIVE: Continuous smooth fluid flight motion timeline */
+  animation: hubBlueprintBtnFloat 3.5s ease-in-out infinite alternate;
+  will-change: transform, box-shadow;
+  transition: box-shadow 0.25s ease, background 0.25s ease, transform 0.2s ease;
+}
+
+/* HIGH-FIDELITY POINTER FOCUS INTERACTIONS */
+.btn-radial-customizer-glow:hover {
+  /* Flares the neon green under-glow intensely on hover focus actions */
+  box-shadow: 0 15px 35px rgba(22, 163, 74, 0.55), 
+              0 0 20px rgba(34, 197, 94, 0.25);
+  
+  background: linear-gradient(135deg, #2e7d32 0%, #15803d 100%);
+  
+  /* UX RULE: Freezes visual floating oscillation cleanly during active mouse focus states */
+  animation-play-state: paused !important; 
+  transform: translateY(-3px) scale(1.01);
+}
+
+.btn-radial-customizer-glow:active {
+  transform: translateY(-1px) scale(0.99);
+}
+
+/* SATELLITE SVG ICON VECTOR ADJUSTMENTS */
+.btn-radial-customizer-glow svg {
+  flex-shrink: 0;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.btn-radial-customizer-glow:hover svg {
+  transform: rotate(15deg) scale(1.08); /* Dynamic micro-spin wrench tool accent */
+}
+
+/* AUTOMATED VISUAL WAVE TIMELINE DEFINITION */
+@keyframes hubBlueprintBtnFloat {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
+}
+
+/* ==========================================================================
+   FLUID STRUCTURAL RESPONSIVE CONSTRAINTS
+   ========================================================================== */
+@media (max-width: 640px) {
+  .radial-action-base {
+    padding: 0 15px;
+    margin-top: 25px;
+  }
+  .btn-radial-customizer-glow {
+    width: 100%; /* Spans full canvas width smoothly on smartphone screens */
+    padding: 15px 24px;
+    font-size: 1rem;
+  }
+}
+
+            /* ==========================================================================
+   ZERO-GAP CINEMATIC DASHBOARD GRIDS SYSTEM STYLES (style.css)
+   ========================================================================== */
+.dashboard-journey-section {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  
+  /* EXACT COMPACT MARGIN CONSTRAINTS: 50px Top, 30px Bottom */
+  padding-top: 50px;
+  padding-bottom: 30px;
+  
+  overflow: hidden;
+  z-index: 2;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.dash-master-container {
+  width: 94%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Centralized Heading Elements Block */
+.dash-header-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 35px; /* Packed interior separation spacing */
+}
+
+.dash-mini-badge {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #16a34a;
+  background: rgba(34, 197, 94, 0.08);
+  padding: 5px 12px;
+  border-radius: 50px;
+  margin-bottom: 12px;
+}
+
+.dash-main-title {
+  font-size: 3.2rem; /* HIGH VISIBILITY: Increased typography parameters */
+  font-weight: 900;
+  line-height: 1.15;
+  color: #0f172a;
+  letter-spacing: -1px;
+}
+.dash-main-title span { display: block; }
+.text-green-accent { color: #22c55e; }
+
+/* ==========================================================================
+   SOLID ASYMMETRICAL OVERLAPPING MESH RAIL (ELIMINATES EMPTY WHITESPACES)
+   ========================================================================== */
+.dash-bento-mesh-deck {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border-radius: 24px;
+  overflow: hidden; /* Clips outer card rows flush into a singular block slate */
+  box-shadow: 0 15px 45px -20px rgba(15, 23, 42, 0.05);
+  border: 1px solid #edf2f7;
+}
+
+.dash-mesh-card {
+  position: relative;
+  width: 100%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+.dash-mesh-card:last-child { border-bottom: none; }
+
+.mesh-card-content {
+  padding: 30px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  position: relative;
+  z-index: 5;
+}
+
+.mesh-left-meta {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex: 1.5;
+}
+
+.mesh-counter-token {
+  font-size: 1.6rem;
+  font-weight: 900;
+  opacity: 0.3;
+  font-family: monospace;
+  transition: opacity 0.3s ease, transform 0.3s;
+}
+
+.mesh-text-group h3 {
+  font-size: 1.45rem; /* INCREASED font weights */
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 4px 0;
+  transition: color 0.25s;
+}
+
+.mesh-text-group p {
+  font-size: 1.02rem; /* INCREASED description layout weights */
+  color: #475569;
+  margin: 0;
+  line-height: 1.45;
+  transition: color 0.25s;
+}
+
+.mesh-right-action {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  justify-content: flex-end;
+  flex: 0.8;
+}
+
+.mesh-view-menu-btn {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #16a34a;
+  transition: color 0.25s, transform 0.2s;
+  white-space: nowrap;
+}
+.mesh-arrow { font-size: 0.7rem; display: inline-block; transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); }
+
+.mesh-vector-icon {
+  width: 54px; height: 52px;
+  border-radius: 12px;
+  display: flex; justify-content: center; align-items: center;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s, color 0.3s;
+}
+
+/* ==========================================================================
+   COLOR SCHEME PALETTES BLOCK (HIGH CONTRAST BRAND SPECIFICS)
+   ========================================================================== */
+/* Green Pathway Theme */
+.card-theme-green { background-color: #f4fbf6; }
+.card-theme-green .mesh-vector-icon { color: #22c55e; }
+.card-theme-green:hover { background-color: #ecfaf0; }
+.card-theme-green:hover .mesh-text-group h3 { color: #16a34a; }
+.card-theme-green:hover .mesh-counter-token { opacity: 0.8; color: #16a34a; transform: scale(1.05); }
+.card-theme-green:hover .mesh-vector-icon { background: #22c55e; color: #ffffff; transform: scale(1.05) rotate(4deg); }
+
+/* Orange Pathway Theme */
+.card-theme-orange { background-color: #fffcf5; }
+.card-theme-orange .mesh-vector-icon { color: #ff9100; }
+.card-theme-orange:hover { background-color: #fff8e7; }
+.card-theme-orange:hover .mesh-text-group h3 { color: #e65100; }
+.card-theme-orange:hover .mesh-counter-token { opacity: 0.8; color: #ff9100; transform: scale(1.05); }
+.card-theme-orange:hover .mesh-vector-icon { background: #ff9100; color: #ffffff; transform: scale(1.05) rotate(-4deg); }
+.card-theme-orange .mesh-view-menu-btn { color: #ff9100; }
+
+/* ==========================================================================
+   HIDDEN SLIDER ACCORDION DRAWER ARCHITECTURE FOR THE 10 TIER ITEMS
+   ========================================================================== */
+.mesh-nested-drawer-slider {
+  max-height: 0; /* Closed closed by default specifications initial setup */
+  overflow: hidden;
+  width: 100%;
+  background: #ffffff;
+  border-top: 0 solid transparent;
+  transition: max-height 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-top 0.3s;
+}
+
+/* Open Injected Drawer State Layout Override */
+.dash-mesh-card.drawer-expanded-open {
+  background: #ffffff !important; /* Forces row background plate clean white when dropdown content is open */
+}
+.dash-mesh-card.drawer-expanded-open .mesh-nested-drawer-slider {
+  border-top: 1px solid #edf2f7;
+}
+.dash-mesh-card.drawer-expanded-open .mesh-arrow {
+  transform: rotate(180deg);
+  color: #16a34a;
+}
+.dash-mesh-card.drawer-expanded-open.card-theme-orange .mesh-arrow { color: #ff9100; }
+
+.mesh-drawer-grid-10 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5x2 Structured course matrix placement layout */
+  gap: 16px;
+  padding: 35px 40px;
+}
+
+.m-tier {
+  background: #fafdfb;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.m-tier:hover { transform: translateY(-2px); border-color: rgba(34,197,94,0.2); }
+.card-theme-orange .m-tier:hover { border-color: rgba(255,145,0,0.2); background: #fffdf9; }
+
+.mt-dot { width: 6px; height: 6px; background-color: #22c55e; border-radius: 50%; flex-shrink: 0; }
+.card-theme-orange .mt-dot { background-color: #ff9100; }
+
+.m-tier p { font-size: 0.92rem; font-weight: 700; color: #334155; margin: 0; line-height: 1.35; }
+
+/* ==========================================================================
+   CENTRALIZED BLUEPRINT CTA LINK KEY BUTTON
+   ========================================================================== */
+.dash-action-base {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.btn-dash-customizer-glow {
+  text-decoration: none;
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: #ffffff;
+  padding: 16px 40px;
+  font-weight: 700;
+  font-size: 1.05rem; /* INCREASED high typography sizes scaling */
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 25px rgba(22, 163, 74, 0.25);
+  animation: dashboardBtnFloat 3.5s ease-in-out infinite alternate;
+}
+.btn-dash-customizer-glow:hover { box-shadow: 0 15px 35px rgba(22, 163, 74, 0.45); animation-play-state: paused; transform: translateY(-2px); }
+
+@keyframes dashboardBtnFloat { 0% { transform: translateY(0px); } 100% { transform: translateY(-8px); } }
+
+/* Scroll reveal parameters initial state tracking coordinates */
+.dash-reveal-node {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+}
+.dash-reveal-node.dash-reveal-active { opacity: 1; transform: translateY(0); }
+
+/* ==========================================================================
+   FLUID STRUCTURAL RESPONSIVE VIEWPORT CONSTRAINTS
+   ========================================================================== */
+@media (max-width: 1200px) {
+  .mesh-drawer-grid-10 { grid-template-columns: repeat(3, 1fr); } /* 3-columns configuration tracks */
+}
+
+@media (max-width: 992px) {
+  .dash-main-title { font-size: 2.3rem; }
+  .mesh-card-content { padding: 25px 20px; flex-direction: column; text-align: center; gap: 15px; }
+  .mesh-left-meta { flex-direction: column; gap: 10px; }
+  .mesh-right-action { width: 100%; justify-content: center; gap: 20px; }
+  .mesh-drawer-grid-10 { grid-template-columns: repeat(2, 1fr); padding: 25px 20px; }
+}
+
+@media (max-width: 640px) {
+  .dash-main-title { font-size: 1.8rem; }
+  .mesh-drawer-grid-10 { grid-template-columns: 1fr; } /* 100% vertical list stream on mobile displays */
+  .btn-dash-customizer-glow { width: 100%; justify-content: center; }
+}
+
+        </style>
+
+<script>
+    // ==========================================================================
+// ZERO-GAP GRIDS MUTATION ACCORDION EXTENSION RUNNER INTERFACE (script.js)
+// ==========================================================================
+
+// 1. In-Grid Accordion Slider Menu Drawer Controller
+function toggleDashMenuDrawer(eventIndex, clickTargetElement) {
+  // Capture parent slat container box
+  const targetParentCard = clickTargetElement.closest('.dash-mesh-card');
+  if (!targetParentCard) return;
+
+  const internalNestedDrawer = targetParentCard.querySelector('.mesh-nested-drawer-slider');
+  if (!internalNestedDrawer) return;
+
+  // Check current toggled layout status
+  const isTargetRowAlreadyOpen = targetParentCard.classList.contains('drawer-expanded-open');
+
+  // UX Optimization: Collapse any other currently open dropdown trays first
+  document.querySelectorAll('.dash-mesh-card').forEach((card) => {
+    card.classList.remove('drawer-expanded-open');
+    const drawer = card.querySelector('.mesh-nested-drawer-slider');
+    if (drawer) drawer.style.maxHeight = "0px";
+  });
+
+  if (!isTargetRowAlreadyOpen) {
+    // Inject active row whiteplate flag class hooks
+    targetParentCard.classList.add('drawer-expanded-open');
+    
+    // Slide open row tray to its full calculated DOM internal height dimensions smoothly
+    internalNestedDrawer.style.maxHeight = internalNestedDrawer.scrollHeight + "px";
+    
+    // Center browser viewpoint lock automatically right onto the open menu track
+    setTimeout(() => {
+      targetParentCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }, 200);
+  }
+}
+
+// 2. High-Performance IntersectionObserver Engine driving items up on scroll fold boundaries
+function initCinematicDashboardRevealEngine() {
+  const masterContainerAnchor = document.getElementById('dash-scroll-trigger');
+  if (!masterContainerAnchor) return;
+
+  const hiddenRevealElements = masterContainerAnchor.querySelectorAll('.dash-reveal-node');
+  if (hiddenRevealElements.length === 0) return;
+
+  let isSequenceActivated = false;
+  const chronologicalStaggerInterval = 140; // 140ms spacing delay steps cards up line-by-line cleanly
+
+  const bentoMeshObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !isSequenceActivated) {
+        isSequenceActivated = true;
+
+        // Loop through title headers, bento card mesh slats, and the blueprint button
+        hiddenRevealElements.forEach((nodeElement, indexPointer) => {
+          setTimeout(() => {
+            nodeElement.classList.add('dash-reveal-active');
+          }, indexPointer * chronologicalStaggerInterval);
+        });
+
+        bentoMeshObserver.unobserve(masterContainerAnchor);
+      }
+    });
+  }, {
+    threshold: 0.08 
+  });
+
+  bentoMeshObserver.observe(masterContainerAnchor);
+}
+
+// Global window event listeners wire-up
+window.addEventListener('DOMContentLoaded', () => {
+  initCinematicDashboardRevealEngine();
+});
+
+</script>
+
+<!-- MASTER FLOATING PARENT TESTIMONIAL MODULE CARD -->
+<section class="testimonial-parent-bento-card">
+  
+  <!-- FLOATING ENVIRONMENT CANVAS VECTOR LAYER -->
+  <div class="testi-bg-offers-canvas">
+    <!-- Star Rating Silhouette 1 -->
+    <svg class="testi-vector tv-1" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" opacity="0.12"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+    <!-- Message Bubble Outline 2 -->
+    <svg class="testi-vector tv-2" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" opacity="0.12"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    <!-- Quote Outline Mark 3 -->
+    <svg class="testi-vector tv-3" width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2.5" opacity="0.1"><path d="M3 21h7V10H3v11zM14 21h7V10h-7v11zM3 10V3h7v7H3zM14 10V3h7v7h-7z"/></svg>
+    <!-- Sparkle Vector 4 -->
+    <svg class="testi-vector tv-4" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" opacity="0.08"><path d="M12 3v18M3 12h18M5.93 5.93l12.14 12.14M5.93 18.07l12.14-12.14"/></svg>
+  </div>
+
+  <div class="testi-master-container">
+    <div class="testi-split-grid">
+      
+      <!-- LEFT COLUMN: STYLISH SURFBOARD ASYMMETRICAL TRANSITIONING FEEDBACK DECK -->
+      <div class="testi-media-left">
+        <div class="testi-surfboard-stage">
+          
+          <div class="testi-surfboard-card active-testi-state" id="testi-chip-0">
+            <div class="surfboard-content-wrapper">
+              
+              <!-- Pure Vector SVG Star Rating Row Framework -->
+              <div class="surfboard-rating-stars-row">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#ff9100"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#ff9100"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#ff9100"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#ff9100"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#ff9100"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+
+              <p class="surfboard-feedback-quote">"The executive hot buffet package transformed our corporate event! The macro balance sheets kept the board highly focused throughout the workshops."</p>
+              
+              <div class="surfboard-author-profile">
+                <div class="surfboard-avatar-circle">
+                  <!-- OPTION CONFIGURATION: Update local folder paths directly here to load your custom user avatar image files -->
+                  <img src="./Assests/salad.webp" alt="Sarah Jenkins" class="surfboard-native-img">
+                </div>
+                <div class="surfboard-author-meta">
+                  <h4>Sarah Jenkins</h4>
+                  <span>Director, FinTech Global</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="testi-surfboard-card" id="testi-chip-1">
+            <div class="surfboard-content-wrapper">
+              <div class="surfboard-rating-stars-row">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#ff9100"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#ff9100"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#ff9100"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#ff9100"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#ff9100"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <p class="surfboard-feedback-quote">"The weekly macro prep vault is pure gold. Clean, chef-cooked organic containers directly delivered to my door. Down 6kg already!"</p>
+              <div class="surfboard-author-profile">
+                <div class="surfboard-avatar-circle">
+                  <img src="./Assests/hero%20section%20img%203.webp" alt="David Miller" class="surfboard-native-img">
+                </div>
+                <div class="surfboard-author-meta">
+                  <h4>David Miller</h4>
+                  <span>Fitness Athlete</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testi-surfboard-card" id="testi-chip-2">
+            <div class="surfboard-content-wrapper">
+              <div class="surfboard-rating-stars-row">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#ff9100"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#ff9100"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#ff9100"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#ff9100"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="#ff9100"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              </div>
+              <p class="surfboard-feedback-quote">"Unbelievable patisseries and finger foods for our private boutique high tea. Our guests are still raving about the organic honey dips."</p>
+              <div class="surfboard-author-profile">
+                <div class="surfboard-avatar-circle">
+                  <img src="./Assests/high%20protein%20box.webp" alt="Elena Rostova" class="surfboard-native-img">
+                </div>
+                <div class="surfboard-author-meta">
+                  <h4>Elena Rostova</h4>
+                  <span>Boutique Event Planner</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: DYNAMIC TYPEWRITER HEADER CLUSTER -->
+      <div class="testi-content-right" id="testi-observer-trigger">
+        <span class="testi-badge-tag">CLIENT TESTIMONIALS</span>
+        <!-- Built-in letter typing animation anchor point -->
+        <h2 class="testi-main-title" id="typewriter-testi-headline"></h2>
+        <p class="testi-sub-paragraph">Read verified success logs from elite corporations, wellness athletes, and wedding planners who choose premium nutritional catering execution channels daily.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FIXED ASYMMETRICAL CIRCULAR GREEN EMBLEMS IN BOTH BOTTOM CARD CORNERS -->
+  <div class="testi-corner-glow-node circle-green-lower-left"></div>
+  <div class="testi-corner-glow-node circle-green-lower-right"></div>
+</section>
+
+<style>
+  /* ==========================================================================
+   MASTER FLOATING PARENT TESTIMONIAL BENTO CARD (ZERO NAV BLOCK COLLISIONS)
+   ========================================================================== */
+.testimonial-parent-bento-card {
+  position: relative;
+  width: 94%;
+  max-width: 1300px;
+  
+  /* FIXED SPACIAL MARGINS: Shields header lines from overlapping blocks */
+  margin: 60px auto 40px auto; 
+  
+  background: linear-gradient(135deg, #f4fbf6 0%, #f9fee7 100%);
+  border: 1px solid rgba(34, 197, 94, 0.12);
+  border-radius: 36px;
+  box-shadow: 0 20px 45px -25px rgba(15, 23, 42, 0.04);
+  
+  /* FIXED COMPACT PADDING METRICS: 50px Top, 30px Bottom exactly */
+  padding-top: 30px;
+  padding-bottom: 30px;
+  
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* ==========================================================================
+   FIXED: PRECISE CIRCULAR GREEN BACKDROP SHADES IN BOTH BOTTOM CORNERS
+   ========================================================================== */
+.testi-corner-glow-node {
+  position: absolute;
+  width: 320px; 
+  height: 320px;
+  border-radius: 50%;
+  bottom: -90px;
+  z-index: 1;
+  pointer-events: none;
+  filter: blur(15px);
+}
+.circle-green-lower-left  { left: -80px; background: radial-gradient(circle, rgba(34,197,94,0.18) 0%, rgba(34,197,94,0) 75%); }
+.circle-green-lower-right { right: -80px; background: radial-gradient(circle, rgba(22,163,74,0.18) 0%, rgba(22,163,74,0) 75%); }
+
+/* Ambient Offers Canvas Vectors */
+.testi-bg-offers-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.testi-vector { position: absolute; }
+.tv-1 { top: 15%; left: 45%; animation: testiVectorDrift 6s ease-in-out infinite alternate; }
+.tv-2 { bottom: 25%; left: 40%; animation: testiVectorDrift 5s ease-in-out infinite alternate-reverse; }
+.tv-3 { top: 12%; right: 8%; animation: testiVectorDrift 7s ease-in-out infinite alternate 0.2s; }
+.tv-4 { bottom: 15%; right: 12%; animation: testiVectorDrift 5.5s ease-in-out infinite alternate-reverse 0.4s; }
+
+@keyframes testiVectorDrift {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-15px) rotate(15deg); }
+}
+
+.testi-master-container {
+  width: 100%;
+  padding: 0 45px;
+  position: relative;
+  z-index: 3;
+}
+
+.testi-split-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+}
+
+/* ==========================================================================
+   LEFT SIDE: AUTOMATED 2-SECOND ASYMMETRICAL SURFBOARD SHAPE REVEALS
+   ========================================================================== */
+.testi-media-left {
+  flex: 0.9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.testi-surfboard-stage {
+  position: relative;
+  width: 350px;
+  height: 420px; /* Vertically elongated to frame text boxes comfortably */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* HIGH-CREATIVE SHAPE: Exquisite Asymmetrical Smooth Surfboard/Leaf Silhouette Outline */
+.testi-surfboard-card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  border: 1px solid rgba(34, 197, 94, 0.15);
+  
+  /* Precision Bezier parameters layout shaping bounds into a premium fluid surfboard */
+  border-radius: 70% 30% 65% 35% / 40% 60% 40% 60%;
+  
+  box-shadow: 0 15px 35px -15px rgba(15, 23, 42, 0.05);
+  overflow: hidden;
+  
+  /* Dynamic 2s cross-fade layout visibility initialization states */
+  opacity: 0;
+  transform: scale(0.94) translateY(10px) rotate(-1deg);
+  pointer-events: none;
+  
+  /* Infinite gentle flight floating motion track loop */
+  animation: primarySurfboardFloat 4s ease-in-out infinite alternate;
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s;
+}
+
+@keyframes primarySurfboardFloat {
+  0% { transform: translateY(0px) rotate(-0.5deg); }
+  100% { transform: translateY(-12px) rotate(1deg); }
+}
+
+.surfboard-content-wrapper {
+  padding: 45px 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+  justify-content: center;
+}
+
+.surfboard-rating-stars-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.surfboard-feedback-quote {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #334155;
+  line-height: 1.5;
+  margin-bottom: 22px;
+}
+
+.surfboard-author-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+}
+
+/* Perfect Circular Platter Profile Frame wrapper forcing raw files round unconditionally */
+.surfboard-avatar-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+.surfboard-native-img { width: 100% !important; height: 100% !important; object-fit: cover !important; border-radius: 50%; }
+
+.surfboard-author-meta h4 { font-size: 0.95rem; font-weight: 800; color: #0f172a; margin-bottom: 1px; }
+.surfboard-author-meta span { font-size: 0.78rem; color: #64748b; font-weight: 600; }
+
+/* ==========================================================================
+   ACTIVE AUTOMATED TRANSITION STATE: DRIVEN BY JAVASCRIPT EVERY 2 SECONDS
+   ========================================================================== */
+.testi-surfboard-card.active-testi-state {
+  opacity: 1;
+  transform: scale(1) translateY(0) rotate(0deg);
+  pointer-events: auto;
+  box-shadow: 0 25px 55px -15px rgba(34, 197, 94, 0.16);
+}
+
+/* ==========================================================================
+   RIGHT COLUMN: DYNAMIC TYPIST ENGINE SEGMENT (HIGH FONT SIZES FIXED)
+   ========================================================================== */
+.testi-content-right {
+  flex: 1.1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.testi-badge-tag {
+  font-size: 0.95rem; /* INCREASED font size */
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #16a34a;
+  background: #ffffff;
+  border: 1px solid rgba(34, 197, 94, 0.12);
+  padding: 6px 14px;
+  border-radius: 50px;
+  margin-bottom: 18px;
+}
+
+.testi-main-title {
+  font-size: 3.2rem; /* INCREASED high-impact font sizes */
+  font-weight: 900;
+  line-height: 1.15;
+  color: #0f172a;
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+  min-height: 125px; /* Halts layout bounce during dynamic typewriter loops */
+}
+
+/* Character typist blink cursor indicator underscore line accent indicator */
+.testi-main-title::after {
+  content: '|';
+  color: #22c55e;
+  animation: typistBlink 0.75s step-end infinite;
+  font-weight: 400;
+}
+@keyframes typistBlink { from, to { opacity: 0 } 50% { opacity: 1 } }
+
+.testi-sub-paragraph {
+  font-size: 1.25rem; /* INCREASED description layout font size */
+  color: #475569;
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+/* ==========================================================================
+   FLUID STRUCTURAL RESPONSIVE ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 992px) {
+  .testi-master-container { padding: 0 15px; }
+  .testi-split-grid { flex-direction: column-reverse; text-align: center; gap: 40px; }
+  .testi-content-right { align-items: center; text-align: center; }
+  .testi-main-title { font-size: 2.3rem; min-height: auto; }
+  .testi-sub-paragraph { font-size: 1.1rem; }
+  .testi-surfboard-stage { width: 310px; height: 380px; }
+  .surfboard-content-wrapper { padding: 35px 25px; }
+  .testi-corner-glow-node { width: 220px; height: 220px; }
+}
+
+@media (max-width: 480px) {
+  .testimonial-parent-bento-card { padding-top: 40px; padding-bottom: 25px; width: 95%; }
+  .testi-main-title { font-size: 1.85rem; }
+}
+
+</style>
+
+<script>
+  // ==========================================================================
+// SCROLL-DRIVEN TYPEWRITER AND AUTOMATED 2-SECOND TESTIMONIAL CYCLE ENGINE
+// ==========================================================================
+function initTestimonialsShowcaseEngine() {
+  const targetHeadlineText = "What Our Active Clients Say";
+  const typewriterHeadlineNode = document.getElementById('typewriter-testi-headline');
+  const parentObserverSection = document.getElementById('testi-observer-trigger');
+  const testimonialChipsList = document.querySelectorAll('.testi-surfboard-card');
+
+  if (!parentObserverSection || !typewriterHeadlineNode) return;
+
+  let isTypingLoopStarted = false;
+
+  // Letter-by-letter renderer
+  function triggerLetterByLetterSequence(text, targetNode, delaySpeed = 50) {
+    let charIndex = 0;
+    targetNode.textContent = ""; 
+    
+    function appendNextLetter() {
+      if (charIndex < text.length) {
+        targetNode.textContent += text.charAt(charIndex);
+        charIndex++;
+        setTimeout(appendNextLetter, delaySpeed);
+      }
+    }
+    appendNextLetter();
+  }
+
+  // Scroll visibility observer
+  const testimonialScrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting && !isTypingLoopStarted) {
+        isTypingLoopStarted = true;
+        
+        // Fire letter-by-letter typing animation loop instantly
+        triggerLetterByLetterSequence(targetHeadlineText, typewriterHeadlineNode, 55);
+        
+        testimonialScrollObserver.unobserve(parentObserverSection);
+      }
+    });
+  }, {
+    threshold: 0.15 
+  });
+
+  testimonialScrollObserver.observe(parentObserverSection);
+
+  // ==========================================================================
+  // CONTINUOUS AUTOMATED TESTIMONIAL CYCLIC LOOP: Rotates Every 2 Seconds
+  // ==========================================================================
+  if (testimonialChipsList.length === 0) return;
+
+  let currentActiveTestiIndex = 0;
+  const loopCycleRotationInterval = 2000; // Rotates exactly every 2 seconds (2000ms) precisely
+
+  setInterval(() => {
+    // Hide current active chip card
+    testimonialChipsList[currentActiveTestiIndex].classList.remove('active-testi-state');
+
+    // Advance loop index pointer safely, wrapping back to 0 at limits
+    currentActiveTestiIndex = (currentActiveTestiIndex + 1) % testimonialChipsList.length;
+
+    // Bring next active chip card into full focus
+    testimonialChipsList[currentActiveTestiIndex].classList.add('active-testi-state');
+  }, loopCycleRotationInterval);
+}
+
+// Global initialization wire-up on load hooks
+window.addEventListener('DOMContentLoaded', () => {
+  initTestimonialsShowcaseEngine();
+});
+
+</script>
+
+<!-- ==========================================================================
+     PREMIUM HEALTHY CATERING MASTER FOOTER DECK (index.html)
+     ========================================================================== -->
+<footer class="catering-master-footer">
+  <div class="footer-master-container">
+    
+    <!-- GRID MATRIX SYSTEM -->
+    <div class="footer-main-grid-rail">
+      
+      <!-- COLUMN 1: BRAND LOGO & CORE PROFILE OVERVIEW -->
+      <div class="footer-grid-column brand-profile-block">
+        <!-- NATIVE BACK TO TOP EMITTER ATTACHED ON CLICK -->
+        <div class="footer-brand-logo-wrap" onclick="executeScrollToTop(event)" title="Click to fly back to top">
+          <!-- OPTION CONFIGURATION: Update source paths here to load your custom transparent logo branding graphic -->
+          <img src="./Assests/brand logo - Copy.webp" alt="Stackly Healthy Catering Logo" class="footer-brand-img">
+        </div>
+        <p class="brand-mission-copy">Engineering premium macro-balanced catering setups and artisanal organic menus designed to fuel workplace productivity and luxury celebrations alike.</p>
+        
+        <!-- 5 COMPLIANT SOCIAL MEDIA SATELLITE LINKS -->
+        <div class="footer-social-channels-row">
+          <a href="404.html" class="social-icon-circle" aria-label="Follow us on Facebook">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-4h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="404.html" class="social-icon-circle" aria-label="Follow us on Instagram">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="2" width="20" height="24" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"/></svg>
+          </a>
+          <a href="404.html" class="social-icon-circle" aria-label="Follow us on X Twitter">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+          </a>
+          <a href="404.html" class="social-icon-circle" aria-label="Follow us on LinkedIn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="404.html" class="social-icon-circle" aria-label="Follow us on YouTube">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 22.5 0 0 0 1 11.75a29 22.5 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 22.5 0 0 0 .46-5.25 29 22.5 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- COLUMN 2: DOMAIN QUICK LINKS -->
+      <div class="footer-grid-column navigation-menu-column">
+        <h4 class="footer-column-heading">Explore Menus</h4>
+        <div class="heading-underline-accent"></div>
+        <ul class="footer-links-list">
+          <li><a href="404.html">Corporate Sunrise</a></li>
+          <li><a href="404.html">Elite Gala Buffet</a></li>
+          <li><a href="404.html">Lean Fitness Boxes</a></li>
+          <li><a href="404.html">Boutique High Tea</a></li>
+        </ul>
+      </div>
+
+      <!-- COLUMN 3: SERVICE SUPPORT HUB -->
+      <div class="footer-grid-column navigation-menu-column">
+        <h4 class="footer-column-heading">Catering Support</h4>
+        <div class="heading-underline-accent"></div>
+        <ul class="footer-links-list">
+          <li><a href="404.html">Nutritional Parameters</a></li>
+          <li><a href="404.html">Fleet Delivery Tracks</a></li>
+          <li><a href="404.html">Help & FAQ Center</a></li>
+          <li><a href="404.html">Hygienic Certifications</a></li>
+        </ul>
+      </div>
+
+      <!-- COLUMN 4: REPLACED CORE ADDRESS MATRIX SLAT -->
+      <div class="footer-grid-column brand-address-matrix-column">
+        <h4 class="footer-column-heading">Headquarters Location</h4>
+        <div class="heading-underline-accent"></div>
+        
+        <div class="address-matrix-wrapper">
+          <!-- Physical Location -->
+          <div class="matrix-data-row">
+            <div class="matrix-icon-wrap text-green-accent">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <p class="matrix-text">MMR Complex, Periyakollappatty, Chinna Thirupathi, Salem, Tamil Nadu 636008</p>
+          </div>
+          
+          <!-- Direct Telephone Slat -->
+          <div class="matrix-data-row">
+            <div class="matrix-icon-wrap text-green-accent">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.7 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <p class="matrix-text"><a href="tel:+914271234567" class="matrix-interactive-link">+91 427 123 4567</a></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- LOWER SUB-FOOTER REVENUE STRIP TRACK -->
+    <div class="footer-copyright-strip-row">
+      <p class="copyright-legal-text">&copy; 2026 Stackly Industries. All culinary rights reserved.</p>
+      
+      <div class="sub-footer-utility-links">
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Terms of Service</a>
+        <a href="404.html">Cookie Management</a>
+      </div>
+
+      <!-- FLOATING BACK-TO-TOP CHRONO HANDLE LINK BUTTON -->
+      <button class="footer-scroll-top-btn" onclick="executeScrollToTop(event)" title="Fly back to top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+      </button>
+    </div>
+
+  </div>
+</footer>
+
+<style>
+  /* ==========================================================================
+   MASTER DEEP CARBON FOOTER ARCHITECTURE (style.css PARITY)
+   ========================================================================== */
+.catering-master-footer {
+  position: relative;
+  width: 100%;
+  /* EXACT SCHEME MATCH: High contrast premium midnight carbon background */
+  background-color: #0b0f19; 
+  padding: 65px 0 30px 0;
+  overflow: hidden;
+  z-index: 100;
+  font-family: inherit;
+}
+
+.footer-master-container {
+  width: 94%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ==========================================================================
+   4-COLUMN EQUALIZER GRID STRUCTURE RAIL
+   ========================================================================== */
+/* ==========================================================================
+   FIXED: COMPACT FOOTER GRID ARCHITECTURE (REDUCED UNWANTED INTER-COLUMN GAPS)
+   ========================================================================== */
+.footer-main-grid-rail {
+  display: grid;
+  
+  /* FIXED: Changed from equal widths to packed custom column weights to compress the space between lists tightly */
+  grid-template-columns: 1.4fr 0.8fr 0.8fr 1.1fr;
+  
+  /* FIXED: Reduced column gap distance from 40px to a tight 20px */
+  column-gap: 20px;
+  row-gap: 30px;
+  
+  width: 100%;
+  padding-bottom: 45px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+}
+
+/* ==========================================================================
+   FLUID STRUCTURAL RESPONSIVE ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .footer-main-grid-rail { 
+    /* Automatically switches grid tracks safely on tablet screens to maintain balance */
+    grid-template-columns: repeat(2, 1fr); 
+    column-gap: 30px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-main-grid-rail { 
+    /* Unconditional vertical center stacking fallback rules for smartphones */
+    grid-template-columns: 1fr; 
+    gap: 30px; 
+  }
+}
+
+
+.footer-grid-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Brand Overview Profile Styles */
+.brand-profile-block { flex: 1.2; }
+
+.footer-brand-logo-wrap {
+  cursor: pointer;
+  margin-bottom: 18px;
+  transition: transform 0.3s ease;
+}
+.footer-brand-logo-wrap:hover { transform: scale(1.03); }
+.footer-brand-img { height: 35px; width: auto; object-fit: contain; }
+
+.brand-mission-copy {
+  font-size: 0.88rem;
+  color: #94a3b8; /* Muted contrast description text color */
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+/* 5 Social Media Rounded Anchors Frame Rows */
+.footer-social-channels-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.social-icon-circle {
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  color: #94a3b8;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s, color 0.3s, border-color 0.3s, transform 0.2s;
+}
+
+.social-icon-circle:hover {
+  /* HOVER ENHANCEMENT: Swaps dynamically to signature brand mint green color on focus triggers */
+  background: rgba(34, 197, 94, 0.1);
+  border-color: #22c55e;
+  color: #22c55e;
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   NAVIGATION COLUMN MODULES & TEXT CONTENT HEADERS
+   ========================================================================== */
+.footer-column-heading {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 6px;
+  letter-spacing: -0.2px;
+}
+
+.heading-underline-accent {
+  width: 25px;
+  height: 2.5px;
+  background-color: #ef4444; /* Exact image copy coral line tag highlight marker */
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links-list a {
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #94a3b8;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-links-list a:hover {
+  color: #22c55e; /* Flows into theme green instantly on pointer interactions */
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   REPLACED BRAND ADDRESS CONTACT MATRIX BLOCK
+   ========================================================================== */
+.brand-address-matrix-column { flex: 1.2; }
+
+.address-matrix-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.matrix-data-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.matrix-icon-wrap {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.text-green-accent { color: #22c55e; }
+
+.matrix-text {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.matrix-interactive-link {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+.matrix-interactive-link:hover { color: #22c55e; }
+
+/* ==========================================================================
+   LOWER SUB-FOOTER LEGAL REVENUE BAR STRIP
+   ========================================================================== */
+.footer-copyright-strip-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 25px;
+  position: relative;
+}
+
+.copyright-legal-text { font-size: 0.82rem; color: #64748b; margin: 0; font-weight: 500; }
+
+.sub-footer-utility-links { display: flex; align-items: center; gap: 24px; }
+.sub-footer-utility-links a {
+  text-decoration: none;
+  font-size: 0.82rem;
+  color: #64748b;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.sub-footer-utility-links a:hover { color: #22c55e; }
+
+/* Dedicated Back-to-Top Floating Trigger Button Action */
+.footer-scroll-top-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #94a3b8;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.25s, color 0.25s, border-color 0.25s, transform 0.2s;
+}
+
+.footer-scroll-top-btn:hover {
+  background: #22c55e;
+  border-color: #22c55e;
+  color: #ffffff;
+  transform: scale(1.05) translateY(-3px);
+  box-shadow: 0 6px 16px rgba(34, 197, 94, 0.25);
+}
+
+/* ==========================================================================
+   FLUID STRUCTURAL RESPONSIVE VIEWPORT QUERIES
+   ========================================================================== */
+@media (max-width: 1024px) {
+  /* Compresses the layout rail into exactly 2 rows side-by-side to block clipping overflow fields */
+  .footer-main-grid-rail { grid-template-columns: repeat(2, 1fr); gap: 35px; }
+}
+
+@media (max-width: 640px) {
+  .catering-master-footer { padding-top: 50px; padding-bottom: 25px; }
+  /* Compresses the grid system row layer directly into a single centered column stack on smartphones */
+  .footer-main-grid-rail { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+  .footer-grid-column { align-items: center; text-align: center; }
+  .footer-links-list { align-items: center; }
+  .matrix-data-row { flex-direction: column; align-items: center; gap: 4px; }
+  
+  .footer-copyright-strip-row { flex-direction: column-reverse; gap: 20px; text-align: center; }
+  .sub-footer-utility-links { flex-direction: column; gap: 12px; }
+  .footer-scroll-top-btn { position: absolute; top: -10px; right: 50%; transform: translateX(50%); } /* Center buttons on tiny displays */
+}
+
+</style>
+
+<script>
+  // ==========================================================================
+// HARDWARE-ACCELERATED BACK TO TOP SMOOTH SCROLL DRIVER TIMELINE (script.js)
+// ==========================================================================
+function executeScrollToTop(event) {
+  if (event) {
+    event.preventDefault(); // Intercept default router index event triggers safely
+  }
+  
+  // Directly feeds instructions into browser hardware scrolling pipelines
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // Triggers a smooth chronological upward flight path curve
+  });
+}
+
+</script>
+</body>
+</html>
