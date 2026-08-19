@@ -1,0 +1,2438 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly - Healthy Catering Food Services</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  
+  <div id="preloader">
+    <svg class="bg-vectors" xmlns="http://w3.org" viewBox="0 0 960 540" preserveAspectRatio="none">
+      <path class="bg-wave" fill="rgba(0, 230, 118, 0.06)" d="M0,160 Q240,280 480,160 T960,160 L960,0 L0,0 Z"/>
+      <path class="bg-wave" fill="rgba(255, 145, 0, 0.04)" d="M0,200 Q240,100 480,220 T960,200 L960,0 L0,0 Z" style="animation-delay: -3s; animation-duration: 11s;"/>
+    </svg>
+
+    <div class="preloader-art">
+      <svg class="food-vector salad-leaf" width="45" height="45" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+        <path d="M2 22C4.5 19.5 7.5 19 10 20C13 21.2 16.5 19.8 18 17C19.5 14.2 18.8 10.5 21 8C18.5 8.5 16 7.5 14.5 5.5C13 3.5 13.5 1 11 2C8.5 3 8 6.5 6 8C4 9.5 1 9 2 11.5C3 14 5.5 14.5 5 17.5C4.5 20.5 2 22 2 22Z" fill="var(--food-green)" opacity="0.95"/>
+        <path d="M6 8C7.5 10.5 10 13 13.5 14.5" stroke="#047857" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+
+      <svg class="food-vector avocado" width="50" height="50" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+        <path d="M12 2C7.5 2 4 7 4 13C4 18 7.5 22 12 22C16.5 22 20 18 20 13C20 7 16.5 2 12 2Z" fill="#4ea93b"/>
+        <path d="M12 4C8.5 4 5.5 8.5 5.5 13C5.5 17 8.5 20.5 12 20.5C15.5 20.5 18.5 17 18.5 13C18.5 8.5 15.5 4 12 4Z" fill="#a3e635"/>
+        <circle cx="12" cy="14.5" r="3.5" fill="#78350f"/>
+      </svg>
+
+      <svg class="food-vector broccoli" width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org">
+        <path d="M10 15C10 12.5 11 11 12 11C13 11 14 12.5 14 15C14 18 13.5 22 12 22C10.5 22 10 18 10 15Z" fill="#15803d"/>
+        <circle cx="8.5" cy="9.5" r="4.5" fill="var(--food-green)"/>
+        <circle cx="15.5" cy="9.5" r="4.5" fill="var(--food-green)"/>
+        <circle cx="12" cy="6.5" r="4.5" fill="#22c55e"/>
+      </svg>
+
+      <div class="cloche-container">
+        <svg width="110" height="80" viewBox="0 0 24 18" fill="none" xmlns="http://w3.org">
+          <path d="M12 4C6.5 4 2 7.5 2 12H22C22 7.5 17.5 4 12 4Z" fill="#475569"/>
+          <path d="M12 4C14.8 4 17.3 5.4 19 7.5" stroke="#ffffff" stroke-width="0.75" stroke-linecap="round"/>
+          <circle cx="12" cy="2.5" r="1.5" fill="var(--food-orange)"/>
+          <path d="M2 13H22V14H22.5C23 14 23.5 14.5 23.5 15C23.5 15.5 23 16 22.5 16H1.5C1 16 0.5 15.5 0.5 15C0.5 14.5 1 14 1.5 14H2V13Z" fill="#334155"/>
+        </svg>
+      </div>
+
+      <div class="platter"></div>
+    </div>
+
+    <div class="brand-title">Stackly</div>
+
+    <div class="progress-wrapper">
+      <div class="progress-bar"></div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="header-container">
+      
+      <div class="logo-wrapper" onclick="refreshPage()">
+        <img src="./Assests/healthy catering logo.webp" alt="Stackly Logo" class="brand-logo">
+       
+      </div>
+
+      <nav class="desktop-nav">
+        <a href="index.html" class="nav-item ">Home</a>
+        <a href="ourmenus.html" class="nav-item">Our Menu</a>
+        <a href="mealplans.html" class="nav-item">Meal Plans</a>
+        <a href="catering.html" class="nav-item active">Catering</a>
+        <a href="about.html" class="nav-item">About Us</a>
+        <a href="contact.html" class="nav-item">Contact Us</a>
+      </nav>
+
+      <div class="utility-actions">
+        <a href="404.html" class="icon-btn" title="Wishlist">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+        </a>
+        <a href="404.html" class="icon-btn" title="Shopping Cart">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+          <span class="cart-badge">0</span>
+        </a>
+       <button class="auth-btn" onclick="window.location.href='login.html';" title="Login">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/>
+    <circle cx="12" cy="7" r="4"/>
+  </svg>
+</button>
+
+      </div>
+
+      <div class="hamburger-menu" id="hamburger-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+
+    </div>
+  </header>
+
+  <div class="mobile-menu-overlay" id="mobile-overlay">
+    <div class="mobile-menu-card">
+      <nav class="mobile-nav-links">
+        <a href="index.html" class="mobile-nav-item ">Home</a>
+        <a href="ourmenus.html" class="mobile-nav-item">Our Menu</a>
+        <a href="mealplans.html" class="mobile-nav-item">Meal Plans</a>
+        <a href="catering.html" class="mobile-nav-item active">Catering</a>
+        <a href="about.html" class="mobile-nav-item">About Us</a>
+        <a href="contact.html" class="mobile-nav-item">Contact Us</a>
+      </nav>
+      <div class="mobile-utilities">
+        <a href="404.html" class="mobile-util-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          Wishlist
+        </a>
+        <a href="404.html" class="mobile-util-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+          Cart Container
+        </a>
+        <button class="mobile-auth-btn">Sign In / Register</button>
+      </div>
+    </div>
+  </div>
+
+
+
+  <script>
+    let audioContext = null;
+    let soundFired = false;
+
+    function initAndPlaySound() {
+      if (soundFired) return;
+      try {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtx) return;
+        if (!audioContext) audioContext = new AudioCtx();
+        if (audioContext.state === 'suspended') audioContext.resume();
+
+        const osc = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        osc.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(1450, audioContext.currentTime); 
+        gainNode.gain.setValueAtTime(0.3, audioContext.currentTime);
+        gainNode.gain.exponentialRampToValueAtTime(0.0001, audioContext.currentTime + 1.5);
+        osc.start();
+        osc.stop(audioContext.currentTime + 1.5);
+        
+        soundFired = true;
+        cleanListeners();
+      } catch (e) {}
+    }
+
+    function cleanListeners() {
+      window.removeEventListener('mousemove', initAndPlaySound);
+      window.removeEventListener('touchstart', initAndPlaySound);
+      window.removeEventListener('click', initAndPlaySound);
+    }
+
+    window.addEventListener('mousemove', initAndPlaySound);
+    window.addEventListener('touchstart', initAndPlaySound);
+    window.addEventListener('click', initAndPlaySound);
+
+    function refreshPage() {
+      window.location.reload(true);
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      const navItems = document.querySelectorAll('.nav-item, .mobile-nav-item');
+      navItems.forEach(item => {
+        item.addEventListener('click', function() {
+          navItems.forEach(i => i.classList.remove('active'));
+          this.classList.add('active');
+        });
+      });
+
+      const burger = document.getElementById('hamburger-toggle');
+      const mobileOverlay = document.getElementById('mobile-overlay');
+      
+      burger.addEventListener('click', () => {
+        burger.classList.toggle('open');
+        mobileOverlay.classList.toggle('visible');
+      });
+
+      setTimeout(() => {
+        const preloader = document.getElementById('preloader');
+        const mainApp = document.getElementById('main-app');
+
+        preloader.style.opacity = '0';
+        preloader.style.transform = 'scale(1.05)';
+        
+        setTimeout(() => {
+          preloader.style.display = 'none';
+          mainApp.style.opacity = '1';
+          mainApp.style.transform = 'scale(1)';
+          cleanListeners();
+        }, 500);
+
+      }, 2000);
+    });
+  </script>
+
+  <!-- ==========================================================================
+     FLOATING BENTO CATERING HERO THEATER SECTION (index.html)
+     ========================================================================== -->
+<section class="catering-hero-section">
+  
+  <!-- SENSORY BACKDROP CANVAS LAYER: INFINITE DRIFTING VEGGIE VECTORS -->
+  <div class="catering-hero-ambient-backdrop">
+    <div class="catering-blur-orb orb-green"></div>
+    <div class="catering-blur-orb orb-orange"></div>
+    
+    <!-- Vector Satellite 1: Probiotic Broccoli -->
+    <svg class="cat-hero-vector chv-1" width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="#16a34a" stroke-width="1.8" opacity="0.12"><circle cx="8.5" cy="9.5" r="5"/><circle cx="15.5" cy="9.5" r="5"/><circle cx="12" cy="6.5" r="5"/><path d="M10 15c0-2.5 1-4 2-4s2 1.5 2 4c0 3-.5 7-2 7s-2-4-2-4z"/></svg>
+    <!-- Vector Satellite 2: Healthy Mint Leaf -->
+    <svg class="cat-hero-vector chv-2" width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://w3.org" opacity="0.14"><path d="M2 22C4.5 19.5 7.5 19 10 20C13 21.2 16.5 19.8 18 17C19.5 14.2 18.8 10.5 21 8C18.5 8.5 16 7.5 14.5 5.5Z" fill="#22c55e"/></svg>
+    <!-- Vector Satellite 3: Aromatic Herb Branch -->
+    <svg class="cat-hero-vector chv-3" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.12"><path d="M2 22c1.25-3.25 3.5-6.5 6-7.5M19 2c-1.5 1-3.5 3-4.5 5.5m2.5-3.5h.01M9 13.5c1.5-1 3-3 3.5-5.5m-1.5 3.5h.01M13 18.5c1-1.5 2.5-3 2.5-5.5m-1.5 3.5h.01"/></svg>
+    <!-- Vector Satellite 4: Premium Event Serving Platter -->
+    <svg class="cat-hero-vector chv-4" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#ff9100" stroke-width="1.8" opacity="0.08"><path d="M2 18h20v2H2zM12 4a7 7 0 0 1 7 7H5a7 7 0 0 1 7-7zM12 2v2"/></svg>
+  </div>
+
+  <div class="catering-hero-master-container" id="cat-hero-scroll-trigger">
+    
+    <!-- MAIN FLOATING CARRIER PLATFORM BANNER POD -->
+    <div class="catering-hero-floating-pod cat-hero-reveal-node">
+      <div class="catering-hero-split-grid">
+        
+        <!-- LEFT COLUMN: HIGH-VISIBILITY TYPOGRAPHY COPIES & ACTION BUTTONS -->
+        <div class="catering-hero-text-side">
+          <span class="catering-hero-mini-tag">PREMIUM GOURMET ECOSYSTEM</span>
+          <h1 class="catering-hero-main-title">
+            Gourmet Catering <span class="text-green-glow">CRAFTED FOR VITALITY.</span>
+          </h1>
+          <p class="catering-hero-sub-paragraph">Meticulously calibrated nutrition plans, organic ingredient loops, and porcelain-grade catering setups engineered flawlessly for your elite corporate summits and private milestone functions.</p>
+          
+          <!-- KINETIC OSCILLATING FLOATING CTA LINKS BUNDLE -->
+          <div class="catering-hero-cta-group">
+            <a href="404.html" class="btn-cat-hero-primary">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="15" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Book Corporate Event
+            </a>
+            <a href="404.html" class="btn-cat-hero-secondary">
+              Explore Banquet Menus
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: LIQUID ORGANIC EGG PHOTO VIEWPORT CANVAS -->
+        <div class="catering-hero-media-side">
+          <div class="catering-hero-artwork-universe">
+            <div class="artwork-radial-spotlight-backdrop"></div>
+            
+            <!-- CREATIVE ASYMMETRICAL EGG OUTLINE FRAME MASK -->
+            <div class="catering-hero-egg-mask">
+              <div class="catering-hero-live-shimmer"></div>
+              <!-- MAIN PHOTOGRAPH CANVAS ASSET -->
+              <img src="./Assests/hero%20section%20img%203.webp" alt="Premium Healthy Catering Gourmet Buffet Spread" class="catering-hero-native-photo">
+            </div>
+            
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+    /* ==========================================================================
+   FLOATING BENTO CATERING HERO HOOD ARCHITECTURE (style.css)
+   ========================================================================== */
+.catering-hero-section {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  
+  /* FIXED: Precise exact padding constraints: 50px Top, 30px Bottom precisely */
+  padding-top: 130px;
+  padding-bottom: 30px;
+  
+  overflow: hidden;
+  z-index: 2;
+}
+
+.catering-hero-master-container {
+  width: 94%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ==========================================================================
+   INFINITE CONTINUOUS DRIFTING BACKDROP VECTOR CHANNELS
+   ========================================================================== */
+.catering-hero-ambient-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.catering-blur-orb {
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  filter: blur(90px);
+  opacity: 0.12;
+}
+.orb-green  { top: -10%; left: 15%; background-color: #22c55e; }
+.orb-orange { bottom: -10%; right: 15%; background-color: #ff9100; }
+
+.cat-hero-vector { position: absolute; }
+.chv-1 { top: 12%; left: 8%; animation: satelliteVDrift 6s ease-in-out infinite alternate; }
+.chv-2 { bottom: 20%; left: 10%; animation: satelliteVDrift 5s ease-in-out infinite alternate-reverse; }
+.chv-3 { top: 15%; right: 12%; animation: satelliteVDrift 7s ease-in-out infinite alternate 0.2s; }
+.chv-4 { bottom: 12%; right: 8%; animation: satelliteVDrift 5.5s ease-in-out infinite alternate-reverse 0.4s; }
+
+@keyframes satelliteVDrift {
+  0% { transform: translateY(0) rotate(0deg) scale(0.95); }
+  100% { transform: translateY(-16px) rotate(12deg) scale(1.04); }
+}
+
+/* ==========================================================================
+   THE FLOATING BENTO CANVAS POD BOARD CARRIER
+   ========================================================================== */
+.catering-hero-floating-pod {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(135deg, rgba(244, 251, 246, 0.75) 0%, rgba(250, 253, 235, 0.75) 100%);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  
+  border: 1px solid rgba(34, 197, 94, 0.15);
+  border-radius: 36px; /* Elegant rounded edge bounding profiles */
+  padding: 55px 60px;
+  box-shadow: 0 25px 55px -25px rgba(15, 23, 42, 0.06);
+  
+  /* Continuous smooth fluid flight motion timeline loop */
+  animation: masterPlatformFloat 4.5s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes masterPlatformFloat {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-10px); }
+}
+
+.catering-hero-split-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 50px;
+  width: 100%;
+}
+
+/* ==========================================================================
+   LEFT SIDE: HIGH-VISIBILITY TYPOGRAPHY COPIES AND ACTION CONTROLLERS
+   ========================================================================== */
+.catering-hero-text-side {
+  flex: 1.25;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.catering-hero-mini-tag {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  color: #16a34a; /* Brand Theme Green tag accents color */
+  margin-bottom: 15px;
+}
+
+.catering-hero-main-title {
+  font-size: 3.2rem; /* INCREASED font size for ultra-scannable presentations */
+  font-weight: 900;
+  color: #0f172a;
+  line-height: 1.15;
+  margin-bottom: 18px;
+  letter-spacing: -1px;
+}
+
+/* HOVER NEON GLOW TRAIL EFFECT BINDINGS */
+.text-green-glow { color: #22c55e; transition: text-shadow 0.3s ease, color 0.3s ease; }
+.catering-hero-floating-pod:hover .text-green-glow {
+  color: #4ade80;
+  text-shadow: 0 0 20px rgba(74, 222, 128, 0.5); /* Title typography flares neon trails intensely on hover focus */
+}
+
+.catering-hero-sub-paragraph {
+  font-size: 1.22rem; /* INCREASED description layout font weights scaling */
+  color: #475569;
+  line-height: 1.6;
+  max-width: 580px;
+  margin-bottom: 30px;
+}
+
+/* Kinetic Oscillating Buttons Group Slat */
+.catering-hero-cta-group {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.btn-cat-hero-primary {
+  text-decoration: none;
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: #ffffff;
+  padding: 16px 36px;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 10px 25px rgba(22, 163, 74, 0.25);
+  
+  /* Primary oscillating flight axis timeline */
+  animation: buttonFluidFloat 3.5s ease-in-out infinite alternate;
+  transition: box-shadow 0.25s, transform 0.2s;
+}
+.btn-cat-hero-primary:hover { box-shadow: 0 15px 32px rgba(22, 163, 74, 0.45); animation-play-state: paused !important; transform: translateY(-2px); }
+
+.btn-cat-hero-secondary {
+  text-decoration: none;
+  background: #ffffff;
+  color: #475569;
+  border: 1px solid #e2e8f0;
+  padding: 16px 36px;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+  
+  /* Alternating staggered oscillation prevents timeline collisions */
+  animation: buttonFluidFloat 3.5s ease-in-out infinite alternate-reverse 0.4s;
+  transition: background 0.25s, color 0.25s, border-color 0.25s, transform 0.2s;
+}
+.btn-cat-hero-secondary:hover { color: #16a34a; border-color: rgba(34,197,94,0.3); background: #f0fdf4; animation-play-state: paused !important; transform: translateY(-2px); }
+
+@keyframes buttonFluidFloat { 0% { transform: translateY(0px); } 100% { transform: translateY(-6px); } }
+
+/* ==========================================================================
+   RIGHT SIDE: CINEMATIC MULTI-DIMENSIONAL ASYMMETRICAL EGG MASK CORE
+   ========================================================================== */
+.catering-hero-media-side {
+  flex: 0.9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.catering-hero-artwork-universe {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.artwork-radial-spotlight-backdrop {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(34,197,94,0.16) 0%, rgba(34,197,94,0) 70%);
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* EXQUISITE ASYMMETRICAL MODERN EGG MASK PORT: Crops photos cleanly drop rigid bounds */
+.catering-hero-egg-mask {
+  position: relative;
+  width: 360px;
+  height: 380px; /* Vertically elongated curves shape */
+  border: 6px solid #ffffff;
+  
+  /* Precision curve indices configuration contours raw landscape/portrait photo asset grids */
+  border-radius: 65% 35% 50% 50% / 45% 45% 55% 55%;
+  
+  box-shadow: 0 25px 55px -20px rgba(15, 23, 42, 0.12);
+  overflow: hidden;
+  z-index: 3;
+  transition: border-radius 0.6s ease-in-out, box-shadow 0.35s ease, border-color 0.35s;
+}
+
+/* Image frame morphs organically on platform hover focused states */
+.catering-hero-floating-pod:hover .catering-hero-egg-mask {
+  border-radius: 50% 50% 45% 55% / 40% 45% 55% 60%;
+  box-shadow: 0 30px 65px -15px rgba(34, 197, 94, 0.25);
+}
+
+.catering-hero-native-photo {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important; /* Retained: forces photographs to clip smoothly into curves */
+}
+
+.catering-hero-live-shimmer {
+  position: absolute;
+  top: -50%; left: -50%; width: 200%; height: 200%;
+  background: linear-gradient(45deg, transparent 45%, rgba(255,255,255,0.4) 50%, transparent 55%);
+  transform: rotate(35deg);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+  z-index: 5;
+}
+.catering-hero-floating-pod:hover .catering-hero-live-shimmer { transform: translate(50%, 50%) rotate(35deg); }
+
+/* ==========================================================================
+   SCROLL REVEAL STAGGER INITIAL ADJ VALUES PROPERTIES
+   ========================================================================== */
+.cat-hero-reveal-node {
+  opacity: 0;
+  transform: translateY(30px) scale(0.98);
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.85s ease;
+}
+.cat-hero-reveal-node.cat-hero-reveal-active { opacity: 1; transform: translateY(0) scale(1); }
+
+/* ==========================================================================
+   FLUID STRUCTURAL RESPONSIVE ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 1150px) {
+  .catering-hero-floating-pod { padding: 40px; }
+  .catering-hero-main-title { font-size: 2.6rem; }
+  .catering-hero-sub-paragraph { font-size: 1.1rem; }
+  .catering-hero-artwork-universe { width: 320px; height: 320px; }
+  .catering-hero-egg-mask { width: 290px; height: 310px; }
+}
+
+@media (max-width: 992px) {
+  /* Safely converts bento card into a stacked vertical column layout on tablets/smartphones */
+  .catering-hero-split-grid { flex-direction: column-reverse; text-align: center; gap: 40px; }
+  .catering-hero-text-side { align-items: center; text-align: center; }
+  .catering-hero-sub-paragraph { max-width: 100%; }
+  .catering-hero-cta-group { flex-direction: column; width: 100%; gap: 12px; }
+  .btn-cat-hero-primary, .btn-cat-hero-secondary { width: 100%; justify-content: center; }
+  .catering-hero-egg-mask { border-radius: 28px !important; } /* Clean fallback curves boundaries on phone display touches */
+  .catering-hero-artwork-universe { width: 260px; height: 260px; }
+  .catering-hero-egg-mask { width: 240px; height: 240px; }
+}
+
+@media (max-width: 480px) {
+  .catering-hero-section { padding-top: 40px; padding-bottom: 25px; }
+  .catering-hero-floating-pod { padding: 30px 16px; border-radius: 24px; }
+  .catering-hero-main-title { font-size: 1.85rem; }
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// SCROLL-DRIVEN FLOATING BENTO HERO PLATFORM REVEAL OBSERVER (script.js)
+// ==========================================================================
+function initCateringHeroVisibilityObserver() {
+  const scrollTriggerParentBox = document.getElementById('cat-hero-scroll-trigger');
+  if (!scrollTriggerParentBox) return;
+
+  const floatingPodNode = scrollTriggerParentBox.querySelector('.cat-hero-reveal-node');
+  if (!floatingPodNode) return;
+
+  const cateringHeroObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        // Inject active visibility status layers instantly on screen entry
+        floatingPodNode.classList.add('cat-hero-reveal-active');
+        cateringHeroObserver.unobserve(scrollTriggerParentBox);
+      }
+    });
+  }, {
+    threshold: 0.05 // Fires the split-second 5% of the section area enters user view grids
+  });
+
+  cateringHeroObserver.observe(scrollTriggerParentBox);
+}
+
+// Map secure execution initialization completion triggers safely
+window.addEventListener('DOMContentLoaded', () => {
+  initCateringHeroVisibilityObserver();
+});
+
+</script>
+
+<!-- ==========================================================================
+     CINEMATIC FIXED CENTRAL LINE EVENT TIMELINE ARCHITECTURE (index.html)
+     ========================================================================== -->
+<section class="event-timeline-asymmetric-section">
+  <div class="timeline-master-container" id="timeline-master-scroll-trigger">
+    
+    <!-- MASTER HEADING -->
+    <div class="timeline-header-center">
+      <span class="timeline-badge-tag timeline-reveal-node">CELEBRATION MATRIX</span>
+      <h2 class="timeline-main-title" id="typewriter-timeline-heading"></h2>
+    </div>
+
+    <!-- MAIN DIAGONAL TIMELINE GRID STAGE RAIL -->
+    <div class="timeline-diagonal-flow-deck">
+      
+      <!-- FIXED: 100% PURE CSS VERTICAL CENTRAL ANCHOR LINE TRACK -->
+      <div class="timeline-central-vertical-spine-line"></div>
+
+      <!-- ==========================================================================
+           ROW 1: MARRIAGE CATERING (DIAGONAL NODE: IMAGES LEFT / TEXT RIGHT)
+           ========================================================================== -->
+      <div class="timeline-asymmetric-row row-align-standard timeline-reveal-node">
+        
+        <!-- LEFT BOUNDARY: 2-SECOND AUTOPLAY CROSS-FADING MULTI-IMAGE CANVAS -->
+        <div class="timeline-media-viewport">
+          <div class="media-carousel-fader-deck" data-autoplay-speed="2000">
+            <img src="./Assests/hero%20section%20img%203.webp" alt="Grand Marriage Catering Buffet Setup 1" class="fader-photo-asset active-slide-frame">
+            <img src="./Assests/salad.webp" alt="Grand Marriage Catering Salad Platter 2" class="fader-photo-asset">
+            <img src="./Assests/high%20protein%20box.webp" alt="Grand Marriage Catering Dessert Display 3" class="fader-photo-asset">
+          </div>
+        </div>
+
+        <!-- FIXED Central Spoke Ring Target Console -->
+        <div class="timeline-spine-spoke-node-ring ring-axis-orange">
+          <span>01</span>
+        </div>
+
+        <!-- FIXED: ENHANCED GLASSMORPHIC BENTO POD WITH CONTRAST METRIC HOODS -->
+        <div class="timeline-content-pod text-align-left-box">
+          <div class="pod-glassmorphic-card-shell">
+            <div class="pod-header-pill-row">
+              <span class="pod-category-badge badge-orange">Traditional & Global</span>
+              <span class="pod-macro-indicator">Premium Buffet</span>
+            </div>
+            <h3 class="pod-event-title">Marriage Function Catering</h3>
+            <p class="pod-event-desc">Grand multi-tier traditional culinary arrangements and international continental buffets crafted uniquely for your luxury wedding milestones and reception galas.</p>
+            <div class="pod-cta-floating-wrap">
+              <a href="404.html" class="btn-timeline-kinetic-pill btn-hover-orange">Explore Wedding Menus</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ==========================================================================
+           ROW 2: BIRTHDAY CELEBRATION (DIAGONAL NODE: TEXT LEFT / IMAGES RIGHT)
+           ========================================================================== -->
+      <div class="timeline-asymmetric-row row-align-reversed timeline-reveal-node">
+        
+        <!-- LEFT BOUNDARY: DYNAMIC HIGH-CONTRAST TYPOGRAPHY BLOCK -->
+        <div class="timeline-content-pod text-align-right-box">
+          <div class="pod-glassmorphic-card-shell">
+            <div class="pod-header-pill-row row-reverse-flex">
+              <span class="pod-category-badge badge-green">Calorie Calibrated</span>
+              <span class="pod-macro-indicator">Boutique Spread</span>
+            </div>
+            <h3 class="pod-event-title">Birthday Celebration Catering</h3>
+            <p class="pod-event-desc">Vibrant, high-energy gourmet appetizer spreads, artisanal finger foods, and customized macro-packed macro pastry configurations configured perfectly for all age milestones.</p>
+            <div class="pod-cta-floating-wrap">
+              <a href="404.html" class="btn-timeline-kinetic-pill btn-hover-green">Explore Birthday Deals</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Central Spoke Ring Target Console -->
+        <div class="timeline-spine-spoke-node-ring ring-axis-green">
+          <span>02</span>
+        </div>
+
+        <!-- RIGHT BOUNDARY: 2-SECOND AUTOPLAY CROSS-FADING MULTI-IMAGE CANVAS -->
+        <div class="timeline-media-viewport">
+          <div class="media-carousel-fader-deck" data-autoplay-speed="2000">
+            <img src="./Assests/high%20protein%20box.webp" alt="Birthday Celebration Scones Treats 1" class="fader-photo-asset active-slide-frame">
+            <img src="./Assests/organic%20munchies.webp" alt="Birthday Celebration Snack Platters 2" class="fader-photo-asset">
+            <img src="./Assests/salad.webp" alt="Birthday Celebration Cupcake Towers 3" class="fader-photo-asset">
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ==========================================================================
+           ROW 3: BABY SHOWER FUNCTION (DIAGONAL NODE: IMAGES LEFT / TEXT RIGHT)
+           ========================================================================== -->
+      <div class="timeline-asymmetric-row row-align-standard timeline-reveal-node">
+        
+        <!-- LEFT BOUNDARY: 2-SECOND AUTOPLAY CROSS-FADING MULTI-IMAGE CANVAS -->
+        <div class="timeline-media-viewport">
+          <div class="media-carousel-fader-deck" data-autoplay-speed="2000">
+            <img src="./Assests/salad.webp" alt="Baby Shower Wholesome Organic Menu 1" class="fader-photo-asset active-slide-frame">
+            <img src="./Assests/detox.webp" alt="Baby Shower Pressed Detox Juices 2" class="fader-photo-asset">
+            <img src="./Assests/hero%20section%20img%203.webp" alt="Baby Shower Clean Fruit Platters 3" class="fader-photo-asset">
+          </div>
+        </div>
+
+        <!-- Central Spoke Ring Target Console -->
+        <div class="timeline-spine-spoke-node-ring ring-axis-orange">
+          <span>03</span>
+        </div>
+
+        <!-- RIGHT BOUNDARY: DYNAMIC HIGH-CONTRAST TYPOGRAPHY BLOCK -->
+        <div class="timeline-content-pod text-align-left-box">
+          <div class="pod-glassmorphic-card-shell">
+            <div class="pod-header-pill-row">
+              <span class="pod-category-badge badge-orange">100% Farm Organic</span>
+              <span class="pod-macro-indicator">Prenatal Vitality</span>
+            </div>
+            <h3 class="pod-event-title">Baby Shower Function</h3>
+            <p class="pod-event-desc">Delicate, wholesome organic harvest menus prepped by certified nutritionists to ensure maximum prenatal tracking vitality and pristine guest safety streams.</p>
+            <div class="pod-cta-floating-wrap">
+              <a href="404.html" class="btn-timeline-kinetic-pill btn-hover-orange">Explore Prenatal Packages</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+    /* ==========================================================================
+   CINEMATIC FIXED CENTRAL LINE TIMELINE ARCHITECTURE (style.css)
+   ========================================================================== */
+.event-timeline-asymmetric-section {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  overflow: hidden;
+  z-index: 2;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.timeline-master-container {
+  width: 94%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.timeline-header-center { display: flex; flex-direction: column; align-items: center; text-align: center; margin-bottom: 55px; }
+.timeline-badge-tag { font-size: 0.85rem; font-weight: 800; letter-spacing: 2.5px; color: #16a34a; background: rgba(34, 197, 94, 0.08); padding: 6px 14px; border-radius: 50px; margin-bottom: 15px; }
+.timeline-main-title { font-size: 3.4rem; font-weight: 900; line-height: 1.15; color: #0f172a; letter-spacing: -1px; margin: 0; min-height: 80px; }
+.timeline-main-title::after { content: '|'; color: #22c55e; animation: typistBlinkCursor 0.75s step-end infinite; font-weight: 400; }
+@keyframes typistBlinkCursor { from, to { opacity: 0 } 50% { opacity: 1 } }
+
+/* ==========================================================================
+   THEMED FIXED VERTICAL SPINE RAIL & ALTERNATING GRID MESH DECK
+   ========================================================================== */
+.timeline-diagonal-flow-deck {
+  display: flex;
+  flex-direction: column;
+  gap: 75px; /* Spatial separation margin path */
+  width: 100%;
+  position: relative;
+}
+
+/* FIXED: The solid center tracking spine rule line */
+.timeline-central-vertical-spine-line {
+  position: absolute;
+  top: 15px;
+  bottom: 15px;
+  left: 50%;
+  width: 4px;
+  background: linear-gradient(180deg, rgba(34, 197, 94, 0.1) 0%, #22c55e 50%, rgba(255, 145, 0, 0.1) 100%);
+  transform: translateX(-50%);
+  z-index: 2;
+  border-radius: 10px;
+}
+
+.timeline-asymmetric-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 30px;
+  position: relative;
+  z-index: 5;
+}
+.row-align-standard { flex-direction: row; }
+.row-align-reversed { flex-direction: row-reverse; }
+
+/* FIXED Central Spoke Ring Target Console Interface */
+.timeline-spine-spoke-node-ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  font-family: monospace;
+  font-size: 0.85rem;
+  font-weight: 900;
+  border: 3px solid #cbd5e1;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.ring-axis-orange { border-color: #ff9100; color: #ff9100; }
+.ring-axis-green  { border-color: #22c55e; color: #22c55e; }
+
+.timeline-asymmetric-row:hover .timeline-spine-spoke-node-ring {
+  transform: translate(-50%, -50%) scale(1.12);
+  box-shadow: 0 0 20px rgba(34, 197, 94, 0.35);
+  background: #0f172a;
+  color: #ffffff !important;
+}
+
+/* ==========================================================================
+   2-SECOND AUTOPLAY AUTOMATED CROSS-FADING PHOTO LAYER
+   ========================================================================== */
+.timeline-media-viewport { flex: 0.95; display: flex; justify-content: center; align-items: center; }
+
+.media-carousel-fader-deck {
+  position: relative;
+  width: 100%;
+  max-width: 460px;
+  height: 310px;
+  background-color: #edf2f7;
+  border: 1px solid #e2e8f0;
+  border-radius: 50% !important; /* FIXED SHAPE: Uniform big circles crop photographs cleanly */
+  box-shadow: 0 20px 45px -15px rgba(15, 23, 42, 0.1);
+  overflow: hidden;
+  z-index: 5;
+  animation: visualPebbleFloat 5s ease-in-out infinite alternate;
+}
+.row-align-standard .media-carousel-fader-deck { animation-delay: 0s; }
+.row-align-reversed .media-carousel-fader-deck { animation-delay: 0.4s; }
+
+@keyframes visualPebbleFloat { 0% { transform: translateY(0px); } 100% { transform: translateY(-10px); } }
+
+.fader-photo-asset {
+  position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover !important;
+  opacity: 0; z-index: 1; transform: scale(1.02);
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+.fader-photo-asset.active-slide-frame { opacity: 1; z-index: 2; transform: scale(1); }
+
+/* ==========================================================================
+   FIXED: CREATIVE GLASSMORPHIC BENTO RE-DESIGN FOR CONTENT COPIES
+   ========================================================================== */
+.timeline-content-pod {
+  flex: 1.05;
+  display: flex;
+  flex-direction: column;
+}
+.text-align-left-box { align-items: flex-start; text-align: left; padding-left: 25px; }
+.text-align-right-box { align-items: flex-end; text-align: right; padding-right: 25px; }
+
+.pod-glassmorphic-card-shell {
+  width: 100%;
+  background: linear-gradient(135deg, rgba(248, 250, 252, 0.85) 0%, rgba(255, 255, 255, 0.95) 100%);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 10px 30px -15px rgba(15, 23, 42, 0.03);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+.timeline-asymmetric-row:hover .pod-glassmorphic-card-shell {
+  border-color: rgba(34, 197, 94, 0.25);
+  box-shadow: 0 20px 45px -15px rgba(34, 197, 94, 0.12);
+  transform: scale(1.01);
+}
+
+.pod-header-pill-row { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; width: 100%; }
+.row-reverse-flex { flex-direction: row-reverse; }
+
+.pod-category-badge { font-size: 0.78rem; font-weight: 800; padding: 4px 10px; border-radius: 6px; letter-spacing: 0.3px; text-transform: uppercase; }
+.badge-orange { background: #fff3e0; color: #ff9100; }
+.badge-green { background: #e8f5e9; color: #22c55e; }
+
+.pod-macro-indicator { font-size: 0.8rem; font-weight: 700; color: #94a3b8; }
+
+.pod-event-title {
+  font-size: 1.75rem !important; /* INCREASED text sizes */
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 12px 0;
+  line-height: 1.25;
+}
+
+.pod-event-desc {
+  font-size: 1.12rem !important; /* INCREASED text descriptions sizes */
+  color: #475569;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* OVAL BUTTON CHIPS SETUP */
+.pod-cta-floating-wrap { width: 100%; display: flex; }
+.text-align-left-box .pod-cta-floating-wrap { justify-content: flex-start; }
+.text-align-right-box .pod-cta-floating-wrap { justify-content: flex-end; }
+
+.btn-timeline-kinetic-pill {
+  text-decoration: none; background: #ffffff; color: #475569; border: 1px solid #cbd5e1;
+  padding: 12px 30px; font-weight: 700; font-size: 0.95rem; border-radius: 50px;
+  box-shadow: 0 4px 12px rgba(15,23,42,0.01); transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-hover-orange:hover { color: #ffffff; background: #ff9100; border-color: #ff9100; box-shadow: 0 6px 16px rgba(255, 145, 0, 0.3); transform: translateY(-1px); }
+.btn-hover-green:hover { color: #ffffff; background: #16a34a; border-color: #16a34a; box-shadow: 0 6px 16px rgba(22, 163, 74, 0.3); transform: translateY(-1px); }
+
+/* Scroll reveal parameters entries */
+.timeline-reveal-node { opacity: 0; transform: translateY(28px); transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.85s ease; }
+.timeline-reveal-node.timeline-reveal-active { opacity: 1; transform: translateY(0); }
+
+/* ==========================================================================
+   FLUID STRUCTURAL RESPONSIVE VIEWPORT CONSTRAINTS
+   ========================================================================== */
+@media (max-width: 992px) {
+  .timeline-main-title { font-size: 2.4rem; min-height: auto; }
+  .timeline-diagonal-flow-deck { gap: 50px; }
+  
+  /* FIXED RESPONSIVE CONTRAINTS: Drops central vertical lines on phone displays to eliminate content overlapping collisions */
+  .timeline-central-vertical-spine-line { display: none !important; }
+  .timeline-spine-spoke-node-ring { display: none !important; }
+  
+  .timeline-asymmetric-row { flex-direction: column !important; text-align: center !important; gap: 24px; }
+  .text-align-left-box, .text-align-right-box { align-items: center; text-align: center; padding: 0; }
+  .pod-header-pill-row { justify-content: center !important; flex-direction: row !important; }
+  .pod-cta-floating-wrap { justify-content: center !important; }
+  .pod-event-desc { max-width: 100%; font-size: 1.05rem; }
+  .media-carousel-fader-deck { max-width: 320px; height: 320px; border-radius: 50% !important; } /* Maintains perfect circle mask on mobile screens */
+}
+
+@media (max-width: 540px) {
+  .timeline-main-title { font-size: 1.85rem; }
+  .pod-event-title { font-size: 1.45rem !important; }
+  .btn-timeline-kinetic-pill { width: 100%; text-align: center; }
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// CENTRAL SPINE TIMELINE REVEAL & DYNAMIC 2S FADER SYSTEM (script.js)
+// ==========================================================================
+function initAsymmetricTimelineEcosystem() {
+  const targetHeadlineString = "Our Specialized Catering Milestones";
+  const typewriterTargetNode = document.getElementById('typewriter-timeline-heading');
+  const scrollTriggerContainerArea = document.getElementById('timeline-master-scroll-trigger');
+
+  if (!scrollTriggerContainerArea || !typewriterTargetNode) return;
+
+  let isTypewriterLoopFired = false;
+
+  // 1. High-Fidelity Letter-By-Letter Typing Sequence Engine
+  function runLetterByLetterTyping(text, targetNode, delaySpeed = 55) {
+    let characterPointerIdx = 0;
+    targetNode.textContent = ""; 
+    
+    function appendNextLetter() {
+      if (characterPointerIdx < text.length) {
+        targetNode.textContent += text.charAt(characterPointerIdx);
+        characterPointerIdx++;
+        setTimeout(appendNextLetter, delaySpeed);
+      }
+    }
+    appendNextLetter();
+  }
+
+  // 2. IntersectionObserver Layout Engine driving row appearance cascades on scroll folds
+  const hiddenRevealElementsList = scrollTriggerContainerArea.querySelectorAll('.timeline-reveal-node');
+  
+  const timelineScrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        
+        // Triggers the central title typing sequence immediately on screen entry
+        if (!isTypewriterLoopFired) {
+          isTypewriterLoopFired = true;
+          runLetterByLetterTyping(targetHeadlineString, typewriterTargetNode, 55);
+        }
+
+        // Elevates alternating timeline bento blocks line-by-line sequentially
+        hiddenRevealElementsList.forEach((nodeElement, indexPointer) => {
+          setTimeout(() => {
+            nodeElement.classList.add('timeline-reveal-active');
+          }, indexPointer * 160); // 160ms step intervals create a fluid trailing pop-up wave
+        });
+
+        timelineScrollObserver.unobserve(scrollTriggerContainerArea);
+      }
+    });
+  }, {
+    threshold: 0.08 // Activates the split-second 8% of the timeline enters the viewport folding line
+  });
+
+  timelineScrollObserver.observe(scrollTriggerContainerArea);
+
+  // ==========================================================================
+  // MULTI-IMAGE AUTOMATED CROSS-FADE LOOPS: Cycles Photos Exactly Every 2s
+  // ==========================================================================
+  const allCarouselDecksList = document.querySelectorAll('.media-carousel-fader-deck');
+  if (allCarouselDecksList.length === 0) return;
+
+  allCarouselDecksList.forEach((deckNode) => {
+    const slideFramesList = deckNode.querySelectorAll('.fader-photo-asset');
+    if (slideFramesList.length <= 1) return; // Guard track against single layout item breakages
+
+    let activeFramePointerIdx = 0;
+    const loopIntervalSpeedClock = parseInt(deckNode.getAttribute('data-autoplay-speed')) || 2000; // Cycles exactly every 2 seconds (2000ms) precisely
+
+    setInterval(() => {
+      // Hide current active slide photograph canvas layer
+      slideFramesList[activeFramePointerIdx].classList.remove('active-slide-frame');
+
+      // Advance rotation loop tracker index pointer safely, wrapping back to 0 at limits
+      activeFramePointerIdx = (activeFramePointerIdx + 1) % slideFramesList.length;
+
+      // Bring next active slide photograph canvas layer into full view focus smoothly
+      slideFramesList[activeFramePointerIdx].classList.add('active-slide-frame');
+    }, loopIntervalSpeedClock);
+  });
+}
+
+// Register global canvas initialization listener safely on DOM load hooks
+window.addEventListener('DOMContentLoaded', () => {
+  initAsymmetricTimelineEcosystem();
+});
+
+</script>
+
+<!-- ==========================================================================
+     WHO WE ARE BRAND NARRATIVE MODULE (index.html)
+     ========================================================================== -->
+<section class="whoweare-narrative-section">
+  <div class="whoweare-master-container" id="whoweare-scroll-trigger">
+    <div class="whoweare-split-grid">
+      
+      <!-- LEFT COLUMN: INFINITE FLOATING HIGH-CONTRAST RECTANGLE IMAGE -->
+      <div class="whoweare-media-left whoweare-node">
+        <div class="whoweare-image-viewport-wrapper">
+          <div class="whoweare-radial-spotlight-wash"></div>
+          
+          <!-- STRICT RECTANGLE SHAPE FRAME: Sharpened structural bounding borders -->
+          <div class="whoweare-rectangle-mask-pod">
+            <div class="whoweare-live-shimmer-line"></div>
+            <!-- MAIN PHOTOGRAPH CANVAS ASSET -->
+            <img src="./Assests/catering employees.webp" alt="Our Elite Culinary Catering Kitchen Team" class="whoweare-native-photo">
+          </div>
+          
+          <!-- Overlapping Decorative Micro-Metric Badge -->
+          <div class="whoweare-floating-experience-badge">
+            <strong>10+</strong>
+            <span>Years of Vitality Cooking</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- RIGHT COLUMN: HIGH-VISIBILITY CASCADING BENTO TEXT DECK -->
+      <div class="whoweare-content-right">
+        <span class="whoweare-mini-tag whoweare-node">OUR PHILOSOPHY</span>
+        <h2 class="whoweare-main-title whoweare-node">We Craft Tasteful Health Experiences.</h2>
+        <div class="whoweare-title-line whoweare-node"></div>
+        
+        <!-- GLASSMORPHIC CONTENT POD CARD SHELL -->
+        <div class="whoweare-glass-card-shell whoweare-node">
+          <p class="whoweare-lead-paragraph">At Stackly, we believe that premium corporate events and milestone celebrations shouldn't force guests to compromise their nutritional tracking metrics.</p>
+          <p class="whoweare-body-copy">Our certified culinary chefs engineer clean farm-to-table farm loop menus calibrated around precise calorie bounds and strict macro values. We source 100% organic local farm harvest ingredients to fuel workspace mental focus and deliver porcelain-grade hospitality matrices across every summit layout we deliver.</p>
+          
+          <!-- CORE MILESTONE STATISTICAL METRICS SLATS -->
+          <div class="whoweare-statistics-row">
+            <div class="stat-cell">
+              <strong>100%</strong>
+              <span>Organic Harvest</span>
+            </div>
+            <div class="stat-cell">
+              <strong>250k+</strong>
+              <span>Macros Calibrated</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+    /* ==========================================================================
+   WHO WE ARE BRAND NARRATIVE HOOD MODULE STYLE (style.css)
+   ========================================================================== */
+.whoweare-narrative-section {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  
+  /* FIXED: Precise exact padding constraints: 50px Top, 30px Bottom precisely */
+  padding-top: 50px;
+  padding-bottom: 30px;
+  
+  overflow: hidden;
+  z-index: 2;
+}
+
+.whoweare-master-container {
+  width: 94%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.whoweare-split-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  width: 100%;
+}
+
+/* ==========================================================================
+   LEFT SIDE: HIGH-CREATIVE INFINITE FLOATING SHARP RECTANGLE IMAGE
+   ========================================================================== */
+.whoweare-media-left {
+  flex: 0.95;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.whoweare-image-viewport-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.whoweare-radial-spotlight-wash {
+  position: absolute;
+  width: 320px;
+  height: 320px;
+  background: radial-gradient(circle, rgba(34,197,94,0.14) 0%, rgba(34,197,94,0) 70%);
+  border-radius: 50%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* FIXED SHAPE: Sharp, modern clean rectangle profile boundaries instead of round masks */
+.whoweare-rectangle-mask-pod {
+  position: relative;
+  width: 100%;
+  height: 350px; /* Locked elegant horizontal/vertical presentation aspect height bounds */
+  border: 1px solid #edf2f7;
+  
+  /* STRICT RECTANGLE PROFILE: Sharp clean corners mapping rules */
+  border-radius: 20px; 
+  
+  box-shadow: 0 20px 45px -15px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+  z-index: 3;
+  
+  /* Continuous smooth hardware vertical flight floating motion loop drive */
+  animation: narrativePhotoFloat 4.5s ease-in-out infinite alternate;
+  will-change: transform;
+  transition: box-shadow 0.3s ease, border-color 0.3s;
+}
+
+.whoweare-asymmetric-row:hover .whoweare-rectangle-mask-pod,
+.whoweare-rectangle-mask-pod:hover {
+  border-color: rgba(34, 197, 94, 0.22);
+  box-shadow: 0 25px 65px -15px rgba(34, 197, 94, 0.22); /* Flares up theme green shadow overlay on hover focus */
+}
+
+@keyframes narrativePhotoFloat {
+  0% { transform: translateY(0px) rotate(0deg); }
+  100% { transform: translateY(-10px) rotate(0.5deg); } /* Subtle clean drift */
+}
+
+.whoweare-native-photo {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important; /* Forces photographs to fit cleanly inside rectangles without compression skewing */
+}
+
+.whoweare-live-shimmer-line {
+  position: absolute;
+  top: -50%; left: -50%; width: 200%; height: 200%;
+  background: linear-gradient(45deg, transparent 45%, rgba(255,255,255,0.3) 50%, transparent 55%);
+  transform: rotate(30deg);
+  transition: transform 0.6s ease;
+  pointer-events: none;
+  z-index: 5;
+}
+.whoweare-rectangle-mask-pod:hover .whoweare-live-shimmer-line { transform: translate(50%, 50%) rotate(30deg); }
+
+/* Overlapping Decorative Metrics Slat Overlay */
+.whoweare-floating-experience-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: #0f172a; /* Sleek high contrast dark slate backing platter */
+  color: #ffffff;
+  padding: 16px 24px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.15);
+  border: 2px solid #ffffff;
+  z-index: 10;
+  animation: narrativePhotoFloat 4.5s ease-in-out infinite alternate-reverse; /* Counters image movement lines */
+}
+.whoweare-floating-experience-badge strong { font-size: 1.6rem; font-weight: 900; color: #22c55e; line-height: 1.1; }
+.whoweare-floating-experience-badge span { font-size: 0.78rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* ==========================================================================
+   RIGHT SIDE: HIGH-VISIBILITY CASCADING BENTO TYPOGRAPHY PODS
+   ========================================================================== */
+.whoweare-content-right {
+  flex: 1.15;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.whoweare-mini-tag {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  color: #16a34a; /* Main Brand Theme Green */
+  background: rgba(34, 197, 94, 0.08);
+  padding: 6px 14px;
+  border-radius: 50px;
+  margin-bottom: 15px;
+}
+
+.whoweare-main-title {
+  font-size: 3.2rem; /* HIGH CONTRAST: Increased scannability brand typography size scales */
+  font-weight: 900;
+  line-height: 1.15;
+  color: #0f172a;
+  margin-bottom: 12px;
+  letter-spacing: -1px;
+}
+
+.whoweare-title-line {
+  width: 40px;
+  height: 3.5px;
+  background-color: #22c55e;
+  border-radius: 2px;
+  margin-bottom: 25px;
+}
+
+/* Glassmorphic Description Pod Shell Cover Layer */
+.whoweare-glass-card-shell {
+  width: 100%;
+  background: linear-gradient(135deg, rgba(248, 250, 252, 0.75) 0%, rgba(255, 255, 255, 0.95) 100%);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 24px;
+  padding: 30px;
+  box-shadow: 0 8px 24px -15px rgba(15, 23, 42, 0.02);
+}
+
+.whoweare-lead-paragraph {
+  font-size: 1.25rem !important; /* INCREASED: Text size optimized for premium scannability reading */
+  font-weight: 700;
+  color: #1e293b;
+  line-height: 1.55;
+  margin: 0 0 16px 0;
+}
+
+.whoweare-body-copy {
+  font-size: 1.05rem !important; /* INCREASED text sizes */
+  color: #475569;
+  line-height: 1.65;
+  margin: 0 0 25px 0;
+}
+
+/* Interior Milestone Stats Matrix Row Slat */
+.whoweare-statistics-row {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  border-top: 1px solid #edf2f7;
+  padding-top: 20px;
+  width: 100%;
+}
+
+.stat-cell { display: flex; flex-direction: column; align-items: flex-start; }
+.stat-cell strong { font-size: 2.1rem; font-weight: 900; color: #16a34a; line-height: 1.1; }
+.stat-cell span { font-size: 0.85rem; color: #64748b; font-weight: 700; margin-top: 2px; }
+
+/* ==========================================================================
+   SCROLL REVEAL ARRAYS INITIAL PARAMETERS DEFINITION
+   ========================================================================== */
+.whoweare-node {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+}
+/* Injected line-by-line sequentially by our Javascript high-performance loop engine */
+.whoweare-node.whoweare-reveal-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   FLUID STRUCTURAL RESPONSIVE VIEWPORT CONSTRAINTS
+   ========================================================================== */
+@media (max-width: 1100px) {
+  .whoweare-main-title { font-size: 2.5rem; }
+  .whoweare-lead-paragraph { font-size: 1.15rem !important; }
+}
+
+@media (max-width: 992px) {
+  /* Safely converts side track configurations into standard central stacked columns on tablet screen horizons */
+  .whoweare-split-grid { flex-direction: column; text-align: center; gap: 40px; }
+  .whoweare-media-left { justify-content: center; width: 100%; }
+  .whoweare-content-right { align-items: center; text-align: center; width: 100%; }
+  .whoweare-title-line { margin: 0 auto 25px auto; }
+  .whoweare-glass-card-shell { text-align: center; }
+  .whoweare-statistics-row { justify-content: center; gap: 50px; }
+  .stat-cell { align-items: center; }
+  .whoweare-floating-experience-badge { right: 50%; transform: translateX(50%) !important; bottom: -25px; animation: none !important; } /* Center absolute overlays on tablet display touches */
+}
+
+@media (max-width: 540px) {
+  .whoweare-main-title { font-size: 1.85rem; }
+  .whoweare-rectangle-mask-pod { height: 280px; } /* Compact smartphone borders constraints bounding box */
+  .whoweare-floating-experience-badge { padding: 12px 18px; }
+  .whoweare-floating-experience-badge strong { font-size: 1.3rem; }
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// SCROLL-DRIVEN LINE-BY-LINE BRAND COPIES CASCADE OBSERVER (script.js)
+// ==========================================================================
+function initWhoWeAreNarrativeEngine() {
+  const scrollTriggerContainerArea = document.getElementById('whoweare-scroll-trigger');
+  if (!scrollTriggerContainerArea) return;
+
+  const hiddenRevealNodesList = scrollTriggerContainerArea.querySelectorAll('.whoweare-node');
+  if (hiddenRevealNodesList.length === 0) return;
+
+  let isSequenceActivated = false;
+  const chronologicalStaggerInterval = 150; // 150ms delay steps elements up line-by-line cleanly
+
+  const whoweareObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      // Check entry coordinates and guard against multiple loop executions
+      if (entry.isIntersecting && !isSequenceActivated) {
+        isSequenceActivated = true;
+
+        // Loop through the rectangle mask image, tags, headings, and bento card shells step-by-step
+        hiddenRevealNodesList.forEach((nodeElement, indexPointer) => {
+          setTimeout(() => {
+            nodeElement.classList.add('whoweare-reveal-active');
+          }, indexPointer * chronologicalStaggerInterval);
+        });
+
+        // Disconnect handle completely post execution to optimize paint overhead thresholds
+        whoweareObserver.unobserve(scrollTriggerContainerArea);
+      }
+    });
+  }, {
+    threshold: 0.12 // Launches cascade as soon as 12% of the content box crosses screen folds
+  });
+
+  whoweareObserver.observe(scrollTriggerContainerArea);
+}
+
+// Register global initialization startup wire-up listener safely on DOM load hooks
+window.addEventListener('DOMContentLoaded', () => {
+  initWhoWeAreNarrativeEngine();
+});
+
+</script>
+
+<!-- ==========================================================================
+     CINEMATIC ALTERNATING PROCESS S-CURVE FLOWCHART (index.html)
+     ========================================================================== -->
+<section class="process-flowchart-section">
+  <div class="proc-flow-master-container" id="proc-flow-scroll-trigger">
+    
+    <!-- MASTER HEADING SLOT FOR LETTER-BY-LETTER TYPING ENGINE -->
+    <div class="proc-flow-header-center">
+      <span class="proc-flow-mini-badge proc-flow-reveal-node">EXECUTION CHANNEL</span>
+      <h2 class="proc-flow-main-title" id="typewriter-process-heading"></h2>
+    </div>
+
+    <!-- 3D ALTERNATING HORIZONTAL CONTINUOUS S-CURVE FLOWCHART RAIL -->
+    <div class="proc-flow-rail">
+      
+      <!-- MILESTONE 1: CONTACTING -->
+      <div class="proc-flow-card proc-flow-reveal-node">
+        <div class="card-glass-shimmer-layer"></div>
+        <div class="proc-card-content-wrapper">
+          <div class="proc-top-meta-row">
+            <span class="proc-counter-token token-green">01</span>
+            <div class="proc-vector-icon-shield shield-green">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.7 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+          </div>
+          <div class="proc-text-group">
+            <h3>Digital Contacting</h3>
+            <p>Submit your initial event framework coordinates seamlessly via our smart channels.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONNECTING RIBBON WIRE 1 -->
+      <div class="proc-wire-ribbon">
+        <svg class="wire-svg-track" viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M0,10 Q25,20 50,10 T100,10" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-dasharray="6,4"/></svg>
+      </div>
+
+      <!-- MILESTONE 2: CONSULTING -->
+      <div class="proc-flow-card proc-flow-reveal-node">
+        <div class="card-glass-shimmer-layer"></div>
+        <div class="proc-card-content-wrapper">
+          <div class="proc-top-meta-row">
+            <span class="proc-counter-token token-orange">02</span>
+            <div class="proc-vector-icon-shield shield-orange">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+          </div>
+          <div class="proc-text-group">
+            <h3>Macro Consulting</h3>
+            <p>Calibrate precise nutritional limits and portion metrics with our certified team experts.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONNECTING RIBBON WIRE 2 -->
+      <div class="proc-wire-ribbon">
+        <svg class="wire-svg-track" viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M0,10 Q25,0 50,10 T100,10" fill="none" stroke="#ff9100" stroke-width="2.5" stroke-dasharray="6,4"/></svg>
+      </div>
+
+      <!-- MILESTONE 3: LOCKING SCHEDULES -->
+      <div class="proc-flow-card proc-flow-reveal-node">
+        <div class="card-glass-shimmer-layer"></div>
+        <div class="proc-card-content-wrapper">
+          <div class="proc-top-meta-row">
+            <span class="proc-counter-token token-green">03</span>
+            <div class="proc-vector-icon-shield shield-green">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="15" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+          </div>
+          <div class="proc-text-group">
+            <h3>Locking Schedules</h3>
+            <p>Secure your specific calendar target deadlines and customize tier plate item grids.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CONNECTING RIBBON WIRE 3 -->
+      <div class="proc-wire-ribbon">
+        <svg class="wire-svg-track" viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M0,10 Q25,20 50,10 T100,10" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-dasharray="6,4"/></svg>
+      </div>
+
+      <!-- MILESTONE 4: EXPRESS DELIVERY -->
+      <div class="proc-flow-card proc-flow-reveal-node">
+        <div class="card-glass-shimmer-layer"></div>
+        <div class="proc-card-content-wrapper">
+          <div class="proc-top-meta-row">
+            <span class="proc-counter-token token-orange">04</span>
+            <div class="proc-vector-icon-shield shield-orange">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            </div>
+          </div>
+          <div class="proc-text-group">
+            <h3>Express Delivery</h3>
+            <p>Hygienic thermal fleet containment transit driven directly to your venue location doors.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- KINETIC FLOATING BASE CTA BUTTON -->
+    <div class="proc-flow-action-base proc-flow-reveal-node">
+      <a href="404.html" class="btn-proc-flow-customizer-glow">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="15" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Book Your Dates Now
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+    /* ==========================================================================
+   INTERACTIVE PROCESS S-CURVE TIMELINE FLOWCHART SYSTEM (style.css)
+   ========================================================================== */
+.process-flowchart-section {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  
+  /* FIXED: Precise exact padding constraints: 50px Top, 30px Bottom precisely */
+  padding-top: 50px;
+  padding-bottom: 30px;
+  
+  overflow: hidden;
+  z-index: 2;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.proc-flow-master-container {
+  width: 94%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Centered Typist Header Segment */
+.proc-flow-header-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.proc-flow-mini-badge {
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #16a34a;
+  background: rgba(34, 197, 94, 0.08);
+  padding: 5px 12px;
+  border-radius: 50px;
+  margin-bottom: 14px;
+}
+
+.proc-flow-main-title {
+  font-size: 3.2rem; /* HIGH VISIBILITY: Increased typography parameter sizes */
+  font-weight: 900;
+  line-height: 1.15;
+  color: #0f172a;
+  letter-spacing: -1px;
+  min-height: 75px; 
+}
+.proc-flow-main-title::after { content: '|'; color: #22c55e; animation: procBlinker 0.75s step-end infinite; font-weight: 400; }
+@keyframes procBlinker { from, to { opacity: 0 } 50% { opacity: 1 } }
+
+/* ==========================================================================
+   3D HORIZONTAL CONTINUOUS S-CURVE FLOWCHART RAIL DESIGN
+   ========================================================================== */
+.proc-flow-rail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 35px;
+}
+
+.proc-flow-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 24px; /* Creative fluid asymmetrical curves frame paths */
+  border-radius: 30px 12px 30px 12px;
+  padding: 30px 24px;
+  flex: 1;
+  max-width: 250px;
+  box-shadow: 0 12px 30px -15px rgba(15, 23, 42, 0.05);
+  
+  /* Continuous, soft floating oscillation drive loop layout */
+  animation: flowchartCardFloat 4.5s ease-in-out infinite alternate;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s;
+}
+
+/* Staggers individual floating axes loops to prevent card tracks from moving rigidly together */
+.proc-flow-rail .proc-flow-card:nth-child(1) { animation-delay: 0s; }
+.proc-flow-rail .proc-flow-card:nth-child(3) { animation-delay: 0.25s; }
+.proc-flow-rail .proc-flow-card:nth-child(5) { animation-delay: 0.5s; }
+.proc-flow-rail .proc-flow-card:nth-child(7) { animation-delay: 0.75s; }
+
+@keyframes flowchartCardFloat {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-10px); }
+}
+
+/* UX Rule: Freezes visual floating oscillation cleanly on hover actions */
+.proc-flow-card:hover {
+  animation-play-state: paused !important;
+  transform: translateY(-4px);
+  border-color: rgba(34, 197, 94, 0.25);
+  box-shadow: 0 20px 40px -15px rgba(34, 197, 94, 0.12);
+}
+
+.card-glass-shimmer-layer {
+  position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+  background: linear-gradient(45deg, transparent 45%, rgba(255,255,255,0.5) 50%, transparent 55%);
+  transform: rotate(30deg); transition: transform 0.6s ease; pointer-events: none; z-index: 1;
+}
+.proc-flow-card:hover .card-glass-shimmer-layer { transform: translate(50%, 50%) rotate(30deg); }
+
+.proc-card-content-wrapper { display: flex; flex-direction: column; height: 100%; position: relative; z-index: 3; }
+
+.proc-top-meta-row { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; width: 100%; }
+
+.proc-counter-token {
+  font-size: 1.40rem; font-weight: 900; font-family: monospace; opacity: 0.3;
+}
+.token-green { color: #16a34a; }
+.token-orange { color: #ff9100; }
+
+.proc-vector-icon-shield {
+  width: 48px; height: 46px; border-radius: 12px;
+  display: flex; justify-content: center; align-items: center;
+  background: #ffffff; box-shadow: 0 4px 10px rgba(0,0,0,0.01);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), background 0.3s, color 0.3s;
+}
+.proc-flow-card:hover .proc-vector-icon-shield { transform: scale(1.05) rotate(5deg); }
+
+.shield-green { background-color: #e8f5e9; color: #22c55e; }
+.proc-flow-card:hover .shield-green { background-color: #22c55e; color: #ffffff; }
+
+.shield-orange { background-color: #fff3e0; color: #ff9100; }
+.proc-flow-card:hover .shield-orange { background-color: #ff9100; color: #ffffff; }
+
+/* Typography Constraints: Increased font sizes for scannability reading */
+.proc-text-group { display: flex; flex-direction: column; align-items: flex-start; text-align: left; }
+
+.proc-text-group h3 {
+  font-size: 1.25rem !important; /* INCREASED text heading size */
+  font-weight: 800;
+  color: #0f172a;
+  margin: 0 0 6px 0;
+  line-height: 1.3;
+  transition: color 0.2s;
+}
+.proc-flow-card:hover h3 { color: #16a34a; }
+.proc-flow-card:nth-child(3):hover h3, .proc-flow-card:nth-child(7):hover h3 { color: #e65100; }
+
+.proc-text-group p {
+  font-size: 0.92rem !important; /* INCREASED description text size */
+  color: #64748b;
+  margin: 0;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+/* Connecting Ribbon Wavy Wire Lines */
+.proc-wire-ribbon {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 4px;
+  margin-bottom: 75px; /* Centers wires exactly against the meta row elements axis */
+}
+.wire-svg-track { width: 100%; height: 18px; opacity: 0.6; }
+
+/* ==========================================================================
+   KINETIC FLOATING CALL TO ACTION HUB COMPONENT KEY
+   ========================================================================== */
+.proc-flow-action-base {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 25px;
+}
+
+.btn-proc-flow-customizer-glow {
+  text-decoration: none;
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  color: #ffffff;
+  padding: 16px 42px;
+  font-weight: 700;
+  font-size: 1.05rem; /* INCREASED font size metrics */
+  border-radius: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 10px 25px rgba(22, 163, 74, 0.25);
+  animation: procFlowCtaFloat 3.5s ease-in-out infinite alternate;
+}
+.btn-proc-flow-customizer-glow:hover { box-shadow: 0 15px 35px rgba(22, 163, 74, 0.45); animation-play-state: paused !important; transform: translateY(-2px); }
+
+@keyframes procFlowCtaFloat { 0% { transform: translateY(0px); } 100% { transform: translateY(-8px); } }
+
+/* Scroll reveal parameters entries bases */
+.proc-flow-reveal-node {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.85s ease;
+}
+.proc-flow-reveal-node.proc-flow-reveal-active { opacity: 1; transform: translateY(0); }
+
+/* ==========================================================================
+   FLUID STRUCTURAL RESPONSIVE ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 992px) {
+  .proc-flow-main-title { font-size: 2.3rem; min-height: auto; }
+  /* Collapses horizontal timeline flowchart safely into an elegant vertical column block */
+  .proc-flow-rail { flex-direction: column; gap: 30px; }
+  .proc-wire-ribbon { display: none !important; } /* Hidden to clear horizontal link line breaks overflow bugs */
+  .proc-flow-card { max-width: 100%; width: 100%; border-radius: 20px !important; }
+}
+
+@media (max-width: 640px) {
+  .proc-flow-main-title { font-size: 1.8rem; }
+  .proc-flow-card { padding: 25px 20px; }
+  .proc-card-content-wrapper { align-items: center; text-align: center; }
+  .proc-top-meta-row { flex-direction: column; gap: 10px; margin-bottom: 12px; }
+  .proc-text-group { align-items: center; text-align: center; }
+  .btn-proc-flow-customizer-glow { width: 100%; justify-content: center; }
+}
+
+</style>
+
+<script>
+    // ==========================================================================
+// SCROLL-DRIVEN INTERACTIVE PROCESS TYPEWRITER ENGINE (script.js)
+// ==========================================================================
+function initCateringProcessTypewriterEngine() {
+  const targetHeadlineString = "Our Catering Booking Process";
+  const typewriterTargetNode = document.getElementById('typewriter-process-heading');
+  const scrollTriggerParentBox = document.getElementById('proc-flow-scroll-trigger');
+
+  if (!scrollTriggerParentBox || !typewriterTargetNode) return;
+
+  let isTypingLoopFired = false;
+  const chronologicalStaggerInterval = 140; // 140ms delay steps element cards up one-by-one cleanly
+
+  function runLetterByLetterTyping(text, targetNode, delaySpeed = 50) {
+    let characterPointerIndex = 0;
+    targetNode.textContent = ""; 
+    
+    function appendNextLetter() {
+      if (characterPointerIndex < text.length) {
+        targetNode.textContent += text.charAt(characterPointerIndex);
+        characterPointerIndex++;
+        setTimeout(appendNextLetter, delaySpeed);
+      }
+    }
+    appendNextLetter();
+  }
+
+  const processObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        
+        // Execute letter-by-letter header typing sequence on screen entry focus
+        if (!isTypingLoopFired) {
+          isTypingLoopFired = true;
+          runLetterByLetterTyping(targetHeadlineString, typewriterTargetNode, 60);
+        }
+
+        // Reveal card steps one-by-one sequentially
+        scrollTriggerParentBox.querySelectorAll('.proc-flow-reveal-node').forEach((node, idx) => {
+          setTimeout(() => {
+            node.classList.add('proc-flow-reveal-active');
+          }, idx * chronologicalStaggerInterval);
+        });
+
+        processObserver.unobserve(scrollTriggerParentBox);
+      }
+    });
+  }, {
+    threshold: 0.08 
+  });
+
+  processObserver.observe(scrollTriggerParentBox);
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  initCateringProcessTypewriterEngine();
+});
+
+</script>
+
+<!-- ==========================================================================
+     FLOATING NEWSLETTER SUBSCRIPTION BANNER (index.html)
+     ========================================================================== -->
+<section class="newsletter-banner-section">
+  <div class="newsletter-master-container">
+    
+    <!-- MAIN FLOATING CARRIER BANNER POD -->
+    <div class="newsletter-floating-pod">
+      
+      <!-- SUBTLE FLOATING VECTOR LEAF ELEMENTS -->
+      <div class="pod-ambient-leaves">
+        <svg class="pod-leaf pl-1" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M2 22C4.5 19.5 7.5 19 10 20C13 21.2 16.5 19.8 18 17C19.5 14.2 18.8 10.5 21 8C18.5 8.5 16 7.5 14.5 5.5Z" fill="#22c55e" opacity="0.4"/></svg>
+        <svg class="pod-leaf pl-2" width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M2 22C4.5 19.5 7.5 19 10 20C13 21.2 16.5 19.8 18 17C19.5 14.2 18.8 10.5 21 8C18.5 8.5 16 7.5 14.5 5.5Z" fill="#22c55e" opacity="0.3"/></svg>
+        <svg class="pod-leaf pl-3" width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M2 22C4.5 19.5 7.5 19 10 20C13 21.2 16.5 19.8 18 17C19.5 14.2 18.8 10.5 21 8C18.5 8.5 16 7.5 14.5 5.5Z" fill="#22c55e" opacity="0.25"/></svg>
+      </div>
+
+      <div class="newsletter-pod-split">
+        
+        <!-- LEFT SIDE: HIGH-VISIBILITY TYPOGRAPHY FIELDS -->
+        <div class="newsletter-text-block">
+          <h2 class="newsletter-pod-title">Subscribe to our <span class="text-green-glow">Newsletter</span></h2>
+          <p class="newsletter-pod-subtext">Get the best culinary offers & updates straight to your inbox.</p>
+          
+          <!-- SUBMISSION RAIL POINTS TO 404 DIRECTLY -->
+          <form action="404.html" method="GET" class="newsletter-native-form">
+            <div class="newsletter-field-carrier">
+              <!-- oninvalid event triggers custom validation warning message natively -->
+              <input 
+                type="email" 
+                placeholder="Enter your email address" 
+                required 
+                class="newsletter-input-box"
+                oninvalid="this.setCustomValidity('Please fill the fields')"
+                oninput="this.setCustomValidity('')"
+              >
+              <button type="submit" class="btn-newsletter-subscribe">Subscribe</button>
+            </div>
+          </form>
+        </div>
+
+        <!-- RIGHT SIDE: THEMED GROCERY BAG PLACEMENT HOLDER GRAPHIC -->
+        <div class="newsletter-graphic-block">
+          <div class="grocery-bag-silhouette">
+            <!-- OPTION CONFIGURATION: Update local folder paths directly here to load your custom bag illustration photographs -->
+            <img src="./Assests/hero%20section%20img%203.webp" alt="Fresh Healthy Organic Catering Ingredients Bag" class="grocery-bag-asset">
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<style>
+  /* ==========================================================================
+   MINIMALIST FLOATING NEWSLETTER BANNER LAYER (COMPRESSED PADDINGS FIXED)
+   ========================================================================== */
+.newsletter-banner-section {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  
+  /* FIXED: Precise exact padding constraints: 50px Top, 30px Bottom precisely */
+  padding-top: 50px;
+  padding-bottom: 30px;
+  
+  overflow: hidden;
+  z-index: 2;
+}
+
+.newsletter-master-container {
+  width: 94%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ==========================================================================
+   INFINITE CONTINUOUS OSCILLATING FLOATING POD CARRIER
+   ========================================================================== */
+.newsletter-floating-pod {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(135deg, #f3fbf5 0%, #f7fee7 100%); /* Refreshing light wellness mint tint */
+  border: 1px solid rgba(34, 197, 94, 0.14);
+  border-radius: 24px;
+  padding: 40px 50px;
+  box-shadow: 0 15px 35px -20px rgba(15, 23, 42, 0.05);
+  overflow: hidden;
+  
+  /* Infinite gentle visual banner floating animation loop */
+  animation: primaryPodOscillate 4s ease-in-out infinite alternate;
+}
+
+@keyframes primaryPodOscillate {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-8px); }
+}
+
+.newsletter-pod-split {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+}
+
+/* ==========================================================================
+   HIGH-VISIBILITY TYPOGRAPHY & INTEGRATED INPUT CORE FLUID GRIDS
+   ========================================================================== */
+.newsletter-text-block {
+  flex: 1.3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  z-index: 5;
+}
+
+.newsletter-pod-title {
+  font-size: 2.3rem; /* High text size parameter scaling */
+  font-weight: 900;
+  color: #1e293b;
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+  transition: text-shadow 0.3s ease;
+}
+
+/* Creative Hover & Glow Effect Assigned to Content Text Elements */
+.text-green-glow { color: #16a34a; }
+.newsletter-floating-pod:hover .newsletter-pod-title {
+  text-shadow: 0 0 15px rgba(34, 197, 94, 0.15);
+}
+
+.newsletter-pod-subtext {
+  font-size: 1.1rem;
+  color: #64748b;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+/* Form row architecture fields */
+.newsletter-native-form { width: 100%; max-width: 480px; }
+
+.newsletter-field-carrier {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.newsletter-input-box {
+  flex: 1;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 14px 18px;
+  border-radius: 12px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.01);
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.newsletter-input-box:focus {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1);
+}
+
+.btn-newsletter-subscribe {
+  background: #16a34a; /* Signature active brand green button */
+  color: #ffffff;
+  border: none;
+  padding: 14px 28px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border-radius: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
+  transition: background 0.25s, box-shadow 0.25s, transform 0.15s;
+}
+.btn-newsletter-subscribe:hover {
+  background: #15803d;
+  box-shadow: 0 6px 16px rgba(22, 163, 74, 0.35);
+  transform: translateY(-1px);
+}
+.btn-newsletter-subscribe:active { transform: translateY(0); }
+
+/* ==========================================================================
+   RIGHT COLUMN: DIGITAL ECOSYSTEM SILHOUETTE PICTURE
+   ========================================================================== */
+.newsletter-graphic-block {
+  flex: 0.8;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+}
+
+.grocery-bag-silhouette {
+  position: relative;
+  width: 250px;
+  height: 180px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grocery-bag-asset {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Keeps raw photographic elements proportioned cleanly */
+  transform: scale(1);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+/* Trigger gentle asset lift on hover interactions */
+.newsletter-floating-pod:hover .grocery-bag-asset {
+  transform: scale(1.05) rotate(2deg);
+}
+
+/* Surrounding Floating Satellite Leaves */
+.pod-ambient-leaves { position: absolute; width: 100%; height: 100%; top: 0; left: 0; pointer-events: none; z-index: 2; }
+.pod-leaf { position: absolute; }
+.pl-1 { top: 10%; right: 40%; animation: leafDrift 5s ease-in-out infinite alternate; }
+.pl-2 { bottom: 8%; left: 45%; animation: leafDrift 6s ease-in-out infinite alternate-reverse; }
+.pl-3 { top: 40%; right: 22%; animation: leafDrift 4.5s ease-in-out infinite alternate; }
+
+@keyframes leafDrift {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-10px) rotate(12deg); }
+}
+
+/* ==========================================================================
+   FLUID STRUCTURAL RESPONSIVE ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 992px) {
+  .newsletter-floating-pod { padding: 35px 30px; }
+  .newsletter-pod-title { font-size: 1.85rem; }
+  .newsletter-pod-subtext { font-size: 1rem; }
+  .grocery-bag-silhouette { width: 200px; height: 150px; }
+}
+
+@media (max-width: 768px) {
+  /* Shifts layout into a single vertical bento card on smaller viewports safely */
+  .newsletter-pod-split { flex-direction: column; text-align: center; gap: 30px; }
+  .newsletter-text-block { align-items: center; width: 100%; }
+  .newsletter-field-carrier { flex-direction: column; width: 100%; }
+  .newsletter-input-box { width: 100%; text-align: center; }
+  .btn-newsletter-subscribe { width: 100%; }
+  .newsletter-graphic-block { width: 100%; justify-content: center; }
+}
+
+</style>
+
+<!-- ==========================================================================
+     PREMIUM HEALTHY CATERING MASTER FOOTER DECK (index.html)
+     ========================================================================== -->
+<footer class="catering-master-footer">
+  <div class="footer-master-container">
+    
+    <!-- GRID MATRIX SYSTEM -->
+    <div class="footer-main-grid-rail">
+      
+      <!-- COLUMN 1: BRAND LOGO & CORE PROFILE OVERVIEW -->
+      <div class="footer-grid-column brand-profile-block">
+        <!-- NATIVE BACK TO TOP EMITTER ATTACHED ON CLICK -->
+        <div class="footer-brand-logo-wrap" onclick="executeScrollToTop(event)" title="Click to fly back to top">
+          <!-- OPTION CONFIGURATION: Update source paths here to load your custom transparent logo branding graphic -->
+          <img src="./Assests/brand logo - Copy.webp" alt="Stackly Healthy Catering Logo" class="footer-brand-img">
+        </div>
+        <p class="brand-mission-copy">Engineering premium macro-balanced catering setups and artisanal organic menus designed to fuel workplace productivity and luxury celebrations alike.</p>
+        
+        <!-- 5 COMPLIANT SOCIAL MEDIA SATELLITE LINKS -->
+        <div class="footer-social-channels-row">
+          <a href="404.html" class="social-icon-circle" aria-label="Follow us on Facebook">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-4h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="404.html" class="social-icon-circle" aria-label="Follow us on Instagram">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="2" width="20" height="24" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"/></svg>
+          </a>
+          <a href="404.html" class="social-icon-circle" aria-label="Follow us on X Twitter">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
+          </a>
+          <a href="404.html" class="social-icon-circle" aria-label="Follow us on LinkedIn">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="404.html" class="social-icon-circle" aria-label="Follow us on YouTube">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 22.5 0 0 0 1 11.75a29 22.5 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 22.5 0 0 0 .46-5.25 29 22.5 0 0 0-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- COLUMN 2: DOMAIN QUICK LINKS -->
+      <div class="footer-grid-column navigation-menu-column">
+        <h4 class="footer-column-heading">Explore Menus</h4>
+        <div class="heading-underline-accent"></div>
+        <ul class="footer-links-list">
+          <li><a href="404.html">Corporate Sunrise</a></li>
+          <li><a href="404.html">Elite Gala Buffet</a></li>
+          <li><a href="404.html">Lean Fitness Boxes</a></li>
+          <li><a href="404.html">Boutique High Tea</a></li>
+        </ul>
+      </div>
+
+      <!-- COLUMN 3: SERVICE SUPPORT HUB -->
+      <div class="footer-grid-column navigation-menu-column">
+        <h4 class="footer-column-heading">Catering Support</h4>
+        <div class="heading-underline-accent"></div>
+        <ul class="footer-links-list">
+          <li><a href="404.html">Nutritional Parameters</a></li>
+          <li><a href="404.html">Fleet Delivery Tracks</a></li>
+          <li><a href="404.html">Help & FAQ Center</a></li>
+          <li><a href="404.html">Hygienic Certifications</a></li>
+        </ul>
+      </div>
+
+      <!-- COLUMN 4: REPLACED CORE ADDRESS MATRIX SLAT -->
+      <div class="footer-grid-column brand-address-matrix-column">
+        <h4 class="footer-column-heading">Headquarters Location</h4>
+        <div class="heading-underline-accent"></div>
+        
+        <div class="address-matrix-wrapper">
+          <!-- Physical Location -->
+          <div class="matrix-data-row">
+            <div class="matrix-icon-wrap text-green-accent">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <p class="matrix-text">MMR Complex, Periyakollappatty, Chinna Thirupathi, Salem, Tamil Nadu 636008</p>
+          </div>
+          
+          <!-- Direct Telephone Slat -->
+          <div class="matrix-data-row">
+            <div class="matrix-icon-wrap text-green-accent">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.7 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <p class="matrix-text"><a href="tel:+914271234567" class="matrix-interactive-link">+91 427 123 4567</a></p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- LOWER SUB-FOOTER REVENUE STRIP TRACK -->
+    <div class="footer-copyright-strip-row">
+      <p class="copyright-legal-text">&copy; 2026 Stackly Industries. All culinary rights reserved.</p>
+      
+      <div class="sub-footer-utility-links">
+        <a href="404.html">Privacy Policy</a>
+        <a href="404.html">Terms of Service</a>
+        <a href="404.html">Cookie Management</a>
+      </div>
+
+      <!-- FLOATING BACK-TO-TOP CHRONO HANDLE LINK BUTTON -->
+      <button class="footer-scroll-top-btn" onclick="executeScrollToTop(event)" title="Fly back to top">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+      </button>
+    </div>
+
+  </div>
+</footer>
+
+<style>
+  /* ==========================================================================
+   MASTER DEEP CARBON FOOTER ARCHITECTURE (style.css PARITY)
+   ========================================================================== */
+.catering-master-footer {
+  position: relative;
+  width: 100%;
+  /* EXACT SCHEME MATCH: High contrast premium midnight carbon background */
+  background-color: #0b0f19; 
+  padding: 65px 0 30px 0;
+  overflow: hidden;
+  z-index: 100;
+  font-family: inherit;
+}
+
+.footer-master-container {
+  width: 94%;
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* ==========================================================================
+   4-COLUMN EQUALIZER GRID STRUCTURE RAIL
+   ========================================================================== */
+/* ==========================================================================
+   FIXED: COMPACT FOOTER GRID ARCHITECTURE (REDUCED UNWANTED INTER-COLUMN GAPS)
+   ========================================================================== */
+.footer-main-grid-rail {
+  display: grid;
+  
+  /* FIXED: Changed from equal widths to packed custom column weights to compress the space between lists tightly */
+  grid-template-columns: 1.4fr 0.8fr 0.8fr 1.1fr;
+  
+  /* FIXED: Reduced column gap distance from 40px to a tight 20px */
+  column-gap: 20px;
+  row-gap: 30px;
+  
+  width: 100%;
+  padding-bottom: 45px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05); 
+}
+
+/* ==========================================================================
+   FLUID STRUCTURAL RESPONSIVE ADAPTATIONS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .footer-main-grid-rail { 
+    /* Automatically switches grid tracks safely on tablet screens to maintain balance */
+    grid-template-columns: repeat(2, 1fr); 
+    column-gap: 30px;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer-main-grid-rail { 
+    /* Unconditional vertical center stacking fallback rules for smartphones */
+    grid-template-columns: 1fr; 
+    gap: 30px; 
+  }
+}
+
+
+.footer-grid-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Brand Overview Profile Styles */
+.brand-profile-block { flex: 1.2; }
+
+.footer-brand-logo-wrap {
+  cursor: pointer;
+  margin-bottom: 18px;
+  transition: transform 0.3s ease;
+}
+.footer-brand-logo-wrap:hover { transform: scale(1.03); }
+.footer-brand-img { height: 35px; width: auto; object-fit: contain; }
+
+.brand-mission-copy {
+  font-size: 0.88rem;
+  color: #94a3b8; /* Muted contrast description text color */
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+/* 5 Social Media Rounded Anchors Frame Rows */
+.footer-social-channels-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.social-icon-circle {
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  color: #94a3b8;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s, color 0.3s, border-color 0.3s, transform 0.2s;
+}
+
+.social-icon-circle:hover {
+  /* HOVER ENHANCEMENT: Swaps dynamically to signature brand mint green color on focus triggers */
+  background: rgba(34, 197, 94, 0.1);
+  border-color: #22c55e;
+  color: #22c55e;
+  transform: translateY(-3px);
+}
+
+/* ==========================================================================
+   NAVIGATION COLUMN MODULES & TEXT CONTENT HEADERS
+   ========================================================================== */
+.footer-column-heading {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 6px;
+  letter-spacing: -0.2px;
+}
+
+.heading-underline-accent {
+  width: 25px;
+  height: 2.5px;
+  background-color: #ef4444; /* Exact image copy coral line tag highlight marker */
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+.footer-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links-list a {
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #94a3b8;
+  transition: color 0.2s ease, transform 0.2s ease;
+  display: inline-block;
+}
+
+.footer-links-list a:hover {
+  color: #22c55e; /* Flows into theme green instantly on pointer interactions */
+  transform: translateX(4px);
+}
+
+/* ==========================================================================
+   REPLACED BRAND ADDRESS CONTACT MATRIX BLOCK
+   ========================================================================== */
+.brand-address-matrix-column { flex: 1.2; }
+
+.address-matrix-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}
+
+.matrix-data-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.matrix-icon-wrap {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.text-green-accent { color: #22c55e; }
+
+.matrix-text {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.matrix-interactive-link {
+  text-decoration: none;
+  color: inherit;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+.matrix-interactive-link:hover { color: #22c55e; }
+
+/* ==========================================================================
+   LOWER SUB-FOOTER LEGAL REVENUE BAR STRIP
+   ========================================================================== */
+.footer-copyright-strip-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 25px;
+  position: relative;
+}
+
+.copyright-legal-text { font-size: 0.82rem; color: #64748b; margin: 0; font-weight: 500; }
+
+.sub-footer-utility-links { display: flex; align-items: center; gap: 24px; }
+.sub-footer-utility-links a {
+  text-decoration: none;
+  font-size: 0.82rem;
+  color: #64748b;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.sub-footer-utility-links a:hover { color: #22c55e; }
+
+/* Dedicated Back-to-Top Floating Trigger Button Action */
+.footer-scroll-top-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: #94a3b8;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.25s, color 0.25s, border-color 0.25s, transform 0.2s;
+}
+
+.footer-scroll-top-btn:hover {
+  background: #22c55e;
+  border-color: #22c55e;
+  color: #ffffff;
+  transform: scale(1.05) translateY(-3px);
+  box-shadow: 0 6px 16px rgba(34, 197, 94, 0.25);
+}
+
+/* ==========================================================================
+   FLUID STRUCTURAL RESPONSIVE VIEWPORT QUERIES
+   ========================================================================== */
+@media (max-width: 1024px) {
+  /* Compresses the layout rail into exactly 2 rows side-by-side to block clipping overflow fields */
+  .footer-main-grid-rail { grid-template-columns: repeat(2, 1fr); gap: 35px; }
+}
+
+@media (max-width: 640px) {
+  .catering-master-footer { padding-top: 50px; padding-bottom: 25px; }
+  /* Compresses the grid system row layer directly into a single centered column stack on smartphones */
+  .footer-main-grid-rail { grid-template-columns: 1fr; gap: 30px; text-align: center; }
+  .footer-grid-column { align-items: center; text-align: center; }
+  .footer-links-list { align-items: center; }
+  .matrix-data-row { flex-direction: column; align-items: center; gap: 4px; }
+  
+  .footer-copyright-strip-row { flex-direction: column-reverse; gap: 20px; text-align: center; }
+  .sub-footer-utility-links { flex-direction: column; gap: 12px; }
+  .footer-scroll-top-btn { position: absolute; top: -10px; right: 50%; transform: translateX(50%); } /* Center buttons on tiny displays */
+}
+
+</style>
+
+<script>
+  // ==========================================================================
+// HARDWARE-ACCELERATED BACK TO TOP SMOOTH SCROLL DRIVER TIMELINE (script.js)
+// ==========================================================================
+function executeScrollToTop(event) {
+  if (event) {
+    event.preventDefault(); // Intercept default router index event triggers safely
+  }
+  
+  // Directly feeds instructions into browser hardware scrolling pipelines
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth' // Triggers a smooth chronological upward flight path curve
+  });
+}
+
+</script>
+</body>
+</html>
