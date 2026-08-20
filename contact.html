@@ -747,6 +747,79 @@ window.addEventListener('DOMContentLoaded', () => {
 
 
 <style>
+  /* ============================================================
+   FORM VALIDATION ERROR STATES
+   ============================================================ */
+
+/* Error message remains hidden by default */
+.field-validation-error-prompt {
+    display: none;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: #DC2626;
+    margin-top: 0.25rem;
+    line-height: 1.35;
+}
+
+/* Show error message when field is invalid */
+.field-error-alert-triggered .field-validation-error-prompt {
+    display: block;
+}
+
+/* Red border for invalid fields */
+.field-error-alert-triggered .intake-text-input,
+.field-error-alert-triggered .intake-textarea-input {
+    border-color: #DC2626 !important;
+    background-color: #FFF7F7 !important;
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.08) !important;
+}
+
+/* Red icon when field is invalid */
+.field-error-alert-triggered .field-icon-accent {
+    color: #DC2626;
+}
+
+/* Green valid state */
+.intake-input-group-cell.field-valid .intake-text-input,
+.intake-input-group-cell.field-valid .intake-textarea-input {
+    border-color: #108A4E;
+    background-color: #F7FFF9;
+}
+
+/* Error animation */
+.field-error-alert-triggered {
+    animation: intakeFieldShake 0.25s ease-in-out;
+}
+
+@keyframes intakeFieldShake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-4px);
+    }
+
+    50% {
+        transform: translateX(4px);
+    }
+
+    75% {
+        transform: translateX(-3px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Submit button disabled-looking state while invalid */
+.btn-intake-submit-kinetic-glow {
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
  /* ==========================================================================
    Bento Form Twin Column Architecture Modifiers Layout CSS 
    ========================================================================== */
@@ -1037,120 +1110,484 @@ window.addEventListener('DOMContentLoaded', () => {
 </style>
 
 <script>
-    // ==========================================================================
-// CLIENT-SIDE REAL-TIME STRICT VALUE VALIDATION FORM CONTROLLER (script.js)
+ // ==========================================================================
+// HEALTHY CATERING - INTAKE FORM VALIDATION CONTROLLER
 // ==========================================================================
+
 function initCateringFormValidationConsole() {
-  const formElement = document.getElementById('catering-intake-form');
-  const scrollTriggerParentBox = document.getElementById('intake-scroll-trigger');
 
-  if (!formElement || !scrollTriggerParentBox) return;
+    const formElement = document.getElementById('catering-intake-form');
+    const scrollTriggerParentBox = document.getElementById('intake-scroll-trigger');
 
-  const clientNameInput = document.getElementById('intake-client-name');
-  const clientPhoneInput = document.getElementById('intake-client-phone');
-  const clientEmailInput = document.getElementById('intake-client-email');
-  const guestCountInput = document.getElementById('intake-guest-count');
+    if (!formElement || !scrollTriggerParentBox) {
+        return;
+    }
 
-  // ==========================================================================
-  // REAL-TIME INPUT FILTERS: Intercepts and denies faulty string entries instantly
-  // ==========================================================================
-  
-  // 1. STRICT NAME RULE: Blocks numerical digits and specific punctuation characters from ever loading into the box
-  if (clientNameInput) {
-    clientNameInput.addEventListener('input', function() {
-      // Strips digits [0-9] and raw punctuation signs out of the string instantly
-      const cleanedValue = this.value.replace(/[^a-zA-Z\s.]/g, '');
-      if (this.value !== cleanedValue) {
-        this.value = cleanedValue; // Hard-replaces content thread variables bounds
-      }
-      // Instantly clear error visibility if inputs baseline checks look stable
-      if (this.value.trim().length > 0) {
-        this.closest('.intake-input-group-cell').classList.remove('field-error-alert-triggered');
-      }
+    // ----------------------------------------------------------------------
+    // FIELD REFERENCES
+    // ----------------------------------------------------------------------
+
+    const clientNameInput = document.getElementById('intake-client-name');
+    const clientPhoneInput = document.getElementById('intake-client-phone');
+    const clientEmailInput = document.getElementById('intake-client-email');
+    const guestCountInput = document.getElementById('intake-guest-count');
+    const eventNotesInput = document.getElementById('intake-event-notes');
+
+    // ----------------------------------------------------------------------
+    // HELPER: GET FIELD GROUP
+    // ----------------------------------------------------------------------
+
+    function getFieldGroup(input) {
+        return input
+            ? input.closest('.intake-input-group-cell')
+            : null;
+    }
+
+    // ----------------------------------------------------------------------
+    // HELPER: SHOW ERROR
+    // ----------------------------------------------------------------------
+
+    function showFieldError(input, message) {
+
+        if (!input) return;
+
+        const fieldGroup = getFieldGroup(input);
+
+        if (!fieldGroup) return;
+
+        fieldGroup.classList.remove('field-valid');
+        fieldGroup.classList.add('field-error-alert-triggered');
+
+        const errorElement = fieldGroup.querySelector(
+            '.field-validation-error-prompt'
+        );
+
+        if (errorElement && message) {
+            errorElement.textContent = message;
+        }
+    }
+
+    // ----------------------------------------------------------------------
+    // HELPER: CLEAR ERROR
+    // ----------------------------------------------------------------------
+
+    function clearFieldError(input) {
+
+        if (!input) return;
+
+        const fieldGroup = getFieldGroup(input);
+
+        if (!fieldGroup) return;
+
+        fieldGroup.classList.remove('field-error-alert-triggered');
+
+        if (input.value.trim() !== '') {
+            fieldGroup.classList.add('field-valid');
+        }
+    }
+
+    // ----------------------------------------------------------------------
+    // 1. NAME INPUT
+    // ----------------------------------------------------------------------
+
+    if (clientNameInput) {
+
+        clientNameInput.addEventListener('input', function () {
+
+            // Allow letters, spaces and dots
+            const cleanedValue = this.value.replace(
+                /[^a-zA-Z\s.]/g,
+                ''
+            );
+
+            if (this.value !== cleanedValue) {
+                this.value = cleanedValue;
+            }
+
+            if (this.value.trim().length >= 2) {
+
+                clearFieldError(this);
+
+            } else {
+
+                const group = getFieldGroup(this);
+
+                if (group) {
+                    group.classList.remove('field-valid');
+                }
+            }
+        });
+    }
+
+    // ----------------------------------------------------------------------
+    // 2. PHONE INPUT
+    // ----------------------------------------------------------------------
+
+    if (clientPhoneInput) {
+
+        clientPhoneInput.addEventListener('input', function () {
+
+            // Numbers only
+            const numericCleanedValue = this.value.replace(
+                /[^0-9]/g,
+                ''
+            );
+
+            if (this.value !== numericCleanedValue) {
+                this.value = numericCleanedValue;
+            }
+
+            // Maximum 10 digits
+            if (this.value.length > 10) {
+                this.value = this.value.substring(0, 10);
+            }
+
+            if (this.value.length === 10) {
+
+                clearFieldError(this);
+
+            } else {
+
+                const group = getFieldGroup(this);
+
+                if (group) {
+                    group.classList.remove('field-valid');
+                }
+            }
+        });
+    }
+
+    // ----------------------------------------------------------------------
+    // 3. EMAIL INPUT
+    // ----------------------------------------------------------------------
+
+    if (clientEmailInput) {
+
+        clientEmailInput.addEventListener('input', function () {
+
+            const emailValidationRegex =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (emailValidationRegex.test(this.value.trim())) {
+
+                clearFieldError(this);
+
+            } else {
+
+                const group = getFieldGroup(this);
+
+                if (group) {
+                    group.classList.remove('field-valid');
+                }
+            }
+        });
+    }
+
+    // ----------------------------------------------------------------------
+    // 4. GUEST COUNT
+    // ----------------------------------------------------------------------
+
+    if (guestCountInput) {
+
+        guestCountInput.addEventListener('input', function () {
+
+            const guestCount = parseInt(this.value, 10);
+
+            if (
+                !isNaN(guestCount) &&
+                guestCount >= 10 &&
+                guestCount <= 5000
+            ) {
+
+                clearFieldError(this);
+
+            } else {
+
+                const group = getFieldGroup(this);
+
+                if (group) {
+                    group.classList.remove('field-valid');
+                }
+            }
+        });
+    }
+
+    // ----------------------------------------------------------------------
+    // 5. EVENT NOTES
+    // ----------------------------------------------------------------------
+
+    if (eventNotesInput) {
+
+        eventNotesInput.addEventListener('input', function () {
+
+            // Notes are optional.
+            // If the user enters something, remove any error state.
+            clearFieldError(this);
+
+        });
+    }
+
+    // ----------------------------------------------------------------------
+    // MASTER FORM SUBMISSION VALIDATION
+    // ----------------------------------------------------------------------
+
+    formElement.addEventListener('submit', function (event) {
+
+        event.preventDefault();
+
+        let isFormMatrixValid = true;
+
+        // ================================================================
+        // NAME VALIDATION
+        // ================================================================
+
+        if (
+            !clientNameInput ||
+            clientNameInput.value.trim() === ''
+        ) {
+
+            isFormMatrixValid = false;
+
+            showFieldError(
+                clientNameInput,
+                'Please fill in your full name.'
+            );
+
+        } else if (
+            clientNameInput.value.trim().length < 2
+        ) {
+
+            isFormMatrixValid = false;
+
+            showFieldError(
+                clientNameInput,
+                'Please enter at least 2 characters.'
+            );
+
+        } else if (
+            !/^[a-zA-Z\s.]+$/.test(
+                clientNameInput.value.trim()
+            )
+        ) {
+
+            isFormMatrixValid = false;
+
+            showFieldError(
+                clientNameInput,
+                'Alphabetical characters only allowed.'
+            );
+
+        } else {
+
+            clearFieldError(clientNameInput);
+        }
+
+        // ================================================================
+        // PHONE VALIDATION
+        // ================================================================
+
+        if (
+            !clientPhoneInput ||
+            clientPhoneInput.value.trim() === ''
+        ) {
+
+            isFormMatrixValid = false;
+
+            showFieldError(
+                clientPhoneInput,
+                'Please fill in your mobile number.'
+            );
+
+        } else if (
+            !/^[0-9]{10}$/.test(
+                clientPhoneInput.value.trim()
+            )
+        ) {
+
+            isFormMatrixValid = false;
+
+            showFieldError(
+                clientPhoneInput,
+                'Please enter a valid 10-digit mobile number.'
+            );
+
+        } else {
+
+            clearFieldError(clientPhoneInput);
+        }
+
+        // ================================================================
+        // EMAIL VALIDATION
+        // ================================================================
+
+        const emailValidationRegex =
+            /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        if (
+            !clientEmailInput ||
+            clientEmailInput.value.trim() === ''
+        ) {
+
+            isFormMatrixValid = false;
+
+            showFieldError(
+                clientEmailInput,
+                'Please fill in your email address.'
+            );
+
+        } else if (
+            !emailValidationRegex.test(
+                clientEmailInput.value.trim()
+            )
+        ) {
+
+            isFormMatrixValid = false;
+
+            showFieldError(
+                clientEmailInput,
+                'Please enter a valid email address.'
+            );
+
+        } else {
+
+            clearFieldError(clientEmailInput);
+        }
+
+        // ================================================================
+        // GUEST COUNT VALIDATION
+        // ================================================================
+
+        const guestValue = guestCountInput
+            ? guestCountInput.value.trim()
+            : '';
+
+        const parsedGuestInteger = parseInt(
+            guestValue,
+            10
+        );
+
+        if (
+            !guestCountInput ||
+            guestValue === ''
+        ) {
+
+            isFormMatrixValid = false;
+
+            showFieldError(
+                guestCountInput,
+                'Please enter the estimated guest count.'
+            );
+
+        } else if (
+            isNaN(parsedGuestInteger) ||
+            parsedGuestInteger < 10 ||
+            parsedGuestInteger > 5000
+        ) {
+
+            isFormMatrixValid = false;
+
+            showFieldError(
+                guestCountInput,
+                'Guest count must be between 10 and 5,000.'
+            );
+
+        } else {
+
+            clearFieldError(guestCountInput);
+        }
+
+        // ================================================================
+        // IF INVALID
+        // ================================================================
+
+        if (!isFormMatrixValid) {
+
+            // Find first invalid field
+            const firstInvalidField =
+                formElement.querySelector(
+                    '.field-error-alert-triggered .intake-text-input'
+                );
+
+            if (firstInvalidField) {
+
+                firstInvalidField.focus();
+
+                firstInvalidField.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }
+
+            return;
+        }
+
+        // ================================================================
+        // FORM IS VALID
+        // ================================================================
+
+        console.log(
+            'Catering request validation successful.'
+        );
+
+        // Keep your existing 404 redirect
+        window.location.href = '404.html';
     });
-  }
 
-  // 2. STRICT PHONE RULE: Intercepts and denies all alphabet characters completely (numbers only allowed)
-  if (clientPhoneInput) {
-    clientPhoneInput.addEventListener('input', function() {
-      const numericCleanedValue = this.value.replace(/[^0-9]/g, '');
-      if (this.value !== numericCleanedValue) {
-        this.value = numericCleanedValue;
-      }
-      if (this.value.length === 10) {
-        this.closest('.intake-input-group-cell').classList.remove('field-error-alert-triggered');
-      }
-    });
-  }
+    // ----------------------------------------------------------------------
+    // INTERSECTION OBSERVER
+    // ----------------------------------------------------------------------
 
-  // Clear errors for email/guest row items live upon inputs updates
-  if (clientEmailInput) { clientEmailInput.addEventListener('input', function() { this.closest('.intake-input-group-cell').classList.remove('field-error-alert-triggered'); }); }
-  if (guestCountInput) { guestCountInput.addEventListener('input', function() { this.closest('.intake-input-group-cell').classList.remove('field-error-alert-triggered'); }); }
+    const formCardNode =
+        scrollTriggerParentBox.querySelector(
+            '.intake-node'
+        );
 
-  // ==========================================================================
-  // MASTER SUBMISSION CHECK: Evaluates final fields logs, routing to 404 on pass
-  // ==========================================================================
-  formElement.addEventListener('submit', function(event) {
-    event.preventDefault(); // Safeguards native browser reloads crash bugs tracks
-    
-    let isFormMatrixValid = true;
+    if ('IntersectionObserver' in window) {
 
-    // Validate Name Field length baseline
-    if (!clientNameInput || clientNameInput.value.trim().length < 2) {
-      isFormMatrixValid = false;
-      clientNameInput.closest('.intake-input-group-cell').classList.add('field-error-alert-triggered');
+        const formPanelObserver =
+            new IntersectionObserver(
+                (entries) => {
+
+                    entries.forEach((entry) => {
+
+                        if (entry.isIntersecting) {
+
+                            if (formCardNode) {
+                                formCardNode.classList.add(
+                                    'intake-revealed-active'
+                                );
+                            }
+
+                            formPanelObserver.unobserve(
+                                scrollTriggerParentBox
+                            );
+                        }
+                    });
+
+                },
+                {
+                    threshold: 0.08
+                }
+            );
+
+        formPanelObserver.observe(
+            scrollTriggerParentBox
+        );
     }
-
-    // Validate Phone Field length rules (Requires exactly 10 digits parameters)
-    if (!clientPhoneInput || clientPhoneInput.value.length !== 10) {
-      isFormMatrixValid = false;
-      clientPhoneInput.closest('.intake-input-group-cell').classList.add('field-error-alert-triggered');
-    }
-
-    // Validate Email Field format structures regex expression
-    const emailValidationRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!clientEmailInput || !emailValidationRegex.test(clientEmailInput.value)) {
-      isFormMatrixValid = false;
-      clientEmailInput.closest('.intake-input-group-cell').classList.add('field-error-alert-triggered');
-    }
-
-    // Validate Guest Heads Volume Integer value range maps bounds
-    const parsedGuestInteger = parseInt(guestCountInput ? guestCountInput.value : 0);
-    if (!guestCountInput || isNaN(parsedGuestInteger) || parsedGuestInteger < 10 || parsedGuestInteger > 5000) {
-      isFormMatrixValid = false;
-      guestCountInput.closest('.intake-input-group-cell').classList.add('field-error-alert-triggered');
-    }
-
-    if (isFormMatrixValid) {
-      // Proceed with safe routing redirect handover directly onto your 404 confirmation webpage file
-      window.location.href = "404.html";
-    }
-  });
-
-  // ==========================================================================
-  // HIGH-PERFORMANCE INTERSECTIONOBSERVER TIMELINE DRIVER
-  // ==========================================================================
-  const formCardNode = scrollTriggerParentBox.querySelector('.intake-node');
-  
-  const formPanelObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        if (formCardNode) formCardNode.classList.add('intake-revealed-active');
-        formPanelObserver.unobserve(scrollTriggerParentBox);
-      }
-    });
-  }, { threshold: 0.08 });
-
-  formPanelObserver.observe(scrollTriggerParentBox);
 }
 
-// Map secure completion DOM handlers window startup completion events
-window.addEventListener('DOMContentLoaded', () => {
-  formElement = document.getElementById('catering-intake-form');
-  if (formElement) {
-    initCateringFormValidationConsole();
-  }
-});
+// ==========================================================================
+// DOM READY
+// ==========================================================================
+
+window.addEventListener(
+    'DOMContentLoaded',
+    function () {
+
+        initCateringFormValidationConsole();
+
+    }
+);
 
 </script>
 
