@@ -1,0 +1,3801 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Dashboard - Healthy Catering</title>
+    <!-- Google Fonts for modern typography styling -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="client-styles.css">
+</head>
+<body class="dashboard-body">
+
+    <!-- Top Navigation Header -->
+    <header class="dash-header">
+        <div class="header-left">
+            <button id="sidebarToggle" class="hamburger-btn" aria-label="Toggle Menu">
+                <svg viewBox="0 0 24 24" class="icon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+            </button>
+            <div id="brandRefresh" class="dash-brand" title="Refresh Dashboard">
+                <img src="./Assests/healthy catering logo.webp" alt="Healthy Catering Logo" class="brand-img">
+              
+            </div>
+        </div>
+
+       <div class="header-right">
+
+    <button class="icon-btn" title="Notifications">
+        <svg viewBox="0 0 24 24" class="icon">
+            <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"/>
+        </svg>
+        <span class="notification-badge"></span>
+    </button>
+
+    <div class="user-profile-block">
+
+        <div class="user-avatar-circle">
+            <span id="avatarLetter"></span>
+        </div>
+
+        <div class="user-meta">
+            <span id="headerUsername" class="user-name-text"></span>
+            <span id="userRoleLabel" class="user-role-label"></span>
+        </div>
+
+    </div>
+
+</div>
+    </header>
+
+    <div class="dash-workspace">
+        <!-- Sidebar Navigation Drawer -->
+        <aside id="sidebarPanel" class="dash-sidebar">
+            <nav class="sidebar-nav">
+                <ul class="menu-list">
+                 <li>
+    <!-- Unified Client Menu Platter Navigation Node Links Cleanly -->
+    <button class="menu-item active" data-target="explore-menus">
+        <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+            <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/>
+        </svg>
+        <span>Explore Catering Menus</span>
+    </button>
+</li>
+
+                    <li>
+                        <button class="menu-item" data-target="my-orders">
+                            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                            <span>My Catering Orders</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-item" data-target="meal-subscriptions">
+                            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                            <span>Active Meal Subscriptions</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-item" data-target="macro-metrics">
+                            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+                            <span>Nutritional Macro Metrics</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-item" data-target="profile-settings">
+                            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/></svg>
+                            <span>Client Profile Settings</span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="logout-btn">
+                    <svg viewBox="0 0 24 24" class="icon"><path d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg>
+                    <span>Log Out</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Mobile Background Mask Overlay -->
+        <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+        <!-- Section Wise Display Viewport Panel Frame (Stretched Full Width) -->
+        <main class="dash-content-area">
+            
+          <section id="explore-menus" class="content-view active">
+    <!-- Section Introduction Banner Header -->
+    <div class="explore-catalog-header">
+        <h1 class="view-title">Explore Catering Menus</h1>
+        <p class="section-subtitle-tight">Order premium wellness catering for corporate conferences, local workspace gatherings, or configure your recurring healthy meal subscriptions.</p>
+    </div>
+
+    <!-- Interactive Filtration & Real-Time Booking Multiplier Ribbon -->
+    <div class="catalog-control-ribbon-bar">
+        <div class="filter-chips-wrapper">
+            <button class="menu-filter-chip active" data-filter-type="all">All Packages (3)</button>
+            <button class="menu-filter-chip" data-filter-type="vegan">Vegan / Plant-Based</button>
+            <button class="menu-filter-chip" data-filter-type="keto">Keto / Low-Carb</button>
+            <button class="menu-filter-chip" data-filter-type="protein">High-Protein Custom</button>
+        </div>
+        
+        <!-- Live Catering Math guest volume multiplier panel -->
+        <div class="live-catering-calculator-panel">
+            <label for="globalGuestScaleInput">Catering Guest Scale Matrix:</label>
+            <div class="multiplier-input-box">
+                <input type="number" id="globalGuestScaleInput" value="10" min="1" max="500">
+                <span>Guests</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full-Width Linear Product Rows Framework Canvas -->
+    <div class="fullwidth-catalog-canvas-stack" id="catalogProductsContainer">
+        
+        <!-- Meal Row Item 1: Vegan Matrix Entry -->
+        <div class="catalog-product-row-item" data-diet-category="vegan" data-base-price="18.50">
+            <div class="product-visual-pane">
+                <img src="./Assests/avacado.webp" alt="Avocado Quinoa Harvest Bowl" class="product-row-img">
+                <span class="dietary-pill-badge badge-green-fill">Vegan Matrix</span>
+            </div>
+            
+            <div class="product-details-pane">
+                <div class="title-pricing-row-flex">
+                    <h3 class="product-package-title-name">Avocado Quinoa Harvest Bowl</h3>
+                    <div class="pricing-calculation-stack">
+                        <span class="calculated-payout-total-yield">$185.00</span>
+                        <span class="per-unit-price-subtitle">($18.50 per guest)</span>
+                    </div>
+                </div>
+                <p class="product-ingredients-text">Organic mixed greens, roasted red quinoa, sliced fresh Hass avocado, organic cherry tomatoes, cucumber slices, and lemon-tahini vinaigrette dressing. Rich in fiber and plant-based fats.</p>
+                
+                <!-- Micro Nutritional Boundary Macro Metrics Breakdown -->
+                <div class="nutritional-macro-badge-row">
+                    <div class="macro-capsule-node"><span class="macro-v">520</span><span class="macro-l">Calories</span></div>
+                    <div class="macro-capsule-node"><span class="macro-v">14g</span><span class="macro-l">Protein</span></div>
+                    <div class="macro-capsule-node"><span class="macro-v">62g</span><span class="macro-l">Carbs</span></div>
+                    <div class="macro-capsule-node"><span class="macro-v">22g</span><span class="macro-l">Fats</span></div>
+                </div>
+
+                <div class="product-actions-footer-row">
+                    <span class="logistics-notice-label">⏱️ Requires 12 hours preparation notice</span>
+                  <button
+    type="button"
+    class="catalog-order-execution-btn"
+    onclick="window.location.href='./404.html';"
+>
+    <svg
+        viewBox="0 0 24 24"
+        class="btn-svg-icon"
+        aria-hidden="true"
+    >
+        <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/>
+    </svg>
+
+    <span>Book Package Delivery</span>
+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Meal Row Item 2: Keto Entry -->
+        <div class="catalog-product-row-item" data-diet-category="keto" data-base-price="24.00">
+            <div class="product-visual-pane">
+                <img src="./Assests/salmon.webp" alt="Almond Crusted Salmon Fillet" class="product-row-img">
+                <span class="dietary-pill-badge badge-orange-fill">Strict Keto</span>
+            </div>
+            
+            <div class="product-details-pane">
+                <div class="title-pricing-row-flex">
+                    <h3 class="product-package-title-name">Almond Crusted Salmon Fillet</h3>
+                    <div class="pricing-calculation-stack">
+                        <span class="calculated-payout-total-yield">$240.00</span>
+                        <span class="per-unit-price-subtitle">($24.00 per guest)</span>
+                    </div>
+                </div>
+                <p class="product-ingredients-text">Wild-caught Atlantic salmon crusted with raw almond flour, baked, served on a bed of fresh garlic sautéed asparagus stalks, and finished with herb butter compound oil drizzle.</p>
+                
+                <div class="nutritional-macro-badge-row">
+                    <div class="macro-capsule-node"><span class="macro-v">680</span><span class="macro-l">Calories</span></div>
+                    <div class="macro-capsule-node"><span class="macro-v">42g</span><span class="macro-l">Protein</span></div>
+                    <div class="macro-capsule-node"><span class="macro-v">8g</span><span class="macro-l">Carbs</span></div>
+                    <div class="macro-capsule-node"><span class="macro-v">54g</span><span class="macro-l">Fats</span></div>
+                </div>
+
+                <div class="product-actions-footer-row">
+                    <span class="logistics-notice-label">⏱️ Requires 24 hours preparation notice</span>
+                 <button
+    type="button"
+    class="catalog-order-execution-btn"
+    onclick="window.location.href='404.html';"
+>
+    <svg
+        viewBox="0 0 24 24"
+        class="btn-svg-icon"
+        aria-hidden="true"
+    >
+        <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/>
+    </svg>
+
+    <span>Book Package Delivery</span>
+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Meal Row Item 3: High Protein Entry -->
+        <div class="catalog-product-row-item" data-diet-category="protein" data-base-price="19.50">
+            <div class="product-visual-pane">
+                <img src="./Assests/turkey.webp" alt="Citrus Grilled Turkey Fillets" class="product-row-img">
+                <span class="dietary-pill-badge badge-orange-fill">High-Protein</span>
+            </div>
+            
+            <div class="product-details-pane">
+                <div class="title-pricing-row-flex">
+                    <h3 class="product-package-title-name">Citrus Grilled Turkey Fillets</h3>
+                    <div class="pricing-calculation-stack">
+                        <span class="calculated-payout-total-yield">$195.00</span>
+                        <span class="per-unit-price-subtitle">($19.50 per guest)</span>
+                    </div>
+                </div>
+                <p class="product-ingredients-text">Thick, house-marinated hormone-free lean turkey breast pieces, grilled over wood fires, paired with brown basmati rice wraps, and whole steamed broccoli florets.</p>
+                
+                <div class="nutritional-macro-badge-row">
+                    <div class="macro-capsule-node"><span class="macro-v">590</span><span class="macro-l">Calories</span></div>
+                    <div class="macro-capsule-node"><span class="macro-v">52g</span><span class="macro-l">Protein</span></div>
+                    <div class="macro-capsule-node"><span class="macro-v">44g</span><span class="macro-l">Carbs</span></div>
+                    <div class="macro-capsule-node"><span class="macro-v">12g</span><span class="macro-l">Fats</span></div>
+                </div>
+
+                <div class="product-actions-footer-row">
+                    <span class="logistics-notice-label">⏱️ Requires 12 hours preparation notice</span>
+                   <button
+    type="button"
+    class="catalog-order-execution-btn"
+    onclick="window.location.href='404.html';"
+>
+    <svg
+        viewBox="0 0 24 24"
+        class="btn-svg-icon"
+        aria-hidden="true"
+    >
+        <path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/>
+    </svg>
+
+    <span>Book Package Delivery</span>
+</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<style>
+    /* ==========================================================================
+   Full-Width Explore Catering Menus Component Matrix Styling
+   ========================================================================== */
+.explore-catalog-header {
+    margin-bottom: 1.5rem;
+}
+
+.section-subtitle-tight {
+    color: var(--text-muted);
+    font-size: var(--font-base);
+    line-height: 1.4;
+    margin-top: 0.35rem;
+    max-width: 800px;
+}
+
+/* Filtration chips & dynamic calculation multiplier bar styling */
+.catalog-control-ribbon-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.filter-chips-wrapper {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.menu-filter-chip {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    color: #475569;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: var(--font-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.menu-filter-chip:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.menu-filter-chip.active {
+    background-color: #092518; /* Solid canvas slate header color mapping */
+    color: #FFFFFF;
+    border-color: #092518;
+}
+
+/* Live guest multiplier layout node fields */
+.live-catering-calculator-panel {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    background: #FFFFFF;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.live-catering-calculator-panel label {
+    font-size: var(--font-base);
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.multiplier-input-box {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    background-color: var(--bg-light);
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+}
+
+.multiplier-input-box input {
+    width: 55px;
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: var(--font-base);
+    font-weight: 700;
+    color: var(--primary);
+    text-align: center;
+}
+
+.multiplier-input-box input:focus {
+    outline: none;
+}
+
+.multiplier-input-box span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+/* ==========================================================================
+   Full Width Linear Rows Packaging Framework
+   ========================================================================== */
+.fullwidth-catalog-canvas-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.catalog-product-row-item {
+    display: flex;
+    width: 100%; /* Spans 100% full content canvas width */
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.catalog-product-row-item:hover {
+    border-color: rgba(16, 138, 78, 0.25);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+/* Left Visual Pane */
+.product-visual-pane {
+    width: 240px;
+    min-height: 100%;
+    position: relative;
+    background-color: #E2E8F0;
+    flex-shrink: 0;
+}
+
+.product-row-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dietary-pill-badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+}
+
+.badge-green-fill { background-color: #E8F5E9; color: #108A4E; }
+.badge-orange-fill { background-color: #FFF3E0; color: #E65100; }
+
+/* Right Details Content Pane */
+.product-details-pane {
+    flex: 1;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.title-pricing-row-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.product-package-title-name {
+    font-size: var(--font-md);
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.pricing-calculation-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.15rem;
+}
+
+.calculated-payout-total-yield {
+    font-size: var(--font-lg);
+    font-weight: 800;
+    color: #108A4E; /* High utility green */
+}
+
+.per-unit-price-subtitle {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.product-ingredients-text {
+    font-size: var(--font-base);
+    color: #475569;
+    line-height: 1.5;
+}
+
+/* Micro Nutritional Macro Grid Matrix */
+.nutritional-macro-badge-row {
+    display: inline-flex;
+    gap: 1rem;
+    background-color: var(--bg-light);
+    padding: 0.5rem 0.85rem;
+    border-radius: 8px;
+    border: 1px solid rgba(226, 232, 240, 0.6);
+    align-self: flex-start;
+}
+
+.macro-capsule-node {
+    display: flex;
+    align-items: baseline;
+    gap: 0.25rem;
+}
+
+.macro-v {
+    font-size: var(--font-base);
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.macro-l {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Footer Execution Buttons Row */
+.product-actions-footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #F1F5F9;
+    padding-top: 0.85rem;
+    margin-top: 0.25rem;
+    gap: 1rem;
+}
+
+.logistics-notice-label {
+    font-size: 0.8rem;
+    color: #E65100; /* Operational setup warning orange */
+    font-weight: 600;
+}
+
+.catalog-order-execution-btn {
+    background-color: #108A4E;
+    color: #FFFFFF;
+    border: none;
+    padding: 0.6rem 1.1rem;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: var(--font-base);
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.catalog-order-execution-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-svg-icon {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+/* ==========================================================================
+   Explore Menu Component Responsiveness Adaptive Breakpoints Matrix
+   ========================================================================== */
+@media (max-width: 768px) {
+    .catalog-control-ribbon-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .live-catering-calculator-panel {
+        justify-content: space-between;
+    }
+
+    .catalog-product-row-item {
+        flex-direction: column; /* Collapse horizontally onto stacked vertical blocks */
+    }
+
+    .product-visual-pane {
+        width: 100%;
+        height: 160px;
+    }
+
+    .title-pricing-row-flex {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .pricing-calculation-stack {
+        align-items: flex-start;
+    }
+
+    .product-actions-footer-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .catalog-order-execution-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+</style>
+
+<script>
+    // Append this initialization chunk block inside your existing DOMContentLoaded listener in client-app.js
+const globalGuestScaleInput = document.getElementById('globalGuestScaleInput');
+const menuFilterChips = document.querySelectorAll('.menu-filter-chip');
+const catalogProductRowItems = document.querySelectorAll('.catalog-product-row-item');
+
+// ==========================================================================
+// 1. Live Catering Math Multiplier Engine Calculation Loop
+// ==========================================================================
+if (globalGuestScaleInput) {
+    globalGuestScaleInput.addEventListener('input', (event) => {
+        let currentGuestScaleMultiplier = parseInt(event.target.value);
+        
+        // Safety boundary validation fallback rules
+        if (isNaN(currentGuestScaleMultiplier) || currentGuestScaleMultiplier < 1) {
+            currentGuestScaleMultiplier = 1;
+        }
+
+        catalogProductRowItems.forEach(rowItem => {
+            const basePricePerGuest = parseFloat(rowItem.getAttribute('data-base-price'));
+            
+            // Dynamic Math Calculation: Base Cost * Guest Matrix Scale Multiplier
+            const updatedTotalYieldVal = (basePricePerGuest * currentGuestScaleMultiplier).toFixed(2);
+            
+            // Push updated text metrics smoothly into layout indicators nodes
+            const yieldDisplayNode = rowItem.querySelector('.calculated-payout-total-yield');
+            if (yieldDisplayNode) {
+                yieldDisplayNode.textContent = `$${updatedTotalYieldVal}`;
+            }
+        });
+    });
+}
+
+// ==========================================================================
+// 2. Dietary Category Ribbon Filter Classification Engine
+// ==========================================================================
+menuFilterChips.forEach(chipNode => {
+    chipNode.addEventListener('click', () => {
+        // Toggle selected highlighting parameters cleanly across components lists
+        menuFilterChips.forEach(c => c.classList.remove('active'));
+        chipNode.classList.add('active');
+
+        const requestFilterValue = chipNode.getAttribute('data-filter-type');
+
+        catalogProductRowItems.forEach(productRow => {
+            const rowDietTypeValue = productRow.getAttribute('data-diet-category');
+
+            if (requestFilterValue === 'all' || rowDietTypeValue === requestFilterValue) {
+                productRow.style.display = 'flex';
+            } else {
+                productRow.style.display = 'none';
+            }
+        });
+    });
+});
+
+</script>
+
+<section id="my-orders" class="content-view">
+
+    <!-- Section Introduction Banner Header -->
+    <div class="orders-ledger-header">
+        <h1 class="view-title">My Catering Orders</h1>
+
+        <p class="section-subtitle-tight">
+            Monitor active delivery status parameters, verify logistical
+            transit coordinates, or evaluate historical catering receipts records.
+        </p>
+    </div>
+
+
+    <!-- Search & Filter Controls -->
+    <div class="orders-control-ribbon-bar">
+
+        <div class="search-box-input-wrapper">
+
+            <svg
+                viewBox="0 0 24 24"
+                class="search-input-icon"
+                aria-hidden="true"
+            >
+                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5
+                16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16
+                c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49
+                19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5
+                9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </svg>
+
+            <input
+                type="text"
+                id="clientOrderSearch"
+                placeholder="Filter by Package Name, Reference ID, or Location..."
+            >
+
+        </div>
+
+
+        <div class="orders-filter-chips-row">
+
+            <button
+                type="button"
+                class="order-filter-tab active"
+                data-order-filter="all"
+            >
+                All Receipts (2)
+            </button>
+
+            <button
+                type="button"
+                class="order-filter-tab"
+                data-order-filter="active"
+            >
+                In Transit
+            </button>
+
+            <button
+                type="button"
+                class="order-filter-tab"
+                data-order-filter="completed"
+            >
+                Settled History
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Orders Timeline -->
+    <div
+        class="fullwidth-orders-timeline-canvas"
+        id="clientOrdersLedgerStack"
+    >
+
+
+        <!-- =========================================================
+             ORDER 1
+        ========================================================== -->
+
+        <div
+            class="timeline-receipt-row-item"
+            data-order-state="active"
+        >
+
+            <!-- IMPORTANT: Opening identity wrapper -->
+            <div class="receipt-identity-block">
+
+                <div>
+                    <span class="order-timestamp-label">
+                        📅 Scheduled Today • 12:30 PM Drop
+                    </span>
+
+                    <h3 class="order-package-title-headline">
+                        Avocado Quinoa Harvest Bowl (Bulk Pack)
+                    </h3>
+                </div>
+
+
+                <div class="meta-tags-inline-flex">
+
+                    <span class="mono-id-tag">
+                        #HC-2026-904
+                    </span>
+
+                    <span class="location-descriptor-text">
+                        📍 Innovation Hall, Tower B
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Progress Tracking -->
+
+            <div class="receipt-progress-tracking-block">
+
+                <div class="progress-labels-row">
+
+                    <span class="progress-status-text-highlight text-highlight-orange">
+                        Phase: In Kitchen Production
+                    </span>
+
+                    <span class="progress-percentage-metric-value">
+                        65% Prepared
+                    </span>
+
+                </div>
+
+
+                <div class="progress-track-rail-bg">
+
+                    <div
+                        class="progress-fill-bar-node"
+                        style="width: 65%; background-color: #E65100;"
+                    ></div>
+
+                </div>
+
+
+                <p class="progress-footer-subtext-note">
+                    Logistics Courier: Standard Transit Dispatch Team assigned.
+                </p>
+
+            </div>
+
+
+            <!-- Financial Operations -->
+
+            <div class="receipt-financial-operations-block">
+
+                <div class="financial-yield-summary">
+
+                    <span class="financial-bold-value-label text-highlight-green">
+                        $185.00
+                    </span>
+
+                    <span class="item-volume-count-subtext">
+                        10 Packages • Settled
+                    </span>
+
+                </div>
+
+
+             <button
+    type="button"
+    class="secondary-utility-action-btn"
+    onclick="window.location.href='404.html';"
+>
+    View Invoice Ledger
+</button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================================================
+             ORDER 2
+        ========================================================== -->
+
+        <div
+            class="timeline-receipt-row-item"
+            data-order-state="completed"
+        >
+
+            <!-- IMPORTANT: Opening identity wrapper -->
+            <div class="receipt-identity-block">
+
+                <div>
+
+                    <span class="order-timestamp-label text-muted-time">
+                        📅 Completed • Oct 18, 2026
+                    </span>
+
+                    <h3 class="order-package-title-headline">
+                        Almond Crusted Salmon Fillet Premium
+                    </h3>
+
+                </div>
+
+
+                <div class="meta-tags-inline-flex">
+
+                    <span class="mono-id-tag">
+                        #HC-2026-881
+                    </span>
+
+                    <span class="location-descriptor-text">
+                        📍 Executive Boardroom, Suite 400
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Progress Tracking -->
+
+            <div class="receipt-progress-tracking-block">
+
+                <div class="progress-labels-row">
+
+                    <span class="progress-status-text-highlight text-highlight-green">
+                        Phase: Delivered & Verified
+                    </span>
+
+                    <span class="progress-percentage-metric-value">
+                        100% Finished
+                    </span>
+
+                </div>
+
+
+                <div class="progress-track-rail-bg">
+
+                    <div
+                        class="progress-fill-bar-node"
+                        style="width: 100%; background-color: #108A4E;"
+                    ></div>
+
+                </div>
+
+
+                <p class="progress-footer-subtext-note">
+                    Drop-off confirmation handoff signature logged successfully.
+                </p>
+
+            </div>
+
+
+            <!-- Financial Operations -->
+
+            <div class="receipt-financial-operations-block">
+
+                <div class="financial-yield-summary">
+
+                    <span class="financial-bold-value-label text-highlight-green">
+                        $240.00
+                    </span>
+
+                    <span class="item-volume-count-subtext">
+                        10 Packages • Settled
+                    </span>
+
+                </div>
+
+
+               <button
+    type="button"
+    class="secondary-utility-action-btn"
+    onclick="window.location.href='404.html';"
+>
+    View Invoice Ledger
+</button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<style>
+    /* ==========================================================================
+   Full-Width My Catering Orders Fluid System Rules Config
+   ========================================================================== */
+.orders-ledger-header {
+    margin-bottom: 1.5rem;
+}
+
+/* Operational filtration ribbon panel styling config context */
+.orders-control-ribbon-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+}
+
+.search-box-input-wrapper {
+    position: relative;
+    flex: 1;
+    max-width: 440px;
+}
+
+.search-input-icon {
+    position: absolute;
+    left: 0.85rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    color: var(--text-muted);
+}
+
+.search-box-input-wrapper input {
+    width: 100%;
+    padding: 0.65rem 1rem 0.65rem 2.5rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: var(--font-base);
+    background-color: #FFFFFF;
+    transition: var(--transition);
+}
+
+.search-box-input-wrapper input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(16, 138, 78, 0.06);
+}
+
+.orders-filter-chips-row {
+    display: flex;
+    gap: 0.5rem;
+    background-color: #FFFFFF;
+    padding: 0.3rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.order-filter-tab {
+    background: transparent;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-family: inherit;
+    font-size: var(--font-base);
+    font-weight: 600;
+    color: #475569;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: var(--transition);
+}
+
+.order-filter-tab:hover {
+    color: var(--primary);
+}
+
+.order-filter-tab.active {
+    background-color: #092518;
+    color: #FFFFFF;
+}
+
+/* ==========================================================================
+   Full Width Structural Stack - Complete Fix For Overlapping Heights
+   ========================================================================== */
+.fullwidth-orders-timeline-canvas {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    padding-bottom: 2rem;
+}
+
+/* Converted from Grid layout to a clean flex-column flow with no static bounds */
+.timeline-receipt-row-item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    gap: 1.25rem;
+    box-shadow: var(--shadow-sm);
+    box-sizing: border-box;
+}
+
+/* Top Data Summary Row */
+.receipt-identity-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.order-timestamp-label {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: #E65100;
+    min-width: 180px;
+}
+
+.order-timestamp-label.text-muted-time {
+    color: var(--text-muted);
+}
+
+.order-package-title-headline {
+    font-size: var(--font-md);
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.4;
+    flex: 1;
+    min-width: 250px;
+}
+
+.meta-tags-inline-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.35rem;
+    text-align: right;
+    min-width: 180px;
+}
+
+.mono-id-tag {
+    font-family: monospace;
+    font-size: 0.82rem;
+    font-weight: 700;
+    background-color: #F1F5F9;
+    color: #334155;
+    padding: 0.15rem 0.4rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.location-descriptor-text {
+    font-size: 0.82rem;
+    color: #475569;
+    font-weight: 500;
+}
+
+/* Progress Tracking Component */
+.receipt-progress-tracking-block {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    width: 100%;
+    padding: 0.65rem 0;
+    border-top: 1px solid #F1F5F9;
+    border-bottom: 1px solid #F1F5F9;
+}
+
+.progress-labels-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.progress-track-rail-bg {
+    width: 100%;
+    height: 6px;
+    background-color: #E2E8F0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill-bar-node {
+    height: 100%;
+    border-radius: 10px;
+    transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-footer-subtext-note {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-top: 0.1rem;
+}
+
+/* Bottom Operation Execution Row */
+.receipt-financial-operations-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+}
+
+.financial-yield-summary {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+}
+
+.financial-bold-value-label {
+    font-size: var(--font-lg);
+    font-weight: 800;
+}
+
+.item-volume-count-subtext {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.secondary-utility-action-btn {
+    background-color: #FFFFFF;
+    color: #475569;
+    border: 1px solid var(--border);
+    padding: 0.55rem 1.1rem;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.secondary-utility-action-btn:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+    background-color: var(--primary-light);
+}
+
+/* Strict Color Assignment Text Utilities */
+.text-highlight-green { color: #108A4E !important; }
+.text-highlight-orange { color: #E65100 !important; }
+
+/* ==========================================================================
+   Responsive Architecture Structural Breakpoint Adaptability Drawer Layout Rule
+   ========================================================================== */
+@media (max-width: 768px) {
+    .receipt-identity-block {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .meta-tags-inline-flex {
+        align-items: flex-start;
+        text-align: left;
+        margin-top: 0.25rem;
+    }
+
+    .receipt-financial-operations-block {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .financial-yield-summary {
+        justify-content: space-between;
+    }
+
+    .secondary-utility-action-btn {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+</style>
+
+<script>
+    /**
+ * Client Dashboard Routing Control Logic
+ * Handles real-time ledger filters and string search query matrices.
+ */
+
+document.addEventListener('DOMContentLoaded', () => {
+    const clientOrderSearch = document.getElementById('clientOrderSearch');
+    const orderFilterTabs = document.querySelectorAll('.order-filter-tab');
+    const timelineReceiptRowItems = document.querySelectorAll('.timeline-receipt-row-item');
+
+    // ==========================================================================
+    // 1. Text Query Search Box Filtering Channel Logic
+    // ==========================================================================
+    if (clientOrderSearch) {
+        clientOrderSearch.addEventListener('input', (event) => {
+            const queryText = event.target.value.toLowerCase().trim();
+
+            timelineReceiptRowItems.forEach(rowItem => {
+                const packageHeadlineText = rowItem.querySelector('.order-package-title-headline').textContent.toLowerCase();
+                const referenceIdText = rowItem.querySelector('.mono-id-tag').textContent.toLowerCase();
+                const locationText = rowItem.querySelector('.location-descriptor-text').textContent.toLowerCase();
+
+                if (packageHeadlineText.includes(queryText) || referenceIdText.includes(queryText) || locationText.includes(queryText)) {
+                    const currentActiveFilter = document.querySelector('.order-filter-tab.active').getAttribute('data-order-filter');
+                    const itemStateValue = rowItem.getAttribute('data-order-state');
+                    
+                    if (currentActiveFilter === 'all' || itemStateValue === currentActiveFilter) {
+                        rowItem.style.display = 'flex';
+                    }
+                } else {
+                    rowItem.style.display = 'none';
+                }
+            });
+        });
+    }
+
+    // ==========================================================================
+    // 2. Operational Status Filter Tab Switches Router Pipeline
+    // ==========================================================================
+    orderFilterTabs.forEach(tabNode => {
+        tabNode.addEventListener('click', () => {
+            orderFilterTabs.forEach(t => t.classList.remove('active'));
+            tabNode.classList.add('active');
+
+            const activeFilterValue = tabNode.getAttribute('data-order-filter');
+
+            timelineReceiptRowItems.forEach(rowItem => {
+                const itemStateValue = rowItem.getAttribute('data-order-state');
+
+                if (activeFilterValue === 'all' || itemStateValue === activeFilterValue) {
+                    rowItem.style.display = 'flex';
+                } else {
+                    rowItem.style.display = 'none';
+                }
+            });
+            
+            // Re-execute input search evaluation if text values are active in search inputs box
+            if (clientOrderSearch && clientOrderSearch.value.trim() !== "") {
+                clientOrderSearch.dispatchEvent(new Event('input'));
+            }
+        });
+    });
+});
+
+</script>
+
+         <section id="meal-subscriptions" class="content-view">
+    <!-- Section Introduction Banner Header -->
+    <div class="subs-management-header">
+        <h1 class="view-title">Active Meal Subscriptions</h1>
+        <p class="section-subtitle-tight">Review ongoing recurring nutritional packages, modify calorie caps, track upcoming calendar deliveries, or dynamically adjust billing cycle locks.</p>
+    </div>
+
+    <!-- Active Subscription Overview Live Tracker Deck -->
+    <div class="subs-summary-strip-deck">
+        <div class="summary-metric-strip">
+            <span class="strip-label-lbl">Ongoing Contract Plan</span>
+            <div class="strip-value-row">
+                <strong class="strip-value-val text-highlight-green">Corporate Wellness Bundle</strong>
+                <span class="strip-badge-status status-badge-green">Active Run</span>
+            </div>
+        </div>
+        <div class="summary-metric-strip">
+            <span class="strip-label-lbl">Next Delivery Dispatched</span>
+            <div class="strip-value-row">
+                <strong class="strip-value-val">Tomorrow, 8:00 AM</strong>
+                <span class="strip-badge-status status-badge-orange">In Production</span>
+            </div>
+        </div>
+        <div class="summary-metric-strip">
+            <span class="strip-label-lbl">Accumulated Volume Saved</span>
+            <div class="strip-value-row">
+                <strong class="strip-value-val text-highlight-green">$42.50 Saved</strong>
+                <span class="strip-badge-status status-badge-gray">15% Payout Tier</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full-Width Dynamic Settings Framework Canvas Stack -->
+    <div class="fullwidth-subs-workspace-stack">
+        
+        <!-- Setting Block 1: Multi-select Dropdown & Configuration Toggles Block -->
+        <div class="subs-config-linear-row">
+            <div class="row-header-icon-deck">
+                <div class="deck-icon-badge green-tint-bg">
+                    <svg viewBox="0 0 24 24" class="deck-svg-icon"><path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/></svg>
+                </div>
+                <div class="deck-text-meta">
+                    <h3 class="subs-block-title-text">Dispatch Schedule Coordinates</h3>
+                    <p class="subs-block-desc-text">Select your preferred calendar drops array and instant status flags switches.</p>
+                </div>
+            </div>
+            
+            <div class="form-input-horizontal-row-flex">
+                <div class="input-element-group flex-1">
+                    <label for="subDeliveryDays">Weekly Delivery Cadence</label>
+                    <select id="subDeliveryDays">
+                        <option value="mon-wed-fri" selected>Mon, Wed, Fri Drops (Standard Office Cadence)</option>
+                        <option value="daily">Daily Drop (Monday - Friday Morning Run)</option>
+                        <option value="weekends">Weekend Meal Preps Run Only</option>
+                    </select>
+                </div>
+                
+                <!-- Instant Cycle Pause Switch Trigger -->
+                <div class="inline-toggle-switch-card">
+                    <div class="toggle-text-labels">
+                        <span class="toggle-main-title">Subscription Delivery Gate</span>
+                        <p class="toggle-sub-desc">Temporarily freeze your active cycle for holidays or remote work weeks.</p>
+                    </div>
+                    <div class="toggle-switch-wrapper-control">
+                        <label class="switch-toggle-node">
+                            <input type="checkbox" id="subStatusToggleSwitch" checked>
+                            <span class="slider-round-rail-track"></span>
+                        </label>
+                        <span id="subStatusLabelIndicator" class="toggle-status-label-indicator label-active-green">Gate Open</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Setting Block 2: Interactive Nutritional Macro Threshold Slider Controls Grid -->
+        <div class="subs-config-linear-row">
+            <div class="row-header-icon-deck">
+                <div class="deck-icon-badge orange-tint-bg">
+                    <svg viewBox="0 0 24 24" class="deck-svg-icon"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+                </div>
+                <div class="deck-text-meta">
+                    <h3 class="subs-block-title-text">Caloric & Nutrient Threshold Limits</h3>
+                    <p class="subs-block-desc-text">Slide range caps to communicate maximum dietary targets to cooking staff.</p>
+                </div>
+            </div>
+            
+            <div class="sliders-distribution-row-grid">
+                <!-- Slider 1 -->
+                <div class="slider-input-group">
+                    <div class="slider-labels-flex">
+                        <span class="slider-core-lbl">Calorie Target Boundary</span>
+                        <span class="slider-numeric-output-val"><strong id="outputCalorie">2100</strong> kcal</span>
+                    </div>
+                    <input type="range" id="inputCalorieRange" min="1200" max="4000" step="50" value="2100" class="creative-range-slider-node slider-color-green">
+                </div>
+
+                <!-- Slider 2 -->
+                <div class="slider-input-group">
+                    <div class="slider-labels-flex">
+                        <span class="slider-core-lbl">Protein Minimum Target</span>
+                        <span class="slider-numeric-output-val"><strong id="outputProtein">120</strong> grams</span>
+                    </div>
+                    <input type="range" id="inputProteinRange" min="40" max="250" step="5" value="120" class="creative-range-slider-node slider-color-orange">
+                </div>
+            </div>
+        </div>
+
+        <!-- Master Global Modifications Execution Control Row Deck -->
+        <div class="subs-master-execution-footer">
+            <span class="logistics-notice-label">⏱️ Schedule configuration modifications require a 24-hour cycle verification processing window.</span>
+          <button
+    type="button"
+    class="primary-save-action-btn"
+    id="saveSubSettingsBtn"
+    onclick="window.location.href='404.html';"
+>
+    <svg
+        viewBox="0 0 24 24"
+        class="btn-svg-icon"
+        aria-hidden="true"
+    >
+        <path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"/>
+    </svg>
+    <span>Commit Cycle Updates</span>
+</button>
+        </div>
+
+    </div>
+</section>
+<style>
+    /* ==========================================================================
+   Full-Width Active Meal Subscriptions Canvas Layout CSS Modules
+   ========================================================================== */
+.subs-management-header {
+    margin-bottom: 1.5rem;
+}
+
+/* Summary Live Dashboard Metadata Ribbon Strip Deck */
+.subs-summary-strip-deck {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+.summary-metric-strip {
+    background-color: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.strip-label-lbl {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.strip-value-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.strip-value-val {
+    font-size: var(--font-md);
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.strip-badge-status {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+}
+
+.status-badge-green { background-color: #E8F5E9; color: #108A4E; }
+.status-badge-orange { background-color: #FFF3E0; color: #E65100; }
+.status-badge-gray { background-color: #F1F5F9; color: #475569; }
+
+/* ==========================================================================
+   Full Width Custom Workspace Row Elements
+   ========================================================================== */
+.fullwidth-subs-workspace-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.subs-config-linear-row {
+    background-color: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Section Subheader Badging Block Alignment Row */
+.row-header-icon-deck {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    border-bottom: 1px solid #F1F5F9;
+    padding-bottom: 1rem;
+}
+
+.deck-icon-badge {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.green-tint-bg { background-color: #E8F5E9; color: #108A4E; }
+.orange-tint-bg { background-color: #FFF3E0; color: #E65100; }
+
+.deck-svg-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.deck-text-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.subs-block-title-text {
+    font-size: var(--font-md);
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.subs-block-desc-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Internal Inputs Blocks Alignment Row */
+.form-input-horizontal-row-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+}
+
+.input-element-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.input-element-group.flex-1 { flex: 1; }
+
+.input-element-group label {
+    font-size: 0.82rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.input-element-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: var(--font-base);
+    background-color: #F8FAFC;
+    color: var(--text-dark);
+    transition: var(--transition);
+}
+
+.input-element-group select:focus {
+    outline: none;
+    border-color: #108A4E;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 4px rgba(16, 138, 78, 0.06);
+}
+
+/* Multi-field split range sliders distribution subgrid blocks */
+.sliders-distribution-row-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    width: 100%;
+}
+
+.slider-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.slider-labels-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.slider-core-lbl {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.slider-numeric-output-val {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.slider-numeric-output-val strong {
+    color: #108A4E;
+    font-size: var(--font-base);
+}
+
+/* Range Inputs Thumb Normalizations Track */
+.creative-range-slider-node {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;
+    background: #E2E8F0;
+    outline: none;
+    transition: background 0.3s;
+}
+
+.creative-range-slider-node::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    transition: transform 0.1s;
+}
+
+.creative-range-slider-node::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+}
+
+.slider-color-green::-webkit-slider-thumb { background-color: #108A4E; }
+.slider-color-orange::-webkit-slider-thumb { background-color: #E65100; }
+
+/* Inline Switch Toggle Layout Components Area Node Rules Styling */
+.inline-toggle-switch-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F8FAFC;
+    border: 1px dashed var(--border);
+    padding: 0.85rem 1.25rem;
+    border-radius: 10px;
+    flex: 1;
+    gap: 1.5rem;
+}
+
+.toggle-text-labels {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.toggle-main-title { font-size: 0.9rem; font-weight: 700; color: var(--text-dark); }
+.toggle-sub-desc { font-size: 0.78rem; color: var(--text-muted); line-height: 1.3; }
+
+.toggle-switch-wrapper-control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.switch-toggle-node {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 22px;
+}
+
+.switch-toggle-node input { opacity: 0; width: 0; height: 0; }
+
+.slider-round-rail-track {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #CBD5E1;
+    transition: .3s;
+    border-radius: 34px;
+}
+
+.slider-round-rail-track::before {
+    position: absolute;
+    content: "";
+    height: 16px; width: 16px;
+    left: 3px; bottom: 3px;
+    background-color: white;
+    transition: .3s;
+    border-radius: 50%;
+}
+
+input:checked + .slider-round-rail-track { background-color: #108A4E; }
+input:checked + .slider-round-rail-track::before { transform: translateX(18px); }
+
+.toggle-status-label-indicator { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.3px; }
+.label-active-green { color: #108A4E; }
+.label-disabled-gray { color: #64748B; }
+
+/* Global Master Updates Commit Footer Row Deck Rules */
+.subs-master-execution-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border);
+    padding-top: 1.25rem;
+    margin-top: 0.5rem;
+    gap: 1.5rem;
+}
+
+.primary-save-action-btn {
+    background-color: #108A4E;
+    color: #FFFFFF;
+    border: none;
+    padding: 0.75rem 1.4rem;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: var(--font-base);
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    box-shadow: 0 4px 12px rgba(16, 138, 78, 0.15);
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.primary-save-action-btn:hover {
+    background-color: var(--primary-hover);
+    box-shadow: 0 6px 16px rgba(12, 111, 62, 0.25);
+}
+
+.btn-svg-icon { width: 18px; height: 18px; fill: currentColor; }
+
+/* ==========================================================================
+   Active Subs Viewport Responsiveness Breakdown Media Query Matrices
+   ========================================================================== */
+@media (max-width: 960px) {
+    .form-input-horizontal-row-flex {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.25rem;
+    }
+    
+    .inline-toggle-switch-card {
+        flex: none;
+        width: 100%;
+    }
+}
+
+@media (max-width: 640px) {
+    .sliders-distribution-row-grid {
+        grid-template-columns: 1fr; /* Force range sliders to stack into individual column rows on phone viewports */
+        gap: 1.25rem;
+    }
+
+    .subs-master-execution-footer {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.25rem;
+    }
+
+    .primary-save-action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+</style>
+<script>
+    // Append this configuration block inside your existing DOMContentLoaded listener inside client-app.js
+const subStatusToggleSwitch = document.getElementById('subStatusToggleSwitch');
+const subStatusLabelIndicator = document.getElementById('subStatusLabelIndicator');
+
+const inputCalorieRange = document.getElementById('inputCalorieRange');
+const outputCalorie = document.getElementById('outputCalorie');
+
+const inputProteinRange = document.getElementById('inputProteinRange');
+const outputProtein = document.getElementById('outputProtein');
+
+const saveSubSettingsBtn = document.getElementById('saveSubSettingsBtn');
+
+// ==========================================================================
+// 1. Live Instant Range Sliders Numeric Output Value Text Mirrors
+// ==========================================================================
+if (inputCalorieRange && outputCalorie) {
+    inputCalorieRange.addEventListener('input', (e) => {
+        outputCalorie.textContent = e.target.value;
+    });
+}
+
+if (inputProteinRange && outputProtein) {
+    inputProteinRange.addEventListener('input', (e) => {
+        outputProtein.textContent = e.target.value;
+    });
+}
+
+// ==========================================================================
+// 2. Active Subscription Service Gate Status Toggle Label Trigger
+// ==========================================================================
+if (subStatusToggleSwitch && subStatusLabelIndicator) {
+    subStatusToggleSwitch.addEventListener('change', (e) => {
+        if (e.target.checked) {
+            subStatusLabelIndicator.className = 'toggle-status-label-indicator label-active-green';
+            subStatusLabelIndicator.textContent = 'Gate Open';
+        } else {
+            subStatusLabelIndicator.className = 'toggle-status-label-indicator label-disabled-gray';
+            subStatusLabelIndicator.textContent = 'Cycle Paused';
+        }
+    });
+}
+
+// ==========================================================================
+// 3. Master Form Modifications Core Commit Listener Action Hook
+// ==========================================================================
+if (saveSubSettingsBtn) {
+    saveSubSettingsBtn.addEventListener('click', () => {
+        const activeCadenceSelection = document.getElementById('subDeliveryDays').value;
+        const currentCalorieCap = inputCalorieRange ? inputCalorieRange.value : '2100';
+        const isGateOpen = subStatusToggleSwitch ? subStatusToggleSwitch.checked : true;
+        
+        let stateMessageText = `Saved! Cadence: ${activeCadenceSelection} • Calorie boundary cap: ${currentCalorieCap} kcal.`;
+        if (!isGateOpen) {
+            stateMessageText += " Note: Your next delivery package has been frozen as requested.";
+        }
+
+        alert(`💾 Loading...`);
+    });
+}
+
+</script>
+
+           <section id="macro-metrics" class="content-view">
+    <!-- Section Introduction Banner Header -->
+    <div class="metrics-analytics-header">
+        <h1 class="view-title">Nutritional Macro Metrics</h1>
+        <p class="section-subtitle-tight">Track week-over-week macro boundary targets, evaluate caloric absorption consistency charts, and monitor historical kitchen logs alignment.</p>
+    </div>
+
+    <!-- Metrics Summary Current Week Accumulation Strip Deck -->
+    <div class="macros-summary-strip-deck">
+        <div class="summary-metric-strip">
+            <span class="strip-label-lbl">Avg Daily Calorie Absorption</span>
+            <div class="strip-value-row">
+                <strong class="strip-value-val text-highlight-green">1,940 kcal</strong>
+                <span class="strip-badge-status status-badge-green">Target Met</span>
+            </div>
+        </div>
+        <div class="summary-metric-strip">
+            <span class="strip-label-lbl">Weekly Protein Threshold</span>
+            <div class="strip-value-row">
+                <strong class="strip-value-val">840 / 900 grams</strong>
+                <span class="strip-badge-status status-badge-orange">93% Complete</span>
+            </div>
+        </div>
+        <div class="summary-metric-strip">
+            <span class="strip-label-lbl">Dietary Consistency Score</span>
+            <div class="strip-value-row">
+                <strong class="strip-value-val text-highlight-green">96.4% Rating</strong>
+                <span class="strip-badge-status status-badge-green">Excellent</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Full-Width Dynamic Analytical Progress & Logs Canvas Stack -->
+    <div class="fullwidth-analytics-workspace-stack">
+        
+        <!-- Setting Block 1: Fluid CSS Progressive Distribution Bars -->
+        <div class="analytics-config-linear-row">
+            <div class="row-header-icon-deck">
+                <div class="deck-icon-badge green-tint-bg">
+                    <svg viewBox="0 0 24 24" class="deck-svg-icon"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+                </div>
+                <div class="deck-text-meta">
+                    <h3 class="subs-block-title-text">Weekly Macro Split Analytics</h3>
+                    <p class="subs-block-desc-text">Real-time target alignment relative to your configured subscription boundaries.</p>
+                </div>
+            </div>
+
+            <div class="analytics-progress-bars-stack">
+                <!-- Bar 1: Protein -->
+                <div class="macro-progress-element">
+                    <div class="progress-labels-row">
+                        <span class="progress-bar-core-lbl">Protein Target Consistency</span>
+                        <span class="progress-bar-numeric-val"><strong class="text-highlight-green">135g</strong> / 150g Daily</span>
+                    </div>
+                    <div class="progress-track-rail-bg">
+                        <div class="progress-fill-bar-node" style="width: 90%; background-color: #108A4E;"></div>
+                    </div>
+                </div>
+
+                <!-- Bar 2: Carbs -->
+                <div class="macro-progress-element">
+                    <div class="progress-labels-row">
+                        <span class="progress-bar-core-lbl">Carbohydrates Threshold Limit</span>
+                        <span class="progress-bar-numeric-val"><strong class="text-highlight-orange">185g</strong> / 200g Max Cap</span>
+                    </div>
+                    <div class="progress-track-rail-bg">
+                        <div class="progress-fill-bar-node" style="width: 92%; background-color: #E65100;"></div>
+                    </div>
+                </div>
+
+                <!-- Bar 3: Healthy Fats -->
+                <div class="macro-progress-element">
+                    <div class="progress-labels-row">
+                        <span class="progress-bar-core-lbl">Healthy Fats Distribution Balance</span>
+                        <span class="progress-bar-numeric-val"><strong class="text-highlight-green">68g</strong> / 80g Recommended</span>
+                    </div>
+                    <div class="progress-track-rail-bg">
+                        <div class="progress-fill-bar-node" style="width: 85%; background-color: #108A4E;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Setting Block 2: Full-Width Historical Logs Ledger Table Container -->
+        <div class="analytics-config-linear-row">
+            <div class="row-header-icon-deck">
+                <div class="deck-icon-badge orange-tint-bg">
+                    <svg viewBox="0 0 24 24" class="deck-svg-icon"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 2 2h12c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+                </div>
+                <div class="deck-text-meta">
+                    <h3 class="subs-block-title-text">Daily Kitchen Fulfillment Logs</h3>
+                    <p class="subs-block-desc-text">Audited macro breakdown matrices for meals packed and delivered to your coordinates.</p>
+                </div>
+            </div>
+
+            <div class="responsive-table-scroll-wrapper">
+                <table class="macro-logs-display-table">
+                    <thead>
+                        <tr>
+                            <th>Fulfillment Date</th>
+                            <th>Package Dispatched</th>
+                            <th>Calories</th>
+                            <th>Protein</th>
+                            <th>Carbs</th>
+                            <th>Fats</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong class="log-date-text">Aug 19, 2026</strong></td>
+                            <td>Avocado Quinoa Harvest Bowl</td>
+                            <td>520 kcal</td>
+                            <td>14g</td>
+                            <td>62g</td>
+                            <td>22g</td>
+                        </tr>
+                        <tr>
+                            <td><strong class="log-date-text">Aug 18, 2026</strong></td>
+                            <td>Almond Crusted Salmon Fillet</td>
+                            <td>680 kcal</td>
+                            <td>42g</td>
+                            <td>8g</td>
+                            <td>54g</td>
+                        </tr>
+                        <tr>
+                            <td><strong class="log-date-text">Aug 17, 2026</strong></td>
+                            <td>Citrus Grilled Turkey Fillets</td>
+                            <td>590 kcal</td>
+                            <td>52g</td>
+                            <td>44g</td>
+                            <td>12g</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+<style>
+    /* ==========================================================================
+   Full-Width Nutritional Macro Metrics Canvas Layout Styling
+   ========================================================================== */
+.metrics-analytics-header {
+    margin-bottom: 1.5rem;
+}
+
+/* Summary Live Tracker Deck Strip Layout */
+.macros-summary-strip-deck {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+/* Full Width Custom Workspace Row Elements Mapping */
+.fullwidth-analytics-workspace-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.analytics-config-linear-row {
+    background-color: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.analytics-progress-bars-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    width: 100%;
+}
+
+.macro-progress-element {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.progress-bar-core-lbl {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.progress-bar-numeric-val {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   Full-Width Responsive Audit Logs Data Table System Component
+   ========================================================================== */
+.responsive-table-scroll-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background-color: #FFFFFF;
+}
+
+.macro-logs-display-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-size: var(--font-base);
+}
+
+.macro-logs-display-table th {
+    background-color: var(--bg-light);
+    padding: 0.85rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--border);
+}
+
+.macro-logs-display-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #F1F5F9;
+    color: #475569;
+}
+
+.macro-logs-display-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.log-date-text {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   Analytics Viewport Responsiveness Breakdown Media Queries
+   ========================================================================== */
+@media (max-width: 768px) {
+    /* Transform tabular tracking matrices into individual block units for mobile */
+    .macro-logs-display-table, 
+    .macro-logs-display-table thead, 
+    .macro-logs-display-table tbody, 
+    .macro-logs-display-table th, 
+    .macro-logs-display-table td, 
+    .macro-logs-display-table tr { 
+        display: block; 
+    }
+    
+    .macro-logs-display-table thead {
+        display: none; /* Conceal static column metrics headers */
+    }
+    
+    .macro-logs-display-table td { 
+        border: none;
+        border-bottom: 1px dashed #F1F5F9; 
+        position: relative;
+        padding-left: 45%; 
+        text-align: right;
+        font-size: 0.88rem;
+    }
+
+    .macro-logs-display-table td::before { 
+        position: absolute;
+        top: 50%;
+        left: 1rem;
+        transform: translateY(-50%);
+        width: 40%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+        text-align: left;
+        font-weight: 700;
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        text-transform: uppercase;
+    }
+    
+    /* Inject mobile text headings content descriptions on row metrics dynamically */
+    .macro-logs-display-table td:nth-of-type(1)::before { content: "Logged Date"; }
+    .macro-logs-display-table td:nth-of-type(2)::before { content: "Meal Dispatched"; }
+    .macro-logs-display-table td:nth-of-type(3)::before { content: "Calories"; }
+    .macro-logs-display-table td:nth-of-type(4)::before { content: "Protein Shift"; }
+    .macro-logs-display-table td:nth-of-type(5)::before { content: "Carbohydrates"; }
+    .macro-logs-display-table td:nth-of-type(6)::before { content: "Healthy Fats"; }
+    
+    .macro-logs-display-table tr {
+        border-bottom: 2px solid var(--border);
+        padding: 0.5rem 0;
+        background-color: #FFFFFF;
+    }
+}
+
+</style>
+
+         <section id="profile-settings" class="content-view">
+    <!-- Section Introduction Header Row with New Professional Title -->
+    <div class="settings-header-row">
+        <div class="header-text-group">
+            <h1 class="view-title">Operations & Profile Setup</h1>
+            <p class="section-subtitle-tight">Maintain active delivery office coordinates, individual drop boundaries, notifications emails, and security settlement logs.</p>
+        </div>
+        <div class="header-action-group">
+            <!-- Global Structural Save Action Button Trigger -->
+          <button
+    type="button"
+    class="primary-save-action-btn"
+    id="saveClientProfileSettingsBtn"
+    onclick="window.location.href='404.html';"
+>
+    <svg
+        viewBox="0 0 24 24"
+        class="btn-svg-icon"
+        aria-hidden="true"
+    >
+        <path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"/>
+    </svg>
+    <span>Save Setup Modifications</span>
+</button>
+        </div>
+    </div>
+
+    <!-- Main Grid Multi-Panel Framework Workspace Layout Grid -->
+    <div class="settings-layout-grid">
+        
+        <!-- Left Side Column: Settings Input Forms Stack -->
+        <div class="settings-main-forms-stack">
+            
+            <!-- Block 1: Client Personal Metadata Form Box Container -->
+            <div class="settings-card-panel">
+                <div class="panel-header-icon-row">
+                    <div class="panel-badge-icon green-icon-tint">
+                        <svg viewBox="0 0 24 24" class="panel-svg-icon" aria-hidden="true"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                    </div>
+                    <div class="panel-header-text">
+                        <h3 class="settings-block-title">User Account Registry</h3>
+                        <p class="settings-block-desc">Refine personal descriptors and default coordination points utilized for drop dispatch validation logs.</p>
+                    </div>
+                </div>
+                
+                <div class="form-input-vertical-stack">
+                    <div class="input-element-group">
+                        <label for="setClientName">Full Profile Name</label>
+                        <input type="text" id="setClientName" value="Jeevi Kumar" placeholder="Enter your full name...">
+                    </div>
+                    
+                    <div class="form-grid-2-col">
+                        <div class="input-element-group">
+                            <label for="setClientPhone">Primary Contact Phone</label>
+                            <input type="tel" id="setClientPhone" value="8834567132" placeholder="9856783451">
+                        </div>
+                        <div class="input-element-group">
+                            <label for="setClientEmail">Fulfillment Notifications Email</label>
+                            <input type="email" id="setClientEmail" value="jeevi@gmail.com" placeholder="name@domain.com">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Block 2: Logistics Boundaries & Default Drop Coordinates Mapping -->
+            <div class="settings-card-panel">
+                <div class="panel-header-icon-row">
+                    <div class="panel-badge-icon orange-icon-tint">
+                        <svg viewBox="0 0 24 24" class="panel-svg-icon" aria-hidden="true"><path d="M12 2c-4.41 0-8 3.59-8 8 0 5.25 8 12 8 12s8-6.75 8-12c0-4.41-3.59-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                    </div>
+                    <div class="panel-header-text">
+                        <h3 class="settings-block-title">Primary Drop Coordinates</h3>
+                        <p class="settings-block-desc">Establish secure corporate building suite vectors to streamline morning courier route assignments.</p>
+                    </div>
+                </div>
+                
+                <div class="form-input-vertical-stack">
+                    <div class="input-element-group">
+                        <label for="setClientAddress">Office Physical Address / Building Location</label>
+                        <input type="text" id="setClientAddress" value="Innovation Hall, TechCorp Tower B, Suite 450" placeholder="Street address, building, floor...">
+                    </div>
+                    
+                    <div class="form-grid-2-col">
+                        <div class="input-element-group">
+                            <label for="setDeliveryGateCode">Access PIN / Gate Entry Code</label>
+                            <input type="text" id="setDeliveryGateCode" value="GATE-402" placeholder="e.g., #1234 or Buzz 40">
+                        </div>
+                        <div class="input-element-group">
+                            <label for="setDropInstructions">Courier Desk Delivery Rules</label>
+                            <select id="setDropInstructions">
+                                <option value="reception" selected>Leave with Front Desk Receptionist</option>
+                                <option value="hand-to-me">Call on Arrival (Hand-to-Hand Exchange)</option>
+                                <option value="cafeteria">Drop off at Level 2 Breakroom Counter</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side Column: Status Checklist & Verified Badge Summary -->
+        <div class="settings-sidebar-toggles-stack">
+            
+            <!-- Block 3: Notification Rule Preference Overrides Box -->
+            <div class="settings-card-panel">
+                <div class="panel-header-icon-row">
+                    <div class="panel-badge-icon green-icon-tint">
+                        <svg viewBox="0 0 24 24" class="panel-svg-icon" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    </div>
+                    <div class="panel-header-text">
+                        <h3 class="settings-block-title">Broadcast Alert Channels</h3>
+                        <p class="settings-block-desc">Instantly toggle message alerts routing channels.</p>
+                    </div>
+                </div>
+                
+                <div class="toggle-list-stack-group">
+                    <div class="settings-toggle-action-row-item">
+                        <div class="toggle-text-meta">
+                            <span class="toggle-headline-title">SMS Transit Status Alerts</span>
+                            <p class="toggle-support-desc">Receive real-time automated text alerts the second your delivery courier leaves the kitchen dispatcher.</p>
+                        </div>
+                        <div class="toggle-switch-wrapper-control">
+                            <label class="switch-toggle-node">
+                                <input type="checkbox" id="toggleSmsAlerts" checked>
+                                <span class="slider-round-rail-track"></span>
+                            </label>
+                            <span class="toggle-status-label-indicator label-active-green">Active</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Block 4: Banking Disbursement Settlement Security Profile Card -->
+            <div class="settings-card-panel security-badge-panel">
+                <div class="verification-lock-header">
+                    <div class="lock-icon-shield-wrapper">
+                        <svg viewBox="0 0 24 24" class="shield-lock-icon" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 15.41L8.41 13.8 9.83 12.4l1.17 1.18 4.17-4.17 1.42 1.41L11 16.41z"/></svg>
+                    </div>
+                    <div class="verification-text-meta">
+                        <span class="badge-title-green">Verified Premium Member Account</span>
+                        <p class="badge-subtext-muted">Client Account ID: #C-JEEVI-2026</p>
+                    </div>
+                </div>
+                <div class="payout-summary-infobox">
+                    <span class="info-label-lbl">Linked Settlement Method:</span>
+                    <strong class="info-value-val">•••• 4310 (Corporate Visa Hub)</strong>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+</section>
+<style>
+    /* ==========================================================================
+   Operations & Profile Setup Luxury Interface Core System CSS Modules
+   ========================================================================== */
+.settings-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Master Layout Framework Grid Architecture Alignment (Full Width) */
+.settings-layout-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 2rem;
+    align-items: start;
+    width: 100%;
+}
+
+.settings-main-forms-stack, 
+.settings-sidebar-toggles-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.settings-card-panel {
+    background-color: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.settings-card-panel:hover {
+    border-color: rgba(16, 138, 78, 0.15);
+}
+
+/* Enhanced Section Header Title Content Rows with Graphic Badges Layout Alignment */
+.panel-header-icon-row {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid #F1F5F9;
+    padding-bottom: 1rem;
+}
+
+.panel-badge-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.green-icon-tint { background-color: #E8F5E9; color: #108A4E; }
+.orange-icon-tint { background-color: #FFF3E0; color: #E65100; }
+
+.panel-svg-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.panel-header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.settings-block-title {
+    font-size: var(--font-md);
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.settings-block-desc {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    line-height: 1.4;
+}
+
+/* Content Element Fields Typography Rescaling Layout Parameters */
+.form-input-vertical-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.form-grid-2-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+}
+
+.input-element-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.input-element-group label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.input-element-group input, 
+.input-element-group select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: var(--font-base);
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    transition: var(--transition);
+}
+
+.input-element-group input:focus, 
+.input-element-group select:focus {
+    outline: none;
+    border-color: #108A4E;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 4px rgba(16, 138, 78, 0.06);
+}
+
+/* Operational Option Toggles Rows Elements Controls Layout Matrix */
+.toggle-list-stack-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.settings-toggle-action-row-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.toggle-text-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    max-width: 75%;
+}
+
+.toggle-headline-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.toggle-support-desc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+/* Verified Account Profile Security Badging Container Panels */
+.security-badge-panel {
+    background-color: #F0FDF4;
+    border-color: #DCFCE7;
+}
+
+.verification-lock-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    border-bottom: 1px dashed #DCFCE7;
+    padding-bottom: 1rem;
+}
+
+.lock-icon-shield-wrapper {
+    width: 40px;
+    height: 40px;
+    background-color: #DCFCE7;
+    color: #108A4E;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shield-lock-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+.verification-text-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.badge-title-green {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #166534;
+}
+
+.badge-subtext-muted {
+    font-size: 0.8rem;
+    color: #15803D;
+    font-weight: 600;
+    font-family: monospace;
+}
+
+.payout-summary-infobox {
+    background-color: #FFFFFF;
+    border: 1px solid rgba(22, 101, 52, 0.12);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    font-size: 0.88rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.info-label-lbl {
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.info-value-val {
+    color: var(--text-dark);
+}
+
+/* Global Footer Layout Alignment */
+.primary-save-action-btn {
+    background-color: #108A4E;
+    color: #FFFFFF;
+    border: none;
+    padding: 0.75rem 1.4rem;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: var(--font-base);
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    box-shadow: 0 4px 12px rgba(16, 138, 78, 0.15);
+    transition: var(--transition);
+    white-space: nowrap;
+}
+
+.primary-save-action-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-svg-icon { width: 18px; height: 18px; fill: currentColor; }
+
+/* ==========================================================================
+   Adaptive Viewport Settings Responsiveness Structural Media Queries
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .settings-layout-grid {
+        grid-template-columns: 1fr; /* Collapses dual panels seamlessly to stretch end-to-end */
+    }
+}
+
+@media (max-width: 640px) {
+    .settings-header-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .settings-header-row .primary-save-action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .form-grid-2-col {
+        grid-template-columns: 1fr; /* Rescales subgrids inside compact phone rows */
+    }
+    
+    .settings-toggle-action-row-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .toggle-switch-wrapper-control {
+        flex-direction: row-reverse;
+        align-self: flex-end;
+        gap: 0.75rem;
+    }
+}
+
+</style>
+
+<script>
+    // Append this block cleanly inside your centralized DOMContentLoaded listener wrapper in client-app.js
+const saveClientProfileSettingsBtn = document.getElementById('saveClientProfileSettingsBtn');
+const toggleSmsAlertsCheckbox = document.getElementById('toggleSmsAlerts');
+
+// ==========================================================================
+// 1. Core Profile Changes Verification Commit Pipeline
+// ==========================================================================
+if (saveClientProfileSettingsBtn) {
+    saveClientProfileSettingsBtn.addEventListener('click', () => {
+        // Read active text variables out from input nodes properties fields
+        const clientProfileNameValue = document.getElementById('setClientName').value.trim();
+        const clientOfficeAddressValue = document.getElementById('setClientAddress').value.trim();
+
+        // Perform basic input completeness tracking check rules
+        if (!clientProfileNameValue || !clientOfficeAddressValue) {
+            alert("⚠️ Loading...");
+            return;
+        }
+
+        // Trigger secure update notice popups windows instantly
+        alert(`💾 Loading...`);
+    });
+}
+
+// ==========================================================================
+// 2. Live Broadcast Alert Channels Switch Toggle Automation Label Modifier
+// ==========================================================================
+if (toggleSmsAlertsCheckbox) {
+    toggleSmsAlertsCheckbox.addEventListener('change', (event) => {
+        const toggleStatusLabelIndicator = event.target.closest('.toggle-switch-wrapper-control').querySelector('.toggle-status-label-indicator');
+        
+        if (toggleStatusLabelIndicator) {
+            if (event.target.checked) {
+                toggleStatusLabelIndicator.className = 'toggle-status-label-indicator label-active-green';
+                toggleStatusLabelIndicator.textContent = 'Active';
+            } else {
+                toggleStatusLabelIndicator.className = 'toggle-status-label-indicator label-disabled-gray';
+                toggleStatusLabelIndicator.textContent = 'Disabled';
+            }
+        }
+    });
+}
+
+</script>
+
+        </main>
+    </div>
+
+<style>
+
+/* ==========================================================================
+   Clean Variable Tokens & Balanced Typography Scheme Config
+   ========================================================================== */
+:root {
+    --primary-gradient: linear-gradient(135deg, #108A4E 0%, #075E33 100%);
+    --dark-gradient: linear-gradient(135deg, #0A2E1C 0%, #02140B 100%);
+    --primary: #108A4E;
+    --primary-hover: #0C6F3E;
+    --primary-light: #E8F5E9;
+    --accent-orange: #E65100;
+    --text-dark: #0B251A;
+    --text-muted: #64748B;
+    --border: #E2E8F0;
+    --bg-light: #FAFAFA;
+    --font-stack: 'Plus Jakarta Sans', sans-serif;
+    --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Reduced and Tightened Font Scale System */
+    --font-base: 0.92rem;   /* Reduced for compact data density */
+    --font-md: 1rem;       /* Clean sidebar/input size */
+    --font-lg: 1.15rem;     /* Refined header brand text */
+    --font-xl: 1.65rem;     /* Reduced header view title */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-stack);
+    font-size: var(--font-base);
+    color: var(--text-dark);
+    background-color: #F8FAFC;
+    min-height: 100vh;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ==========================================================================
+   Persistent Navigation Top Header
+   ========================================================================== */
+.dash-header {
+    height: 65px; /* Reduced header height */
+    background: #FFFFFF;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.dash-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    cursor: pointer;
+    user-select: none;
+    padding: 0.4rem 0.75rem;
+    border-radius: 8px;
+    transition: var(--transition);
+}
+
+.dash-brand:hover {
+    background: var(--bg-light);
+}
+
+.brand-img {
+    width: 130px; /* Slightly more compact brand asset */
+    height: 50px;
+}
+
+.brand-text {
+    font-size: var(--font-lg);
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.hamburger-btn {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.4rem;
+    color: var(--text-dark);
+    border-radius: 6px;
+}
+
+.icon {
+    width: 20px; /* Standardized reduced icon scale */
+    height: 20px;
+    fill: currentColor;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.icon-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    color: var(--text-muted);
+    padding: 0.5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.icon-btn:hover {
+    color: var(--primary);
+    background-color: var(--bg-light);
+}
+
+.notification-badge {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    width: 7px;
+    height: 7px;
+    background-color: var(--accent-orange);
+    border-radius: 50%;
+}
+
+/* User Header Card Profile Meta */
+.user-profile-block {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-left: 1rem;
+    border-left: 1px solid var(--border);
+}
+
+.user-avatar-circle {
+    width: 34px; /* Reduced avatar dimensions */
+    height: 34px;
+    background: var(--primary-gradient);
+    color: #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-md);
+    font-weight: 700;
+}
+
+.user-meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name-text {
+    font-size: var(--font-base);
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.user-role-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Workspace Shared Panels Architecture Layout Configuration
+   ========================================================================== */
+.dash-workspace {
+    display: flex;
+    flex: 1;
+    position: relative;
+}
+
+.dash-sidebar {
+    width: 250px; /* Tightened sidebar footprint */
+    background: #FFFFFF;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: sticky;
+    top: 65px;
+    height: calc(100vh - 65px);
+    transition: var(--transition);
+}
+
+.sidebar-nav {
+    padding: 1rem 0.75rem;
+}
+
+.menu-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem; /* Tighter vertical menu spacing */
+}
+
+.menu-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.75rem 1rem;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: var(--font-base);
+    font-weight: 500;
+    color: #475569;
+    cursor: pointer;
+    text-align: left;
+    transition: var(--transition);
+}
+
+.menu-item:hover {
+    color: var(--primary);
+    background-color: var(--bg-light);
+}
+
+.menu-item.active {
+    color: #FFFFFF;
+    background: #092518; /* Solid, crisp slate template header background mapping */
+    font-weight: 600;
+}
+
+.sidebar-footer {
+    padding: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.logout-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding: 0.75rem 1rem;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: var(--font-base);
+    font-weight: 500;
+    color: #64748B;
+    cursor: pointer;
+    text-align: left;
+    transition: var(--transition);
+}
+
+.logout-btn:hover {
+    color: var(--error);
+    background-color: #FFF5F5;
+}
+
+/* ==========================================================================
+   Full Width Workspace Presentation Viewport Section Blocks
+   ========================================================================== */
+.dash-content-area {
+    flex: 1;
+    padding: 1.5rem; /* Clean standard canvas padding margins */
+    background-color: #F8FAFC;
+}
+
+.content-view {
+    display: none;
+    width: 100%; /* Eliminated independent card boundaries: full workspace width */
+    background: transparent; 
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.content-view.active {
+    display: block;
+}
+
+.view-title {
+    font-size: var(--font-xl);
+    font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: -0.5px;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--primary); /* Integrated clean header under-accent */
+    display: inline-block;
+    margin-bottom: 1.5rem;
+}
+
+.sidebar-overlay {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(2px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   Responsive Viewport Scale Grid Breakpoints Adaptive Matrices
+   ========================================================================== */
+@media (max-width: 960px) {
+    .dash-header { padding: 0 1rem; }
+    .hamburger-btn { display: block; }
+
+    .dash-sidebar {
+        position: fixed;
+        left: -250px;
+        top: 65px;
+        z-index: 90;
+        height: calc(100vh - 65px);
+        width: 250px;
+    }
+
+    .dash-sidebar.open {
+        left: 0;
+        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.05);
+    }
+
+    .sidebar-overlay {
+        position: fixed;
+        top: 65px;
+        left: 0;
+        width: 100vw;
+        height: calc(100vh - 65px);
+        background-color: rgba(11, 37, 26, 0.2);
+        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+        z-index: 80;
+        display: none;
+    }
+
+    .sidebar-overlay.visible { display: block; }
+    .dash-content-area { padding: 1.25rem 1rem; }
+}
+
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* =========================================================
+       1. LOGIN / USER DATA
+    ========================================================= */
+
+    const storedEmail = localStorage.getItem("userEmail");
+    const storedRole = localStorage.getItem("userRole");
+
+    if (!storedEmail) {
+        document.body.style.visibility = "hidden";
+        window.location.href = "./login.html";
+        return;
+    }
+
+    const emailUsername = storedEmail
+        .split("@")[0]
+        .trim();
+
+    const displayName = emailUsername
+        .replace(/[._-]+/g, " ")
+        .replace(/\s+/g, " ")
+        .trim()
+        .replace(/\b\w/g, function (character) {
+            return character.toUpperCase();
+        });
+
+
+    /* =========================================================
+       2. HEADER USER INFORMATION
+    ========================================================= */
+
+    const headerUsername =
+        document.getElementById("headerUsername");
+
+    const avatarLetter =
+        document.getElementById("avatarLetter");
+
+    const userRoleLabel =
+        document.getElementById("userRoleLabel") ||
+        document.querySelector(".user-role-label");
+
+
+    if (headerUsername) {
+        headerUsername.textContent = displayName;
+    }
+
+
+    if (avatarLetter) {
+        avatarLetter.textContent =
+            emailUsername.charAt(0).toUpperCase();
+    }
+
+
+    if (userRoleLabel) {
+
+        if (storedRole === "client") {
+            userRoleLabel.textContent =
+                "Premium Member";
+        }
+
+        else if (storedRole === "partner") {
+            userRoleLabel.textContent =
+                "Partner Account";
+        }
+
+        else {
+            userRoleLabel.textContent =
+                "Member";
+        }
+    }
+
+
+    /* =========================================================
+       3. GET DASHBOARD ELEMENTS
+       IMPORTANT:
+       These are declared BEFORE any function that uses them.
+    ========================================================= */
+
+    const contentViews =
+        document.querySelectorAll(".content-view");
+
+    const menuItems =
+        document.querySelectorAll(".menu-item");
+
+    const sidebarToggle =
+        document.getElementById("sidebarToggle");
+
+    const sidebarPanel =
+        document.getElementById("sidebarPanel");
+
+    const sidebarOverlay =
+        document.getElementById("sidebarOverlay");
+
+
+    /* =========================================================
+       4. MOBILE SIDEBAR FUNCTIONS
+       IMPORTANT:
+       Declared before showDashboardSection().
+    ========================================================= */
+
+    function closeMobileDrawer() {
+
+        if (sidebarPanel) {
+            sidebarPanel.classList.remove("open");
+        }
+
+        if (sidebarOverlay) {
+            sidebarOverlay.classList.remove("visible");
+        }
+
+        document.body.classList.remove("sidebar-open");
+    }
+
+
+    function openMobileDrawer() {
+
+        if (sidebarPanel) {
+            sidebarPanel.classList.add("open");
+        }
+
+        if (sidebarOverlay) {
+            sidebarOverlay.classList.add("visible");
+        }
+
+        document.body.classList.add("sidebar-open");
+    }
+
+
+    /* =========================================================
+       5. DASHBOARD SECTION NAVIGATION
+    ========================================================= */
+
+    function showDashboardSection(targetId) {
+
+        if (!targetId) {
+            return;
+        }
+
+
+        const targetView =
+            document.getElementById(targetId);
+
+
+        /* If section does not exist */
+        if (!targetView) {
+
+            console.error(
+                "Dashboard section not found:",
+                targetId
+            );
+
+            return;
+        }
+
+
+        /* Remove active state from all sections */
+        contentViews.forEach(function (view) {
+            view.classList.remove("active");
+        });
+
+
+        /* Remove active state from all sidebar items */
+        menuItems.forEach(function (menu) {
+            menu.classList.remove("active");
+        });
+
+
+        /* Activate requested section */
+        targetView.classList.add("active");
+
+
+        /* Activate matching sidebar item */
+        menuItems.forEach(function (menu) {
+
+            const menuTarget =
+                menu.getAttribute("data-target");
+
+            if (menuTarget === targetId) {
+                menu.classList.add("active");
+            }
+
+        });
+
+
+        /* =====================================================
+           SAVE CURRENT SECTION
+           This is important for:
+           - 404 back button
+           - page refresh
+           - dashboard navigation
+           - returning from another page
+        ===================================================== */
+
+        sessionStorage.setItem(
+            "dashboardActiveSection",
+            targetId
+        );
+
+
+        /* Close mobile sidebar after selecting menu */
+        if (window.innerWidth <= 960) {
+            closeMobileDrawer();
+        }
+
+
+        console.log(
+            "Dashboard section:",
+            targetId
+        );
+    }
+
+
+    /* =========================================================
+       6. SIDEBAR MENU CLICK
+    ========================================================= */
+
+    menuItems.forEach(function (menuItem) {
+
+        menuItem.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+                const targetId =
+                    menuItem.getAttribute("data-target");
+
+
+                if (!targetId) {
+                    return;
+                }
+
+
+                showDashboardSection(targetId);
+            }
+        );
+
+    });
+
+
+    /* =========================================================
+       7. RESTORE LAST OPEN DASHBOARD SECTION
+    ========================================================= */
+
+    const savedSection =
+        sessionStorage.getItem(
+            "dashboardActiveSection"
+        );
+
+
+    if (
+        savedSection &&
+        document.getElementById(savedSection)
+    ) {
+
+        /*
+         * Restore the exact section that was open
+         * before refresh / 404 navigation.
+         */
+
+        showDashboardSection(savedSection);
+
+    }
+
+    else {
+
+        /*
+         * Only use overview when there is no
+         * previously saved section.
+         */
+
+        const overviewSection =
+            document.getElementById(
+                "overview-section"
+            );
+
+
+        if (overviewSection) {
+
+            showDashboardSection(
+                "overview-section"
+            );
+
+        }
+
+    }
+
+
+    /* =========================================================
+       8. MOBILE SIDEBAR TOGGLE
+    ========================================================= */
+
+    if (sidebarToggle) {
+
+        sidebarToggle.addEventListener(
+            "click",
+            function (event) {
+
+                event.stopPropagation();
+
+
+                const sidebarIsOpen =
+                    sidebarPanel &&
+                    sidebarPanel.classList.contains("open");
+
+
+                if (sidebarIsOpen) {
+                    closeMobileDrawer();
+                }
+
+                else {
+                    openMobileDrawer();
+                }
+
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       9. MOBILE SIDEBAR OVERLAY
+    ========================================================= */
+
+    if (sidebarOverlay) {
+
+        sidebarOverlay.addEventListener(
+            "click",
+            function () {
+
+                closeMobileDrawer();
+
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       10. ESC KEY CLOSE SIDEBAR
+    ========================================================= */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (event.key === "Escape") {
+
+                closeMobileDrawer();
+
+            }
+
+        }
+    );
+
+
+    /* =========================================================
+       11. WINDOW RESIZE
+    ========================================================= */
+
+    window.addEventListener(
+        "resize",
+        function () {
+
+            if (window.innerWidth > 960) {
+
+                closeMobileDrawer();
+
+            }
+
+        }
+    );
+
+
+    /* =========================================================
+       12. BRAND / LOGO REFRESH
+       Keeps current dashboard section after refresh.
+    ========================================================= */
+
+    const brandRefresh =
+        document.getElementById("brandRefresh");
+
+
+    if (brandRefresh) {
+
+        brandRefresh.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+
+                const activeSection =
+                    document.querySelector(
+                        ".content-view.active"
+                    );
+
+
+                if (activeSection) {
+
+                    sessionStorage.setItem(
+                        "dashboardActiveSection",
+                        activeSection.id
+                    );
+
+                }
+
+
+                window.location.reload();
+
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       13. LOGOUT
+    ========================================================= */
+
+    const logoutBtn =
+        document.getElementById("logoutBtn");
+
+
+    if (logoutBtn) {
+
+        logoutBtn.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+
+
+                /* Remove login information */
+                localStorage.removeItem(
+                    "userEmail"
+                );
+
+                localStorage.removeItem(
+                    "userRole"
+                );
+
+                localStorage.removeItem(
+                    "username"
+                );
+
+
+                /* Remove session login information */
+                sessionStorage.removeItem(
+                    "loggedInUser"
+                );
+
+                sessionStorage.removeItem(
+                    "loggedInRole"
+                );
+
+                sessionStorage.removeItem(
+                    "loggedInUsername"
+                );
+
+
+                /* Remove saved dashboard section */
+                sessionStorage.removeItem(
+                    "dashboardActiveSection"
+                );
+
+
+                /* Go back to login */
+                window.location.href =
+                    "./login.html";
+
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       14. KITCHEN SETTINGS SAVE
+    ========================================================= */
+
+    const saveKitchenSettingsBtn =
+        document.getElementById(
+            "saveKitchenSettingsBtn"
+        );
+
+
+    if (saveKitchenSettingsBtn) {
+
+        saveKitchenSettingsBtn.addEventListener(
+            "click",
+            function () {
+
+                const kitchenNameInput =
+                    document.getElementById(
+                        "setKitchenName"
+                    );
+
+
+                if (
+                    !kitchenNameInput ||
+                    !kitchenNameInput.value.trim()
+                ) {
+
+                    alert(
+                        "Please enter the kitchen name."
+                    );
+
+
+                    if (kitchenNameInput) {
+                        kitchenNameInput.focus();
+                    }
+
+                    return;
+                }
+
+
+                const kitchenSettings = {
+
+                    kitchenName:
+                        kitchenNameInput.value.trim(),
+
+                    kitchenPhone:
+                        document.getElementById(
+                            "setKitchenPhone"
+                        )?.value.trim() || "",
+
+                    kitchenEmail:
+                        document.getElementById(
+                            "setKitchenEmail"
+                        )?.value.trim() || "",
+
+                    kitchenBio:
+                        document.getElementById(
+                            "setKitchenBio"
+                        )?.value.trim() || "",
+
+                    radius:
+                        document.getElementById(
+                            "setRadiusLimit"
+                        )?.value || "",
+
+                    minimumOrder:
+                        document.getElementById(
+                            "setMinOrderCost"
+                        )?.value || "",
+
+                    maximumGuests:
+                        document.getElementById(
+                            "setMaxGuestScale"
+                        )?.value || "",
+
+                    leadTime:
+                        document.getElementById(
+                            "setLeadTime"
+                        )?.value || "",
+
+                    markup:
+                        document.getElementById(
+                            "setTaxRate"
+                        )?.value || "",
+
+                    acceptingOrders:
+                        document.getElementById(
+                            "toggleAcceptingOrders"
+                        )?.checked || false,
+
+                    corporateEvents:
+                        document.getElementById(
+                            "toggleCorporateEvents"
+                        )?.checked || false,
+
+                    singleDeliveries:
+                        document.getElementById(
+                            "toggleSingleSubs"
+                        )?.checked || false
+                };
+
+
+                localStorage.setItem(
+                    "kitchenSettings",
+                    JSON.stringify(kitchenSettings)
+                );
+
+
+                alert(
+                    "Loading..."
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       15. LOAD SAVED KITCHEN SETTINGS
+    ========================================================= */
+
+    const savedKitchenSettings =
+        localStorage.getItem(
+            "kitchenSettings"
+        );
+
+
+    if (savedKitchenSettings) {
+
+        try {
+
+            const settings =
+                JSON.parse(
+                    savedKitchenSettings
+                );
+
+
+            function setValue(
+                elementId,
+                value
+            ) {
+
+                const element =
+                    document.getElementById(
+                        elementId
+                    );
+
+
+                if (
+                    element &&
+                    value !== undefined &&
+                    value !== null
+                ) {
+
+                    element.value = value;
+
+                }
+
+            }
+
+
+            function setChecked(
+                elementId,
+                value
+            ) {
+
+                const element =
+                    document.getElementById(
+                        elementId
+                    );
+
+
+                if (
+                    element &&
+                    typeof value === "boolean"
+                ) {
+
+                    element.checked = value;
+
+                }
+
+            }
+
+
+            setValue(
+                "setKitchenName",
+                settings.kitchenName
+            );
+
+            setValue(
+                "setKitchenPhone",
+                settings.kitchenPhone
+            );
+
+            setValue(
+                "setKitchenEmail",
+                settings.kitchenEmail
+            );
+
+            setValue(
+                "setKitchenBio",
+                settings.kitchenBio
+            );
+
+            setValue(
+                "setRadiusLimit",
+                settings.radius
+            );
+
+            setValue(
+                "setMinOrderCost",
+                settings.minimumOrder
+            );
+
+            setValue(
+                "setMaxGuestScale",
+                settings.maximumGuests
+            );
+
+            setValue(
+                "setLeadTime",
+                settings.leadTime
+            );
+
+            setValue(
+                "setTaxRate",
+                settings.markup
+            );
+
+
+            setChecked(
+                "toggleAcceptingOrders",
+                settings.acceptingOrders
+            );
+
+            setChecked(
+                "toggleCorporateEvents",
+                settings.corporateEvents
+            );
+
+            setChecked(
+                "toggleSingleSubs",
+                settings.singleDeliveries
+            );
+
+        }
+
+        catch (error) {
+
+            console.error(
+                "Unable to load kitchen settings:",
+                error
+            );
+
+        }
+
+    }
+
+
+    /* =========================================================
+       16. FINAL DEBUG INFORMATION
+    ========================================================= */
+
+    console.log(
+        "===================================="
+    );
+
+    console.log(
+        "Healthy Catering Client Dashboard"
+    );
+
+    console.log(
+        "Logged-in email:",
+        storedEmail
+    );
+
+    console.log(
+        "Dashboard username:",
+        displayName
+    );
+
+    console.log(
+        "Dashboard role:",
+        storedRole
+    );
+
+    console.log(
+        "Current section:",
+        sessionStorage.getItem(
+            "dashboardActiveSection"
+        )
+    );
+
+    console.log(
+        "===================================="
+    );
+
+});
+</script>
+</body>
+</html>

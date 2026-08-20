@@ -117,7 +117,13 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
           Cart Container
         </a>
-        <button class="mobile-auth-btn">Sign In / Register</button>
+       <button 
+    type="button" 
+    class="mobile-auth-btn"
+    onclick="window.location.href='login.html';"
+>
+    Sign In / Register
+</button>
       </div>
     </div>
   </div>
@@ -238,7 +244,7 @@
             </div>
             <div class="hero-touch-cell">
               <strong>Email Inbox:</strong>
-              <span><a href="mailto:concierge@stackly.com" class="hero-touch-link">concierge@stackly.com</a></span>
+              <span><a href="mailto:design@stacklystudio.com" class="hero-touch-link">design@stacklystudio.com</a></span>
             </div>
           </div>
         </div>
@@ -592,281 +598,440 @@ window.addEventListener('DOMContentLoaded', () => {
      ========================================================================== -->
 <section class="intake-form-section">
   <div class="intake-master-container" id="intake-scroll-trigger">
-    <div class="intake-bento-console-card intake-node">
+    
+    <!-- DUAL COLUMN SPLIT PARENT WORKSPACE CONTAINER -->
+    <div class="intake-split-bento-grid">
       
-      <!-- COMPACT HEADER CLUSTER INSIDE THE CARD PLATFORM -->
-      <div class="intake-card-header-block">
-        <span class="intake-mini-badge">TASTE PROFILING</span>
-        <h2 class="intake-main-title">Configure Your Gathering Matrix</h2>
-        <p class="intake-subtext">Fill out your baseline requirements coordinates below. Our system will dynamically compute a tailored catering proposal quote blueprint.</p>
+      <!-- LEFT HAND PANEL COLUMN: FORM OPERATIONS PORTAL -->
+      <div class="intake-bento-console-card intake-node">
+        
+        <!-- COMPACT HEADER CLUSTER INSIDE THE CARD PLATFORM -->
+        <div class="intake-card-header-block">
+          <span class="intake-mini-badge">TASTE PROFILING</span>
+          <h2 class="intake-main-title">Configure Your Gathering Matrix</h2>
+          <p class="intake-subtext">Fill out your baseline requirements coordinates below. Our system will dynamically compute a tailored catering proposal quote blueprint.</p>
+        </div>
+
+        <!-- CORE FORM VALIDATION SHELL ENGINE -->
+        <form class="intake-native-form-element" id="catering-intake-form" novalidate>
+          <div class="intake-form-two-column-split">
+            
+            <!-- INPUT FIELD 1: FULL NAME -->
+            <div class="intake-input-group-cell">
+              <label for="intake-client-name" class="intake-field-label">Full Name / Corporate Title</label>
+              <div class="intake-interactive-field-viewport">
+                <span class="field-icon-accent"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
+                <input type="text" id="intake-client-name" class="intake-text-input" placeholder="e.g. Vikram R" autocomplete="off" required>
+              </div>
+              <div class="field-validation-error-prompt" id="error-client-name">Alphabetical characters only allowed</div>
+            </div>
+
+            <!-- INPUT FIELD 2: MOBILE HANDLE PHONE NUMBER -->
+            <div class="intake-input-group-cell">
+              <label for="intake-client-phone" class="intake-field-label">Contact Mobile Handle</label>
+              <div class="intake-interactive-field-viewport">
+                <span class="field-icon-accent"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.7 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+                <input type="tel" id="intake-client-phone" class="intake-text-input" placeholder="e.g. 9876543210" maxlength="10" autocomplete="off" required>
+              </div>
+              <div class="field-validation-error-prompt" id="error-client-phone">Please enter a valid 10-digit mobile line</div>
+            </div>
+
+          </div>
+
+          <div class="intake-form-two-column-split">
+            
+            <!-- INPUT FIELD 3: EMAIL ADDRESS -->
+            <div class="intake-input-group-cell">
+              <label for="intake-client-email" class="intake-field-label">Email Inbox Address</label>
+              <div class="intake-interactive-field-viewport">
+                <span class="field-icon-accent"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
+                <input type="email" id="intake-client-email" class="intake-text-input" placeholder="e.g. design@stacklystudio.com" autocomplete="off" required>
+              </div>
+              <div class="field-validation-error-prompt" id="error-client-email">Please enter a verified electronic email route</div>
+            </div>
+
+            <!-- INPUT FIELD 4: GUEST TRACK COUNT HEADS -->
+            <div class="intake-input-group-cell">
+              <label for="intake-guest-count" class="intake-field-label">Estimated Guest Volume Attendance</label>
+              <div class="intake-interactive-field-viewport">
+                <span class="field-icon-accent"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+                <input type="number" id="intake-guest-count" class="intake-text-input" placeholder="e.g. 150" min="10" max="5000" required>
+              </div>
+              <div class="field-validation-error-prompt" id="error-guest-count">Guest ranges must register between 10 and 5,000 heads</div>
+            </div>
+
+          </div>
+
+          <!-- INPUT FIELD 5: ADDITIONAL LOG NOTES SUMMARY OVERVIEW -->
+          <div class="intake-input-group-cell width-100-percent">
+            <label for="intake-event-notes" class="intake-field-label">Thematic Diet Preferences & Event Notes</label>
+            <div class="intake-interactive-field-viewport align-items-flex-start">
+              <span class="field-icon-accent padding-top-textarea"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></span>
+              <textarea id="intake-event-notes" class="intake-textarea-input" placeholder="Describe any tracking macro thresholds, flower choices, traditional buffet setups, or specific menu package inclusions..." rows="4"></textarea>
+            </div>
+          </div>
+
+          <!-- KINETIC SUBMIT DRIVER BUTTON -->
+          <div class="intake-submit-hub-wrap">
+            <button type="submit" class="btn-intake-submit-kinetic-glow">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              Transmit Catering Blueprint Request
+            </button>
+          </div>
+        </form>
       </div>
 
-      <!-- CORE FORM VALIDATION SHELL ENGINE -->
-      <form class="intake-native-form-element" id="catering-intake-form" novalidate>
-        <div class="intake-form-two-column-split">
-          
-          <!-- INPUT FIELD 1: FULL NAME (BLOCKS SPECIAL CHARACTERS & DIGITS) -->
-          <div class="intake-input-group-cell">
-            <label for="intake-client-name" class="intake-field-label">Full Name / Corporate Title</label>
-            <div class="intake-interactive-field-viewport">
-              <span class="field-icon-accent"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span>
-              <!-- Keypress listener attached to instantly deny special symbol overrides -->
-              <input type="text" id="intake-client-name" class="intake-text-input" placeholder="e.g. Vikram R" autocomplete="off" required>
+      <!-- RIGHT HAND PANEL COLUMN: HUB LOGISTICS COORDINATES REGISTER -->
+      <aside class="logistics-coordinates-bento-card">
+      <div class="intake-card-header-block">
+    <!-- Updated branding badge and copywriting tailored to Healthy Catering Food Service -->
+    <span class="intake-mini-badge badge-orange-line">FLAGSHIP KITCHEN HUB</span>
+    <h2 class="intake-main-title text-light-white">Reach Our Taste Architects</h2>
+    <p class="intake-subtext text-light-muted">Connect directly with our corporate culinary wellness staff to fast-track specialized meal bookings, nutritional packages, and event plans.</p>
+</div>
+
+
+        <div class="logistics-info-ledger-stack">
+          <!-- Address Row -->
+          <div class="logistics-ledger-row-item">
+            <div class="ledger-icon-badge green-accent-tint">
+              <svg viewBox="0 0 24 24" class="ledger-svg-icon" aria-hidden="true"><path d="M12 2c-4.41 0-8 3.59-8 8 0 5.25 8 12 8 12s8-6.75 8-12c0-4.41-3.59-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
             </div>
-            <!-- Dynamic validation feedback prompts row -->
-            <div class="field-validation-error-prompt" id="error-client-name">Alphabetical characters only allowed</div>
+            <div class="ledger-text-metadata">
+                <span class="ledger-meta-headline">Visit Our Studio</span>
+                <p class="ledger-meta-body">MMR Complex, Periyakollappatty, Chinna Thirupathi, Salem, Tamil Nadu 636008</p>
+            </div>
           </div>
 
-          <!-- INPUT FIELD 2: MOBILE HANDLE PHONE NUMBER (BLOCKS LETTERS) -->
-          <div class="intake-input-group-cell">
-            <label for="intake-client-phone" class="intake-field-label">Contact Mobile Handle</label>
-            <div class="intake-interactive-field-viewport">
-              <span class="field-icon-accent"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.7 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
-              <input type="tel" id="intake-client-phone" class="intake-text-input" placeholder="e.g. 9876543210" maxlength="10" autocomplete="off" required>
+          <!-- Hotline Row -->
+          <div class="logistics-ledger-row-item">
+            <div class="ledger-icon-badge orange-accent-tint">
+              <svg viewBox="0 0 24 24" class="ledger-svg-icon" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.7 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
             </div>
-            <div class="field-validation-error-prompt" id="error-client-phone">Please enter a valid 10-digit mobile line</div>
+            <div class="ledger-text-metadata">
+                <span class="ledger-meta-headline">Direct Hotlines</span>
+                <p class="ledger-meta-body"><a href="tel:+917010792745" class="logistics-interactive-link">+91 7010792745</a></p>
+            </div>
           </div>
 
-        </div>
-
-        <div class="intake-form-two-column-split">
-          
-          <!-- INPUT FIELD 3: EMAIL ADDDRESS INBOX -->
-          <div class="intake-input-group-cell">
-            <label for="intake-client-email" class="intake-field-label">Email Inbox Address</label>
-            <div class="intake-interactive-field-viewport">
-              <span class="field-icon-accent"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
-              <input type="email" id="intake-client-email" class="intake-text-input" placeholder="e.g. concierge@stackly.com" autocomplete="off" required>
+          <!-- Fixed Mailto Outlook Link Row -->
+          <div class="logistics-ledger-row-item">
+            <div class="ledger-icon-badge green-accent-tint">
+              <svg viewBox="0 0 24 24" class="ledger-svg-icon" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
             </div>
-            <div class="field-validation-error-prompt" id="error-client-email">Please enter a verified electronic email route</div>
+            <div class="ledger-text-metadata">
+                <span class="ledger-meta-headline">Electronic Mail</span>
+                <p class="ledger-meta-body">
+                    <a href="mailto:design@stacklystudio.com" class="logistics-interactive-link text-underlined-fixed" title="Open directly inside Microsoft Outlook client">design@stacklystudio.com</a>
+                </p>
+            </div>
           </div>
 
-          <!-- INPUT FIELD 4: GUEST TRACK COUNT HEADS -->
-          <div class="intake-input-group-cell">
-            <label for="intake-guest-count" class="intake-field-label">Estimated Guest Volume Attendance</label>
-            <div class="intake-interactive-field-viewport">
-              <span class="field-icon-accent"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
-              <input type="number" id="intake-guest-count" class="intake-text-input" placeholder="e.g. 150" min="10" max="5000" required>
+          <!-- Availability Row -->
+          <div class="logistics-ledger-row-item">
+            <div class="ledger-icon-badge orange-accent-tint">
+              <svg viewBox="0 0 24 24" class="ledger-svg-icon" aria-hidden="true"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm3.3 14.88L11 12.43V7h1.5v4.69l3.43 2.04-.64 1.15z"/></svg>
             </div>
-            <div class="field-validation-error-prompt" id="error-guest-count">Guest ranges must register between 10 and 5,000 heads</div>
-          </div>
-
-        </div>
-
-        <!-- INPUT FIELD 5: ADDITIONAL LOG NOTES SUMMARY OVERVIEW -->
-        <div class="intake-input-group-cell width-100-percent">
-          <label for="intake-event-notes" class="intake-field-label">Thematic Diet Preferences & Event Notes</label>
-          <div class="intake-interactive-field-viewport align-items-flex-start">
-            <span class="field-icon-accent padding-top-textarea"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></span>
-            <textarea id="intake-event-notes" class="intake-textarea-input" placeholder="Describe any tracking macro thresholds, flower choices, traditional buffet setups, or specific menu package inclusions..." rows="4"></textarea>
+            <div class="ledger-text-metadata">
+                <span class="ledger-meta-headline">Atelier Availability</span>
+                <p class="ledger-meta-body">Mon - Sun: 9:00 AM - 7:00 PM</p>
+            </div>
           </div>
         </div>
+      </aside>
 
-        <!-- KINETIC PROCESSING ROUTE LINK AND SUBMIT DRIVER -->
-        <div class="intake-submit-hub-wrap">
-          <button type="submit" class="btn-intake-submit-kinetic-glow">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-            Transmit Catering Blueprint Request
-          </button>
-        </div>
-
-      </form>
     </div>
   </div>
 </section>
 
+
+
 <style>
-    /* ==========================================================================
-   INTERACTIVE BENTO DESIGN CONSOLE CARD INTAKE FORM (style.css)
+ /* ==========================================================================
+   Bento Form Twin Column Architecture Modifiers Layout CSS 
    ========================================================================== */
 .intake-form-section {
-  position: relative;
-  width: 100%;
-  background-color: #ffffff;
-  
-  /* FIXED COMPACT GAPS: Strict padding metrics layer blocks (50px Top, 30px Bottom) */
-  padding-top: 50px;
-  padding-bottom: 30px;
-  
-  overflow: hidden;
-  z-index: 2;
+    width: 100%;
+    padding: 2.5rem 0;
+    box-sizing: border-box;
 }
 
 .intake-master-container {
-  width: 94%;
-  max-width: 1300px;
-  margin: 0 auto;
-  padding: 0 15px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-/* ==========================================================================
-   THE DECK GLASSMORPHIC PANEL PROFILE ARCHITECTURE
-   ========================================================================== */
+/* Master Shared Grid Architecture Split - Centered Alignments */
+.intake-split-bento-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 2rem;
+    align-items: center; /* FIXED: Centered vertically relative to the left side panel */
+    width: 100%;
+}
+
 .intake-bento-console-card {
-  width: 100%;
-  max-width: 850px; /* Perfect centered dashboard layout width constraints */
-  margin: 0 auto;
-  background: linear-gradient(135deg, rgba(244, 251, 246, 0.7) 0%, rgba(255, 255, 255, 0.95) 100%);
-  border: 1px solid rgba(34, 197, 94, 0.14);
-  border-radius: 32px;
-  padding: 45px 50px;
-  box-shadow: 0 25px 55px -25px rgba(15, 23, 42, 0.05);
+    background: #FFFFFF;
+    border: 1px solid var(--border, #E2E8F0);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
 }
 
 .intake-card-header-block {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-bottom: 35px;
+    margin-bottom: 1.75rem;
 }
 
 .intake-mini-badge {
-  font-size: 0.8rem; font-weight: 800; letter-spacing: 2px; color: #16a34a;
-  background: #ffffff; border: 1px solid rgba(34, 197, 94, 0.1); padding: 5px 12px; border-radius: 50px; margin-bottom: 12px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: #108A4E;
+    background-color: #E8F5E9;
+    padding: 0.3rem 0.65rem;
+    border-radius: 6px;
+    letter-spacing: 0.5px;
+    display: inline-block;
+    margin-bottom: 0.5rem;
 }
 
-.intake-main-title { font-size: 2.1rem; font-weight: 900; color: #0f172a; margin: 0 0 10px 0; letter-spacing: -0.5px; }
-.intake-subtext { font-size: 1.05rem; color: #475569; line-height: 1.5; max-width: 600px; margin: 0; }
+.badge-orange-line {
+    color: #E65100 !important;
+    background-color: #FFF3E0 !important;
+}
 
-/* ==========================================================================
-   INPUT COMPONENTS DECK STRUCTURE (INCREASED TEXT SIZES & HIGHLIGHTS)
-   ========================================================================== */
+.intake-main-title {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #0B251A;
+    letter-spacing: -0.5px;
+}
+
+.intake-subtext {
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.5;
+    margin-top: 0.35rem;
+}
+
 .intake-native-form-element {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
 }
 
 .intake-form-two-column-split {
-  display: flex;
-  align-items: flex-start;
-  gap: 24px;
-  width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
 }
 
 .intake-input-group-cell {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  flex: 1;
-  width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
 }
-.width-100-percent { width: 100%; }
+
+.width-100-percent { grid-column: span 2; }
 
 .intake-field-label {
-  font-size: 0.95rem; /* INCREASED: Font scaled up for clean scannability labels reading */
-  font-weight: 700;
-  color: #1e293b;
-  margin-bottom: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #0B251A;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
 }
 
 .intake-interactive-field-viewport {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  background: #ffffff;
-  border: 1px solid #cbd5e1;
-  border-radius: 12px;
-  transition: border-color 0.25s, box-shadow 0.25s;
+    position: relative;
+    display: flex;
+    align-items: center;
 }
+
 .align-items-flex-start { align-items: flex-start; }
 
-/* Focus glow highlight tracks */
-.intake-interactive-field-viewport:focus-within {
-  border-color: #22c55e;
-  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.1); /* Section input row glows intensely on click */
-}
-
-/* Isolated left icon tags wrapper profile */
 .field-icon-accent {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 46px; height: 46px;
-  color: #64748b;
-  flex-shrink: 0;
-  transition: color 0.2s;
+    position: absolute;
+    left: 1rem;
+    color: #64748B;
+    display: flex;
+    align-items: center;
+    z-index: 5;
 }
-.intake-interactive-field-viewport:focus-within .field-icon-accent { color: #16a34a; }
-.padding-top-textarea { height: 46px; }
 
-/* Native text entries input styling fields variables overrides */
-.intake-text-input,
-.intake-textarea-input {
-  width: 100%;
-  background: transparent;
-  border: none;
-  outline: none;
-  padding: 12px 16px 12px 0;
-  font-size: 1.05rem !important; /* INCREASED text copy entry weight size */
-  font-weight: 600;
-  color: #0f172a;
+.padding-top-textarea { margin-top: 0.9rem; }
+
+.intake-text-input, .intake-textarea-input {
+    width: 100%;
+    padding: 0.85rem 1rem 0.85rem 2.5rem;
+    border: 1px solid var(--border, #E2E8F0);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    background-color: #F8FAFC;
+    color: #0B251A;
+    transition: all 0.2s ease;
 }
-.intake-textarea-input { padding: 14px 16px 14px 0; resize: vertical; font-family: inherit; }
 
-/* Placeholder font layout tracking metrics configuration profiles */
-::placeholder { color: #94a3b8; font-weight: 500; }
+.intake-textarea-input { resize: vertical; }
 
-/* ==========================================================================
-   DYNAMIC INTERFACE SUBMISSION ERROR ALERTS (RED SHELL TIMELINES)
-   ========================================================================== */
+.intake-text-input:focus, .intake-textarea-input:focus {
+    outline: none;
+    border-color: #108A4E;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 4px rgba(16, 138, 78, 0.06);
+}
+
 .field-validation-error-prompt {
-  font-size: 0.8rem;
-  font-weight: 700;
-  color: #ef4444;
-  margin-top: 5px;
-  display: none; /* Hidden by default engine properties validation flags */
-  text-align: left;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #DC2626;
+    margin-top: 0.2rem;
+    display: none;
 }
 
-/* Error Injected Active State Layout Variables Classes overrides */
-.intake-input-group-cell.field-error-alert-triggered .intake-interactive-field-viewport {
-  border-color: #ef4444 !important;
-  background-color: #fef2f2;
-}
-.intake-input-group-cell.field-error-alert-triggered .field-icon-accent { color: #ef4444 !important; }
-.intake-input-group-cell.field-error-alert-triggered .field-validation-error-prompt { display: block; }
-
-/* ==========================================================================
-   KINETIC TRANSMIT CTA BUTTON HUB (ROUTES SECURELY TO 404.HTML ON SUCCESS)
-   ========================================================================== */
 .intake-submit-hub-wrap {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin-top: 15px;
+    margin-top: 0.5rem;
 }
 
 .btn-intake-submit-kinetic-glow {
-  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-  color: #ffffff; border: none; padding: 16px 42px;
-  font-size: 1.05rem; font-weight: 700; border-radius: 12px;
-  display: inline-flex; align-items: center; gap: 12px; cursor: pointer;
-  box-shadow: 0 10px 25px rgba(22, 163, 74, 0.25);
-  animation: formSubmitFloat 3.5s ease-in-out infinite alternate;
-  transition: background 0.25s, box-shadow 0.25s, transform 0.2s;
+    background-color: #108A4E;
+    color: #FFFFFF;
+    border: none;
+    padding: 0.9rem 1.5rem;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+    box-shadow: 0 4px 12px rgba(16, 138, 78, 0.15);
+    transition: all 0.2s ease;
 }
-.btn-intake-submit-kinetic-glow:hover { box-shadow: 0 15px 35px rgba(22, 163, 74, 0.45); animation-play-state: paused !important; transform: translateY(-2px); }
 
-@keyframes formSubmitFloat { 0% { transform: translateY(0px); } 100% { transform: translateY(-6px); } }
-
-/* Scroll entries appearance reveals node rules initialization handles */
-.intake-node { opacity: 0; transform: translateY(24px); transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.85s ease; }
-.intake-node.intake-revealed-active { opacity: 1; transform: translateY(0); }
+.btn-intake-submit-kinetic-glow:hover {
+    background-color: #0C6F3E;
+    transform: translateY(-1px);
+}
 
 /* ==========================================================================
-   FLUID STRUCTURAL RESPONSIVE ADAPTATIONS
+   Right Panel Column Styling Matches Image Content Layout
    ========================================================================== */
-@media (max-width: 850px) {
-  .intake-bento-console-card { padding: 35px 24px; border-radius: 24px; }
-  .intake-form-two-column-split { flex-direction: column; gap: 20px; } /* Stacks rows cleanly into independent columns streams on tablets */
+.logistics-coordinates-bento-card {
+    background-color: #F8FAFC; /* Light gray layout background matching card lines */
+    border: 1px solid var(--border, #E2E8F0);
+    border-radius: 20px;
+    padding: 2.25rem 2rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
 }
-@media (max-width: 540px) {
-  .intake-main-title { font-size: 1.65rem; }
-  .btn-intake-submit-kinetic-glow { width: 100%; justify-content: center; } /* Spans full canvas width smoothly on smartphones */
+
+.text-light-white { color: #0B251A !important; }
+.text-light-muted { color: #475569 !important; }
+
+.logistics-info-ledger-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-top: 0.5rem;
+}
+
+.logistics-ledger-row-item {
+    display: flex;
+    gap: 1.15rem;
+    align-items: center;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    padding: 1.1rem 1.25rem;
+    border-radius: 16px; /* Smooth rounded parameters mimicking photo cards */
+    transition: all 0.2s ease-in-out;
+}
+
+.logistics-ledger-row-item:hover {
+    border-color: #108A4E;
+}
+
+.ledger-icon-badge {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background-color: #F1F5F9;
+    color: #334155;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.ledger-svg-icon {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.ledger-text-metadata {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.ledger-meta-headline {
+    font-size: 0.78rem;
+    font-weight: 800;
+    color: #64748B;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ledger-meta-body {
+    font-size: 0.95rem;
+    color: #0B251A;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.logistics-interactive-link {
+    color: #0B251A;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.text-underlined-fixed {
+    text-decoration: underline !important;
+    text-underline-offset: 3px;
+    color: #0B251A;
+}
+
+.logistics-interactive-link:hover {
+    color: #108A4E;
+}
+
+/* ==========================================================================
+   Adaptive Viewport Settings Responsiveness Breakpoints
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .intake-split-bento-grid {
+        grid-template-columns: 1fr;
+        gap: 1.75rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .intake-form-two-column-split {
+        grid-template-columns: 1fr;
+    }
+    .width-100-percent { grid-column: span 1; }
+    .btn-intake-submit-kinetic-glow {
+        width: 100%;
+        justify-content: center;
+    }
 }
 
 </style>
@@ -1641,9 +1806,11 @@ window.addEventListener('DOMContentLoaded', () => {
           <a href="404.html" class="social-icon-circle" aria-label="Follow us on Instagram">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="2" width="20" height="24" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"/></svg>
           </a>
-          <a href="404.html" class="social-icon-circle" aria-label="Follow us on X Twitter">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
-          </a>
+        <a href="404.html" class="social-icon-circle" aria-label="Follow us on X Twitter">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+    </svg>
+</a>
           <a href="404.html" class="social-icon-circle" aria-label="Follow us on LinkedIn">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           </a>

@@ -314,23 +314,20 @@
 
 
                                 <select
-                                    id="userRole"
-                                    class="role-select"
-                                >
+    id="userRole"
+    class="role-select"
+    required
+>
+    <option value="">Select account type</option>
 
-                                    <option value="">
-                                        Select account type
-                                    </option>
+    <option value="partner">
+        Partner
+    </option>
 
-                                    <option value="admin">
-                                        Admin
-                                    </option>
-
-                                    <option value="client">
-                                        Client
-                                    </option>
-
-                                </select>
+    <option value="client">
+        Client
+    </option>
+</select>
 
                             </div>
 
@@ -385,54 +382,76 @@
 
                         <div class="form-group">
 
-                            <label for="password">
-                                Password
-                            </label>
+    <label for="password">
+        Password
+    </label>
 
-                            <div class="input-wrapper">
+    <div class="input-wrapper">
 
-                                <svg
-                                    class="input-icon"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="2"
-                                >
+        <!-- Lock Icon -->
+        <svg
+            class="input-icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+        >
+            <rect
+                x="4"
+                y="10"
+                width="16"
+                height="11"
+                rx="2"
+            />
 
-                                    <rect
-                                        x="4"
-                                        y="10"
-                                        width="16"
-                                        height="11"
-                                        rx="2"
-                                    />
-
-                                    <path
-                                        d="M8 10V7a4 4 0 0 1 8 0v3"
-                                    />
-
-                                </svg>
+            <path d="M8 10V7a4 4 0 0 1 8 0v3" />
+        </svg>
 
 
-                                <input
-                                    type="password"
-                                    id="password"
-                                    class="form-input"
-                                    placeholder="Enter your password"
-                                    autocomplete="current-password"
-                                >
+        <!-- Password Input -->
+        <input
+            type="password"
+            id="password"
+            class="form-input password-input"
+            placeholder="Enter your password"
+            autocomplete="current-password"
+        >
 
-                            </div>
 
-                        </div>
+        <!-- Eye Toggle Button -->
+        <button
+            type="button"
+            class="password-toggle"
+            id="passwordToggle"
+            aria-label="Show password"
+            title="Show password"
+        >
+            <svg
+                id="eyeIcon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+            >
+                <path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/>
+                <circle cx="12" cy="12" r="3"/>
+            </svg>
+        </button>
 
+    </div>
+
+</div>
 
                         <!-- Forgot password -->
 
                         <div class="password-row">
 
                             <a
-                                href="forgot-password.html"
+                                href="404.html"
                                 class="forgot-password"
                             >
                                 Forgot Password?
@@ -1735,22 +1754,51 @@ body {
     }
 
 }
+
+.input-wrapper {
+    position: relative;
+}
+
+.password-input {
+    padding-right: 3rem;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 0.85rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #64748B;
+    cursor: pointer;
+    z-index: 5;
+}
+
+.password-toggle:hover {
+    color: #108A4E;
+}
+
+.password-toggle svg {
+    width: 19px;
+    height: 19px;
+}
  </style>
 
- <script>
+<script>
 document.addEventListener("DOMContentLoaded", function () {
-
-    /* =========================================================
-       GET ELEMENTS
-    ========================================================= */
 
     const loginForm = document.getElementById("loginForm");
     const formMessage = document.getElementById("formMessage");
-
     const role = document.getElementById("userRole");
     const email = document.getElementById("email");
     const password = document.getElementById("password");
-
     const googleLogin = document.getElementById("googleLogin");
     const facebookLogin = document.getElementById("facebookLogin");
 
@@ -1760,32 +1808,37 @@ document.addEventListener("DOMContentLoaded", function () {
     ========================================================= */
 
     if (!loginForm || !formMessage || !role || !email || !password) {
-        console.error("Login page: Required elements were not found.");
+
+        console.error(
+            "Login page: Required elements were not found."
+        );
+
         return;
     }
 
 
     /* =========================================================
-       SHOW MESSAGE
+       MESSAGE FUNCTIONS
     ========================================================= */
 
     function showMessage(message) {
+
         formMessage.textContent = message;
         formMessage.classList.add("show");
+
     }
 
-
-    /* =========================================================
-       HIDE MESSAGE
-    ========================================================= */
 
     function hideMessage() {
+
+        formMessage.textContent = "";
         formMessage.classList.remove("show");
+
     }
 
 
     /* =========================================================
-       CLEAR MESSAGE WHEN USER EDITS FORM
+       CLEAR MESSAGE WHEN INPUT CHANGES
     ========================================================= */
 
     role.addEventListener("change", hideMessage);
@@ -1805,26 +1858,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         /* =====================================================
-           GET VALUES
+           GET FORM VALUES
         ===================================================== */
 
-        const selectedRole = role.value.trim();
-        const enteredEmail = email.value.trim();
-        const enteredPassword = password.value;
+        const selectedRole =
+            role.value.trim().toLowerCase();
+
+        const enteredEmail =
+            email.value.trim().toLowerCase();
+
+        const enteredPassword =
+            password.value;
 
 
-        console.log("========== LOGIN ATTEMPT ==========");
+        console.log("=================================");
+        console.log("LOGIN ATTEMPT");
         console.log("Role:", selectedRole);
         console.log("Email:", enteredEmail);
+        console.log("=================================");
 
 
         /* =====================================================
-           REQUIRED FIELD VALIDATION
+           ROLE VALIDATION
         ===================================================== */
 
         if (selectedRole === "") {
 
-            showMessage("Please select an account type.");
+            showMessage(
+                "Please select an account type."
+            );
 
             role.focus();
 
@@ -1832,9 +1894,15 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
+        /* =====================================================
+           EMAIL VALIDATION
+        ===================================================== */
+
         if (enteredEmail === "") {
 
-            showMessage("Please enter your email address.");
+            showMessage(
+                "Please enter your email address."
+            );
 
             email.focus();
 
@@ -1842,9 +1910,15 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
+        /* =====================================================
+           PASSWORD VALIDATION
+        ===================================================== */
+
         if (enteredPassword === "") {
 
-            showMessage("Please enter your password.");
+            showMessage(
+                "Please enter your password."
+            );
 
             password.focus();
 
@@ -1853,7 +1927,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         /* =====================================================
-           EMAIL VALIDATION
+           EMAIL FORMAT VALIDATION
         ===================================================== */
 
         const emailPattern =
@@ -1873,10 +1947,60 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         /* =====================================================
-           SAVE LOGIN SESSION
+           CREATE USERNAME FROM EMAIL
+           
+           test@gmail.com
+                    ↓
+           test
+        ===================================================== */
+
+        const username =
+            enteredEmail
+                .split("@")[0]
+                .trim();
+
+
+        /* =====================================================
+           CLEAR OLD LOGIN DATA
+           
+           This is important because an old value such as
+           Jeevi may already exist in localStorage.
         ===================================================== */
 
         try {
+
+            localStorage.removeItem("userEmail");
+            localStorage.removeItem("userRole");
+            localStorage.removeItem("username");
+
+            sessionStorage.removeItem("loggedInUser");
+            sessionStorage.removeItem("loggedInRole");
+            sessionStorage.removeItem("loggedInUsername");
+
+
+            /* =================================================
+               SAVE CURRENT LOGIN DATA
+            ================================================= */
+
+            localStorage.setItem(
+                "userEmail",
+                enteredEmail
+            );
+
+            localStorage.setItem(
+                "userRole",
+                selectedRole
+            );
+
+            localStorage.setItem(
+                "username",
+                username
+            );
+
+
+            /* =================================================
+               ALSO SAVE SESSION VALUES
+            ================================================= */
 
             sessionStorage.setItem(
                 "loggedInUser",
@@ -1888,99 +2012,67 @@ document.addEventListener("DOMContentLoaded", function () {
                 selectedRole
             );
 
-            /*
-             * Save username separately.
-             *
-             * Example:
-             * jeevi@gmail.com
-             * becomes:
-             * jeevi
-             */
-
-            const username =
-                enteredEmail
-                    .split("@")[0]
-                    .trim();
-
             sessionStorage.setItem(
                 "loggedInUsername",
                 username
             );
 
 
+            console.log("=================================");
+            console.log("LOGIN DATA SAVED");
             console.log(
-                "Session saved successfully."
+                "userEmail:",
+                localStorage.getItem("userEmail")
             );
-
             console.log(
-                "loggedInUser:",
-                sessionStorage.getItem("loggedInUser")
+                "userRole:",
+                localStorage.getItem("userRole")
             );
-
             console.log(
-                "loggedInRole:",
-                sessionStorage.getItem("loggedInRole")
+                "username:",
+                localStorage.getItem("username")
             );
+            console.log("=================================");
 
-            console.log(
-                "loggedInUsername:",
-                sessionStorage.getItem("loggedInUsername")
-            );
-
-        } catch (error) {
+        }
+        catch (error) {
 
             console.error(
-                "Session storage error:",
+                "Storage error:",
                 error
             );
 
+            showMessage(
+                "Unable to save login information. Please try again."
+            );
+
+            return;
         }
 
 
         /* =====================================================
-           ROLE BASED NAVIGATION
+           ROLE BASED DASHBOARD
         ===================================================== */
 
         let dashboardURL = "";
 
 
-        /* -----------------------------------------------------
-           ADMIN → PARTNER DASHBOARD
-        ----------------------------------------------------- */
-
-        if (selectedRole === "admin") {
+        if (selectedRole === "partner") {
 
             dashboardURL =
                 "./partner-dashboard.html";
 
         }
-
-
-        /* -----------------------------------------------------
-           CLIENT → CLIENT DASHBOARD
-        ----------------------------------------------------- */
-
         else if (selectedRole === "client") {
 
             dashboardURL =
                 "./client-dashboard.html";
 
         }
-
-
-        /* -----------------------------------------------------
-           INVALID ROLE
-        ----------------------------------------------------- */
-
         else {
 
             showMessage(
                 "Invalid account type selected."
-            );
-
-            console.error(
-                "Invalid role:",
-                selectedRole
             );
 
             return;
@@ -1997,19 +2089,8 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-        /*
-         * Small delay allows sessionStorage to complete
-         * before navigation.
-         */
-
-        setTimeout(function () {
-
-            window.location.assign(
-                dashboardURL
-            );
-
-        }, 100);
-
+        window.location.href =
+            dashboardURL;
 
     });
 
@@ -2028,9 +2109,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     "Google login selected."
                 );
 
-                window.location.assign(
-                    "./404.html"
-                );
+                window.location.href =
+                    "./404.html";
 
             }
         );
@@ -2052,9 +2132,8 @@ document.addEventListener("DOMContentLoaded", function () {
                     "Facebook login selected."
                 );
 
-                window.location.assign(
-                    "./404.html"
-                );
+                window.location.href =
+                    "./404.html";
 
             }
         );
@@ -2063,12 +2142,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================================================
-       ENTER KEY / FORM READY
+       LOGIN PAGE INITIALIZED
     ========================================================= */
 
+    console.log("=================================");
     console.log(
-        "Login page JavaScript initialized successfully."
+        "Login JavaScript initialized."
     );
+    console.log(
+        "Partner → ./partner-dashboard.html"
+    );
+    console.log(
+        "Client → ./client-dashboard.html"
+    );
+    console.log("=================================");
 
 });
 </script>

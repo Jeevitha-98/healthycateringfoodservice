@@ -117,7 +117,13 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
           Cart Container
         </a>
-        <button class="mobile-auth-btn">Sign In / Register</button>
+        <button 
+    type="button" 
+    class="mobile-auth-btn"
+    onclick="window.location.href='login.html';"
+>
+    Sign In / Register
+</button>
       </div>
     </div>
   </div>
@@ -252,7 +258,7 @@
         
         <!-- FLOATING CTA BUTTON BUNDLE -->
         <div class="meal-hero-cta-group">
-          <a href="#explore-plans" class="btn-meal-hero-primary">
+          <a href="404.html" class="btn-meal-hero-primary">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="4" width="18" height="15" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
             Explore Meal Plans
           </a>
@@ -1452,6 +1458,680 @@ window.addEventListener('DOMContentLoaded', () => {
 @media (max-width: 992px) {
     .calibrator-master-container { flex-direction: column; text-align: center; gap: 45px; }.calibrator-content-left { align-items: center; text-align: center; }.calibrator-main-title { font-size: 2.3rem; }.calibrator-subtext { max-width: 100%; }.calibrator-meal-selector-deck { max-width: 100%; }.btn-meal-pill { justify-content: center; }.btn-calibrator-kinetic-glow { width: 100%; justify-content: center; }}@media (max-width: 480px) {.macro-calibrator-section { padding-top: 40px; padding-bottom: 25px; }.calibrator-main-title { font-size: 1.8rem; }.phone-ui-bento-card { border-radius: 28px; }.phone-micro-nutrients-grid { grid-template-columns: 1fr; gap: 10px; }.cell-radial-viewport { width: 56px; height: 50px; }.phone-ui-footer-action-bar { flex-direction: column; }.btn-phone-secondary-action-link, .btn-phone-primary-action-link { width: 100%; }}
 
+/* ================================================================
+   MACRO CALIBRATOR - RESPONSIVE ADD-ON
+   ================================================================ */
+
+/* ------------------------------------------------
+   LARGE TABLET / SMALL LAPTOP
+   ------------------------------------------------ */
+
+@media (max-width: 1100px) {
+
+    .calibrator-master-container {
+        width: 92%;
+        gap: 35px;
+    }
+
+    .calibrator-content-left {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .calibrator-card-right {
+        flex: 0 1 400px;
+        min-width: 0;
+    }
+
+    .calibrator-main-title {
+        font-size: 2.7rem;
+    }
+
+    .calibrator-subtext {
+        font-size: 1.05rem;
+    }
+
+    .calibrator-meal-selector-deck {
+        max-width: 100%;
+    }
+
+    .phone-ui-bento-card {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+
+/* ------------------------------------------------
+   TABLET
+   ------------------------------------------------ */
+
+@media (max-width: 992px) {
+
+    .macro-calibrator-section {
+        padding-top: 55px;
+        padding-bottom: 45px;
+    }
+
+    .calibrator-master-container {
+        width: 90%;
+        padding: 0;
+        flex-direction: column;
+        gap: 45px;
+    }
+
+    /* LEFT CONTENT */
+
+    .calibrator-content-left {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .calibrator-badge-tag {
+        margin-bottom: 16px;
+    }
+
+    .calibrator-main-title {
+        width: 100%;
+        max-width: 700px;
+        font-size: 2.5rem;
+        line-height: 1.18;
+        letter-spacing: -0.7px;
+    }
+
+    .calibrator-subtext {
+        width: 100%;
+        max-width: 700px;
+        font-size: 1.05rem;
+        line-height: 1.65;
+        margin-bottom: 25px;
+    }
+
+
+    /* MEAL SELECTOR */
+
+    .calibrator-meal-selector-deck {
+        width: 100%;
+        max-width: 700px;
+        padding: 18px;
+        margin-bottom: 28px;
+    }
+
+    .selector-category-tabs-rail {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .btn-cat-tab {
+        flex: 0 0 auto;
+        font-size: 0.88rem;
+        padding: 8px 14px;
+    }
+
+    .btn-meal-pill {
+        width: 100%;
+        justify-content: flex-start;
+        min-height: 52px;
+    }
+
+
+    /* CTA */
+
+    .calibrator-cta-wrap {
+        width: 100%;
+        max-width: 700px;
+    }
+
+    .btn-calibrator-kinetic-glow {
+        width: 100%;
+        justify-content: center;
+    }
+
+
+    /* RIGHT PHONE CARD */
+
+    .calibrator-card-right {
+        width: 100%;
+        flex: none;
+        justify-content: center;
+    }
+
+    .phone-ui-bento-card {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+
+/* ------------------------------------------------
+   768px TABLET / LARGE MOBILE
+   ------------------------------------------------ */
+
+@media (max-width: 768px) {
+
+    .macro-calibrator-section {
+        padding-top: 45px;
+        padding-bottom: 40px;
+    }
+
+    .calibrator-master-container {
+        width: 92%;
+        gap: 35px;
+    }
+
+
+    /* TITLE */
+
+    .calibrator-main-title {
+        font-size: 2.15rem;
+        line-height: 1.2;
+    }
+
+    .calibrator-subtext {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+
+    /* CATEGORY SELECTOR */
+
+    .calibrator-meal-selector-deck {
+        padding: 15px;
+        border-radius: 18px;
+    }
+
+    .selector-category-tabs-rail {
+        gap: 6px;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+    }
+
+    .btn-cat-tab {
+        font-size: 0.82rem;
+        padding: 8px 11px;
+    }
+
+    .meal-group-stack {
+        gap: 8px;
+    }
+
+    .btn-meal-pill {
+        font-size: 0.92rem;
+        padding: 13px 15px;
+    }
+
+    .btn-meal-pill.active-meal-pill {
+        padding-left: 20px;
+    }
+
+
+    /* PHONE CARD */
+
+    .phone-ui-bento-card {
+        width: 100%;
+        max-width: 390px;
+        border-radius: 30px;
+    }
+
+    .phone-ui-image-viewport {
+        height: 245px;
+    }
+
+    .phone-ui-data-plate {
+        padding: 20px;
+    }
+
+    .phone-dish-title {
+        font-size: 1.45rem !important;
+        margin-bottom: 16px;
+    }
+
+
+    /* CALORIE PANEL */
+
+    .phone-calorie-dashboard-row {
+        padding: 14px 16px;
+        border-radius: 18px;
+    }
+
+    .calorie-metric-left span {
+        font-size: 0.75rem;
+    }
+
+    .calorie-big-digit-row strong {
+        font-size: 2rem;
+    }
+
+    .calorie-big-digit-row small {
+        font-size: 0.8rem;
+    }
+
+
+    /* NUTRIENT GRID */
+
+    .phone-micro-nutrients-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .micro-nutrient-cell {
+        padding: 11px 5px;
+        border-radius: 15px;
+    }
+
+    .cell-radial-viewport {
+        width: 48px;
+        height: 48px;
+    }
+
+    .cell-percentage-group span {
+        font-size: 0.7rem;
+    }
+
+    .cell-percentage-group small {
+        font-size: 0.55rem;
+    }
+
+    .cell-label-tag {
+        font-size: 0.72rem;
+    }
+}
+
+
+/* ------------------------------------------------
+   600px MOBILE
+   ------------------------------------------------ */
+
+@media (max-width: 600px) {
+
+    .macro-calibrator-section {
+        padding-top: 38px;
+        padding-bottom: 35px;
+    }
+
+    .calibrator-master-container {
+        width: calc(100% - 30px);
+        padding: 0;
+        gap: 30px;
+    }
+
+
+    /* BADGE */
+
+    .calibrator-badge-tag {
+        font-size: 0.72rem;
+        letter-spacing: 1.8px;
+        padding: 6px 12px;
+        margin-bottom: 14px;
+    }
+
+
+    /* TITLE */
+
+    .calibrator-main-title {
+        font-size: 1.9rem;
+        line-height: 1.2;
+        letter-spacing: -0.5px;
+        margin-bottom: 14px;
+    }
+
+
+    /* DESCRIPTION */
+
+    .calibrator-subtext {
+        font-size: 0.92rem;
+        line-height: 1.6;
+        margin-bottom: 22px;
+    }
+
+
+    /* SELECTOR */
+
+    .calibrator-meal-selector-deck {
+        width: 100%;
+        padding: 13px;
+        border-radius: 16px;
+        margin-bottom: 22px;
+    }
+
+    .selector-category-tabs-rail {
+        margin-left: -2px;
+        margin-right: -2px;
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    .btn-cat-tab {
+        font-size: 0.76rem;
+        padding: 7px 10px;
+        border-radius: 7px;
+    }
+
+    .btn-meal-pill {
+        min-height: 50px;
+        font-size: 0.87rem;
+        padding: 12px 13px;
+        border-radius: 11px;
+        gap: 9px;
+    }
+
+    .pill-dot {
+        width: 7px;
+        height: 7px;
+    }
+
+
+    /* CTA */
+
+    .btn-calibrator-kinetic-glow {
+        padding: 14px 20px;
+        font-size: 0.92rem;
+        border-radius: 11px;
+    }
+
+
+    /* PHONE */
+
+    .calibrator-card-right {
+        width: 100%;
+    }
+
+    .phone-ui-bento-card {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 26px;
+    }
+
+    .phone-ui-image-viewport {
+        height: 225px;
+    }
+
+    .phone-action-pill-buttons {
+        top: 14px;
+        padding: 0 15px;
+    }
+
+    .phone-circle-action {
+        width: 36px;
+        height: 36px;
+    }
+
+    .phone-ui-data-plate {
+        padding: 18px;
+    }
+
+    .phone-dish-title {
+        font-size: 1.35rem !important;
+        margin-bottom: 14px;
+    }
+
+
+    /* CALORIE */
+
+    .phone-calorie-dashboard-row {
+        padding: 13px 14px;
+        margin-bottom: 17px;
+    }
+
+    .calorie-gauge-right {
+        width: 58px;
+        height: 58px;
+    }
+
+    .calorie-big-digit-row strong {
+        font-size: 1.9rem;
+    }
+
+
+    /* NUTRIENTS */
+
+    .phone-micro-nutrients-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 7px;
+        margin-bottom: 18px;
+    }
+
+    .micro-nutrient-cell {
+        padding: 10px 4px;
+        border-radius: 14px;
+    }
+
+    .cell-radial-viewport {
+        width: 44px;
+        height: 44px;
+        margin-bottom: 5px;
+    }
+
+    .cell-label-tag {
+        font-size: 0.68rem;
+    }
+
+
+    /* FOOTER BUTTONS */
+
+    .phone-ui-footer-action-bar {
+        flex-direction: row;
+        gap: 8px;
+    }
+
+    .btn-phone-secondary-action-link,
+    .btn-phone-primary-action-link {
+        width: auto;
+        padding: 12px 8px !important;
+        font-size: 0.78rem !important;
+    }
+}
+
+
+/* ------------------------------------------------
+   480px SMALL MOBILE
+   ------------------------------------------------ */
+
+@media (max-width: 480px) {
+
+    .macro-calibrator-section {
+        padding-top: 32px;
+        padding-bottom: 30px;
+    }
+
+    .calibrator-master-container {
+        width: calc(100% - 24px);
+        gap: 27px;
+    }
+
+
+    /* TITLE */
+
+    .calibrator-main-title {
+        font-size: 1.65rem;
+        line-height: 1.22;
+    }
+
+    .calibrator-subtext {
+        font-size: 0.86rem;
+        line-height: 1.55;
+    }
+
+
+    /* CATEGORY TABS */
+
+    .calibrator-meal-selector-deck {
+        padding: 11px;
+    }
+
+    .selector-category-tabs-rail {
+        gap: 5px;
+    }
+
+    .btn-cat-tab {
+        font-size: 0.7rem;
+        padding: 7px 8px;
+    }
+
+
+    /* MEAL BUTTONS */
+
+    .btn-meal-pill {
+        font-size: 0.82rem;
+        padding: 11px 12px;
+    }
+
+    .btn-meal-pill.active-meal-pill {
+        padding-left: 16px;
+    }
+
+
+    /* CTA */
+
+    .btn-calibrator-kinetic-glow {
+        font-size: 0.85rem;
+        padding: 13px 16px;
+    }
+
+
+    /* PHONE CARD */
+
+    .phone-ui-bento-card {
+        border-radius: 23px;
+    }
+
+    .phone-ui-image-viewport {
+        height: 205px;
+    }
+
+    .phone-ui-data-plate {
+        padding: 15px;
+    }
+
+    .phone-dish-title {
+        font-size: 1.22rem !important;
+    }
+
+
+    /* CALORIE PANEL */
+
+    .phone-calorie-dashboard-row {
+        padding: 11px 12px;
+    }
+
+    .calorie-metric-left span {
+        font-size: 0.67rem;
+    }
+
+    .calorie-big-digit-row strong {
+        font-size: 1.7rem;
+    }
+
+    .calorie-big-digit-row small {
+        font-size: 0.72rem;
+    }
+
+    .calorie-gauge-right {
+        width: 54px;
+        height: 54px;
+    }
+
+    .gauge-center-token {
+        font-size: 0.55rem;
+    }
+
+
+    /* NUTRIENT CARDS */
+
+    .phone-micro-nutrients-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+    }
+
+    .micro-nutrient-cell {
+        padding: 8px 3px;
+        border-radius: 12px;
+    }
+
+    .cell-radial-viewport {
+        width: 40px;
+        height: 40px;
+    }
+
+    .cell-percentage-group span {
+        font-size: 0.63rem;
+    }
+
+    .cell-percentage-group small {
+        font-size: 0.5rem;
+    }
+
+    .cell-label-tag {
+        font-size: 0.62rem;
+    }
+
+
+    /* FOOTER */
+
+    .phone-ui-footer-action-bar {
+        gap: 7px;
+    }
+
+    .btn-phone-secondary-action-link,
+    .btn-phone-primary-action-link {
+        padding: 11px 5px !important;
+        font-size: 0.72rem !important;
+        border-radius: 10px !important;
+    }
+}
+
+
+/* ------------------------------------------------
+   VERY SMALL DEVICES
+   ------------------------------------------------ */
+
+@media (max-width: 360px) {
+
+    .calibrator-master-container {
+        width: calc(100% - 18px);
+    }
+
+    .calibrator-main-title {
+        font-size: 1.48rem;
+    }
+
+    .calibrator-subtext {
+        font-size: 0.82rem;
+    }
+
+    .btn-cat-tab {
+        font-size: 0.66rem;
+        padding: 6px 7px;
+    }
+
+    .btn-meal-pill {
+        font-size: 0.76rem;
+    }
+
+    .phone-ui-image-viewport {
+        height: 190px;
+    }
+
+    .phone-dish-title {
+        font-size: 1.12rem !important;
+    }
+
+    .calorie-big-digit-row strong {
+        font-size: 1.55rem;
+    }
+
+    .cell-label-tag {
+        font-size: 0.58rem;
+    }
+
+    .btn-phone-secondary-action-link,
+    .btn-phone-primary-action-link {
+        font-size: 0.67rem !important;
+    }
+}
 </style>
 
 <script>
@@ -3193,9 +3873,11 @@ window.addEventListener('DOMContentLoaded', () => {
           <a href="404.html" class="social-icon-circle" aria-label="Follow us on Instagram">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="2" width="20" height="24" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"/></svg>
           </a>
-          <a href="404.html" class="social-icon-circle" aria-label="Follow us on X Twitter">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
-          </a>
+         <a href="404.html" class="social-icon-circle" aria-label="Follow us on X Twitter">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+    </svg>
+</a>
           <a href="404.html" class="social-icon-circle" aria-label="Follow us on LinkedIn">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           </a>

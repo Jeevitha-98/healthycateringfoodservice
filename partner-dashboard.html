@@ -1,898 +1,2851 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <meta
-        name="description"
-        content="Healthy Catering Partner Dashboard"
-    >
-
-    <title>Partner Dashboard | Healthy Catering</title>
-
-    <link
-        rel="stylesheet"
-        href="./partner-dashboard.css"
-    >
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Partner Dashboard - Healthy Catering</title>
+    <!-- Google Fonts for modern typography styling -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
+<body class="dashboard-body">
 
-
-<body>
-
-
-    <!-- =========================================================
-         DASHBOARD APPLICATION
-    ========================================================== -->
-
-    <div class="dashboard-app">
-
-
-        <!-- =====================================================
-             MOBILE OVERLAY
-        ====================================================== -->
-
-        <div
-            class="sidebar-overlay"
-            id="sidebarOverlay"
-        ></div>
-
-
-        <!-- =====================================================
-             SIDEBAR
-        ====================================================== -->
-
-        <aside
-            class="dashboard-sidebar"
-            id="dashboardSidebar"
-        >
-
-
-            <!-- SIDEBAR BRAND -->
-
-            <div class="sidebar-brand">
-
-                <a
-                    href="#"
-                    class="brand-refresh"
-                    id="brandRefresh"
-                    title="Refresh Dashboard"
-                >
-
-                    <!-- Replace this image path with your logo -->
-
-                    <img
-                        src="./Assests/logo.png"
-                        alt="Healthy Catering Logo"
-                        class="sidebar-logo"
-                    >
-
-                    <div class="brand-text">
-
-                        <strong>
-                            HEALTHY
-                        </strong>
-
-                        <span>
-                            CATERING
-                        </span>
-
-                    </div>
-
-                </a>
-
-
-                <!-- MOBILE CLOSE -->
-
-                <button
-                    class="sidebar-close"
-                    id="sidebarClose"
-                    aria-label="Close sidebar"
-                >
-
-                    <svg
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="2"
-                    >
-
-                        <path
-                            d="M18 6L6 18"
-                        />
-
-                        <path
-                            d="M6 6L18 18"
-                        />
-
-                    </svg>
-
-                </button>
-
+    <!-- Top Persistent Navigation Header -->
+    <header class="dash-header">
+        <div class="header-left">
+            <!-- Mobile Menu Toggle Hamburger Icon -->
+            <button id="sidebarToggle" class="hamburger-btn" aria-label="Toggle Navigation Menu">
+                <svg viewBox="0 0 24 24" class="icon"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+            </button>
+            <!-- Refresh Dashboard Brand Name & Logo -->
+            <div id="brandRefresh" class="dash-brand" title="Refresh Dashboard">
+                <img src="./Assests/healthy catering logo.webp" alt="Healthy Catering Logo" class="brand-img">
+             
             </div>
+        </div>
 
-
-            <!-- =================================================
-                 SIDEBAR NAVIGATION
-            ================================================== -->
-
-            <nav class="sidebar-navigation">
-
-
-                <div class="navigation-label">
-                    PARTNER MENU
+        <div class="header-right">
+            <!-- Notification Center Bell Icon -->
+            <button
+    type="button"
+    class="icon-btn"
+    title="Notifications"
+    aria-label="Notifications"
+    onclick="window.location.href='./404.html';"
+>
+    <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+        <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.89 2 2 2zm6-6v-5c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4-2.02 4-4.5v6z"/>
+    </svg>
+    <span class="notification-badge"></span>
+</button>
+            <!-- User Profile Quick View Block -->
+            <div class="user-profile-block">
+                <div class="user-avatar-circle">
+                    <span id="avatarLetter">J</span>
                 </div>
-
-
-                <!-- DASHBOARD -->
-
-                <a
-                    href="#dashboard"
-                    class="sidebar-menu active"
-                    data-section="dashboard"
-                >
-
-                    <span class="menu-icon">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.8"
-                        >
-
-                            <rect
-                                x="3"
-                                y="3"
-                                width="7"
-                                height="7"
-                                rx="1"
-                            />
-
-                            <rect
-                                x="14"
-                                y="3"
-                                width="7"
-                                height="7"
-                                rx="1"
-                            />
-
-                            <rect
-                                x="3"
-                                y="14"
-                                width="7"
-                                height="7"
-                                rx="1"
-                            />
-
-                            <rect
-                                x="14"
-                                y="14"
-                                width="7"
-                                height="7"
-                                rx="1"
-                            />
-
-                        </svg>
-
-                    </span>
-
-                    <span class="menu-title">
-                        Dashboard
-                    </span>
-
-                </a>
-
-
-                <!-- ORDERS -->
-
-                <a
-                    href="#orders"
-                    class="sidebar-menu"
-                    data-section="orders"
-                >
-
-                    <span class="menu-icon">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.8"
-                        >
-
-                            <path
-                                d="M6 3h12v18H6z"
-                            />
-
-                            <path
-                                d="M9 7h6"
-                            />
-
-                            <path
-                                d="M9 11h6"
-                            />
-
-                            <path
-                                d="M9 15h4"
-                            />
-
-                        </svg>
-
-                    </span>
-
-                    <span class="menu-title">
-                        Orders
-                    </span>
-
-                </a>
-
-
-                <!-- MENU -->
-
-                <a
-                    href="#menu"
-                    class="sidebar-menu"
-                    data-section="menu"
-                >
-
-                    <span class="menu-icon">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.8"
-                        >
-
-                            <path
-                                d="M4 5h16"
-                            />
-
-                            <path
-                                d="M4 12h16"
-                            />
-
-                            <path
-                                d="M4 19h16"
-                            />
-
-                            <circle
-                                cx="8"
-                                cy="5"
-                                r="1.5"
-                            />
-
-                            <circle
-                                cx="15"
-                                cy="12"
-                                r="1.5"
-                            />
-
-                            <circle
-                                cx="10"
-                                cy="19"
-                                r="1.5"
-                            />
-
-                        </svg>
-
-                    </span>
-
-                    <span class="menu-title">
-                        Menu
-                    </span>
-
-                </a>
-
-
-                <!-- EVENTS -->
-
-                <a
-                    href="#events"
-                    class="sidebar-menu"
-                    data-section="events"
-                >
-
-                    <span class="menu-icon">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.8"
-                        >
-
-                            <rect
-                                x="3"
-                                y="5"
-                                width="18"
-                                height="16"
-                                rx="2"
-                            />
-
-                            <path
-                                d="M16 3v4"
-                            />
-
-                            <path
-                                d="M8 3v4"
-                            />
-
-                            <path
-                                d="M3 10h18"
-                            />
-
-                            <path
-                                d="M8 14h3"
-                            />
-
-                            <path
-                                d="M8 17h5"
-                            />
-
-                        </svg>
-
-                    </span>
-
-                    <span class="menu-title">
-                        Events
-                    </span>
-
-                </a>
-
-
-                <!-- PROFILE -->
-
-                <a
-                    href="#profile"
-                    class="sidebar-menu"
-                    data-section="profile"
-                >
-
-                    <span class="menu-icon">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.8"
-                        >
-
-                            <circle
-                                cx="12"
-                                cy="8"
-                                r="4"
-                            />
-
-                            <path
-                                d="M4 21c0-4.2 3.4-7 8-7s8 2.8 8 7"
-                            />
-
-                        </svg>
-
-                    </span>
-
-                    <span class="menu-title">
-                        Profile
-                    </span>
-
-                </a>
-
+                <div class="user-meta">
+                    <span id="headerUsername" class="user-name-text">Jeevi</span>
+                    <span class="user-role-label">Kitchen Partner</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="dash-workspace">
+        <!-- Navigation Menu Sidebar Panel -->
+        <aside id="sidebarPanel" class="dash-sidebar">
+            <nav class="sidebar-nav">
+                <ul class="menu-list">
+                    <li>
+                        <button class="menu-item" data-target="overview-section">
+                            <svg viewBox="0 0 24 24" class="icon"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z"/></svg>
+                            <span>Dashboard Overview</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-item" data-target="orders-section">
+                            <svg viewBox="0 0 24 24" class="icon"><path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/></svg>
+                            <span>Catering Requests</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-item" data-target="menu-section">
+                            <svg viewBox="0 0 24 24" class="icon"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>
+                            <span>Kitchen Menu Manager</span>
+                        </button>
+                    </li>
+                    <li>
+                        <button class="menu-item" data-target="analytics-section">
+                            <svg viewBox="0 0 24 24" class="icon"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg>
+                            <span>Earnings & Analytics</span>
+                        </button>
+                    </li>
+     <li>
+        <button class="menu-item" data-target="settings-section">
+            <svg viewBox="0 0 24 24" class="icon" aria-hidden="true">
+                <path d="M19.14 12.94c.04-.3.06-.61.06-.94 0-.32-.02-.64-.07-.94l2.03-1.58c.18-.14.23-.41.12-.61l-1.92-3.32c-.12-.22-.37-.29-.59-.22l-2.39.96c-.5-.38-1.03-.7-1.62-.94l-.36-2.54c-.04-.24-.24-.41-.48-.41h-3.84c-.24 0-.43.17-.47.41l-.36 2.54c-.59.24-1.13.57-1.62.94l-2.39-.96c-.22-.08-.47 0-.59.22L2.74 8.87c-.12.21-.08.47.12.61l2.03 1.58c-.05.3-.09.63-.09.94s.02.64.07.94l-2.03 1.58c-.18.14-.23.41-.12.61l1.92 3.32c.12.22.37.29.59.22l2.39-.96c.5.38 1.03.7 1.62.94l.36 2.54c.05.24.24.41.48.41h3.84c.24 0 .44-.17.47-.41l.36-2.54c.59-.24 1.13-.56 1.62-.94l2.39.96c.22.08.47 0 .59-.22l1.92-3.32c.12-.22.07-.47-.12-.61l-2.01-1.58zM12 15.6c-1.98 0-3.6-1.62-3.6-3.6s1.62-3.6 3.6-3.6 3.6 1.62 3.6 3.6-1.62 3.6-3.6 3.6z"/>
+            </svg>
+            <span>Operations & Profile Setup</span>
+        </button>
+    </li>
+
+                </ul>
             </nav>
-
-
-            <!-- =================================================
-                 SIDEBAR BOTTOM
-            ================================================== -->
-
-            <div class="sidebar-bottom">
-
-
-                <div class="sidebar-help-card">
-
-                    <span class="help-icon">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.7"
-                        >
-
-                            <circle
-                                cx="12"
-                                cy="12"
-                                r="9"
-                            />
-
-                            <path
-                                d="M9.5 9a2.5 2.5 0 1 1 4.5 1.5c-.8 1-2 1.2-2 2.5"
-                            />
-
-                            <circle
-                                cx="12"
-                                cy="16.5"
-                                r=".7"
-                                fill="currentColor"
-                            />
-
-                        </svg>
-
-                    </span>
-
-                    <div>
-
-                        <strong>
-                            Need help?
-                        </strong>
-
-                        <small>
-                            Contact support
-                        </small>
-
-                    </div>
-
-                </div>
-
-
-                <!-- LOGOUT -->
-
-                <button
-                    class="logout-button"
-                    id="logoutButton"
-                >
-
-                    <span class="menu-icon">
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.8"
-                        >
-
-                            <path
-                                d="M10 17l5-5-5-5"
-                            />
-
-                            <path
-                                d="M15 12H3"
-                            />
-
-                            <path
-                                d="M20 3v18"
-                            />
-
-                        </svg>
-
-                    </span>
-
-                    <span>
-                        Logout
-                    </span>
-
+            
+            <!-- Global Logout Trigger Interface -->
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="logout-btn">
+                    <svg viewBox="0 0 24 24" class="icon"><path d="M10.09 15.59L11.5 17l5-5-5-5-1.41 1.41L12.67 11H3v2h9.67l-2.58 2.59zM19 3H5c-1.11 0-2 .9-2 2v4h2V5h14v14H5v-4H3v4c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/></svg>
+                    <span>Log Out</span>
                 </button>
-
             </div>
-
         </aside>
 
+        <!-- Overlay for closing Mobile Sidebar -->
+        <div id="sidebarOverlay" class="sidebar-overlay"></div>
 
-        <!-- =====================================================
-             MAIN AREA
-        ====================================================== -->
+        <!-- Section Wise Display Viewport Panel Frame -->
+        <main class="dash-content-area">
+        <section id="overview-section" class="content-view active">
+    <!-- Section Introduction Header Banner Row -->
+    <div class="overview-header-row">
+        <div class="header-text-group">
+            <h1 class="view-title">Dashboard Overview</h1>
+            <p class="section-subtitle">Real-time processing snapshot, ongoing production stats, and earnings tracking metrics summaries.</p>
+        </div>
+        <div class="header-action-group">
+            <!-- Fixed Button: Strong contrast outline style using green -->
+        <button
+    type="button"
+    class="primary-action-btn"
+    onclick="window.location.href='404.html';"
+>
+    <svg
+        viewBox="0 0 24 24"
+        class="btn-icon"
+        aria-hidden="true"
+    >
+        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+    </svg>
 
-        <main class="dashboard-main">
+    <span>Add New Menu Item</span>
+</button>
+        </div>
+    </div>
 
+    <!-- 1. Analytical Summary Key Performance Metrics Data Cards Grid -->
+    <div class="metrics-summary-grid">
+        <div class="metric-card">
+            <div class="card-upper-row">
+                <div class="metric-icon-box green-tint">
+                    <svg viewBox="0 0 24 24" class="card-icon"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
+                </div>
+                <span class="trend-badge positive">+14.2%</span>
+            </div>
+            <div class="card-data-row">
+                <h3 class="metric-value">48</h3>
+                <p class="metric-label">Active Subscriptions</p>
+            </div>
+        </div>
 
-            <!-- =================================================
-                 TOP HEADER
-            ================================================== -->
+        <div class="metric-card">
+            <div class="card-upper-row">
+                <div class="metric-icon-box orange-tint">
+                    <svg viewBox="0 0 24 24" class="card-icon"><path d="M11 9H9V2H7v7H5V2H3v7c0 2.12 1.66 3.84 3.75 3.97V22h2.5v-9.03C11.34 12.84 13 11.12 13 9V2h-2v7zm5-3v8h2.5v8H21V2c-2.76 0-5 2.24-5 4z"/></svg>
+                </div>
+                <span class="trend-badge positive">+8.5%</span>
+            </div>
+            <div class="card-data-row">
+                <h3 class="metric-value">124</h3>
+                <p class="metric-label">Meals Prepared Today</p>
+            </div>
+        </div>
 
-            <header class="dashboard-header">
+        <div class="metric-card">
+            <div class="card-upper-row">
+                <div class="metric-icon-box green-tint">
+                    <svg viewBox="0 0 24 24" class="card-icon"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H7c0-2.76 2.24-5 5-5s5 2.24 5 5c0 1.04-.42 1.99-1.07 2.75z"/></svg>
+                </div>
+                <span class="trend-badge neutral">Stable</span>
+            </div>
+            <div class="card-data-row">
+                <h3 class="metric-value">98.6%</h3>
+                <p class="metric-label">Client Satisfaction Rating</p>
+            </div>
+        </div>
 
+        <!-- Fixed Gross Revenue Card: Stripped out the dark gradient, now matching clean contrast styling -->
+        <div class="metric-card revenue-card-fixed">
+            <div class="card-upper-row">
+                <div class="metric-icon-box orange-tint">
+                    <svg viewBox="0 0 24 24" class="card-icon"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm0-4h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                </div>
+                <span class="trend-badge positive">+22.4%</span>
+            </div>
+            <div class="card-data-row">
+                <h3 class="metric-value text-highlight-green">$4,862.50</h3>
+                <p class="metric-label">Gross Revenue (This Month)</p>
+            </div>
+        </div>
+    </div>
 
-                <div class="header-left">
+    <!-- 2. Dual Column Layout: Pending Queue & Macro Progress Tracking -->
+    <div class="overview-split-layout">
+        <div class="table-card-container">
+            <div class="card-inner-header">
+                <h2 class="card-block-title">Pending Delivery Queue</h2>
+                <a href="#" class="view-all-link" id="linkToOrders">View Queue &rarr;</a>
+            </div>
+            
+            <div class="responsive-table-scroll-wrapper">
+                <table class="data-display-table">
+                    <thead>
+                        <tr>
+                            <th>Order Details</th>
+                            <th>Diet Type</th>
+                            <th>Guest Scale</th>
+                            <th>Status Badge</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="order-cell-info">
+                                    <span class="client-name">TechCorp Corporate Gala</span>
+                                    <span class="order-id-label">#HC-2026-904</span>
+                                </div>
+                            </td>
+                            <td><span class="diet-tag vegan-tag">Vegan Matrix</span></td>
+                            <td><span class="count-value">120 Guests</span></td>
+                            <td><span class="status-pill status-preparing">In Prep</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="order-cell-info">
+                                    <span class="client-name">Anna Mitchell (Weekly Plan)</span>
+                                    <span class="order-id-label">#HC-2026-905</span>
+                                </div>
+                            </td>
+                            <td><span class="diet-tag keto-tag">Strict Keto</span></td>
+                            <td><span class="count-value">1 Client</span></td>
+                            <td><span class="status-pill status-ready">Dispatched</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
-
-                    <!-- HAMBURGER -->
-
-                    <button
-                        class="hamburger-button"
-                        id="hamburgerButton"
-                        aria-label="Open navigation menu"
-                        aria-expanded="false"
-                    >
-
-                        <span></span>
-                        <span></span>
-                        <span></span>
-
-                    </button>
-
-
-                    <div class="header-page-info">
-
-                        <span class="header-small-title">
-                            PARTNER PORTAL
-                        </span>
-
-                        <h1 id="headerPageTitle">
-                            Dashboard
-                        </h1>
-
+        <div class="distribution-card-container">
+            <h2 class="card-block-title">Macro Distribution Tracking</h2>
+            <p class="distribution-subtext">Current split across kitchen operational production logs.</p>
+            
+            <div class="macro-progress-stack">
+                <div class="progress-bar-group">
+                    <div class="progress-labels">
+                        <span class="progress-label-text">Plant-Based / Vegan</span>
+                        <span class="progress-percentage-value">45%</span>
                     </div>
-
+                    <div class="progress-track-bg">
+                        <div class="progress-fill-bar" style="width: 45%; background: #108A4E;"></div>
+                    </div>
                 </div>
 
-
-                <!-- =================================================
-                     HEADER RIGHT
-                ================================================== -->
-
-                <div class="header-right">
-
-
-                    <!-- NOTIFICATION -->
-
-                    <button
-                        class="header-icon-button"
-                        id="notificationButton"
-                        aria-label="Notifications"
-                    >
-
-                        <svg
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="1.8"
-                        >
-
-                            <path
-                                d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"
-                            />
-
-                            <path
-                                d="M10 21h4"
-                            />
-
-                        </svg>
-
-                        <span
-                            class="notification-dot"
-                        ></span>
-
-                    </button>
-
-
-                    <!-- PROFILE -->
-
-                    <div class="header-profile">
-
-
-                        <div
-                            class="profile-avatar"
-                            id="profileAvatar"
-                        >
-                            J
-                        </div>
-
-
-                        <div class="profile-details">
-
-                            <span class="profile-greeting">
-                                Welcome back
-                            </span>
-
-                            <strong id="profileName">
-                                Jeevi
-                            </strong>
-
-                        </div>
-
-
-                        <svg
-                            class="profile-chevron"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            stroke-width="2"
-                        >
-
-                            <path
-                                d="M6 9l6 6 6-6"
-                            />
-
-                        </svg>
-
+                <div class="progress-bar-group">
+                    <div class="progress-labels">
+                        <span class="progress-label-text">Keto / Low-Carb</span>
+                        <span class="progress-percentage-value">30%</span>
                     </div>
-
+                    <div class="progress-track-bg">
+                        <div class="progress-fill-bar" style="width: 30%; background: #E65100;"></div>
+                    </div>
                 </div>
-
-            </header>
-
-
-            <!-- =================================================
-                 PAGE CONTENT
-            ================================================== -->
-
-            <div
-                class="dashboard-content"
-                id="dashboardContent"
-            >
-
-
-                <!-- =============================================
-                     DASHBOARD SECTION
-                ============================================== -->
-
-                <section
-                    class="dashboard-section active-section"
-                    id="section-dashboard"
-                >
-
-                    <div class="welcome-block">
-
-                        <div>
-
-                            <span class="content-eyebrow">
-                                PARTNER DASHBOARD
-                            </span>
-
-                            <h2>
-                                Good to see you,
-                                <span id="welcomeName">
-                                    Jeevi
-                                </span>.
-                            </h2>
-
-                            <p>
-                                Manage your catering operations,
-                                orders and upcoming events from
-                                one place.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="dashboard-placeholder-grid">
-
-
-                        <div class="placeholder-card">
-
-                            <div class="placeholder-icon">
-
-                                <svg
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="1.7"
-                                >
-
-                                    <path
-                                        d="M4 19V5"
-                                    />
-
-                                    <path
-                                        d="M4 19h16"
-                                    />
-
-                                    <path
-                                        d="M7 16v-4"
-                                    />
-
-                                    <path
-                                        d="M11 16V8"
-                                    />
-
-                                    <path
-                                        d="M15 16v-6"
-                                    />
-
-                                    <path
-                                        d="M19 16V5"
-                                    />
-
-                                </svg>
-
-                            </div>
-
-                            <span>
-                                SECTION
-                            </span>
-
-                            <h3>
-                                Dashboard Overview
-                            </h3>
-
-                            <p>
-                                Dashboard content can be added
-                                here later.
-                            </p>
-
-                        </div>
-
-
-                        <div class="placeholder-card">
-
-                            <div class="placeholder-icon">
-
-                                <svg
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    stroke="currentColor"
-                                    stroke-width="1.7"
-                                >
-
-                                    <circle
-                                        cx="12"
-                                        cy="12"
-                                        r="8"
-                                    />
-
-                                    <path
-                                        d="M12 8v5l3 2"
-                                    />
-
-                                </svg>
-
-                            </div>
-
-                            <span>
-                                SECTION
-                            </span>
-
-                            <h3>
-                                Activity
-                            </h3>
-
-                            <p>
-                                Recent partner activity will
-                                appear here.
-                            </p>
-
-                        </div>
-
-
-                    </div>
-
-                </section>
-
-
-                <!-- =============================================
-                     ORDERS SECTION
-                ============================================== -->
-
-                <section
-                    class="dashboard-section"
-                    id="section-orders"
-                >
-
-                    <div class="section-heading">
-
-                        <span>
-                            PARTNER MENU
-                        </span>
-
-                        <h2>
-                            Orders
-                        </h2>
-
-                        <p>
-                            Orders section page content.
-                        </p>
-
-                    </div>
-
-                </section>
-
-
-                <!-- =============================================
-                     MENU SECTION
-                ============================================== -->
-
-                <section
-                    class="dashboard-section"
-                    id="section-menu"
-                >
-
-                    <div class="section-heading">
-
-                        <span>
-                            PARTNER MENU
-                        </span>
-
-                        <h2>
-                            Menu
-                        </h2>
-
-                        <p>
-                            Menu management page content.
-                        </p>
-
-                    </div>
-
-                </section>
-
-
-                <!-- =============================================
-                     EVENTS SECTION
-                ============================================== -->
-
-                <section
-                    class="dashboard-section"
-                    id="section-events"
-                >
-
-                    <div class="section-heading">
-
-                        <span>
-                            PARTNER MENU
-                        </span>
-
-                        <h2>
-                            Events
-                        </h2>
-
-                        <p>
-                            Catering events page content.
-                        </p>
-
-                    </div>
-
-                </section>
-
-
-                <!-- =============================================
-                     PROFILE SECTION
-                ============================================== -->
-
-                <section
-                    class="dashboard-section"
-                    id="section-profile"
-                >
-
-                    <div class="section-heading">
-
-                        <span>
-                            PARTNER MENU
-                        </span>
-
-                        <h2>
-                            Profile
-                        </h2>
-
-                        <p>
-                            Partner profile page content.
-                        </p>
-
-                    </div>
-
-                </section>
-
-
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .content-view {
+    display: none;
+}
+
+.content-view.active {
+    display: block;
+}
+    /* ==========================================================================
+   Dashboard Overview High-Contrast UI Corrections Matrix
+   ========================================================================== */
+.overview-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.section-subtitle {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    margin-top: 0.4rem;
+}
+
+/* Fixed Action Button: High contrast background color scheme */
+.primary-action-btn {
+    background-color: #108A4E;
+    color: #FFFFFF;
+    border: none;
+    padding: 0.9rem 1.6rem;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: var(--font-md);
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 4px 12px rgba(16, 138, 78, 0.2);
+    transition: var(--transition);
+}
+
+.primary-action-btn:hover {
+    background-color: #0C6F3E;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(12, 111, 62, 0.3);
+}
+
+.btn-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* Analytical Metrics Grid Framework */
+.metrics-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.75rem;
+    margin-bottom: 3rem;
+}
+
+.metric-card {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 1.75rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.metric-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+    border-color: rgba(16, 138, 78, 0.2);
+}
+
+.card-upper-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.metric-icon-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Strict Color Assignment Utilities (Green & Orange) */
+.green-tint { background: #E8F5E9; color: #108A4E; }
+.orange-tint { background: #FFF3E0; color: #E65100; }
+
+.card-icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.trend-badge {
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 8px;
+}
+
+.trend-badge.positive { background: #E8F5E9; color: #108A4E; }
+.trend-badge.neutral { background: #F1F5F9; color: #64748B; }
+
+.card-data-row {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+}
+
+.metric-value {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    letter-spacing: -0.5px;
+}
+
+.metric-label {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* Revenue Card Visibility Fix Rules */
+.revenue-card-fixed {
+    background: #FFFFFF !important;
+    border: 1px solid var(--border) !important;
+}
+
+.text-highlight-green {
+    color: #108A4E !important;
+}
+
+/* ==========================================================================
+   2. Split Content Column Component Sections Styling
+   ========================================================================== */
+.overview-split-layout {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 2rem;
+}
+
+.table-card-container, .distribution-card-container {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 1.75rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.card-inner-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.card-block-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.view-all-link {
+    color: #108A4E;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: var(--transition);
+}
+
+.view-all-link:hover {
+    text-decoration: underline;
+}
+
+.responsive-table-scroll-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.data-display-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.data-display-table th {
+    padding: 1rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border);
+}
+
+.data-display-table td {
+    padding: 1.2rem 1rem;
+    border-bottom: 1px solid #F1F5F9;
+}
+
+.order-cell-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.client-name {
+    font-weight: 600;
+}
+
+.order-id-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* Diet Configuration Tags styling details rules */
+.diet-tag {
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.3rem 0.6rem;
+    border-radius: 6px;
+    display: inline-block;
+}
+.vegan-tag { background: #E8F5E9; color: #108A4E; }
+.keto-tag { background: #FFF3E0; color: #E65100; }
+
+.status-pill {
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.35rem 0.75rem;
+    border-radius: 50px;
+}
+.status-preparing { background: #FFF3E0; color: #E65100; }
+.status-ready { background: #E8F5E9; color: #108A4E; }
+
+/* Distribution Components Stack Bar styling */
+.distribution-subtext {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.macro-progress-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.progress-bar-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+.progress-track-bg {
+    width: 100%;
+    height: 8px;
+    background-color: #F1F5F9;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-fill-bar {
+    height: 100%;
+    border-radius: 10px;
+}
+
+/* ==========================================================================
+   Responsive Architecture Structural Adaptive Rules Media Query Breakpoints
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .overview-split-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .overview-header-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .primary-action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .metrics-summary-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+</style>
+
+         <section id="orders-section" class="content-view">
+
+    <div class="section-header-flex">
+        <div class="header-text-group">
+            <h1 class="view-title">Catering Requests</h1>
+            <p class="section-subtitle">
+                Manage incoming corporate catering bookings, individual recurring meal plans,
+                and real-time food preparation statuses.
+            </p>
+        </div>
+
+        <div class="live-counter-row">
+            <div class="counter-badge badge-orange">
+                <span class="counter-num" id="countPending">1</span>
+                <span class="counter-label">Pending Approval</span>
             </div>
 
-        </main>
+            <div class="counter-badge badge-green">
+                <span class="counter-num" id="countActive">1</span>
+                <span class="counter-label">Active Kitchen Tasks</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="filter-toolbar-card">
+
+        <div class="search-input-wrapper">
+            <svg viewBox="0 0 24 24" class="search-icon">
+                <path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5
+                16 5.91 13.09 3 9.5 3S3 5.91 3 9.5
+                5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57
+                l.27.28v.79l5 4.99L20.49 19l-4.99-5z
+                M9.5 14C7.01 14 5 11.99 5 9.5S7.01 5
+                9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+            </svg>
+
+            <input
+                type="text"
+                id="orderSearchInput"
+                placeholder="Search by Client Name, ID, or Location..."
+            >
+        </div>
+
+        <div class="filter-button-group">
+            <button class="filter-tab active" data-filter="all">
+                All Requests
+            </button>
+
+            <button class="filter-tab" data-filter="pending">
+                Pending
+            </button>
+
+            <button class="filter-tab" data-filter="preparing">
+                Preparing
+            </button>
+
+            <button class="filter-tab" data-filter="dispatched">
+                Dispatched
+            </button>
+        </div>
 
     </div>
 
+    <div class="orders-table-card">
 
-  <style>
-    /* ============================================================
-   RESET
-============================================================ */
+        <div class="responsive-table-scroll-wrapper">
+
+            <table class="orders-management-table">
+
+                <thead>
+                    <tr>
+                        <th>Order Identifier / Client Details</th>
+                        <th>Diet & Menu Selection</th>
+                        <th>Guest Scale & Logistics</th>
+                        <th>Financials</th>
+                        <th>Status Configuration</th>
+                        <th class="text-right">Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody id="cateringOrdersQueue">
+
+                    <tr
+                        class="order-row-item"
+                        data-status="preparing"
+                        id="row-904"
+                    >
+                        <td>
+                            <div class="client-meta-cell">
+                                <span class="client-title-name">
+                                    TechCorp Corporate Gala
+                                </span>
+
+                                <span class="meta-subtext-item ID-tag">
+                                    #HC-2026-904
+                                </span>
+
+                                <span class="meta-subtext-item location-tag">
+                                    📍 Innovation Hall, Tower B
+                                </span>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="menu-selection-cell">
+                                <span class="diet-tag vegan-tag">
+                                    Vegan Matrix Menu
+                                </span>
+
+                                <span class="menu-items-summary">
+                                    Quinoa bowls, Avocado sliders, chia parfaits
+                                </span>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="logistics-cell">
+                                <span class="guest-count-highlight">
+                                    120 Guests
+                                </span>
+
+                                <span class="delivery-time-label">
+                                    ⏱️ Oct 24, 12:30 PM Delivery
+                                </span>
+                            </div>
+                        </td>
+
+                        <td>
+                            <span class="financial-bold-value">
+                                $2,400.00
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="status-pill status-preparing">
+                                In Kitchen Prep
+                            </span>
+                        </td>
+
+                        <td class="text-right">
+                            <div class="action-buttons-flex">
+
+                                <button
+                                    class="action-btn-circle btn-view"
+                                    title="View Specifications Details"
+                                >
+                                    👁
+                                </button>
+
+                                <button
+                                    class="action-btn-circle btn-advance btn-dispatch-action"
+                                    data-row-id="row-904"
+                                    title="Mark as Dispatched"
+                                >
+                                    ✓
+                                </button>
+
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr
+                        class="order-row-item"
+                        data-status="pending"
+                        id="row-905"
+                    >
+                        <td>
+                            <div class="client-meta-cell">
+                                <span class="client-title-name">
+                                    Anna Mitchell (Weekly Sub)
+                                </span>
+
+                                <span class="meta-subtext-item ID-tag">
+                                    #HC-2026-905
+                                </span>
+
+                                <span class="meta-subtext-item location-tag">
+                                    📍 452 Maple Avenue, Apt 4C
+                                </span>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="menu-selection-cell">
+                                <span class="diet-tag keto-tag">
+                                    Strict Keto
+                                </span>
+
+                                <span class="menu-items-summary">
+                                    Grilled salmon, almond-crusted chicken
+                                </span>
+                            </div>
+                        </td>
+
+                        <td>
+                            <div class="logistics-cell">
+                                <span class="guest-count-highlight">
+                                    1 Individual Plan
+                                </span>
+
+                                <span class="delivery-time-label">
+                                    ⏱️ Daily Sub (8:00 AM Drop)
+                                </span>
+                            </div>
+                        </td>
+
+                        <td>
+                            <span class="financial-bold-value">
+                                $185.00
+                            </span>
+                        </td>
+
+                        <td>
+                            <span class="status-pill status-pending">
+                                Awaiting Kitchen Run
+                            </span>
+                        </td>
+
+                        <td class="text-right">
+                            <div class="action-buttons-flex">
+
+                                <button
+                                    class="action-btn-circle btn-view"
+                                    title="View Specifications Details"
+                                >
+                                    👁
+                                </button>
+
+                                <button
+                                    class="action-btn-circle btn-advance btn-approve-action"
+                                    data-row-id="row-905"
+                                    title="Approve & Begin Cooking"
+                                >
+                                    ✓
+                                </button>
+
+                            </div>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+                                <style>
+                                    /* ==========================================================================
+   Catering Requests Layout & Multi-Tier Filter Toolbars Style Rules
+   ========================================================================== */
+.section-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.live-counter-row {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.counter-badge {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    padding: 0.75rem 1.25rem;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.counter-num {
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+.counter-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.badge-orange .counter-num { color: #E65100; }
+.badge-green .counter-num { color: #108A4E; }
+
+/* Filter Operations Toolbar Cards Module Context Rules Grid */
+.filter-toolbar-card {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.25rem;
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.search-input-wrapper {
+    position: relative;
+    flex: 1;
+    max-width: 460px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    color: var(--text-muted);
+}
+
+.search-input-wrapper input {
+    width: 100%;
+    padding: 0.8rem 1rem 0.8rem 2.8rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-size: var(--font-base);
+    background-color: var(--bg-light);
+    transition: var(--transition);
+}
+
+.search-input-wrapper input:focus {
+    background-color: #FFFFFF;
+    border-color: #108A4E;
+    box-shadow: 0 0 0 4px rgba(16, 138, 78, 0.08);
+}
+
+.filter-button-group {
+    display: flex;
+    gap: 0.5rem;
+    background-color: var(--bg-light);
+    padding: 0.35rem;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+}
+
+.filter-tab {
+    background: transparent;
+    border: none;
+    padding: 0.6rem 1.1rem;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    cursor: pointer;
+    border-radius: 7px;
+    transition: var(--transition);
+}
+
+.filter-tab:hover {
+    color: #108A4E;
+}
+
+.filter-tab.active {
+    background-color: #FFFFFF;
+    color: #108A4E;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Master Data Grid Table Context Structure Modifiers Layout */
+.orders-table-card {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+}
+
+.orders-management-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.orders-management-table th {
+    background-color: var(--bg-light);
+    padding: 1.1rem 1.5rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--border);
+}
+
+.orders-management-table tr {
+    transition: var(--transition);
+}
+
+.orders-management-table tbody tr:hover {
+    background-color: rgba(16, 138, 78, 0.01);
+}
+
+.orders-management-table td {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    vertical-align: middle;
+}
+
+.client-meta-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    max-width: 280px;
+}
+
+.client-title-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.meta-subtext-item {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.ID-tag {
+    font-family: monospace;
+    font-weight: 600;
+}
+
+.menu-selection-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    max-width: 260px;
+}
+
+.menu-items-summary {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.logistics-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.guest-count-highlight {
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.delivery-time-label {
+    font-size: 0.85rem;
+    color: #E65100;
+    font-weight: 500;
+}
+
+.delivery-time-label.text-muted-time {
+    color: var(--text-muted);
+}
+
+.financial-bold-value {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: #108A4E;
+}
+
+.orange-tag { background: #FFF3E0; color: #E65100; }
+.text-right { text-align: right; }
+
+/* Control Action Node Circle Buttons Configurations */
+.action-buttons-flex {
+    display: inline-flex;
+    gap: 0.5rem;
+}
+
+.action-btn-circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    background: #FFFFFF;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    transition: var(--transition);
+}
+
+.action-btn-circle svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+.btn-view:hover {
+    color: #108A4E;
+    border-color: #108A4E;
+    background-color: var(--primary-light);
+}
+
+.btn-advance:hover {
+    color: #FFFFFF;
+    background-color: #108A4E;
+    border-color: #108A4E;
+}
+
+.btn-disabled {
+    background-color: var(--bg-light);
+    color: #CBD5E1;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   Responsive Architecture Structural Breakpoint Adaptability Table Layout
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .filter-toolbar-card {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .search-input-wrapper {
+        max-width: 100%;
+    }
+    
+    .filter-button-group {
+        width: 100%;
+        overflow-x: auto;
+    }
+    
+    .filter-tab {
+        flex: 1;
+        text-align: center;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-header-flex {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    /* Transform wide tables into clean block structures dynamically for mobile viewports */
+    .orders-management-table, 
+    .orders-management-table thead, 
+    .orders-management-table tbody, 
+    .orders-management-table th, 
+    .orders-management-table td, 
+    .orders-management-table tr { 
+        display: block; 
+    }
+    
+    .orders-management-table thead {
+        display: none; 
+    }
+    
+    .orders-management-table td { 
+        border: none;
+        border-bottom: 1px dashed #F1F5F9; 
+        position: relative;
+        padding-left: 50%; 
+        text-align: right;
+    }
+
+    .orders-management-table td::before { 
+        position: absolute;
+        top: 50%;
+        left: 1rem;
+        transform: translateY(-50%);
+        width: 45%; 
+        padding-right: 10px; 
+        white-space: nowrap;
+        text-align: left;
+        font-weight: 700;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        text-transform: uppercase;
+    }
+    
+    /* Assign Mobile Data Labels Dynamic Identifiers Matrix */
+    .orders-management-table td:nth-of-type(1)::before { content: "Order Info"; }
+    .orders-management-table td:nth-of-type(2)::before { content: "Menu Profile"; }
+    .orders-management-table td:nth-of-type(3)::before { content: "Logistics Metrics"; }
+    .orders-management-table td:nth-of-type(4)::before { content: "Gross Value"; }
+    .orders-management-table td:nth-of-type(5)::before { content: "Status Phase"; }
+    .orders-management-table td:nth-of-type(6)::before { content: "Operations"; }
+    
+    .client-meta-cell, .menu-selection-cell, .logistics-cell {
+        max-width: 100%;
+        align-items: flex-end;
+    }
+    
+    .order-row-item {
+        border-bottom: 3px solid var(--border);
+        background: #FFFFFF;
+        padding: 0.5rem 0;
+    }
+}
+                                </style>
+    
+    <script>
+        // Append this block inside the window DOMContentLoaded block in your app.js
+const orderSearchInput = document.getElementById('orderSearchInput');
+const filterTabs = document.querySelectorAll('.filter-tab');
+const orderRows = document.querySelectorAll('.order-row-item');
+
+// 1. Text Query Search Box Filtering Channel Logic
+if (orderSearchInput) {
+    orderSearchInput.addEventListener('input', (e) => {
+        const queryText = e.target.value.toLowerCase().trim();
+
+        orderRows.forEach(row => {
+            const clientNameText = row.querySelector('.client-title-name').textContent.toLowerCase();
+            const orderIdText = row.querySelector('.ID-tag').textContent.toLowerCase();
+            const locationText = row.querySelector('.location-tag').textContent.toLowerCase();
+
+            if (clientNameText.includes(queryText) || orderIdText.includes(queryText) || locationText.includes(queryText)) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    });
+}
+
+// 2. Status Toolbar Tab Switcher Filter Router Pipeline
+filterTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        filterTabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const activeFilterValue = tab.getAttribute('data-filter');
+
+        orderRows.forEach(row => {
+            const rowStatusValue = row.getAttribute('data-status');
+
+            if (activeFilterValue === 'all' || rowStatusValue === activeFilterValue) {
+                row.style.display = '';
+            } else {
+                row.style.display = 'none';
+            }
+        });
+    });
+});
+
+// 3. Dynamic State Advancer Action Modifiers (Approve / Dispatch)
+document.addEventListener('click', (e) => {
+    // Handle "Approve & Begin Cooking" trigger button
+    if (e.target.closest('.btn-approve-action')) {
+        const btn = e.target.closest('.btn-approve-action');
+        const rowId = btn.getAttribute('data-row-id');
+        const row = document.getElementById(rowId);
+        
+        if (row) {
+            row.setAttribute('data-status', 'preparing');
+            const statusPill = row.querySelector('.status-pill');
+            statusPill.className = 'status-pill status-preparing';
+            statusPill.textContent = 'In Kitchen Prep';
+            
+            // Transform button icon style cleanly to dispatch workflow mode
+            btn.className = 'action-btn-circle btn-advance btn-dispatch-action';
+            btn.setAttribute('title', 'Mark as Dispatched');
+            
+            // Recalculate top totals cleanly instantly
+            updateCounterMetrics();
+        }
+    }
+    // Handle "Mark as Dispatched" trigger button
+    else if (e.target.closest('.btn-dispatch-action')) {
+        const btn = e.target.closest('.btn-dispatch-action');
+        const rowId = btn.getAttribute('data-row-id');
+        const row = document.getElementById(rowId);
+        
+        if (row) {
+            row.setAttribute('data-status', 'dispatched');
+            const statusPill = row.querySelector('.status-pill');
+            statusPill.className = 'status-pill status-ready';
+            statusPill.textContent = 'Out with Dispatch';
+            
+            // Complete action state by locking element interaction paths
+            btn.className = 'action-btn-circle btn-disabled';
+            btn.setAttribute('disabled', 'true');
+            btn.setAttribute('title', 'Order Lifecycle Finished');
+            
+            updateCounterMetrics();
+        }
+    }
+});
+
+// Helper state function loop to recount workspace numbers
+function updateCounterMetrics() {
+    const pendingNum = document.querySelectorAll('.order-row-item[data-status="pending"]').length;
+    const activeNum = document.querySelectorAll('.order-row-item[data-status="preparing"]').length;
+    
+    const countPendingNode = document.getElementById('countPending');
+    const countActiveNode = document.getElementById('countActive');
+    
+    if (countPendingNode) countPendingNode.textContent = pendingNum;
+    if (countActiveNode) countActiveNode.textContent = activeNum;
+}
+
+    </script>
+
+       <section id="menu-section" class="content-view">
+    <!-- Section Introduction Header Row -->
+    <div class="menu-manager-header-row">
+        <div class="header-text-group">
+            <h1 class="view-title">Kitchen Menu Manager</h1>
+            <p class="section-subtitle">Catalog, refine, update, or instantly toggle active ingredient availability across meal plans.</p>
+        </div>
+        <div class="header-action-group">
+          <button
+    type="button"
+    class="primary-action-btn"
+    id="openAddMealModalBtn"
+    onclick="window.location.href='404.html';"
+>
+    <svg
+        viewBox="0 0 24 24"
+        class="btn-icon"
+        aria-hidden="true"
+    >
+        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+    </svg>
+
+    <span>Create New Diet Package</span>
+</button>
+        </div>
+    </div>
+
+    <!-- Dietary Filter Control Nodes and Stats Summary Panel -->
+    <div class="menu-control-toolbar">
+        <div class="dietary-filter-chips-row">
+            <button class="menu-filter-chip active" data-diet-category="all">All Items (6)</button>
+            <button class="menu-filter-chip" data-diet-category="vegan">Vegan / Plant-Based</button>
+            <button class="menu-filter-chip" data-diet-category="keto">Keto / Low-Carb</button>
+            <button class="menu-filter-chip" data-diet-category="protein">High-Protein</button>
+        </div>
+        <div class="menu-count-badge-display">
+            Active Workspace Items: <strong id="visibleMealsCount">6</strong>
+        </div>
+    </div>
+
+    <!-- Main Dynamic Meals Catalog Floating Grid Workspace Matrix Container -->
+    <div class="meals-catalog-grid" id="mealsCatalogGridContainer">
+        
+        <!-- Meal Card 1: Vegan Matrix Selection Item Card Component -->
+        <div class="meal-inventory-card" data-diet-type="vegan">
+            <div class="meal-thumbnail-wrapper">
+                <img src="./Assests/avacado.webp" alt="Avocado Quinoa Harvest Bowl" class="meal-preview-img">
+                <span class="diet-category-ribbon ribbon-vegan">Vegan / Plant-Based</span>
+            </div>
+            <div class="meal-card-details-body">
+                <div class="title-pricing-row">
+                    <h3 class="meal-package-name">Avocado Quinoa Harvest Bowl</h3>
+                    <span class="meal-base-cost-tag">$18.50</span>
+                </div>
+                <p class="meal-ingredients-description">Organic mixed greens, roasted red quinoa, sliced fresh Hass avocado, organic cherry tomatoes, cucumber slices, and lemon-tahini vinaigrette dressing.</p>
+                
+                <!-- Micro Nutritional Boundary Macro Breakdown Grid Matrix -->
+                <div class="nutritional-metrics-row-grid">
+                    <div class="macro-stat-node"><span class="macro-val">520</span><span class="macro-lbl">Calories</span></div>
+                    <div class="macro-stat-node"><span class="macro-val">14g</span><span class="macro-lbl">Protein</span></div>
+                    <div class="macro-stat-node"><span class="macro-val">62g</span><span class="macro-lbl">Carbs</span></div>
+                    <div class="macro-stat-node"><span class="macro-val">22g</span><span class="macro-lbl">Fats</span></div>
+                </div>
+
+                <!-- Footer Operations Availability Toggle Switch Controls Rows -->
+                <div class="meal-card-operations-footer">
+                    <div class="toggle-switch-wrapper-control">
+                        <label class="switch-toggle-node">
+                            <input type="checkbox" checked class="meal-status-toggle-checkbox">
+                            <span class="slider-round-rail-track"></span>
+                        </label>
+                        <span class="toggle-status-label-indicator label-active-green">Live on Client App</span>
+                    </div>
+                 <button
+    type="button"
+    class="meal-edit-action-icon-btn"
+    title="Edit Catalog Item Details"
+    onclick="window.location.href='404.html';"
+>
+    <svg
+        viewBox="0 0 24 24"
+        class="edit-icon-svg"
+        aria-hidden="true"
+    >
+        <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/>
+    </svg>
+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Meal Card 2: Keto Choice Selection Item Card Component -->
+        <div class="meal-inventory-card" data-diet-type="keto">
+            <div class="meal-thumbnail-wrapper">
+                <img src="./Assests/salmon.webp" alt="Almond Crusted Salmon Fillet" class="meal-preview-img">
+                <span class="diet-category-ribbon ribbon-keto">Strict Keto / Low-Carb</span>
+            </div>
+            <div class="meal-card-details-body">
+                <div class="title-pricing-row">
+                    <h3 class="meal-package-name">Almond Crusted Salmon Fillet</h3>
+                    <span class="meal-base-cost-tag">$24.00</span>
+                </div>
+                <p class="meal-ingredients-description">Wild-caught Atlantic salmon crusted with raw almond flour, baked, served on a bed of fresh garlic sautéed asparagus stalks, and finished with herb butter compound oil drizzle.</p>
+                
+                <div class="nutritional-metrics-row-grid">
+                    <div class="macro-stat-node"><span class="macro-val">680</span><span class="macro-lbl">Calories</span></div>
+                    <div class="macro-stat-node"><span class="macro-val">42g</span><span class="macro-lbl">Protein</span></div>
+                    <div class="macro-stat-node"><span class="macro-val">8g</span><span class="macro-lbl">Carbs</span></div>
+                    <div class="macro-stat-node"><span class="macro-val">54g</span><span class="macro-lbl">Fats</span></div>
+                </div>
+
+                <div class="meal-card-operations-footer">
+                    <div class="toggle-switch-wrapper-control">
+                        <label class="switch-toggle-node">
+                            <input type="checkbox" checked class="meal-status-toggle-checkbox">
+                            <span class="slider-round-rail-track"></span>
+                        </label>
+                        <span class="toggle-status-label-indicator label-active-green">Live on Client App</span>
+                    </div>
+                   <button
+    type="button"
+    class="meal-edit-action-icon-btn"
+    title="Edit Catalog Item Details"
+    onclick="window.location.href='404.html';"
+>
+    <svg
+        viewBox="0 0 24 24"
+        class="edit-icon-svg"
+        aria-hidden="true"
+    >
+        <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0-1.83 1.83 3.75 3.75 3.75 3.75l1.83-1.83z"/>
+    </svg>
+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Meal Card 3: High-Protein Muscle Pack Item Card Component -->
+        <div class="meal-inventory-card" data-diet-type="protein">
+            <div class="meal-thumbnail-wrapper">
+                <img src="./Assests/turkey.webp" alt="Lean Citrus Grilled Turkey Breast" class="meal-preview-img">
+                <span class="diet-category-ribbon ribbon-protein">High-Protein Custom</span>
+            </div>
+            <div class="meal-card-details-body">
+                <div class="title-pricing-row">
+                    <h3 class="meal-package-name">Citrus Grilled Turkey Fillets</h3>
+                    <span class="meal-base-cost-tag">$19.50</span>
+                </div>
+                <p class="meal-ingredients-description">Thick, house-marinated hormone-free lean turkey breast pieces, grilled over wood fires, paired with brown basmati rice wraps, and whole steamed broccoli florets.</p>
+                
+                <div class="nutritional-metrics-row-grid">
+                    <div class="macro-stat-node"><span class="macro-val">590</span><span class="macro-lbl">Calories</span></div>
+                    <div class="macro-stat-node"><span class="macro-val">52g</span><span class="macro-lbl">Protein</span></div>
+                    <div class="macro-stat-node"><span class="macro-val">44g</span><span class="macro-lbl">Carbs</span></div>
+                    <div class="macro-stat-node"><span class="macro-val">12g</span><span class="macro-lbl">Fats</span></div>
+                </div>
+
+                <div class="meal-card-operations-footer">
+                    <div class="toggle-switch-wrapper-control">
+                        <label class="switch-toggle-node">
+                            <input type="checkbox" class="meal-status-toggle-checkbox">
+                            <span class="slider-round-rail-track"></span>
+                        </label>
+                        <span class="toggle-status-label-indicator label-disabled-gray">Paused / Sold Out</span>
+                    </div>
+                  <button
+    type="button"
+    class="meal-edit-action-icon-btn"
+    title="Edit Catalog Item Details"
+    onclick="window.location.href='404.html';"
+>
+    <svg
+        viewBox="0 0 24 24"
+        class="edit-icon-svg"
+        aria-hidden="true"
+    >
+        <path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0-1.83 1.83 3.75 3.75 3.75 3.75l1.83-1.83z"/>
+    </svg>
+</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+<style>
+    /* ==========================================================================
+   Kitchen Menu Manager Layout Structural Framework Custom Tokens CSS Modules
+   ========================================================================== */
+.menu-manager-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+/* Dietary Filter Toolbar Dashboard Panel Controls */
+.menu-control-toolbar {
+    background-color: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.dietary-filter-chips-row {
+    display: flex;
+    gap: 0.65rem;
+    flex-wrap: wrap;
+}
+
+.menu-filter-chip {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 0.65rem 1.25rem;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.menu-filter-chip:hover {
+    color: #108A4E;
+    border-color: rgba(16, 138, 78, 0.3);
+    background-color: #FFFFFF;
+}
+
+.menu-filter-chip.active {
+    background-color: #108A4E;
+    color: #FFFFFF;
+    border-color: #108A4E;
+    box-shadow: 0 4px 10px rgba(16, 138, 78, 0.15);
+}
+
+.menu-count-badge-display {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.menu-count-badge-display strong {
+    color: var(--text-dark);
+}
+
+/* ==========================================================================
+   Meals Catalog Auto-Adaptive Floating Grid Items Section Block Styles
+   ========================================================================== */
+.meals-catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.meal-inventory-card {
+    background: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    transition: var(--transition);
+}
+
+.meal-inventory-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: rgba(16, 138, 78, 0.2);
+}
+
+.meal-thumbnail-wrapper {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+    background-color: #E2E8F0;
+}
+
+.meal-preview-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.meal-inventory-card:hover .meal-preview-img {
+    transform: scale(1.05);
+}
+
+/* Dietary Accent Colors Ribbon Badges Rules */
+.diet-category-ribbon {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.ribbon-vegan { background-color: #E8F5E9; color: #108A4E; }
+.ribbon-keto { background-color: #FFF3E0; color: #E65100; }
+.ribbon-protein { background-color: #E1F5FE; color: #0288D1; }
+
+.meal-card-details-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.title-pricing-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+}
+
+.meal-package-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    line-height: 1.3;
+}
+
+.meal-base-cost-tag {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #108A4E;
+    white-space: nowrap;
+}
+
+.meal-ingredients-description {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Nutritional Grid Matrix Macro Badges CSS rules structural nodes */
+.nutritional-metrics-row-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background-color: var(--bg-light);
+    border-radius: 12px;
+    padding: 0.75rem;
+    text-align: center;
+    gap: 0.5rem;
+    margin-top: auto;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(226, 232, 240, 0.5);
+}
+
+.macro-stat-node {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.macro-val {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.macro-lbl {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Footer Switch Toggle Layout Components Area Node Rules Styling */
+.meal-card-operations-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--border);
+    padding-top: 1rem;
+}
+
+.toggle-switch-wrapper-control {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.switch-toggle-node {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+.switch-toggle-node input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider-round-rail-track {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #CBD5E1;
+    transition: .3s;
+    border-radius: 34px;
+}
+
+.slider-round-rail-track::before {
+    position: absolute;
+    content: "";
+    height: 18px; width: 18px;
+    left: 3px; bottom: 3px;
+    background-color: white;
+    transition: .3s;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+input:checked + .slider-round-rail-track {
+    background-color: #108A4E;
+}
+
+input:checked + .slider-round-rail-track::before {
+    transform: translateX(20px);
+}
+
+.toggle-status-label-indicator {
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.label-active-green { color: #108A4E; }
+.label-disabled-gray { color: #64748B; }
+
+.meal-edit-action-icon-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    background-color: #FFFFFF;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.meal-edit-action-icon-btn:hover {
+    color: #108A4E;
+    border-color: #108A4E;
+    background-color: var(--primary-light);
+}
+
+.edit-icon-svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+/* ==========================================================================
+   Adaptive Mobile Structural Layout Responsiveness Breakpoint Rule Modifiers
+   ========================================================================== */
+@media (max-width: 768px) {
+    .menu-manager-header-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.25rem;
+    }
+
+    .primary-action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .menu-control-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        padding: 1.25rem;
+    }
+}
+
+</style>
+
+<script>
+    // Append this chunk inside the window DOMContentLoaded wrapper block logic in your app.js script
+const menuFilterChips = document.querySelectorAll('.menu-filter-chip');
+const mealInventoryCards = document.querySelectorAll('.meal-inventory-card');
+const visibleMealsCountNode = document.getElementById('visibleMealsCount');
+
+// 1. Dietary Ribbon Filter Classification Engine sorting pipeline
+menuFilterChips.forEach(chip => {
+    chip.addEventListener('click', () => {
+        // Toggle active visual class tracking attributes state safely across elements nodes
+        menuFilterChips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+
+        const targetedDietCategory = chip.getAttribute('data-diet-category');
+        let computedMatchScoreCount = 0;
+
+        mealInventoryCards.forEach(card => {
+            const cardDietTypeValue = card.getAttribute('data-diet-type');
+
+            if (targetedDietCategory === 'all' || cardDietTypeValue === targetedDietCategory) {
+                card.style.display = '';
+                computedMatchScoreCount++;
+            } else {
+                card.style.display = 'none';
+            }
+        });
+
+        // Update active visibility trackers instantly inside DOM text counters nodes layout
+        if (visibleMealsCountNode) {
+            visibleMealsCountNode.textContent = computedMatchScoreCount;
+        }
+    });
+});
+
+// 2. Real-time In-Stock Availability Interactive Switch Toggles Listener Action Hook
+document.addEventListener('change', (event) => {
+    if (event.target.classList.contains('meal-status-toggle-checkbox')) {
+        const checkboxNode = event.target;
+        const statusTextIndicatorNode = checkboxNode.closest('.toggle-switch-wrapper-control').querySelector('.toggle-status-label-indicator');
+        
+        if (checkboxNode.checked) {
+            statusTextIndicatorNode.className = 'toggle-status-label-indicator label-active-green';
+            statusTextIndicatorNode.textContent = 'Live on Client App';
+        } else {
+            statusTextIndicatorNode.className = 'toggle-status-label-indicator label-disabled-gray';
+            statusTextIndicatorNode.textContent = 'Paused / Sold Out';
+        }
+    }
+});
+
+</script>
+
+         <section id="analytics-section" class="content-view">
+    <!-- Section Header Title & Statement Actions Row -->
+    <div class="analytics-header-row">
+        <div class="header-text-group">
+            <h1 class="view-title">Earnings & Analytics</h1>
+            <p class="section-subtitle">Monitor payout disbursements, volume analytics, average subscription yields, and distribution metrics.</p>
+        </div>
+        <div class="header-action-group">
+            <!-- Functional Mock Export Document Trigger Button -->
+        <button
+    type="button"
+    class="primary-action-btn"
+    id="exportStatementBtn"
+    onclick="window.location.href='404.html';"
+>
+    <svg
+        viewBox="0 0 24 24"
+        class="btn-icon"
+        aria-hidden="true"
+    >
+        <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/>
+    </svg>
+
+    <span>Export CSV Statement</span>
+</button>
+        </div>
+    </div>
+
+    <!-- 1. Analytical Summary Financial Performance Metric Grid -->
+    <div class="analytics-summary-grid">
+        <div class="analytics-metric-card">
+            <span class="analytics-card-label">Gross Volume (This Month)</span>
+            <div class="analytics-value-row">
+                <h2 class="analytics-big-value text-highlight-green">$4,862.50</h2>
+                <span class="analytics-trend-indicator positive-arrow">▲ 22.4%</span>
+            </div>
+            <p class="analytics-card-footer">vs. $3,972.00 last month</p>
+        </div>
+
+        <div class="analytics-metric-card">
+            <span class="analytics-card-label">Average Order Yield</span>
+            <div class="analytics-value-row">
+                <h2 class="analytics-big-value">$156.85</h2>
+                <span class="analytics-trend-indicator positive-arrow">▲ 5.1%</span>
+            </div>
+            <p class="analytics-card-footer">Based on 31 active contracts</p>
+        </div>
+
+        <div class="analytics-metric-card">
+            <span class="analytics-card-label">Next Scheduled Payout</span>
+            <div class="analytics-value-row">
+                <h2 class="analytics-big-value text-highlight-orange">$1,240.00</h2>
+                <span class="analytics-payout-status-tag">Processing</span>
+            </div>
+            <p class="analytics-card-footer">Auto-disbursement on Oct 28</p>
+        </div>
+    </div>
+
+    <!-- 2. Dual Column Structural Split Layout: Visual Statistics & Statement Receipts Ledger -->
+    <div class="analytics-split-layout">
+        
+        <!-- Left Side Column Container: Simulated Structural Revenue Scaling Bar Chart -->
+        <div class="chart-visualization-card">
+            <h3 class="chart-block-title">Weekly Revenue Breakdown</h3>
+            <p class="chart-subtitle">Gross distribution logs tracked over the last 4 active business weeks.</p>
+            
+            <div class="simulated-bar-chart-container">
+                <div class="chart-axis-y-labels">
+                    <span>$2k</span><span>$1.5k</span><span>$1k</span><span>$500</span><span>$0</span>
+                </div>
+                <div class="chart-bars-canvas-row">
+                    <!-- Week 1 Bar -->
+                    <div class="chart-bar-vertical-wrapper">
+                        <div class="chart-bar-fill-node tint-orange" style="height: 45%;" title="$900.00">
+                            <span class="bar-floating-tooltip">$900</span>
+                        </div>
+                        <span class="chart-axis-x-label">Week 1</span>
+                    </div>
+                    <!-- Week 2 Bar -->
+                    <div class="chart-bar-vertical-wrapper">
+                        <div class="chart-bar-fill-node tint-green" style="height: 65%;" title="$1,300.00">
+                            <span class="bar-floating-tooltip">$1.3k</span>
+                        </div>
+                        <span class="chart-axis-x-label">Week 2</span>
+                    </div>
+                    <!-- Week 3 Bar -->
+                    <div class="chart-bar-vertical-wrapper">
+                        <div class="chart-bar-fill-node tint-orange" style="height: 55%;" title="$1,100.00">
+                            <span class="bar-floating-tooltip">$1.1k</span>
+                        </div>
+                        <span class="chart-axis-x-label">Week 3</span>
+                    </div>
+                    <!-- Week 4 Bar (Current Peak) -->
+                    <div class="chart-bar-vertical-wrapper">
+                        <div class="chart-bar-fill-node tint-green" style="height: 85%;" title="$1,562.50">
+                            <span class="bar-floating-tooltip">$1.56k</span>
+                        </div>
+                        <span class="chart-axis-x-label">Week 4</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side Column Container: Payout Settlement Disbursement History Ledger -->
+        <div class="payout-ledger-card">
+            <h3 class="chart-block-title">Recent Payout Settlements</h3>
+            <p class="chart-subtitle">Historical list of verified kitchen banking remittances.</p>
+            
+            <div class="ledger-rows-stack">
+                <!-- Ledger Item 1 -->
+                <div class="ledger-list-item-row">
+                    <div class="ledger-left-info">
+                        <span class="ledger-reference-id">Disbursement #PAY-00824</span>
+                        <span class="ledger-timestamp-date">Oct 15, 2026 • Electronic Transfer</span>
+                    </div>
+                    <div class="ledger-right-financials">
+                        <span class="ledger-amount-value">$1,842.50</span>
+                        <span class="ledger-status-pill success-green-pill">Settled</span>
+                    </div>
+                </div>
+
+                <!-- Ledger Item 2 -->
+                <div class="ledger-list-item-row">
+                    <div class="ledger-left-info">
+                        <span class="ledger-reference-id">Disbursement #PAY-00823</span>
+                        <span class="ledger-timestamp-date">Oct 01, 2026 • Electronic Transfer</span>
+                    </div>
+                    <div class="ledger-right-financials">
+                        <span class="ledger-amount-value">$1,780.00</span>
+                        <span class="ledger-status-pill success-green-pill">Settled</span>
+                    </div>
+                </div>
+
+                <!-- Ledger Item 3 -->
+                <div class="ledger-list-item-row">
+                    <div class="ledger-left-info">
+                        <span class="ledger-reference-id">Disbursement #PAY-00822</span>
+                        <span class="ledger-timestamp-date">Sep 15, 2026 • Electronic Transfer</span>
+                    </div>
+                    <div class="ledger-right-financials">
+                        <span class="ledger-amount-value">$1,240.00</span>
+                        <span class="ledger-status-pill success-green-pill">Settled</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>
+<style>
+    /* ==========================================================================
+   Earnings & Financial Analytics Custom Tokens CSS Layout Blocks
+   ========================================================================== */
+.analytics-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+/* 1. Metric Display Cards Grid Configuration */
+.analytics-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.75rem;
+    margin-bottom: 3rem;
+}
+
+.analytics-metric-card {
+    background-color: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 1.75rem;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.analytics-card-label {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.analytics-value-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0.25rem 0;
+}
+
+.analytics-big-value {
+    font-size: 2.2rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    letter-spacing: -0.5px;
+}
+
+.analytics-trend-indicator {
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+}
+
+.analytics-trend-indicator.positive-arrow {
+    background-color: #E8F5E9;
+    color: #108A4E;
+}
+
+.analytics-payout-status-tag {
+    background-color: #FFF3E0;
+    color: #E65100;
+    font-size: 0.85rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+}
+
+.analytics-card-footer {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   2. Twin Split Analytics Grid Layout Structures
+   ========================================================================== */
+.analytics-split-layout {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+}
+
+.chart-visualization-card, .payout-ledger-card {
+    background-color: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.chart-block-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.chart-subtitle {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+/* CSS-Powered Vector Bar Graph Canvas Styles Structural Nodes */
+.simulated-bar-chart-container {
+    display: flex;
+    height: 240px;
+    gap: 1.5rem;
+    position: relative;
+    padding-left: 2.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.chart-axis-y-labels {
+    position: absolute;
+    left: 0; top: 0; bottom: 1.5rem;
+    width: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-align: right;
+}
+
+.chart-bars-canvas-row {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+    border-left: 2px solid var(--border);
+    border-bottom: 2px solid var(--border);
+    padding: 0 1rem;
+    height: 100%;
+}
+
+.chart-bar-vertical-wrapper {
+    width: 45px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+}
+
+.chart-bar-fill-node {
+    width: 100%;
+    border-radius: 6px 6px 0 0;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chart-bar-fill-node:hover {
+    transform: scaleY(1.03);
+}
+
+.tint-green { background: #108A4E; }
+.tint-orange { background: #E65100; }
+
+/* Interactive Floating Bar Chart Tooltip Element styling rules */
+.bar-floating-tooltip {
+    position: absolute;
+    top: -2.5rem;
+    left: 50%;
+    transform: translateX(-50%) translateY(4px);
+    background-color: var(--text-dark);
+    color: #FFFFFF;
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.3rem 0.5rem;
+    border-radius: 6px;
+    opacity: 0;
+    pointer-events: none;
+    transition: var(--transition);
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.chart-bar-fill-node:hover .bar-floating-tooltip {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+.chart-axis-x-label {
+    position: absolute;
+    bottom: -1.5rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Financial Receipts Ledger Rows Item Styling */
+.ledger-rows-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.ledger-list-item-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.1rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background-color: var(--bg-light);
+    transition: var(--transition);
+}
+
+.ledger-list-item-row:hover {
+    background-color: #FFFFFF;
+    border-color: rgba(16, 138, 78, 0.2);
+    box-shadow: var(--shadow-sm);
+}
+
+.ledger-left-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.ledger-reference-id {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.ledger-timestamp-date {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.ledger-right-financials {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.35rem;
+}
+
+.ledger-amount-value {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
+.ledger-status-pill {
+    font-size: 0.8rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+}
+
+.success-green-pill {
+    background-color: #E8F5E9;
+    color: #108A4E;
+}
+
+/* ==========================================================================
+   Adaptive Analytics Split Viewport Responsive Media Queries
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .analytics-split-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .analytics-header-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.25rem;
+    }
+
+    .analytics-header-row .primary-action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .analytics-summary-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .simulated-bar-chart-container {
+        padding-left: 2rem;
+        gap: 0.75rem;
+    }
+    
+    .chart-bar-vertical-wrapper {
+        width: 35px;
+    }
+}
+
+</style>
+
+<script>
+    // Append this block inside the window DOMContentLoaded wrapper block logic in your app.js file
+const exportStatementBtn = document.getElementById('exportStatementBtn');
+
+if (exportStatementBtn) {
+    exportStatementBtn.addEventListener('click', () => {
+        // Trigger a clean, standard alert overlay block confirming extraction operations
+        alert("📊 Loading...");
+    });
+}
+
+</script>
+
+         <section id="settings-section" class="content-view">
+    <!-- Section Introduction Header Row with Luxury Typography Controls -->
+    <div class="settings-header-row">
+        <div class="header-text-group">
+            <h1 class="view-title">Operations & Profile Setup</h1>
+            <p class="section-subtitle">Configure operational bounds, shipping capacities, branding variables, and financial settlement profile criteria.</p>
+        </div>
+        <div class="header-action-group">
+            <!-- Global Structural Save Action Button Trigger -->
+          <button
+    type="button"
+    class="primary-action-btn"
+    id="saveKitchenSettingsBtn"
+    onclick="window.location.href='404.html';"
+>
+    <svg
+        viewBox="0 0 24 24"
+        class="btn-icon"
+        aria-hidden="true"
+    >
+        <path d="M17 3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V7l-4-4zm-5 16c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3zm3-10H5V5h10v4z"/>
+    </svg>
+
+    <span>Save Setup Modifications</span>
+</button>
+        </div>
+    </div>
+
+    <!-- Main Grid Multi-Panel Framework Workspace Layout Grid -->
+    <div class="settings-layout-grid">
+        
+        <!-- Left Side Column: Inputs Forms Stack -->
+        <div class="settings-main-forms-stack">
+            
+            <!-- Block 1: Corporate Profile Brand Metadata Form Box Container -->
+            <div class="settings-card-panel">
+                <div class="panel-header-icon-row">
+                    <div class="panel-badge-icon green-icon-tint">
+                        <svg viewBox="0 0 24 24" class="panel-svg-icon"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+                    </div>
+                    <div class="panel-header-text">
+                        <h3 class="settings-block-title">Catering Brand Registry</h3>
+                        <p class="settings-block-desc">Refine public partner descriptors exposed directly across customer digital catalog interfaces.</p>
+                    </div>
+                </div>
+                
+                <div class="form-input-vertical-stack">
+                    <div class="input-element-group">
+                        <label for="setKitchenName">Catering Kitchen Public Name</label>
+                        <input type="text" id="setKitchenName" value="Stackly Eco-Kitchen Labs" placeholder="Enter brand name...">
+                    </div>
+                    
+                    <div class="form-grid-2-col">
+                        <div class="input-element-group">
+                            <label for="setKitchenPhone">Primary Support Hotlines</label>
+                            <input type="tel" id="setKitchenPhone" value="+1 (555) 834-2961" placeholder="+1 (555) 000-0000">
+                        </div>
+                        <div class="input-element-group">
+                            <label for="setKitchenEmail">Operational Notifications Email</label>
+                            <input type="email" id="setKitchenEmail" value="kitchen-ops@stackly.com" placeholder="ops@brand.com">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Block 2: Logistics Boundaries & Preparation Rules Mapping -->
+            <div class="settings-card-panel">
+                <div class="panel-header-icon-row">
+                    <div class="panel-badge-icon orange-icon-tint">
+                        <svg viewBox="0 0 24 24" class="panel-svg-icon"><path d="M12 2c-4.41 0-8 3.59-8 8 0 5.25 8 12 8 12s8-6.75 8-12c0-4.41-3.59-8-8-8zm0 11c-1.66 0-3-1.34-3-3s1.34-3 3-3 3 1.34 3 3-1.34 3-3 3z"/></svg>
+                    </div>
+                    <div class="panel-header-text">
+                        <h3 class="settings-block-title">Logistics Boundary Metrics</h3>
+                        <p class="settings-block-desc">Establish localized capacity rules to filter incoming client meal packets automatically.</p>
+                    </div>
+                </div>
+                
+                <div class="form-input-vertical-stack">
+                    <div class="form-grid-3-col">
+                        <div class="input-element-group">
+                            <label for="setRadiusLimit">Delivery Radius Limit</label>
+                            <div class="custom-select-wrapper">
+                                <select id="setRadiusLimit">
+                                    <option value="5">Up to 5 Miles</option>
+                                    <option value="15" selected>Up to 15 Miles Max</option>
+                                    <option value="25">Up to 25 Miles Max</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-element-group">
+                            <label for="setMinOrderCost">Minimum Booking Total</label>
+                            <input type="number" id="setMinOrderCost" value="50.00" step="1.00" placeholder="0.00">
+                        </div>
+                        <div class="input-element-group">
+                            <label for="setMaxGuestScale">Max Single Guest Scale</label>
+                            <input type="number" id="setMaxGuestScale" value="250" placeholder="e.g., 500">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side Column: Immediate State Status Overrides -->
+        <div class="settings-sidebar-toggles-stack">
+            
+            <!-- Block 3: Kitchen Dispatch Status Controls Container Box -->
+            <div class="settings-card-panel">
+                <div class="panel-header-icon-row">
+                    <div class="panel-badge-icon green-icon-tint">
+                        <svg viewBox="0 0 24 24" class="panel-svg-icon"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    </div>
+                    <div class="panel-header-text">
+                        <h3 class="settings-block-title">Live Kitchen Run Statuses</h3>
+                        <p class="settings-block-desc">Instantly toggle storefront visibility parameters or suspend active pipelines.</p>
+                    </div>
+                </div>
+                
+                <div class="toggle-list-stack-group">
+                    <div class="settings-toggle-action-row-item">
+                        <div class="toggle-text-meta">
+                            <span class="toggle-headline-title">Accepting Booking Orders</span>
+                            <p class="toggle-support-desc">Enables clients to discover your menu items and request custom catering pack assemblies.</p>
+                        </div>
+                        <div class="toggle-switch-wrapper-control">
+                            <label class="switch-toggle-node">
+                                <input type="checkbox" id="toggleAcceptingOrders" checked class="settings-ops-status-toggle">
+                                <span class="slider-round-rail-track"></span>
+                            </label>
+                            <span class="toggle-status-label-indicator label-active-green">Online</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Block 4: Banking Disbursement Settlement Security Profile Card -->
+            <div class="settings-card-panel security-badge-panel">
+                <div class="verification-lock-header">
+                    <div class="lock-icon-shield-wrapper">
+                        <svg viewBox="0 0 24 24" class="shield-lock-icon" aria-hidden="true"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-1 15.41L8.41 13.8 9.83 12.4l1.17 1.18 4.17-4.17 1.42 1.41L11 16.41z"/></svg>
+                    </div>
+                    <div class="verification-text-meta">
+                        <span class="badge-title-green">Verified Operations Profile Account</span>
+                        <p class="badge-subtext-muted">Kitchen ID: #K-LABS-2026</p>
+                    </div>
+                </div>
+                <div class="payout-summary-infobox">
+                    <span class="info-label-lbl">Remittance Channel Gateway:</span>
+                    <strong class="info-value-val">•••• 9842 (Stripe Hub Secured)</strong>
+                </div>
+            </div>
+            
+        </div>
+
+    </div>
+</section>
+
+
+<style>
+ /* ==========================================================================
+   Operations & Profile Setup Luxury Interface Core System CSS Modules
+   ========================================================================== */
+.settings-header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+/* Master Layout Framework Grid Architecture Alignment */
+.settings-layout-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 2.25rem;
+    align-items: start;
+}
+
+.settings-main-forms-stack, 
+.settings-sidebar-toggles-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.settings-card-panel {
+    background-color: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+}
+
+.settings-card-panel:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+    border-color: rgba(16, 138, 78, 0.12);
+}
+
+/* Enhanced Section Header Title Content Rows with Graphic Badges Layout Alignment */
+.panel-header-icon-row {
+    display: flex;
+    gap: 1.15rem;
+    align-items: flex-start;
+    margin-bottom: 1.75rem;
+    border-bottom: 1px solid #F1F5F9;
+    padding-bottom: 1.25rem;
+}
+
+.panel-badge-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.green-icon-tint { background-color: #E8F5E9; color: #108A4E; }
+.orange-icon-tint { background-color: #FFF3E0; color: #E65100; }
+
+.panel-svg-icon {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+
+.panel-header-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.settings-block-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.settings-block-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+/* Content Element Fields Typography Rescaling Layout Parameters */
+.form-input-vertical-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-grid-2-col {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.form-grid-3-col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+}
+
+.input-element-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.input-element-group label {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+.input-element-group input, 
+.input-element-group select {
+    width: 100%;
+    padding: 0.9rem 1.1rem;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: var(--font-base);
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    transition: var(--transition);
+}
+
+.input-element-group input:focus, 
+.input-element-group select:focus {
+    outline: none;
+    border-color: #108A4E;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 0 4px rgba(16, 138, 78, 0.08);
+}
+
+/* Operational Option Toggles Rows Elements Controls Layout Matrix */
+.toggle-list-stack-group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.settings-toggle-action-row-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.toggle-text-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    max-width: 70%;
+}
+
+.toggle-headline-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.toggle-support-desc {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.4;
+}
+
+.toggle-switch-wrapper-control {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+/* Verified Account Profile Security Badging Container Panels */
+.security-badge-panel {
+    background-color: #F0FDF4;
+    border-color: #DCFCE7;
+}
+
+.verification-lock-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px dashed #DCFCE7;
+    padding-bottom: 1.25rem;
+}
+
+.lock-icon-shield-wrapper {
+    width: 46px;
+    height: 46px;
+    background-color: #DCFCE7;
+    color: #108A4E;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shield-lock-icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.verification-text-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+}
+
+.badge-title-green {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #166534;
+}
+
+.badge-subtext-muted {
+    font-size: 0.85rem;
+    color: #15803D;
+    font-weight: 600;
+    font-family: monospace;
+}
+
+.payout-summary-infobox {
+    background-color: #FFFFFF;
+    border: 1px solid rgba(22, 101, 52, 0.12);
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.info-label-lbl {
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.info-value-val {
+    color: var(--text-dark);
+}
+
+/* ==========================================================================
+   Adaptive Viewport Settings Responsiveness Structural Media Queries
+   ========================================================================== */
+@media (max-width: 1200px) {
+    .settings-layout-grid {
+        grid-template-columns: 1fr; /* Collapses dual panels symmetrically to fit screens neatly */
+    }
+}
+
+@media (max-width: 640px) {
+    .settings-header-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1.25rem;
+    }
+
+    .settings-header-row .primary-action-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .panel-header-icon-row {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .form-grid-2-col, 
+    .form-grid-3-col {
+        grid-template-columns: 1fr; /* Rescales dense subgrids completely inside single column phone views */
+    }
+    
+    .settings-toggle-action-row-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .toggle-switch-wrapper-control {
+        flex-direction: row-reverse;
+        align-self: flex-end;
+        gap: 0.75rem;
+    }
+}
+
+</style>
+
+<script>
+ // Append this block cleanly inside your window DOMContentLoaded architecture block in app.js
+const saveKitchenSettingsBtn = document.getElementById('saveKitchenSettingsBtn');
+
+if (saveKitchenSettingsBtn) {
+    saveKitchenSettingsBtn.addEventListener('click', () => {
+        // Read text input configuration parameter descriptors out from DOM nodes fields safely
+        const targetKitchenPublicBrandName = document.getElementById('setKitchenName').value.trim();
+        const targetKitchenRadiusSelector = document.getElementById('setRadiusLimit').value;
+
+        // Perform foundational data completeness sanity test checks
+        if (!targetKitchenPublicBrandName) {
+            alert("⚠️ Loading...");
+            return;
+        }
+
+        // Trigger premium system update notifications alerts instantly
+        alert(`💾 Loading...`);
+    });
+}
+
+// Live Status On/Off Switch Label Automation Modifier
+const operationsStatusCheckbox = document.getElementById('toggleAcceptingOrders');
+if (operationsStatusCheckbox) {
+    operationsStatusCheckbox.addEventListener('change', (e) => {
+        const statusLabelTextIndicator = e.target.closest('.toggle-switch-wrapper-control').querySelector('.toggle-status-label-indicator');
+        if (statusLabelTextIndicator) {
+            if (e.target.checked) {
+                statusLabelTextIndicator.className = 'toggle-status-label-indicator label-active-green';
+                statusLabelTextIndicator.textContent = 'Online';
+            } else {
+                statusLabelTextIndicator.className = 'toggle-status-label-indicator label-disabled-gray';
+                statusLabelTextIndicator.textContent = 'Offline';
+            }
+        }
+    });
+}
+
+
+</script>
+        </main>
+    </div>
+
+<style>
+
+    .content-view {
+    display: none;
+}
+
+.content-view.active {
+    display: block;
+}
+    /* Structural Global Variables & High-Readability Font Sizes Scale */
+:root {
+    --primary: #108A4E;
+    --primary-hover: #0C6F3E;
+    --text-dark: #0B251A;
+    --text-muted: #475569;
+    --border: #E2E8F0;
+    --bg-light: #FAFAFA;
+    --error: #DC2626;
+    --error-bg: #FEF2F2;
+    --font-stack: 'Plus Jakarta Sans', sans-serif;
+    --transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    /* Increased Typography Variables Scale */
+    --font-base: 1.05rem;   /* Boosted text default size */
+    --font-md: 1.15rem;     /* Boosted menu links and inputs */
+    --font-lg: 1.35rem;     /* Boosted highlights and labels */
+    --font-xl: 2.15rem;     /* Boosted container panel view titles */
+}
 
 * {
     margin: 0;
@@ -900,2153 +2853,674 @@
     box-sizing: border-box;
 }
 
-
-html {
-    scroll-behavior: smooth;
-}
-
-
 body {
+    font-family: var(--font-stack);
+    font-size: var(--font-base);
+    color: var(--text-dark);
+    background-color: #FFFFFF;
     min-height: 100vh;
-
-    font-family:
-        Inter,
-        "Segoe UI",
-        Roboto,
-        Arial,
-        sans-serif;
-
-    color: #172033;
-
-    background: #f5f8f4;
-
     overflow-x: hidden;
 }
 
-
-button,
-a {
-    font-family: inherit;
-}
-
-
-/* ============================================================
-   VARIABLES
-============================================================ */
-
-:root {
-
-    --green:
-        #239b48;
-
-    --green-dark:
-        #15803d;
-
-    --green-light:
-        #eaf7ec;
-
-    --green-soft:
-        #f3faf3;
-
-    --dark:
-        #172033;
-
-    --muted:
-        #738096;
-
-    --border:
-        #e6ebe7;
-
-    --white:
-        #ffffff;
-
-    --sidebar-width:
-        255px;
-
-    --header-height:
-        82px;
-
-}
-
-
-/* ============================================================
-   APP
-============================================================ */
-
-.dashboard-app {
+.dashboard-body {
+    background-color: #F8FAFC;
     min-height: 100vh;
-
     display: flex;
-
-    background:
-        #f6f9f6;
-}
-
-
-/* ============================================================
-   SIDEBAR
-============================================================ */
-
-.dashboard-sidebar {
-
-    position: fixed;
-
-    left: 0;
-    top: 0;
-    bottom: 0;
-
-    width:
-        var(--sidebar-width);
-
-    z-index: 100;
-
-    display: flex;
-
     flex-direction: column;
-
-    background:
-        #ffffff;
-
-    border-right:
-        1px solid var(--border);
-
-    box-shadow:
-        5px 0 30px
-        rgba(15, 23, 42, 0.035);
-
-    transition:
-        transform 0.3s ease;
 }
 
-
-/* ============================================================
-   SIDEBAR BRAND
-============================================================ */
-
-.sidebar-brand {
-
-    height:
-        var(--header-height);
-
-    padding:
-        0 20px;
-
+/* Persistent Header Component Configuration Layout Styles */
+.dash-header {
+    height: 75px;
+    background-color: #FFFFFF;
+    border-bottom: 1px solid var(--border);
     display: flex;
-
-    align-items: center;
-
     justify-content: space-between;
-
-    border-bottom:
-        1px solid var(--border);
-}
-
-
-.brand-refresh {
-
-    display: inline-flex;
-
     align-items: center;
+    padding: 0 2rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
 
-    gap: 10px;
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
 
-    text-decoration: none;
-
-    color: var(--dark);
-
+.dash-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
     cursor: pointer;
+    user-select: none;
+    padding: 0.5rem;
+    border-radius: 6px;
+    transition: var(--transition);
 }
 
-
-.sidebar-logo {
-
-    width: 40px;
-
-    height: 40px;
-
-    object-fit: contain;
-
-    border-radius: 10px;
+.dash-brand:hover {
+    background-color: var(--bg-light);
 }
 
+.brand-img {
+    width: 100px;
+    height: 30px;
+}
 
 .brand-text {
-
-    display: flex;
-
-    flex-direction: column;
-
-    line-height: 1;
+    font-size: var(--font-lg);
+    font-weight: 700;
+    color: #051A10;
 }
 
-
-.brand-text strong {
-
-    font-size:
-        0.98rem;
-
-    letter-spacing:
-        1.2px;
-
-    font-weight:
-        900;
-}
-
-
-.brand-text span {
-
-    margin-top: 4px;
-
-    font-size:
-        0.56rem;
-
-    letter-spacing:
-        2.5px;
-
-    color:
-        var(--green);
-
-    font-weight:
-        800;
-}
-
-
-/* ============================================================
-   CLOSE BUTTON
-============================================================ */
-
-.sidebar-close {
-
+.hamburger-btn {
     display: none;
-
-    width: 36px;
-
-    height: 36px;
-
+    background: none;
     border: none;
-
-    background:
-        var(--green-soft);
-
-    color:
-        var(--green-dark);
-
-    border-radius: 9px;
-
     cursor: pointer;
+    padding: 0.25rem;
+    color: var(--text-dark);
 }
 
-
-.sidebar-close svg {
-
-    width: 19px;
-
-    height: 19px;
+/* Vector Inline Icon Standardization Control Node */
+.icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    display: inline-block;
+    flex-shrink: 0;
 }
 
+.icon-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    color: var(--text-muted);
+    padding: 0.6rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
 
-/* ============================================================
-   NAVIGATION
-============================================================ */
+.icon-btn:hover {
+    color: var(--primary);
+    background-color: var(--bg-light);
+}
 
-.sidebar-navigation {
+.notification-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 9px;
+    height: 9px;
+    background-color: var(--error);
+    border-radius: 50%;
+}
 
+/* Profile Metadata Block Elements CSS Configurations */
+.user-profile-block {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    padding-left: 1rem;
+    border-left: 2px solid var(--border);
+}
+
+.user-avatar-circle {
+    width: 44px;
+    height: 44px;
+    background-color: #E8F5E9;
+    color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-lg);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.user-meta {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-name-text {
+    font-size: var(--font-md);
+    font-weight: 600;
+    color: var(--text-dark);
+    text-transform: capitalize;
+}
+
+.user-role-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 0.1rem;
+}
+
+/* ==========================================================================
+   Workspace Main Structural Components Layout Rules Area
+   ========================================================================== */
+.dash-workspace {
+    display: flex;
     flex: 1;
+    position: relative;
+}
 
-    padding:
-        28px 15px;
+/* Sidebar Component Matrix Layout Configuration */
+.dash-sidebar {
+    width: 280px;
+    background-color: #FFFFFF;
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: sticky;
+    top: 75px;
+    height: calc(100vh - 75px);
+    transition: var(--transition);
+}
 
+.sidebar-nav {
+    padding: 2rem 1.25rem;
+}
+
+.menu-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+}
+
+.menu-item {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1.15rem;
+    padding: 1rem 1.25rem;
+    background: none;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: var(--font-md);
+    font-weight: 500;
+    color: var(--text-muted);
+    cursor: pointer;
+    text-align: left;
+    transition: var(--transition);
+}
+
+.menu-item:hover {
+    color: var(--primary);
+    background-color: var(--bg-light);
+}
+
+.menu-item.active {
+    color: #FFFFFF;
+    background-color: var(--primary);
+    font-weight: 600;
+}
+
+.sidebar-footer {
+    padding: 1.5rem 1.25rem;
+    border-top: 1px solid var(--border);
+}
+
+.logout-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1.15rem;
+    padding: 1rem 1.25rem;
+    background: none;
+    border: none;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: var(--font-md);
+    font-weight: 500;
+    color: #64748B;
+    cursor: pointer;
+    text-align: left;
+    transition: var(--transition);
+}
+
+.logout-btn:hover {
+    color: var(--error);
+    background-color: var(--error-bg);
+}
+
+/* ==========================================================================
+   Section Content-View Display Layout Nodes Area Context
+   ========================================================================== */
+.dash-content-area {
+    flex: 1;
+    padding: 2.5rem;
     overflow-y: auto;
 }
 
-
-.navigation-label {
-
-    padding:
-        0 12px;
-
-    margin-bottom:
-        12px;
-
-    color:
-        #a0a9b7;
-
-    font-size:
-        0.62rem;
-
-    font-weight:
-        850;
-
-    letter-spacing:
-        1.4px;
-}
-
-
-/* ============================================================
-   SIDEBAR MENU
-============================================================ */
-
-.sidebar-menu {
-
-    position: relative;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 13px;
-
-    width: 100%;
-
-    height: 48px;
-
-    padding:
-        0 13px;
-
-    margin-bottom: 5px;
-
-    border-radius:
-        11px;
-
-    color:
-        #657184;
-
-    text-decoration: none;
-
-    font-size:
-        0.87rem;
-
-    font-weight:
-        650;
-
-    transition:
-        color 0.2s ease,
-        background 0.2s ease,
-        transform 0.2s ease;
-}
-
-
-.sidebar-menu:hover {
-
-    color:
-        var(--green-dark);
-
-    background:
-        var(--green-soft);
-
-    transform:
-        translateX(2px);
-}
-
-
-.sidebar-menu.active {
-
-    color:
-        var(--green-dark);
-
-    background:
-        var(--green-light);
-
-    font-weight:
-        800;
-}
-
-
-.sidebar-menu.active::before {
-
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-
-    top: 10px;
-
-    width: 3px;
-
-    height: 28px;
-
-    border-radius: 0 5px 5px 0;
-
-    background:
-        var(--green);
-}
-
-
-.menu-icon {
-
-    width: 21px;
-
-    height: 21px;
-
-    flex-shrink: 0;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-
-.menu-icon svg {
-
-    width: 20px;
-
-    height: 20px;
-}
-
-
-.menu-title {
-    white-space: nowrap;
-}
-
-
-/* ============================================================
-   SIDEBAR BOTTOM
-============================================================ */
-
-.sidebar-bottom {
-
-    padding:
-        15px;
-
-    border-top:
-        1px solid var(--border);
-}
-
-
-/* ============================================================
-   HELP CARD
-============================================================ */
-
-.sidebar-help-card {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    padding:
-        12px;
-
-    margin-bottom:
-        10px;
-
-    border-radius:
-        12px;
-
-    background:
-        #f6faf6;
-
-    border:
-        1px solid
-        #edf3ed;
-}
-
-
-.help-icon {
-
-    width: 32px;
-
-    height: 32px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 9px;
-
-    background:
-        #e5f5e7;
-
-    color:
-        var(--green-dark);
-}
-
-
-.help-icon svg {
-
-    width: 17px;
-
-    height: 17px;
-}
-
-
-.sidebar-help-card strong {
-
-    display: block;
-
-    color:
-        var(--dark);
-
-    font-size:
-        0.73rem;
-}
-
-
-.sidebar-help-card small {
-
-    display: block;
-
-    margin-top: 2px;
-
-    color:
-        #8993a2;
-
-    font-size:
-        0.63rem;
-}
-
-
-/* ============================================================
-   LOGOUT
-============================================================ */
-
-.logout-button {
-
-    width: 100%;
-
-    height: 45px;
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 13px;
-
-    padding:
-        0 13px;
-
-    border: none;
-
-    border-radius:
-        10px;
-
-    background:
-        transparent;
-
-    color:
-        #7b8492;
-
-    cursor: pointer;
-
-    font-size:
-        0.86rem;
-
-    font-weight:
-        700;
-
-    text-align: left;
-
-    transition:
-        color 0.2s ease,
-        background 0.2s ease;
-}
-
-
-.logout-button:hover {
-
-    color:
-        #dc2626;
-
-    background:
-        #fff4f4;
-}
-
-
-/* ============================================================
-   MAIN
-============================================================ */
-
-.dashboard-main {
-
-    width:
-        calc(100% - var(--sidebar-width));
-
-    min-height:
-        100vh;
-
-    margin-left:
-        var(--sidebar-width);
-}
-
-
-/* ============================================================
-   HEADER
-============================================================ */
-
-.dashboard-header {
-
-    position: sticky;
-
-    top: 0;
-
-    z-index: 50;
-
-    height:
-        var(--header-height);
-
-    padding:
-        0 30px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    background:
-        rgba(255, 255, 255, 0.94);
-
-    border-bottom:
-        1px solid var(--border);
-
-    backdrop-filter:
-        blur(15px);
-}
-
-
-/* ============================================================
-   HEADER LEFT
-============================================================ */
-
-.header-left {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 16px;
-}
-
-
-.header-page-info {
-
-    display: flex;
-
-    flex-direction: column;
-}
-
-
-.header-small-title {
-
-    color:
-        #a0a9b7;
-
-    font-size:
-        0.57rem;
-
-    font-weight:
-        850;
-
-    letter-spacing:
-        1.3px;
-}
-
-
-.header-page-info h1 {
-
-    margin-top: 3px;
-
-    color:
-        var(--dark);
-
-    font-size:
-        1.2rem;
-
-    font-weight:
-        850;
-}
-
-
-/* ============================================================
-   HAMBURGER
-============================================================ */
-
-.hamburger-button {
-
+.content-view {
     display: none;
-
-    width: 42px;
-
-    height: 42px;
-
-    flex-direction: column;
-
-    align-items: center;
-
-    justify-content: center;
-
-    gap: 5px;
-
-    border:
-        1px solid var(--border);
-
-    border-radius: 10px;
-
-    background:
-        #ffffff;
-
-    cursor: pointer;
+    animation: fadeIn 0.2s ease-in-out;
 }
 
-
-.hamburger-button span {
-
-    width: 19px;
-
-    height: 2px;
-
-    border-radius: 4px;
-
-    background:
-        var(--dark);
-
-    transition:
-        transform 0.25s ease;
-}
-
-
-/* ============================================================
-   HEADER RIGHT
-============================================================ */
-
-.header-right {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 18px;
-}
-
-
-/* ============================================================
-   NOTIFICATION
-============================================================ */
-
-.header-icon-button {
-
-    position: relative;
-
-    width: 42px;
-
-    height: 42px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border:
-        1px solid var(--border);
-
-    border-radius: 11px;
-
-    background:
-        #ffffff;
-
-    color:
-        #657184;
-
-    cursor: pointer;
-
-    transition:
-        color 0.2s ease,
-        border-color 0.2s ease,
-        background 0.2s ease;
-}
-
-
-.header-icon-button:hover {
-
-    color:
-        var(--green-dark);
-
-    border-color:
-        #cfe6d2;
-
-    background:
-        var(--green-soft);
-}
-
-
-.header-icon-button svg {
-
-    width: 20px;
-
-    height: 20px;
-}
-
-
-.notification-dot {
-
-    position: absolute;
-
-    top: 9px;
-
-    right: 9px;
-
-    width: 6px;
-
-    height: 6px;
-
-    border-radius: 50%;
-
-    background:
-        #ef4444;
-
-    border:
-        1px solid #ffffff;
-}
-
-
-/* ============================================================
-   PROFILE
-============================================================ */
-
-.header-profile {
-
-    display: flex;
-
-    align-items: center;
-
-    gap: 10px;
-
-    cursor: pointer;
-}
-
-
-.profile-avatar {
-
-    width: 39px;
-
-    height: 39px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    border-radius: 50%;
-
-    background:
-        linear-gradient(
-            135deg,
-            #35b95c,
-            #16803c
-        );
-
-    color:
-        #ffffff;
-
-    font-size:
-        0.85rem;
-
-    font-weight:
-        850;
-
-    box-shadow:
-        0 5px 15px
-        rgba(34, 197, 94, 0.20);
-}
-
-
-.profile-details {
-
-    display: flex;
-
-    flex-direction: column;
-
-    line-height: 1.1;
-}
-
-
-.profile-greeting {
-
-    color:
-        #9aa3b0;
-
-    font-size:
-        0.62rem;
-
-    font-weight:
-        600;
-}
-
-
-.profile-details strong {
-
-    margin-top: 4px;
-
-    color:
-        var(--dark);
-
-    font-size:
-        0.82rem;
-
-    font-weight:
-        800;
-}
-
-
-.profile-chevron {
-
-    width: 15px;
-
-    height: 15px;
-
-    color:
-        #9aa3b0;
-}
-
-
-/* ============================================================
-   CONTENT
-============================================================ */
-
-.dashboard-content {
-
-    padding:
-        35px;
-
-    max-width:
-        1500px;
-
-    margin:
-        0 auto;
-}
-
-
-/* ============================================================
-   SECTIONS
-============================================================ */
-
-.dashboard-section {
-
-    display: none;
-
-    animation:
-        sectionIn 0.35s ease;
-}
-
-
-.dashboard-section.active-section {
-
+.content-view.active {
     display: block;
 }
 
-
-@keyframes sectionIn {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateY(8px);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateY(0);
-
-    }
-
+.view-title {
+    font-size: var(--font-xl);
+    font-weight: 700;
+    color: var(--text-dark);
 }
-
-
-/* ============================================================
-   WELCOME
-============================================================ */
-
-.welcome-block {
-
-    padding:
-        32px;
-
-    border-radius:
-        20px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #eff9ed,
-            #ffffff
-        );
-
-    border:
-        1px solid
-        #dfecdf;
-
-    margin-bottom:
-        25px;
-}
-
-
-.content-eyebrow {
-
-    display: inline-block;
-
-    margin-bottom:
-        10px;
-
-    color:
-        var(--green);
-
-    font-size:
-        0.64rem;
-
-    font-weight:
-        900;
-
-    letter-spacing:
-        1.4px;
-}
-
-
-.welcome-block h2 {
-
-    color:
-        var(--dark);
-
-    font-size:
-        clamp(
-            1.8rem,
-            3vw,
-            2.6rem
-        );
-
-    letter-spacing:
-        -1px;
-
-    font-weight:
-        900;
-}
-
-
-.welcome-block h2 span {
-
-    color:
-        var(--green);
-}
-
-
-.welcome-block p {
-
-    max-width:
-        600px;
-
-    margin-top:
-        9px;
-
-    color:
-        var(--muted);
-
-    font-size:
-        0.92rem;
-
-    line-height:
-        1.6;
-}
-
-
-/* ============================================================
-   PLACEHOLDER GRID
-============================================================ */
-
-.dashboard-placeholder-grid {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(2, 1fr);
-
-    gap:
-        20px;
-}
-
-
-.placeholder-card {
-
-    padding:
-        27px;
-
-    border-radius:
-        18px;
-
-    background:
-        #ffffff;
-
-    border:
-        1px solid var(--border);
-
-    transition:
-        transform 0.25s ease,
-        box-shadow 0.25s ease,
-        border-color 0.25s ease;
-}
-
-
-.placeholder-card:hover {
-
-    transform:
-        translateY(-4px);
-
-    border-color:
-        #d5e9d8;
-
-    box-shadow:
-        0 18px 35px
-        rgba(15, 23, 42, 0.06);
-}
-
-
-.placeholder-icon {
-
-    width:
-        43px;
-
-    height:
-        43px;
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    margin-bottom:
-        18px;
-
-    border-radius:
-        12px;
-
-    color:
-        var(--green-dark);
-
-    background:
-        var(--green-light);
-}
-
-
-.placeholder-icon svg {
-
-    width:
-        21px;
-
-    height:
-        21px;
-}
-
-
-.placeholder-card > span {
-
-    color:
-        #9ba5b3;
-
-    font-size:
-        0.61rem;
-
-    font-weight:
-        850;
-
-    letter-spacing:
-        1.2px;
-}
-
-
-.placeholder-card h3 {
-
-    margin-top:
-        5px;
-
-    color:
-        var(--dark);
-
-    font-size:
-        1.05rem;
-
-    font-weight:
-        850;
-}
-
-
-.placeholder-card p {
-
-    margin-top:
-        7px;
-
-    color:
-        var(--muted);
-
-    font-size:
-        0.8rem;
-
-    line-height:
-        1.5;
-}
-
-
-/* ============================================================
-   INDIVIDUAL SECTION HEADING
-============================================================ */
-
-.section-heading {
-
-    padding:
-        35px;
-
-    min-height:
-        280px;
-
-    display:
-        flex;
-
-    flex-direction:
-        column;
-
-    justify-content:
-        center;
-
-    border:
-        1px solid var(--border);
-
-    border-radius:
-        20px;
-
-    background:
-        #ffffff;
-}
-
-
-.section-heading > span {
-
-    color:
-        var(--green);
-
-    font-size:
-        0.64rem;
-
-    font-weight:
-        900;
-
-    letter-spacing:
-        1.4px;
-}
-
-
-.section-heading h2 {
-
-    margin-top:
-        8px;
-
-    color:
-        var(--dark);
-
-    font-size:
-        2rem;
-
-    font-weight:
-        900;
-}
-
-
-.section-heading p {
-
-    margin-top:
-        8px;
-
-    color:
-        var(--muted);
-
-    font-size:
-        0.9rem;
-}
-
-
-/* ============================================================
-   MOBILE OVERLAY
-============================================================ */
 
 .sidebar-overlay {
-
     display: none;
-
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 90;
-
-    background:
-        rgba(15, 23, 42, 0.42);
-
-    backdrop-filter:
-        blur(3px);
 }
 
-
-/* ============================================================
-   TABLET
-============================================================ */
-
-@media (max-width: 1000px) {
-
-    :root {
-
-        --sidebar-width:
-            235px;
-
-    }
-
-
-    .dashboard-content {
-
-        padding:
-            25px;
-
-    }
-
-
-    .dashboard-header {
-
-        padding:
-            0 25px;
-
-    }
-
-
-    .profile-details,
-    .profile-chevron {
-
-        display:
-            none;
-
-    }
-
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-
-/* ============================================================
-   MOBILE
-============================================================ */
-
-@media (max-width: 760px) {
-
-    :root {
-
-        --header-height:
-            70px;
-
+/* ==========================================================================
+   Mobile Adaptive Layout Responsive Breakpoints System Modifiers
+   ========================================================================== */
+@media (max-width: 960px) {
+    .dash-header {
+        padding: 0 1.25rem;
     }
 
-
-    .dashboard-sidebar {
-
-        width:
-            min(
-                285px,
-                84vw
-            );
-
-        transform:
-            translateX(-105%);
-
-        box-shadow:
-            15px 0 40px
-            rgba(15, 23, 42, 0.12);
-
+    .hamburger-btn {
+        display: block; /* Reveals toggle icon on mobile displays */
     }
 
-
-    .dashboard-sidebar.sidebar-open {
-
-        transform:
-            translateX(0);
-
+    .dash-sidebar {
+        position: fixed;
+        left: -280px; /* Conceals navigation bar frame offscreen dynamically */
+        top: 75px;
+        z-index: 90;
+        height: calc(100vh - 75px);
     }
 
-
-    .sidebar-close {
-
-        display:
-            flex;
-
-        align-items:
-            center;
-
-        justify-content:
-            center;
-
+    .dash-sidebar.open {
+        left: 0; /* Exposes panel structure cleanly forward */
+        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.08);
     }
 
-
-    .sidebar-overlay.active {
-
-        display:
-            block;
-
+    .sidebar-overlay {
+        position: fixed;
+        top: 75px;
+        left: 0;
+        width: 100vw;
+        height: calc(100vh - 75px);
+        background-color: rgba(11, 37, 26, 0.4);
+        backdrop-filter: blur(2px);
+        z-index: 80;
+        display: none;
     }
 
-
-    .dashboard-main {
-
-        width:
-            100%;
-
-        margin-left:
-            0;
-
+    .sidebar-overlay.visible {
+        display: block;
     }
 
-
-    .dashboard-header {
-
-        padding:
-            0 17px;
-
+    .dash-content-area {
+        padding: 2rem 1.25rem;
     }
 
-
-    .hamburger-button {
-
-        display:
-            flex;
-
+    .user-meta {
+        display: none; /* Collapses user text profile metadata details on mobile */
     }
-
-
-    .header-right {
-
-        gap:
-            9px;
-
-    }
-
-
-    .header-icon-button {
-
-        width:
-            39px;
-
-        height:
-            39px;
-
-    }
-
-
-    .profile-avatar {
-
-        width:
-            37px;
-
-        height:
-            37px;
-
-    }
-
-
-    .dashboard-content {
-
-        padding:
-            20px 15px 30px;
-
-    }
-
-
-    .welcome-block {
-
-        padding:
-            25px 20px;
-
-    }
-
-
-    .dashboard-placeholder-grid {
-
-        grid-template-columns:
-            1fr;
-
-    }
-
-
-    .section-heading {
-
-        padding:
-            25px 20px;
-
-    }
-
 }
 
+</style>
 
-/* ============================================================
-   SMALL MOBILE
-============================================================ */
-
-@media (max-width: 420px) {
-
-    .header-small-title {
-
-        display:
-            none;
-
-    }
-
-
-    .header-page-info h1 {
-
-        font-size:
-            1rem;
-
-    }
-
-
-    .header-icon-button {
-
-        width:
-            36px;
-
-        height:
-            36px;
-
-    }
-
-
-    .profile-avatar {
-
-        width:
-            35px;
-
-        height:
-            35px;
-
-    }
-
-
-    .welcome-block h2 {
-
-        font-size:
-            1.55rem;
-
-    }
-
-
-    .welcome-block p {
-
-        font-size:
-            0.82rem;
-
-    }
-
-}
-
-
-/* ============================================================
-   REDUCED MOTION
-============================================================ */
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-
-        animation:
-            none !important;
-
-        transition:
-            none !important;
-
-    }
-
-}
-  </style>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
+<script>
+ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================================================
-       ELEMENTS
+       1. GET DASHBOARD ELEMENTS
     ========================================================= */
 
-    const sidebar =
-        document.getElementById(
-            "dashboardSidebar"
-        );
+    const headerUsername =
+        document.getElementById("headerUsername");
 
-    const overlay =
-        document.getElementById(
-            "sidebarOverlay"
-        );
+    const headerUserEmail =
+        document.getElementById("headerUserEmail");
 
-    const hamburger =
-        document.getElementById(
-            "hamburgerButton"
-        );
+    const headerUserRole =
+        document.getElementById("headerUserRole");
 
-    const sidebarClose =
-        document.getElementById(
-            "sidebarClose"
-        );
+    const avatarLetter =
+        document.getElementById("avatarLetter");
+
+    const menuItems =
+        document.querySelectorAll(".menu-item");
+
+    const contentViews =
+        document.querySelectorAll(".content-view");
+
+    const sidebarToggle =
+        document.getElementById("sidebarToggle");
+
+    const sidebarPanel =
+        document.getElementById("sidebarPanel");
+
+    const sidebarOverlay =
+        document.getElementById("sidebarOverlay");
 
     const brandRefresh =
-        document.getElementById(
-            "brandRefresh"
-        );
+        document.getElementById("brandRefresh");
 
-    const logoutButton =
-        document.getElementById(
-            "logoutButton"
-        );
-
-    const notificationButton =
-        document.getElementById(
-            "notificationButton"
-        );
-
-    const profileName =
-        document.getElementById(
-            "profileName"
-        );
-
-    const profileAvatar =
-        document.getElementById(
-            "profileAvatar"
-        );
-
-    const welcomeName =
-        document.getElementById(
-            "welcomeName"
-        );
-
-    const headerPageTitle =
-        document.getElementById(
-            "headerPageTitle"
-        );
+    const logoutBtn =
+        document.getElementById("logoutBtn");
 
 
     /* =========================================================
-       GET USER DATA
+       2. READ LOGIN SESSION
+
+       IMPORTANT:
+       Login page stores:
+
+       loggedInUser
+       loggedInRole
+       loggedInUsername
+
+       Therefore dashboard reads the same keys.
     ========================================================= */
 
-    function getLoggedInUser() {
+    const sessionEmail =
+        sessionStorage.getItem("loggedInUser");
 
-        const storedUser =
-            localStorage.getItem(
-                "healthyCateringUser"
-            );
+    const sessionRole =
+        sessionStorage.getItem("loggedInRole");
 
-
-        if (!storedUser) {
-
-            return null;
-
-        }
+    const sessionUsername =
+        sessionStorage.getItem("loggedInUsername");
 
 
-        try {
+    console.log("=================================");
+    console.log("DASHBOARD SESSION");
+    console.log("Email:", sessionEmail);
+    console.log("Role:", sessionRole);
+    console.log("Username:", sessionUsername);
+    console.log("=================================");
 
-            return JSON.parse(
-                storedUser
-            );
 
-        } catch (error) {
+    /* =========================================================
+       3. PROTECT DASHBOARD
 
-            console.error(
-                "Unable to read user data:",
-                error
-            );
+       If user directly opens:
 
-            return null;
+       partner-dashboard.html
 
-        }
+       without logging in, return to login.
+    ========================================================= */
+
+    if (!sessionEmail) {
+
+        console.warn(
+            "No login session found. Redirecting to login."
+        );
+
+        window.location.href = "./login.html";
+
+        return;
+    }
+
+
+    /* =========================================================
+       4. CREATE USERNAME IF NOT AVAILABLE
+
+       Example:
+
+       jeevi@gmail.com
+
+       becomes:
+
+       jeevi
+    ========================================================= */
+
+    let displayUsername =
+        sessionUsername;
+
+    if (!displayUsername) {
+
+        displayUsername =
+            sessionEmail
+                .split("@")[0]
+                .trim();
 
     }
 
 
     /* =========================================================
-       EXTRACT FIRST NAME
+       5. UPDATE HEADER USERNAME
     ========================================================= */
 
-    function getFirstName(user) {
+    if (headerUsername) {
 
-        /*
-         * First priority:
-         * Registered full name.
-         *
-         * Example:
-         * Jeevitha Karunanithi
-         * →
-         * Jeevitha
-         */
-
-        if (
-            user &&
-            user.name &&
-            user.name.trim() !== ""
-        ) {
-
-            return user.name
-                .trim()
-                .split(/\s+/)[0];
-
-        }
-
-
-        /*
-         * Fallback:
-         * Extract from email.
-         *
-         * jeevi@gmail.com
-         * →
-         * jeevi
-         */
-
-        if (
-            user &&
-            user.email
-        ) {
-
-            return user.email
-                .split("@")[0];
-
-        }
-
-
-        return "Partner";
+        headerUsername.textContent =
+            displayUsername;
 
     }
 
 
     /* =========================================================
-       LOAD PROFILE
+       6. UPDATE HEADER EMAIL
+
+       Example:
+
+       jeevi@gmail.com
     ========================================================= */
 
-    function loadProfile() {
+    if (headerUserEmail) {
 
-        const user =
-            getLoggedInUser();
+        headerUserEmail.textContent =
+            sessionEmail;
 
-
-        /*
-         * If no user exists,
-         * return to login.
-         */
-
-        if (!user) {
-
-            window.location.href =
-                "login.html";
-
-            return;
-
-        }
+    }
 
 
-        const firstName =
-            getFirstName(user);
+    /* =========================================================
+       7. UPDATE AVATAR
 
+       Example:
 
-        /*
-         * Display first name.
-         */
+       jeevi
 
-        profileName.textContent =
-            firstName;
+       becomes:
 
+       J
+    ========================================================= */
 
-        welcomeName.textContent =
-            firstName;
+    if (avatarLetter) {
 
-
-        /*
-         * First letter avatar.
-         */
-
-        profileAvatar.textContent =
-            firstName
+        avatarLetter.textContent =
+            displayUsername
                 .charAt(0)
                 .toUpperCase();
 
     }
 
 
-    loadProfile();
-
-
     /* =========================================================
-       OPEN SIDEBAR
+       8. UPDATE ROLE LABEL
     ========================================================= */
 
-    function openSidebar() {
+    if (headerUserRole) {
 
-        sidebar.classList.add(
-            "sidebar-open"
-        );
+        if (sessionRole === "partner") {
 
-        overlay.classList.add(
-            "active"
-        );
+            headerUserRole.textContent =
+                "Kitchen Partner";
 
-        hamburger.setAttribute(
-            "aria-expanded",
-            "true"
-        );
+        }
 
-        document.body.style.overflow =
-            "hidden";
+        else if (sessionRole === "client") {
+
+            headerUserRole.textContent =
+                "Client";
+
+        }
+
+        else {
+
+            headerUserRole.textContent =
+                "User";
+
+        }
 
     }
 
 
     /* =========================================================
-       CLOSE SIDEBAR
+       9. SECTION NAVIGATION
     ========================================================= */
 
-    function closeSidebar() {
+    menuItems.forEach(function (item) {
 
-        sidebar.classList.remove(
-            "sidebar-open"
-        );
+        item.addEventListener("click", function () {
 
-        overlay.classList.remove(
-            "active"
-        );
-
-        hamburger.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
-        document.body.style.overflow =
-            "";
-
-    }
+            const targetId =
+                item.getAttribute("data-target");
 
 
-    /* =========================================================
-       HAMBURGER
-    ========================================================= */
+            /* Remove active menu */
 
-    hamburger.addEventListener(
-        "click",
-        function () {
+            menuItems.forEach(function (button) {
 
-            if (
-                sidebar.classList.contains(
-                    "sidebar-open"
-                )
-            ) {
+                button.classList.remove("active");
 
-                closeSidebar();
+            });
 
-            } else {
 
-                openSidebar();
+            /* Hide all sections */
+
+            contentViews.forEach(function (view) {
+
+                view.classList.remove("active");
+
+            });
+
+
+            /* Activate selected menu */
+
+            item.classList.add("active");
+
+
+            /* Show selected section */
+
+            const targetView =
+                document.getElementById(targetId);
+
+            if (targetView) {
+
+                targetView.classList.add("active");
 
             }
 
-        }
-    );
+
+            /* Close mobile sidebar */
+
+            if (window.innerWidth <= 960) {
+
+                closeMobileSidebar();
+
+            }
+
+        });
+
+    });
 
 
     /* =========================================================
-       CLOSE BUTTON
+       10. MOBILE SIDEBAR
     ========================================================= */
 
-    sidebarClose.addEventListener(
-        "click",
-        closeSidebar
-    );
+    function openMobileSidebar() {
 
-
-    /* =========================================================
-       CLICK OUTSIDE
-    ========================================================= */
-
-    overlay.addEventListener(
-        "click",
-        closeSidebar
-    );
-
-
-    /* =========================================================
-       SIDEBAR MENU
-    ========================================================= */
-
-    const sidebarMenus =
-        document.querySelectorAll(
-            ".sidebar-menu"
-        );
-
-
-    const dashboardSections =
-        document.querySelectorAll(
-            ".dashboard-section"
-        );
-
-
-    sidebarMenus.forEach(
-        function (menu) {
-
-            menu.addEventListener(
-                "click",
-                function (event) {
-
-                    event.preventDefault();
-
-
-                    const sectionName =
-                        this.dataset.section;
-
-
-                    /*
-                     * Active menu
-                     */
-
-                    sidebarMenus.forEach(
-                        function (item) {
-
-                            item.classList.remove(
-                                "active"
-                            );
-
-                        }
-                    );
-
-
-                    this.classList.add(
-                        "active"
-                    );
-
-
-                    /*
-                     * Hide every section
-                     */
-
-                    dashboardSections.forEach(
-                        function (section) {
-
-                            section.classList.remove(
-                                "active-section"
-                            );
-
-                        }
-                    );
-
-
-                    /*
-                     * Show selected section
-                     */
-
-                    const selectedSection =
-                        document.getElementById(
-                            "section-" +
-                            sectionName
-                        );
-
-
-                    if (
-                        selectedSection
-                    ) {
-
-                        selectedSection.classList.add(
-                            "active-section"
-                        );
-
-                    }
-
-
-                    /*
-                     * Update header title
-                     */
-
-                    const menuTitle =
-                        this.querySelector(
-                            ".menu-title"
-                        );
-
-
-                    if (menuTitle) {
-
-                        headerPageTitle.textContent =
-                            menuTitle.textContent.trim();
-
-                    }
-
-
-                    /*
-                     * Update URL hash.
-                     *
-                     * This makes individual sections
-                     * easier to identify while testing.
-                     */
-
-                    window.history.replaceState(
-                        null,
-                        "",
-                        "#" + sectionName
-                    );
-
-
-                    /*
-                     * Close mobile sidebar.
-                     */
-
-                    if (
-                        window.innerWidth <= 760
-                    ) {
-
-                        closeSidebar();
-
-                    }
-
-                }
-            );
-
-        }
-    );
-
-
-    /* =========================================================
-       RESTORE SECTION FROM HASH
-    ========================================================= */
-
-    function loadSectionFromHash() {
-
-        const hash =
-            window.location.hash
-                .replace("#", "")
-                .trim();
-
-
-        if (!hash) {
-
+        if (!sidebarPanel || !sidebarOverlay) {
             return;
-
         }
 
+        sidebarPanel.classList.add("open");
 
-        const matchingMenu =
-            document.querySelector(
-                `.sidebar-menu[data-section="${hash}"]`
-            );
+        sidebarOverlay.classList.add("visible");
 
-
-        if (matchingMenu) {
-
-            matchingMenu.click();
-
-        }
+        document.body.style.overflow = "hidden";
 
     }
 
 
-    loadSectionFromHash();
+    function closeMobileSidebar() {
 
-
-    /* =========================================================
-       BRAND = REFRESH DASHBOARD
-    ========================================================= */
-
-    brandRefresh.addEventListener(
-        "click",
-        function (event) {
-
-            event.preventDefault();
-
-
-            /*
-             * Reload the dashboard page.
-             *
-             * User remains inside the dashboard.
-             */
-
-            window.location.reload();
-
+        if (!sidebarPanel || !sidebarOverlay) {
+            return;
         }
-    );
+
+        sidebarPanel.classList.remove("open");
+
+        sidebarOverlay.classList.remove("visible");
+
+        document.body.style.overflow = "";
+
+    }
+
+
+    if (sidebarToggle) {
+
+        sidebarToggle.addEventListener(
+            "click",
+            function () {
+
+                const isOpen =
+                    sidebarPanel.classList.contains("open");
+
+                if (isOpen) {
+
+                    closeMobileSidebar();
+
+                }
+
+                else {
+
+                    openMobileSidebar();
+
+                }
+
+            }
+        );
+
+    }
+
+
+    if (sidebarOverlay) {
+
+        sidebarOverlay.addEventListener(
+            "click",
+            closeMobileSidebar
+        );
+
+    }
 
 
     /* =========================================================
-       LOGOUT
-    ========================================================= */
-
-    logoutButton.addEventListener(
-        "click",
-        function () {
-
-            /*
-             * Remove logged-in session information.
-             */
-
-            localStorage.removeItem(
-                "healthyCateringUser"
-            );
-
-
-            /*
-             * Navigate to login.
-             */
-
-            window.location.href =
-                "login.html";
-
-        }
-    );
-
-
-    /* =========================================================
-       NOTIFICATION
-    ========================================================= */
-
-    notificationButton.addEventListener(
-        "click",
-        function () {
-
-            /*
-             * Placeholder notification behavior.
-             * Replace this later with notification drawer.
-             */
-
-            alert(
-                "You have new partner notifications."
-            );
-
-        }
-    );
-
-
-    /* =========================================================
-       ESC KEY
+       11. CLOSE SIDEBAR WITH ESC KEY
     ========================================================= */
 
     document.addEventListener(
         "keydown",
         function (event) {
 
-            if (
-                event.key === "Escape"
-            ) {
+            if (event.key === "Escape") {
 
-                closeSidebar();
+                closeMobileSidebar();
 
             }
 
@@ -3055,28 +3529,81 @@ a {
 
 
     /* =========================================================
-       WINDOW RESIZE
+       12. BRAND REFRESH
     ========================================================= */
 
-    window.addEventListener(
-        "resize",
-        function () {
+    if (brandRefresh) {
 
-            if (
-                window.innerWidth > 760
-            ) {
+        brandRefresh.addEventListener(
+            "click",
+            function () {
 
-                closeSidebar();
+                window.location.reload();
 
             }
+        );
 
-        }
+    }
+
+
+    /* =========================================================
+       13. LOGOUT
+    ========================================================= */
+
+    if (logoutBtn) {
+
+        logoutBtn.addEventListener(
+            "click",
+            function () {
+
+                console.log(
+                    "Logging out user:",
+                    sessionEmail
+                );
+
+
+                /* Clear login session */
+
+                sessionStorage.removeItem(
+                    "loggedInUser"
+                );
+
+                sessionStorage.removeItem(
+                    "loggedInRole"
+                );
+
+                sessionStorage.removeItem(
+                    "loggedInUsername"
+                );
+
+
+                /* Also remove old key if it exists */
+
+                localStorage.removeItem(
+                    "userEmail"
+                );
+
+
+                /* Go back to login */
+
+                window.location.href =
+                    "./login.html";
+
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       14. DASHBOARD READY
+    ========================================================= */
+
+    console.log(
+        "Partner Dashboard initialized successfully."
     );
 
-
 });
-  </script>
-
+</script>
 </body>
-
 </html>

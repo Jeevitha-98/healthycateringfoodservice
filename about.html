@@ -117,7 +117,13 @@
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
           Cart Container
         </a>
-        <button class="mobile-auth-btn">Sign In / Register</button>
+       <button 
+    type="button" 
+    class="mobile-auth-btn"
+    onclick="window.location.href='login.html';"
+>
+    Sign In / Register
+</button>
       </div>
     </div>
   </div>
@@ -214,9 +220,11 @@
   </a>
 
   <!-- Twitter / X Tracker Track -->
-  <a href="404.html" class="social-v-link" title="Follow on X (Twitter)">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
-  </a>
+<a href="404.html" class="social-v-link" title="Follow on X (Twitter)">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+    </svg>
+</a>
 
   <!-- LinkedIn Tracker Track -->
   <a href="404.html" class="social-v-link" title="Connect on LinkedIn">
@@ -788,7 +796,7 @@ setInterval(() => {
 }
 
 @media (max-width: 480px) {
-  .about-hero-section { padding-top: 40px; padding-bottom: 25px; }
+  .about-hero-section { padding-top: 130px; padding-bottom: 25px; }
   .about-hero-bento-pod { padding: 30px 16px; border-radius: 24px; }
   .about-hero-main-title { font-size: 1.85rem; }
   .about-hero-rectangle-mask { max-width: 310px; height: 230px; }
@@ -1207,7 +1215,7 @@ window.addEventListener('DOMContentLoaded', () => {
           <div class="leader-image-circle-frame">
             <div class="leader-live-shimmer-layer"></div>
             <!-- OPTION CONFIGURATION: Update local folder paths directly here to load your founder photographs -->
-            <img src="./Assests/hero%20section%20img%201.webp" alt="Chief Executive Founder Portrait" class="leader-native-img">
+            <img src="./Assests/vikram.webp" alt="Chief Executive Founder Portrait" class="leader-native-img">
           </div>
           <span class="leader-timeline-counter-tag bg-mint-accent">01</span>
         </div>
@@ -1239,7 +1247,7 @@ window.addEventListener('DOMContentLoaded', () => {
           <div class="circle-plate-rim-glow"></div>
           <div class="leader-image-circle-frame">
             <div class="leader-live-shimmer-layer"></div>
-            <img src="./Assests/hero%20section%20img%203.webp" alt="Chief Managing Director Portrait" class="leader-native-img">
+            <img src="./Assests/arjun.webp" alt="Chief Managing Director Portrait" class="leader-native-img">
           </div>
           <span class="leader-timeline-counter-tag bg-orange-accent">02</span>
         </div>
@@ -2228,7 +2236,7 @@ window.addEventListener('DOMContentLoaded', () => {
               <div class="surfboard-author-profile">
                 <div class="surfboard-avatar-circle">
                   <!-- OPTION CONFIGURATION: Update local folder paths directly here to load your custom user avatar image files -->
-                  <img src="./Assests/salad.webp" alt="Sarah Jenkins" class="surfboard-native-img">
+                  <img src="./Assests/rose.webp" alt="Sarah Jenkins" class="surfboard-native-img">
                 </div>
                 <div class="surfboard-author-meta">
                   <h4>Sarah Jenkins</h4>
@@ -2251,7 +2259,7 @@ window.addEventListener('DOMContentLoaded', () => {
               <p class="surfboard-feedback-quote">"The weekly macro prep vault is pure gold. Clean, chef-cooked organic containers directly delivered to my door. Down 6kg already!"</p>
               <div class="surfboard-author-profile">
                 <div class="surfboard-avatar-circle">
-                  <img src="./Assests/hero%20section%20img%203.webp" alt="David Miller" class="surfboard-native-img">
+                  <img src="./Assests/aris.webp" alt="David Miller" class="surfboard-native-img">
                 </div>
                 <div class="surfboard-author-meta">
                   <h4>David Miller</h4>
@@ -2273,10 +2281,10 @@ window.addEventListener('DOMContentLoaded', () => {
               <p class="surfboard-feedback-quote">"Unbelievable patisseries and finger foods for our private boutique high tea. Our guests are still raving about the organic honey dips."</p>
               <div class="surfboard-author-profile">
                 <div class="surfboard-avatar-circle">
-                  <img src="./Assests/high%20protein%20box.webp" alt="Elena Rostova" class="surfboard-native-img">
+                  <img src="./Assests/devon mill.webp" alt="Elena Rostova" class="surfboard-native-img">
                 </div>
                 <div class="surfboard-author-meta">
-                  <h4>Elena Rostova</h4>
+                  <h4>Devon Rostova</h4>
                   <span>Boutique Event Planner</span>
                 </div>
               </div>
@@ -2656,9 +2664,11 @@ window.addEventListener('DOMContentLoaded', () => {
           <a href="404.html" class="social-icon-circle" aria-label="Follow us on Instagram">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="2" y="2" width="20" height="24" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01"/></svg>
           </a>
-          <a href="404.html" class="social-icon-circle" aria-label="Follow us on X Twitter">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"/></svg>
-          </a>
+       <a href="404.html" class="social-icon-circle" aria-label="Follow us on X Twitter">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+    </svg>
+</a>
           <a href="404.html" class="social-icon-circle" aria-label="Follow us on LinkedIn">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
           </a>
